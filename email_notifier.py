@@ -301,8 +301,11 @@ class EmailNotifier:
             
             # メール件名
             # 今日の日付（レポート生成日）
+            # 時間帯判定（12時を境に朝/夜と判断）
+            current_hour = datetime.now().hour
+            time_period = "(07時)" if current_hour < 12 else "(23時)"
             today_formatted = datetime.now().strftime("%Y年%m月%d日")
-            subject = f"🌸 HANAZONOシステム 日次レポート {today_formatted}"
+            subject = f"🌸 HANAZONOシステム 日次レポート {today_formatted} {time_period}"
             
             # レポート本文の生成
             body_text = self._generate_text_report(
