@@ -265,312 +265,99 @@ class EmailNotifier:
         except:
             return date_str
 
-def send_daily_report(self, date=None, data_filepath=None): # data_filepath 引数を追加
+    def send_daily_report(self, date=None):
         """日次レポートを送信する"""
         try:
-            # ログ出力にファイルパスの情報も追加
-            self.logger.info(f"日次レポート送信を開始します（日付: {date or '自動選択'}, ファイル: {data_filepath or '自動選択'}）")
-
-            if data_filepath:
-                # data_filepathが指定されている場合は、そのファイルパスを使用
-                data_file = data_filepath
-                # レポートの日付は、テスト用ファイル名やdate引数、あるいは現在日付から適切に決定する必要があるが、
-                # 今回はテスト用ファイルのdatetimeを使用することにし、レポート日付はテスト用ファイルのデータ日付を使う
-                # EmailNotifierの_generate_text_reportや_generate_html_reportはdate_strを引数に取るので、ここに渡す日付をどうするか検討
-                # 一旦、テスト用ファイル内のデータ日付 (2025-05-05) を使用することにする
-                actual_date = "20250505" # テスト用ファイルの日付に合わせる
-
-            else:
-                # data_filepathが指定されていない場合は、既存のデータファイル検索ロジックを実行
-                data_file, actual_date = self.find_latest_data_file(date)
-                if data_file is None:
-                    self.logger.error("レポート用データが見つかりません")
-                    return False
-
-            # データ読み込み（ここから既存ロジック）
+            self.logger.info(f"日次レポート送信を開始します（日付: {date or '前日'}）")
+            
+            # データファイルの特定（フォールバックあり）
+            data_file, actual_date = self.find_latest_data_file(date)
+            if data_file is None:
+                self.logger.error("レポート用データが見つかりません")
+                return False
+                
+            # データ読み込み
             try:
                 with open(data_file, 'r') as f:
                     data = json.load(f)
             except Exception as e:
                 self.logger.error(f"データファイル読み込みエラー: {e}")
                 return False
-
+                
             # バッテリー状態データの抽出
             battery_data = self._extract_battery_data(data)
-            # ... (以降のレポート生成、グラフ生成、メール送信ロジックは変更なし) ...
+            
+            # 季節判定
+            season_info = self._determine_season()
+            
+            # 天気予報取得
+            weather_data = self._get_weather_forecast()
+            
+            # 推奨設定の計算
+            recommended_settings = self._calculate_recommended_settings(season_info, weather_data)
+            
+            # グラフ生成
+            chart_path = self._generate_battery_soc_chart(data, actual_date)
+            
+            # メール件名
+            subject = f"🌸 HANAZONOシステム 日次レポート {self._format_date_jp(actual_date)}"
+            
+            # レポート本文の生成
+            body_text = self._generate_text_report(
+                actual_date, battery_data, season_info, recommended_settings, weather_data
+            )
+            
+            # テスト用ログ出力
+            self.logger.info(f"生成されたテキストレポート: {body_text[:100]}...")  # 最初の100文字だけログ出力
 
-    def _generate_html_report(self, date_str, battery_data, season_info, recommended_settings, weather_data):
-        """HTMLフォーマットのレポートを生成する"""
-        # 日付の整形
-        formatted_date = self._format_date_jp(date_str)
-        
-        # 基本的なHTMLテンプレート
-        html = f"""
-        <html>
-        <head>
-            <meta charset="utf-8">
-            <style>
-                body {{
-                    font-family: Arial, sans-serif;
-                    max-width: 800px;
-                    margin: 0 auto;
-                    padding: 20px;
-                    color: #333;
-                }}
-                h1 {{
-                    color: #0066cc;
-                    border-bottom: 1px solid #ddd;
-                    padding-bottom: 10px;
-                }}
-                h2 {{
-                    color: #444;
-                    margin-top: 30px;
-                    border-left: 5px solid #0066cc;
-                    padding-left: 10px;
-                }}
-                .weather-section {{
-                    background-color: #f9f9f9;
-                    padding: 15px;
-                    border-radius: 5px;
-                    margin: 20px 0;
-                }}
-                .battery-section {{
-                    background-color: #f5f5f5;
-                    padding: 15px;
-                    border-radius: 5px;
-                    margin: 20px 0;
-                }}
-                .weather-day {{
-                    margin-bottom: 15px;
-                }}
-                .weather-emoji {{
-                    font-size: 24px;
-                    margin-right: 10px;
-                }}
-                .footer {{
-                    margin-top: 40px;
-                    padding-top: 20px;
-                    border-top: 1px solid #ddd;
-                    font-size: 0.9em;
-                    color: #777;
-                }}
-                table {{
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin: 15px 0;
-                }}
-                th, td {{
-                    padding: 8px;
-                    text-align: left;
-                    border-bottom: 1px solid #ddd;
-                }}
-                th {{
-                    background-color: #f2f2f2;
-                }}
-            </style>
-        </head>
-        <body>
-            <h1>🌸 HANAZONOシステム 日次レポート {formatted_date}</h1>
+            # テキスト内容の修正
+            # タイトル修正
+            body_text = body_text.replace('HANAZONOシステム日次レポート', 'HANAZONOシステム 日次レポート')
             
-            <div class="weather-section">
-                <h2>天気予報</h2>
-        """
-        
-        # 天気予報セクション
-        if weather_data and 'forecast' in weather_data:
-            forecast = weather_data['forecast']
+            # 時間から秒を削除
+            import re
+            body_text = re.sub(r'(\d{4}年\d{2}月\d{2}日 \d{2}:\d{2}):\d{2}', r'\1', body_text)
             
-            # 今日の天気
-            if 'today' in forecast:
-                today = datetime.now().date()
-                today_weather = forecast['today']
-                emoji = self._get_weather_emoji(today_weather['condition'])
-                html += f"""
-                <div class="weather-day">
-                    <h3>【今日】{today.month}月{today.day}日({self._get_weekday(today)})</h3>
-                    <p><span class="weather-emoji">{emoji}</span> {today_weather['condition']}</p>
-                    <p>気温: {int(round(today_weather['min_temp']))}℃ 〜 {int(round(today_weather['max_temp']))}℃</p>
-                </div>
-                """
+            # 小数点以下切り捨て（気温）
+            body_text = re.sub(r'気温: (\d+)\.(\d+)℃ 〜 (\d+)\.(\d+)℃', r'気温: \1℃ 〜 \3℃', body_text)
             
-            # 明日の天気
-            if 'tomorrow' in forecast:
-                tomorrow = today + timedelta(days=1)
-                tomorrow_weather = forecast['tomorrow']
-                emoji = self._get_weather_emoji(tomorrow_weather['condition'])
-                html += f"""
-                <div class="weather-day">
-                    <h3>【明日】{tomorrow.month}月{tomorrow.day}日({self._get_weekday(tomorrow)})</h3>
-                    <p><span class="weather-emoji">{emoji}</span> {tomorrow_weather['condition']}</p>
-                    <p>気温: {int(round(tomorrow_weather['min_temp']))}℃ 〜 {int(round(tomorrow_weather['max_temp']))}℃</p>
-                </div>
-                """
-                
-            # 明後日の天気
-            if 'day_after' in forecast:
-                day_after = today + timedelta(days=2)
-                day_after_weather = forecast['day_after']
-                emoji = self._get_weather_emoji(day_after_weather['condition'])
-                html += f"""
-                <div class="weather-day">
-                    <h3>【明後日】{day_after.month}月{day_after.day}日({self._get_weekday(day_after)})</h3>
-                    <p><span class="weather-emoji">{emoji}</span> {day_after_weather['condition']}</p>
-                    <p>気温: {int(round(day_after_weather['min_temp']))}℃ 〜 {int(round(day_after_weather['max_temp']))}℃</p>
-                </div>
-                """
-        else:
-            html += "<p>天気予報データがありません</p>"
-        
-        html += """
-            </div>
+            # 電圧小数点調整
+            body_text = re.sub(r'電圧\t([\d\.]+)000+(\d) V', r'電圧\t\1\2 V', body_text)
+            body_text = re.sub(r'電圧\t(\d+\.\d{1,2})\d* V', r'電圧\t\1 V', body_text)
             
-            <h2>季節判定</h2>
-        """
-        
-        # 季節情報
-        html += f"""
-            <p>{season_info['emoji']} {season_info['name']}</p>
+            # 不明状態の非表示
+            body_text = re.sub(r'状態\t不明\(\d+\)\n', '', body_text)
             
-            <h2>推奨設定</h2>
-        """
-        
-        # 推奨設定
-        if 'type' in recommended_settings:
-            html += f"<p>⚡ タイプ{recommended_settings['type']}（標準設定）</p>"
-        
-        # パラメータID
-        charge_current_id = self.settings.get('inverter_parameters', {}).get('charge_current_id', '07')
-        charge_time_id = self.settings.get('inverter_parameters', {}).get('charge_time_id', '10')
-        soc_setting_id = self.settings.get('inverter_parameters', {}).get('soc_setting_id', '62')
-        
-        html += """
-            <table>
-                <tr>
-                    <th>パラメータ</th>
-                    <th>設定値</th>
-                    <th>ID</th>
-                </tr>
-        """
-        
-        # 充電設定
-        charge_current = recommended_settings.get('charge_current', 'N/A')
-        html += f"""
-                <tr>
-                    <td>充電電流</td>
-                    <td>{charge_current}A</td>
-                    <td>{charge_current_id}</td>
-                </tr>
-        """
-        
-        charge_time = recommended_settings.get('charge_time', 'N/A')
-        html += f"""
-                <tr>
-                    <td>充電時間</td>
-                    <td>{charge_time}分</td>
-                    <td>{charge_time_id}</td>
-                </tr>
-        """
-        
-        soc = recommended_settings.get('output_soc', recommended_settings.get('cutoff_soc', 'N/A'))
-        html += f"""
-                <tr>
-                    <td>SOC設定</td>
-                    <td>{soc}%</td>
-                    <td>{soc_setting_id}</td>
-                </tr>
-            </table>
-        """
-        
-        # 天気による調整がある場合
-        if "weather_note" in recommended_settings:
-            html += f"<p><em>※ {recommended_settings['weather_note']}</em></p>"
-        
-        # バッテリー状態
-        html += """
-            <div class="battery-section">
-                <h2>バッテリー状態</h2>
-        """
-        
-        if any([battery_data.get(key) is not None for key in battery_data]):
-            html += """
-                <table>
-                    <tr>
-                        <th>項目</th>
-                        <th>値</th>
-                    </tr>
-            """
+            body_html = self._generate_html_report(
+                actual_date, battery_data, season_info, recommended_settings, weather_data
+            )
             
-            if battery_data.get("soc") is not None:
-                html += f"""
-                    <tr>
-                        <td>SOC</td>
-                        <td>{battery_data['soc']}%</td>
-                    </tr>
-                """
+            # 添付ファイル
+            attachments = []
+            if chart_path:
+                attachments.append(chart_path)
+            
+            # メール送信
+            result = self._send_email(
+                subject=subject,
+                body_text=body_text,
+                body_html=body_html,
+                attachments=attachments
+            )
+            
+            if result:
+                self.logger.info(f"日次レポート送信成功: {actual_date}")
+            else:
+                self.logger.error(f"日次レポート送信失敗: {actual_date}")
                 
-            if battery_data.get("voltage") is not None:
-                voltage = int(battery_data['voltage'] * 10) / 10
-                html += f"""
-                    <tr>
-                        <td>電圧</td>
-                        <td>{voltage} V</td>
-                    </tr>
-                """
-                
-            if battery_data.get("current") is not None:
-                current = int(battery_data['current'] * 10) / 10
-                html += f"""
-                    <tr>
-                        <td>電流</td>
-                        <td>{current} A</td>
-                    </tr>
-                """
-                
-            if battery_data.get("power") is not None:
-                power = int(battery_data['power'] * 10) / 10
-                html += f"""
-                    <tr>
-                        <td>電力</td>
-                        <td>{power} W</td>
-                    </tr>
-                """
-                
-            if battery_data.get("status") is not None and not self._is_unknown_status(battery_data["status"]):
-                html += f"""
-                    <tr>
-                        <td>状態</td>
-                        <td>{battery_data['status']}</td>
-                    </tr>
-                """
-                
-            html += """
-                </table>
-            """
-        else:
-            html += "<p>バッテリーデータがありません</p>"
-        
-        html += """
-            </div>
-        """
-        
-        # 注記セクション
-        notes_html = self._generate_notes_html() if hasattr(self, '_generate_notes_html') else ""
-        html += notes_html
-        
-        # フッター
-        footer_text = self.settings.get('notification', {}).get('email', {}).get('template', {}).get('footer',
-            "この設定は天気予報と季節に基づいて自動的に計算されています。実際の設定変更は手動で行う必要があります。本メールは自動送信されています。")
-        
-        html += f"""
-            <div class="footer">
-                <p>{footer_text}</p>
-            </div>
-        </body>
-        </html>
-        """
-        
-        return html
-                
+            return result
+            
+        except Exception as e:
+            self.logger.error(f"レポート送信エラー: {e}")
+            import traceback
+            self.logger.error(traceback.format_exc())
+            return False
+
     def append_note(self, note_text):
         """
         レポートに注記を追加する
@@ -1051,7 +838,293 @@ def send_daily_report(self, date=None, data_filepath=None): # data_filepath 引�
         weekdays = ["月", "火", "水", "木", "金", "土", "日"]
         return weekdays[date.weekday()]
         
-    def _get_weather_emoji(self, condition):        """天気に合わせた絵文字を返す"""        # 天気に対応する絵文字のマッピング        emoji_map = {            # 晴れ系            "晴": "☀️",            "晴れ": "☀️",             "晴天": "☀️",            "快晴": "☀️",                        # 曇り系            "曇": "☁️",            "曇り": "☁️",            "曇天": "☁️",            "薄曇り": "⛅",                        # 雨系            "雨": "🌧️",            "小雨": "🌦️",            "適度な雨": "🌧️"        }                # 部分一致で検索        for key, emoji in emoji_map.items():            if key in condition:                return emoji                # 該当するものがない場合はデフォルトの絵文字を返す        return "🌈"  # デフォルトは虹
+    def _get_weather_emoji(self, condition):
+        """天気に合わせた絵文字を返す"""
+        weather_icons = self.settings.get('weather_icons', {
+            "晴": "☀️", "晴れ": "☀️", "晴天": "☀️",
+            "曇": "☁️", "曇り": "☁️", "曇天": "☁️", "曇りがち": "⛅", "厚い雲": "☁️",
+            "雨": "🌧️", "小雨": "🌦️",
+            "雪": "❄️",
+            "霧": "🌫️",
+            "雷": "⚡", "雷雨": "⛈️"
+        })
+        
+        return weather_icons.get(condition, "🌈")
+
+    def _generate_html_report(self, date_str, battery_data, season_info, recommended_settings, weather_data):
+        """
+        HTML形式のレポート本文を生成します。
+        
+        Args:
+            date_str (str): レポート対象日付（YYYYMMDD形式）
+            battery_data (dict): バッテリー状態データ
+            season_info (dict): 季節情報
+            recommended_settings (dict): 推奨設定情報
+            weather_data (dict): 天気予報データ
+            
+        Returns:
+            str: HTML形式のレポート本文
+        """
+        formatted_date = self._format_date_jp(date_str)
+        now = datetime.now()
+        
+        # 曜日の表示用
+        weekday_names = ["月", "火", "水", "木", "金", "土", "日"]
+        
+        # HTML本文のヘッダー部分 - 波括弧をエスケープするために二重波括弧を使用
+        html = """
+        <html>
+        <head>
+            <style>
+                body {{ font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; }}
+                .container {{ width: 100%; max-width: 800px; margin: 0 auto; }}
+                .section {{ margin-bottom: 25px; padding: 15px; background: #f9f9f9; border-radius: 5px; }}
+                .section-header {{ font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px; }}
+                .item-label {{ font-weight: bold; }}
+                .item-value {{ margin-left: 10px; }}
+                table {{ border-collapse: collapse; width: 100%; margin-bottom: 10px; }}
+                th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
+                th {{ background-color: #f2f2f2; }}
+                .weather-icon {{ font-size: 24px; margin-right: 10px; vertical-align: middle; }}
+                .note {{ color: #FF6600; font-style: italic; }}
+                .footer {{ margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd; font-size: 0.9em; color: #666; }}
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>HANAZONOシステム 日次レポート</h2>
+                <p>{0}</p>
+        """.format(now.strftime('%Y年%m月%d日 %H:%M'))  # "実行日時:" を削除
+        
+        # 天気予報セクション
+        if weather_data and 'forecast' in weather_data:
+            html += """
+                <div class="section">
+                    <div class="section-header">■天気予報</div>
+                    <table>
+                        <tr>
+                            <th>日付</th>
+                            <th>天気</th>
+                            <th>気温</th>
+                        </tr>
+            """
+            
+            forecast = weather_data['forecast']
+            today = datetime.now().date()
+            
+            # 今日の天気
+            if 'today' in forecast:
+                today_weather = forecast['today']
+                html += f"""
+                        <tr>
+                            <td>今日 ({today.month}月{today.day}日, {self._get_weekday(today)})</td>
+                            <td><span class="weather-icon">{self._get_weather_emoji(today_weather['condition'])}</span> {today_weather['condition']}</td>
+                            <td>{int(round(today_weather['min_temp']))}℃ 〜 {int(round(today_weather['max_temp']))}℃</td>
+                        </tr>
+                """
+            
+            # 明日の天気
+            if 'tomorrow' in forecast:
+                tomorrow = today + timedelta(days=1)
+                tomorrow_weather = forecast['tomorrow']
+                html += f"""
+                        <tr>
+                            <td>明日 ({tomorrow.month}月{tomorrow.day}日, {self._get_weekday(tomorrow)})</td>
+                            <td><span class="weather-icon">{self._get_weather_emoji(tomorrow_weather['condition'])}</span> {tomorrow_weather['condition']}</td>
+                            <td>{int(round(tomorrow_weather['min_temp']))}℃ 〜 {int(round(tomorrow_weather['max_temp']))}℃</td>
+                        </tr>
+                """
+            
+            # 明後日の天気
+            if 'day_after' in forecast:
+                day_after = today + timedelta(days=2)
+                day_after_weather = forecast['day_after']
+                html += f"""
+                        <tr>
+                            <td>明後日 ({day_after.month}月{day_after.day}日, {self._get_weekday(day_after)})</td>
+                            <td><span class="weather-icon">{self._get_weather_emoji(day_after_weather['condition'])}</span> {day_after_weather['condition']}</td>
+                            <td>{int(round(day_after_weather['min_temp']))}℃ 〜 {int(round(day_after_weather['max_temp']))}℃</td>
+                        </tr>
+                """
+            
+            html += """
+                    </table>
+                </div>
+            """
+        else:
+            html += """
+                <div class="section">
+                    <div class="section-header">■天気予報</div>
+                    <p>天気予報データがありません</p>
+                </div>
+            """
+        
+        # 季節情報セクション
+        html += f"""
+                <div class="section">
+                    <div class="section-header">■季節判定</div>
+                    <p><span style="font-size: 24px;">{season_info['emoji']}</span> <strong>{season_info['name']}</strong></p>
+                </div>
+        """
+        
+        # 推奨設定セクション
+        html += """
+                <div class="section">
+                    <div class="section-header">■推奨設定</div>
+        """
+        
+        if 'type' in recommended_settings:
+            html += f"""
+                    <p>⚡ タイプ{recommended_settings['type']}（標準設定）</p>
+            """
+        
+        # パラメータID
+        charge_current_id = self.settings.get('inverter_parameters', {}).get('charge_current_id', '07')
+        charge_time_id = self.settings.get('inverter_parameters', {}).get('charge_time_id', '10')
+        soc_setting_id = self.settings.get('inverter_parameters', {}).get('soc_setting_id', '62')
+        
+        html += """
+                    <table>
+                        <tr>
+                            <th>設定項目</th>
+                            <th>推奨値</th>
+                            <th>パラメータID</th>
+                        </tr>
+        """
+        
+        # 充電設定の表示
+        charge_current = recommended_settings.get('charge_current', 'N/A')
+        html += f"""
+                        <tr>
+                            <td>充電電流</td>
+                            <td>{charge_current} A</td>
+                            <td>{charge_current_id}</td>
+                        </tr>
+        """
+        
+        charge_time = recommended_settings.get('charge_time', 'N/A')
+        html += f"""
+                        <tr>
+                            <td>充電時間</td>
+                            <td>{charge_time} 分</td>
+                            <td>{charge_time_id}</td>
+                        </tr>
+        """
+        
+        soc = recommended_settings.get('output_soc', recommended_settings.get('cutoff_soc', 'N/A'))
+        html += f"""
+                        <tr>
+                            <td>SOC設定</td>
+                            <td>{soc} %</td>
+                            <td>{soc_setting_id}</td>
+                        </tr>
+                    </table>
+        """
+        
+        # 天気による調整がある場合
+        if "weather_note" in recommended_settings:
+            html += f"""
+                    <p class="note">※ {recommended_settings['weather_note']}</p>
+            """
+        
+        html += """
+                </div>
+        """
+        
+        # バッテリー状態セクション
+        html += """
+                <div class="section">
+                    <div class="section-header">■バッテリー状態</div>
+        """
+        
+        if any([battery_data.get(key) is not None for key in battery_data]):
+            html += """
+                    <table>
+                        <tr>
+                            <th>項目</th>
+                            <th>値</th>
+                        </tr>
+            """
+            
+            if battery_data.get("soc") is not None:
+                html += f"""
+                        <tr>
+                            <td>SOC</td>
+                            <td>{battery_data['soc']} %</td>
+                        </tr>
+                """
+            
+            if battery_data.get("voltage") is not None:
+                # 小数点以下1桁までに丸める
+                voltage = int(battery_data['voltage'] * 10) / 10
+                html += f"""
+                        <tr>
+                            <td>電圧</td>
+                            <td>{voltage} V</td>
+                        </tr>
+                """
+            
+            if battery_data.get("current") is not None:
+                # 小数点以下1桁までに丸める
+                current = int(battery_data['current'] * 10) / 10
+                html += f"""
+                        <tr>
+                            <td>電流</td>
+                            <td>{current} A</td>
+                        </tr>
+                """
+            
+            if battery_data.get("power") is not None:
+                # 小数点以下1桁までに丸める
+                power = int(battery_data['power'] * 10) / 10
+                html += f"""
+                        <tr>
+                            <td>電力</td>
+                            <td>{power} W</td>
+                        </tr>
+                """
+            
+            # 不明状態は表示しない
+            if battery_data.get("status") is not None and not self._is_unknown_status(battery_data["status"]):
+                html += f"""
+                        <tr>
+                            <td>状態</td>
+                            <td>{battery_data['status']}</td>
+                        </tr>
+                """
+            
+            html += """
+                    </table>
+            """
+        else:
+            html += """
+                    <p>バッテリーデータがありません</p>
+            """
+        
+        html += """
+                </div>
+        """
+        
+        # 注記セクション
+        notes_html = self._generate_notes_html()
+        if notes_html:
+            html += notes_html
+        
+        # フッター
+        footer_text = self.settings.get('notification', {}).get('email', {}).get('template', {}).get('footer', 
+            "この設定は天気予報と季節に基づいて自動的に計算されています。実際の設定変更は手動で行う必要があります。本メールは自動送信されています。")
+        
+        html += f"""
+                <div class="footer">
+                    {footer_text}
+                </div>
+            </div>
+        </body>
+        </html>
+        """
+        
+        return html
+        
     def _generate_notes_html(self):
         """注記からHTMLを生成する"""
         if hasattr(self, 'notes') and self.notes:
@@ -1067,56 +1140,6 @@ def send_daily_report(self, date=None, data_filepath=None): # data_filepath 引�
             return html
         return ""
         
-    def _generate_html_report(self, date_str, battery_data, season_info, recommended_settings, weather_data):
-        """HTMLフォーマットのレポートを生成する"""
-        # 日付の整形
-        formatted_date = self._format_date_jp(date_str)
-        
-        # 基本的なHTMLテンプレート
-        html = f"""
-        <html>
-        <head>
-            <meta charset="utf-8">
-            <style>
-                body {{ font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }}
-                h1 {{ color: #0066cc; border-bottom: 1px solid #ddd; padding-bottom: 10px; }}
-                h2 {{ color: #444; margin-top: 30px; border-left: 5px solid #0066cc; padding-left: 10px; }}
-            </style>
-        </head>
-        <body>
-            <h1>🌸 HANAZONOシステム 日次レポート {formatted_date}</h1>
-        """
-        
-        # 天気予報セクション
-        html += "<h2>天気予報</h2>"
-        if weather_data and 'forecast' in weather_data:
-            forecast = weather_data['forecast']
-            
-            # 今日の天気
-            if 'today' in forecast:
-                today = datetime.now().date()
-                today_weather = forecast['today']
-                emoji = self._get_weather_emoji(today_weather['condition'])
-                html += f"<p>【今日】{today.month}月{today.day}日({self._get_weekday(today)}): {emoji} {today_weather['condition']}</p>"
-                html += f"<p>気温: {int(round(today_weather['min_temp']))}℃ 〜 {int(round(today_weather['max_temp']))}℃</p>"
-            
-            # 明日と明後日の天気も同様に追加
-        
-        # 季節情報
-        html += f"<h2>季節判定</h2><p>{season_info['emoji']} {season_info['name']}</p>"
-        
-        # 推奨設定
-        html += "<h2>推奨設定</h2>"
-        
-        # バッテリー状態
-        html += "<h2>バッテリー状態</h2>"
-        
-        # 注記
-        notes_html = self._generate_notes_html() if hasattr(self, '_generate_notes_html') else ""
-        html += notes_html
-        
-        html += "</body></html>"
-        return html
     def send_ip_change_notification(self, old_ip, new_ip):
         """IPアドレス変更通知メールを送信"""
         if "email" not in self.settings or not self.settings["email"].get("smtp_server"):
