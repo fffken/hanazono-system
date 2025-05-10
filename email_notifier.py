@@ -300,7 +300,9 @@ class EmailNotifier:
             chart_path = self._generate_battery_soc_chart(data, actual_date)
             
             # メール件名
-            subject = f"🌸 HANAZONOシステム 日次レポート {self._format_date_jp(actual_date)}"
+            # 今日の日付（レポート生成日）
+            today_formatted = datetime.now().strftime("%Y年%m月%d日")
+            subject = f"🌸 HANAZONOシステム 日次レポート {today_formatted}"
             
             # レポート本文の生成
             body_text = self._generate_text_report(
@@ -735,11 +737,12 @@ class EmailNotifier:
 
     def _generate_text_report(self, date_str, battery_data, season_info, recommended_settings, weather_data):
         """テキスト形式のレポートを生成する"""
-        # 現在の日時（秒を省略）
-        now = datetime.now().strftime("%Y年%m月%d日 %H:%M")
+        # 対象日付と現在時刻（タイトルと同じフォーマットを使用）
+        formatted_date = datetime.now().strftime("%Y年%m月%d日")
+        current_time = datetime.now().strftime("%H:%M")
         
         # レポートタイトル
-        text = f"HANAZONOシステム 日次レポート\n{now}\n\n"
+        text = f"HANAZONOシステム 日次レポート\n{formatted_date} {current_time}\n\n"
         
         # 天気予報のセクション
         text += "■天気予報\n"
@@ -865,8 +868,9 @@ class EmailNotifier:
         Returns:
             str: HTML形式のレポート本文
         """
-        formatted_date = self._format_date_jp(date_str)
-        now = datetime.now()
+        formatted_date = datetime.now().strftime("%Y年%m月%d日")
+        formatted_date = datetime.now().strftime("%Y年%m月%d日")
+        current_time = datetime.now().strftime("%H:%M")
         
         # 曜日の表示用
         weekday_names = ["月", "火", "水", "木", "金", "土", "日"]
@@ -894,7 +898,7 @@ class EmailNotifier:
             <div class="container">
                 <h2>HANAZONOシステム 日次レポート</h2>
                 <p>{0}</p>
-        """.format(now.strftime('%Y年%m月%d日 %H:%M'))  # "実行日時:" を削除
+        """.format(formatted_date + " " + current_time)
         
         # 天気予報セクション
         if weather_data and 'forecast' in weather_data:
