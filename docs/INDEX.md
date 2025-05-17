@@ -1,0 +1,24 @@
+total 96
+drwxr-xr-x  9 pi pi 4096 May 17 15:10 .
+drwxr-xr-x 16 pi pi 4096 May 17 15:15 ..
+-rw-r--r--  1 pi pi  851 May 17 14:27 CODE_STRUCTURE.md
+-rw-r--r--  1 pi pi 3947 May  3 16:43 CRITICAL_NOTES.md
+-rw-r--r--  1 pi pi 1069 May 17 15:10 EMAIL_TEMPLATE_EXAMPLE.md
+drwxr-xr-x  2 pi pi 4096 May  3 17:20 guidelines
+drwxr-xr-x  2 pi pi 4096 May 10 18:57 guides
+-rw-r--r--  1 pi pi 4228 May  3 17:31 HANDOVER_COMPLETE.md
+-rw-r--r--  1 pi pi 4649 May  3 17:24 HANDOVER_PROMPT.md
+-rw-r--r--  1 pi pi  971 May  3 17:28 HANDOVER_PROMPT_PART1.md
+-rw-r--r--  1 pi pi 1171 May  3 17:28 HANDOVER_PROMPT_PART2.md
+-rw-r--r--  1 pi pi 1001 May  3 17:28 HANDOVER_PROMPT_PART3.md
+-rw-r--r--  1 pi pi 1085 May  3 17:29 HANDOVER_PROMPT_PART4.md
+-rw-r--r--  1 pi pi    0 May 17 15:48 INDEX.md
+drwxr-xr-x  2 pi pi 4096 May 10 19:01 project
+-rw-r--r--  1 pi pi 3954 May  3 17:06 PROJECT_MASTER.md
+-rw-r--r--  1 pi pi 1024 May 17 14:14 PROJECT_OVERVIEW.md
+-rw-r--r--  1 pi pi 1602 May  3 17:06 PROJECT_STRUCTURE.md
+drwxr-xr-x  2 pi pi 4096 May  3 17:08 references
+drwxr-xr-x  2 pi pi 4096 May 10 18:57 rule
+drwxr-xr-x  2 pi pi 4096 May 10 17:44 technical
+-rw-r--r--  1 pi pi  443 May 17 15:10 TROUBLESHOOTING.md
+drwxr-xr-x  2 pi pi 4096 May  3 17:07 versions
