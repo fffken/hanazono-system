@@ -376,7 +376,8 @@ class EmailNotifier:
             msg.attach(html_part)
             
             # メール送信
-            server = smtplib.SMTP_SSL(smtp_server, smtp_port)
+            server = smtplib.SMTP(smtp_server, smtp_port)
+            server.starttls()  # TLS暗号化を開始
             server.login(username, password)
             server.sendmail(sender, recipients, msg.as_string())
             server.quit()
@@ -489,7 +490,8 @@ class EmailNotifier:
             msg.attach(html_part)
             
             # メール送信
-            server = smtplib.SMTP_SSL(smtp_server, smtp_port)
+            server = smtplib.SMTP(smtp_server, smtp_port)
+            server.starttls()  # TLS暗号化を開始
             server.login(username, password)
             server.sendmail(sender, recipients, msg.as_string())
             server.quit()

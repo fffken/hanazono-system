@@ -168,9 +168,16 @@
       "fffken@gmail.com"
     ],
     "admin_email": "fffken@gmail.com",
-    "email_address": "your_email@example.com",
-    "email_password": "your_app_password",
-    "recipient": "recipient@example.com"
+    "email_address": "fffken@gmail.com",
+    "email_password": "bbzpgdsvqlcemyxi",
+    "recipient": "fffken@gmail.com",
+    "email_sender": "fffken@gmail.com",
+    "email_recipients": [
+      "fffken@gmail.com"
+    ],
+    "smtp_username": "fffken@gmail.com",
+    "smtp_use_tls": true,
+    "smtp_use_ssl": false
   },
   "monitoring": {
     "interval_minutes": 15,

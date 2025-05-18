@@ -84,7 +84,7 @@ def send_daily_report():
         settings = settings_manager._settings  # 直接内部変数にアクセス
         
         # EmailNotifierの初期化（修正部分）
-        notifier = EmailNotifier(settings, logger)
+        notifier = EmailNotifier(settings["email"], logger)
 
         # 設定ファイルの読み込み（エラーハンドリング強化）
         settings = {}
