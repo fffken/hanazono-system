@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+ENV/
+env/
+
+# ログとデータファイル
+logs/*.log
+*.log
+data/*.json
+!data/*.example.json
+
+# バックアップファイル
+*.bak*
+backup/
+
+# 個人設定
+settings_local.json
+
+# システム固有
+.DS_Store
+Thumbs.db
+
+# 一時ファイル
+*.txt
+temp_*.py
+*_test.py
+*_alternative.py
+
+# 開発中のスクリプト
+extract_*.py
+check_*.py
+find_*.py
+scan_*.py
+register_*.py
+update_*.py
+
+# バックアップディレクトリとファイル
+backups/
+*.original
+*.fixed
+*.backup
+*_backup
+
+# その他の特殊ファイル
+weather_*.txt
+weather_*.py
+register_scans/
+
+# docs の一部ファイル (管理対象外)
+docs/versions/
+docs/references/

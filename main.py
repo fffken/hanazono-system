@@ -84,7 +84,7 @@ def send_daily_report():
         settings = settings_manager._settings  # 直接内部変数にアクセス
         
         # EmailNotifierの初期化（修正部分）
-        notifier = EmailNotifier()
+        notifier = EmailNotifier(settings, logger)
 
         # 設定ファイルの読み込み（エラーハンドリング強化）
         settings = {}
@@ -150,8 +150,7 @@ def send_daily_report():
         }
         
         # 日次レポートメール送信
-        success = True  # メール送信機能をバイパス
-        logger.info("メール送信をバイパスしました（テスト用）")
+        success = notifier.send_daily_report(report_data)
         if success:
             logger.info("日次レポート送信成功")
         else:
