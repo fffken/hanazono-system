@@ -70,7 +70,7 @@ class EmailNotifier:
             # 3. 現在のバッテリー状態
             battery_info = self._extract_battery_info(data)
             report += f"■ 現在の状態\n"
-            report += f"{battery_info}\n\n"
+            report += f"{battery_info}\n"
             
             # 4. 天気予報分析
             report += f"■ 天気予報分析\n"
@@ -78,30 +78,17 @@ class EmailNotifier:
                 today_weather = weather.get('today', {})
                 tomorrow_weather = weather.get('tomorrow', {})
                 
-                report += f"今日: {today_weather.get('weather', 'データなし')}\n"
-                report += f"明日: {tomorrow_weather.get('weather', 'データなし')}\n\n"
+                report += f"今日: {today_weather.get('condition', 'データなし')}\n"
+                report += f"明日: {tomorrow_weather.get('condition', 'データなし')}\n\n"
                 
                 # 5. 最適化推奨（HANAZONOシステムの核心機能）
-                # 5. 推奨設定（詳細パラメータ）
-                try:
-                    season_detail, setting_type, params = self.settings_recommender.recommend_settings(weather)
-                    report += f"■ 推奨設定\n"
-                    report += f"{setting_type}（標準設定）\n\n"
-                    report += "設定項目\t推奨値\tパラメータID\n"
-                    report += f"充電電流\t{params.get('charge_current', 'N/A')} A\t07\n"
-                    report += f"充電時間\t{params.get('charge_time', 'N/A')} 分\t10\n"
-                    report += f"SOC設定\t{params.get('soc', 'N/A')} %\t62\n\n"
-                except Exception as e:
-                    report += f"■ 推奨設定\n推奨設定取得エラー: {e}\n\n"
-                
-                # 6. 最適化推奨（運用アドバイス）
                 recommendations = self._generate_recommendations(weather, season, battery_info)
-                
-                
+                report += f"■ 最適化推奨 🚀\n"
+                report += f"{recommendations}\n"
             else:
                 report += "天気データ取得失敗\n\n"
                 report += f"■ 最適化推奨\n"
-                report += "天気データなしのため基本推奨を適用\n\n"
+                report += "天気データなしのため基本推奨を適用\n"
             
             # 6. システム状態
             report += f"■ システム情報\n"
@@ -115,45 +102,6 @@ class EmailNotifier:
         report += "\n--- HANAZONOシステム 自動最適化 ---"
         return report
     
-    def _extract_battery_info(self, data):
-        """バッテリー情報を抽出"""
-        if 'solar_data' in data and data['solar_data']:
-            solar_data = data['solar_data']
-            if isinstance(solar_data, list) and len(solar_data) > 0:
-                latest = solar_data[0]
-                if 'parameters' in latest:
-                    params = latest['parameters']
-                    soc = params.get('0x0100', {}).get('value', 'N/A')
-                    voltage = params.get('0x0101', {}).get('value', 'N/A')
-                    current = params.get('0x0102', {}).get('value', 'N/A')
-                    return f"バッテリー残量: {soc}%, 電圧: {voltage:.1f}V, 電流: {current}A"
-        return "バッテリー情報: データなし"
-    
-    def _generate_recommendations(self, weather, season, battery_info):
-        """天気予報と季節に基づく最適化推奨を生成"""
-        recommendations = []
-        
-        try:
-            if weather:
-                tomorrow = weather.get('tomorrow', {})
-                condition = tomorrow.get('weather', '')
-                
-                if '雨' in condition or '曇' in condition:
-                    recommendations.append("☔ 明日は発電量低下予想")
-                    recommendations.append("→ 今夜の放電を控えめに設定推奨")
-                    recommendations.append("→ バッテリー残量80%以上を維持")
-                
-                elif '晴' in condition:
-                    recommendations.append("☀️ 明日は好天で高発電予想")
-                    recommendations.append("→ 今夜は積極的放電OK")
-                    recommendations.append("→ バッテリー残量50%程度まで使用可能")
-                
-                if season == '夏':
-                    recommendations.append("🌞 夏期間: 午後の高温による効率低下注意")
-                elif season == '冬':
-                    recommendations.append("❄️ 冬期間: 朝の霜・積雪チェック推奨")
-            
-            return "\n".join(recommendations) if recommendations else "標準運用を継続"
-            
-        except Exception as e:
-            return f"推奨生成エラー: {e}"
+    def _extract_b
+q
+
