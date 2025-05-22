@@ -18,7 +18,7 @@ class EmailNotifier:
             # メール設定取得
             smtp_server = self.config.get('smtp_server')
             smtp_port = self.config.get('smtp_port')
-            username = self.config.get('smtp_username')
+            username = self.config.get('smtp_user')
             password = self.config.get('smtp_password')
             sender = self.config.get('email_sender')
             recipients = self.config.get('email_recipients')
@@ -56,7 +56,7 @@ class EmailNotifier:
             return False
     
     def _generate_intelligent_report(self, data):
-        report = "=== HANAZONOシステム 最適化レポート ===\n\n"
+        report = "=== HANAZONOシステム 最適化レポート ===\n"
         
         try:
             # 1. 天気予報取得
@@ -69,44 +69,42 @@ class EmailNotifier:
             
             # 3. 現在のバッテリー状態
             battery_info = self._extract_battery_info(data)
-            report += f"■ 現在の状態\n"
-            report += f"{battery_info}\n\n"
+            report += f"\n■ 現在の状態"
+            report += f"\n{battery_info}\n"
             
             # 4. 天気予報分析
-            report += f"■ 天気予報分析\n"
+            report += f"\n■ 天気予報分析"
             if weather:
                 today_weather = weather.get('today', {})
                 tomorrow_weather = weather.get('tomorrow', {})
                 
-                report += f"今日: {today_weather.get('weather', 'データなし')}\n"
-                report += f"明日: {tomorrow_weather.get('weather', 'データなし')}\n\n"
+                report += f"\n今日: {today_weather.get('weather', 'データなし')}"
+                report += f"\n明日: {tomorrow_weather.get('weather', 'データなし')}\n"
                 
                 # 5. 最適化推奨（HANAZONOシステムの核心機能）
-                # 5. 推奨設定（詳細パラメータ）
                 try:
                     season_detail, setting_type, params = self.settings_recommender.recommend_settings(weather)
-                    report += f"■ 推奨設定\n"
-                    report += f"{setting_type}（標準設定）\n\n"
-                    report += "設定項目\t推奨値\tパラメータID\n"
-                    report += f"充電電流\t{params.get('charge_current', 'N/A')} A\t07\n"
-                    report += f"充電時間\t{params.get('charge_time', 'N/A')} 分\t10\n"
-                    report += f"SOC設定\t{params.get('soc', 'N/A')} %\t62\n\n"
+                    report += f"\n■ 推奨設定"
+                    report += f"\ntypeA（標準設定）"
+                    report += f"\n設定項目\t推奨値\tパラメータID"
+                    report += f"\n充電電流\t{params.get('charge_current', 'N/A')} A\t07"
+                    report += f"\n充電時間\t{params.get('charge_time', 'N/A')} 分\t10"
+                    report += f"\nSOC設定\t{params.get('soc', 'N/A')} %\t62\n"
                 except Exception as e:
-                    report += f"■ 推奨設定\n推奨設定取得エラー: {e}\n\n"
+                    report += f"■ 推奨設定\n推奨設定取得エラー: {e}\n"
                 
                 # 6. 最適化推奨（運用アドバイス）
                 recommendations = self._generate_recommendations(weather, season, battery_info)
                 
-                
             else:
-                report += "天気データ取得失敗\n\n"
-                report += f"■ 最適化推奨\n"
-                report += "天気データなしのため基本推奨を適用\n\n"
+                report += "\n天気データ取得失敗\n"
+                report += f"■ 最適化推奨"
+                report += "\n天気データなしのため基本推奨を適用\n"
             
             # 6. システム状態
-            report += f"■ システム情報\n"
-            report += f"季節判定: {season} ({detailed_season})\n"
-            report += f"データ更新: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
+            report += f"\n■ システム情報"
+            report += f"\n季節判定: {season} ({detailed_season})"
+            report += f"\nデータ更新: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
             
         except Exception as e:
             self.logger.error(f"レポート生成エラー: {e}")
@@ -126,7 +124,7 @@ class EmailNotifier:
                     soc = params.get('0x0100', {}).get('value', 'N/A')
                     voltage = params.get('0x0101', {}).get('value', 'N/A')
                     current = params.get('0x0102', {}).get('value', 'N/A')
-                    return f"バッテリー残量: {soc}%, 電圧: {voltage:.1f}V, 電流: {current}A"
+                    return f"バッテリー残量: {soc}%, 電圧: {voltage:.1f}V, 電流: {current:.1f}A"
         return "バッテリー情報: データなし"
     
     def _generate_recommendations(self, weather, season, battery_info):

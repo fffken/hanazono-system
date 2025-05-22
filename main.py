@@ -87,7 +87,7 @@ def send_daily_report():
         notifier = EmailNotifier(settings["email"], logger)
 
         # 設定ファイルの読み込み（エラーハンドリング強化）
-        settings = {}
+        # 既に読み込み済みの設定を使用
 # 重複処理削除:         try:
         # settings_managerで既に読み込み済みのため、直接利用
         if not settings:
