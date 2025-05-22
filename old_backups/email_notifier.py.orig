@@ -1,0 +1,92 @@
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import json
+import datetime
+from weather_forecast import get_weather_forecast
+from season_detector import get_current_season, get_detailed_season
+from settings_recommender import SettingsRecommender
+
+class EmailNotifier:
+    def __init__(self, config, logger):
+        self.config = config
+        self.logger = logger
+        self.settings_recommender = SettingsRecommender()
+    
+    def send_daily_report(self, data):
+        try:
+            # メール設定取得
+            smtp_server = self.config.get('smtp_server')
+            smtp_port = self.config.get('smtp_port')
+            username = self.config.get('smtp_user')
+            password = self.config.get('smtp_password')
+            sender = self.config.get('email_sender')
+            recipients = self.config.get('email_recipients')
+            
+            if not all([smtp_server, smtp_port, username, password, sender, recipients]):
+                self.logger.error("メール設定が不完全です")
+                return False
+            
+            # インテリジェントレポート生成
+            now = datetime.datetime.now()
+            time_suffix = "(07時)" if 5 <= now.hour < 12 else "(23時)"
+            date_str = now.strftime("%Y年%m月%d日")
+            subject = f"HANAZONOシステム最適化レポート {date_str} {time_suffix}"
+            
+            text_content = self._generate_intelligent_report(data)
+            
+            # メール送信
+            msg = MIMEMultipart()
+            msg['Subject'] = subject
+            msg['From'] = sender
+            msg['To'] = ", ".join(recipients)
+            msg.attach(MIMEText(text_content, 'plain', 'utf-8'))
+            
+            server = smtplib.SMTP(smtp_server, smtp_port)
+            server.starttls()
+            server.login(username, password)
+            server.sendmail(sender, recipients, msg.as_string())
+            server.quit()
+            
+            self.logger.info(f"最適化レポートを送信しました: {subject}")
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"メール送信エラー: {e}")
+            return False
+    
+    
+        def _generate_intelligent_report(self, data):
+        report = "=== HANAZONOシステム 最適化レポート ===\n"
+        
+        try:
+            # 1. 天気予報取得
+            self.logger.info("天気予報を取得中...")
+            weather = get_weather_forecast()
+            
+            # 2. 季節判定
+            season = get_current_season()
+            detailed_season = get_detailed_season()
+            
+            # 3. 現在のバッテリー状態
+            battery_info = self._extract_battery_info(data)
+            report += f"■ 現在の状態"
+            report += f"\n{battery_info}\n"
+            # 4. 天気予報分析
+            report += f"■ 天気予報分析"
+            if weather:
+                today_weather = weather.get('today', {})
+                tomorrow_weather = weather.get('tomorrow', {})
+                
+                report += f"\n今日: {today_weather.get('weather', 'データなし')}"
+                report += f"\n明日: {tomorrow_weather.get('weather', 'データなし')}\n"
+                
+                # 5. 最適化推奨（HANAZONOシステムの核心機能）
+                try:
+                    season_detail, setting_type, params = self.settings_recommender.recommend_settings(weather)
+                    report += f"■ 推奨設定"
+                    report += f"\ntypeA（標準設定）"
+                    report += f"\n設定項目\t推奨値\tパラメータID"
+                    report += f"\n充電電流\t{params.get('charge_current', 'N/A')} A\t07"
+                    report += f"\n充電時間\t{params.get('charge_time', 'N/A')} 分\t10"
+                    report += f"\nSOC設定\t{params.get('soc', 'N/A')} %\t62\n"
