@@ -13,28 +13,30 @@ import datetime
 import logging
 import argparse
 
+
 class EmailNotifier:
     """
     メール通知機能を提供するクラス
     """
+
     def __init__(self, config, logger):
         """
         初期化
-        
+
         Args:
             config: 設定情報
             logger: ロガーインスタンス
         """
         self.config = config
         self.logger = logger
-        
+
     def _get_weather_emoji(self, condition):
         """
         天気状態に対応する絵文字を返す（改良版）
-        
+
         Args:
             condition: 天気状態の文字列
-            
+
         Returns:
             天気に対応する絵文字
         """
@@ -54,110 +56,110 @@ class EmailNotifier:
             return "☁️"
         else:
             return "🌈"
-    
+
     def _parse_weather_components(self, weather_text):
         """
         天気文字列から各成分を抽出する
-        
+
         Args:
             weather_text: 天気状態の文字列
-            
+
         Returns:
             天気成分のリスト
         """
         if not weather_text or weather_text == "データなし":
             return ["データなし"]
-        
+
         # 「のち」「後」などの接続詞で分割
         components = []
         for delimiter in [" のち ", "のち", " 後 ", "後"]:
             if delimiter in weather_text:
                 components = weather_text.split(delimiter)
                 break
-        
+
         # 分割できなかった場合は単一成分として扱う
         if not components:
             components = [weather_text]
-        
+
         return components
-    
+
     def _format_weather_emojis(self, weather_text):
         """
         天気情報を絵文字の連結に変換
-        
+
         Args:
             weather_text: 天気状態の文字列
-            
+
         Returns:
             絵文字の連結（例: ☀️→☁️）
         """
         if not weather_text or weather_text == "データなし":
             return "🌐"
-        
+
         # 天気成分に分割
         components = self._parse_weather_components(weather_text)
-        
+
         # 各成分に対応する絵文字を取得
         emojis = [self._get_weather_emoji(comp.strip()) for comp in components]
-        
+
         # 絵文字を「→」で連結
         emoji_text = "→".join(emojis)
-        
+
         return emoji_text
-    
+
     def _format_weather_line(self, weather_text):
         """
         天気情報を2行フォーマット（絵文字の連結 + テキスト）に整形
-        
+
         Args:
             weather_text: 天気状態の文字列
-            
+
         Returns:
             整形された天気表示テキスト
         """
         if not weather_text or weather_text == "データなし":
             return "🌐\nデータなし"
-        
+
         # 絵文字の連結を取得
         emoji_text = self._format_weather_emojis(weather_text)
-        
+
         # 「のち」「後」を「→」に置換
         display_text = weather_text
         for term in [" のち ", "のち", " 後 ", "後"]:
             display_text = display_text.replace(term, "→")
-        
+
         return f"{emoji_text}\n{display_text}"
-    
+
     def _format_date_jp(self, date_obj):
         """
         日付を日本語フォーマットに変換
-        
+
         Args:
             date_obj: datetime オブジェクト
-            
+
         Returns:
             日本語形式の日付文字列 (例: 2025年5月11日(日))
         """
         weekday_jp = ["月", "火", "水", "木", "金", "土", "日"]
         weekday = weekday_jp[date_obj.weekday()]
         return f"{date_obj.year}年{date_obj.month}月{date_obj.day}日({weekday})"
-    
+
     def _generate_text_report(self, data):
         """
         テキスト形式のレポートを生成
-        
+
         Args:
             data: レポートデータ
-            
+
         Returns:
             テキスト形式のレポート
         """
         now = datetime.datetime.now()
         date_str = self._format_date_jp(now)
-        
+
         report = f"===== HANAZONOシステム状態レポート =====\n"
         report += f"日付: {date_str}\n\n"
-        
+
         # 電力情報
         report += "■ 電力情報\n"
         if 'power_data' in data:
@@ -167,27 +169,27 @@ class EmailNotifier:
             report += f"消費電力: {power_data.get('consumption', 'N/A')} W\n"
         else:
             report += "データなし\n"
-        
+
         report += "\n"
-        
+
         # 天気予報
         report += "■ 天気予報\n"
         if 'weather' in data:
             weather = data['weather']
             weather_today = weather.get('today', 'データなし')
             weather_tomorrow = weather.get('tomorrow', 'データなし')
-            
+
             # 改良された天気表示形式を使用
             today_formatted = self._format_weather_line(weather_today)
             tomorrow_formatted = self._format_weather_line(weather_tomorrow)
-            
+
             report += f"今日: {today_formatted}\n"
             report += f"明日: {tomorrow_formatted}\n"
         else:
             report += "データなし\n"
-        
+
         report += "\n"
-        
+
         # システム状態
         report += "■ システム状態\n"
         if 'system_status' in data:
@@ -197,22 +199,22 @@ class EmailNotifier:
             report += f"システム温度: {status.get('temperature', 'N/A')} °C\n"
         else:
             report += "データなし\n"
-            
+
         return report
-    
+
     def _generate_html_report(self, data):
         """
         HTML形式のレポートを生成
-        
+
         Args:
             data: レポートデータ
-            
+
         Returns:
             HTML形式のレポート
         """
         now = datetime.datetime.now()
         date_str = self._format_date_jp(now)
-        
+
         html = f"""
         <!DOCTYPE html>
         <html>
@@ -236,13 +238,13 @@ class EmailNotifier:
                     <p>{date_str}</p>
                 </div>
         """
-        
+
         # 電力情報
         html += """
                 <div class="section">
                     <h2>電力情報</h2>
         """
-        
+
         if 'power_data' in data:
             power_data = data['power_data']
             html += f"""
@@ -252,33 +254,33 @@ class EmailNotifier:
             """
         else:
             html += "<p>データなし</p>"
-        
+
         html += """
                 </div>
         """
-        
+
         # 天気予報
         html += """
                 <div class="section">
                     <h2>天気予報</h2>
         """
-        
+
         if 'weather' in data:
             weather = data['weather']
             weather_today = weather.get('today', 'データなし')
             weather_tomorrow = weather.get('tomorrow', 'データなし')
-            
+
             # 天気の絵文字を取得
             today_emojis = self._format_weather_emojis(weather_today)
             tomorrow_emojis = self._format_weather_emojis(weather_tomorrow)
-            
+
             # 「のち」「後」を「→」に置換
             today_text = weather_today
             tomorrow_text = weather_tomorrow
             for term in [" のち ", "のち", " 後 ", "後"]:
                 today_text = today_text.replace(term, "→")
                 tomorrow_text = tomorrow_text.replace(term, "→")
-            
+
             html += f"""
                     <div class="weather-box">
                         <span class="weather-emoji">{today_emojis}</span>
@@ -295,17 +297,17 @@ class EmailNotifier:
             """
         else:
             html += "<p>データなし</p>"
-        
+
         html += """
                 </div>
         """
-        
+
         # システム状態
         html += """
                 <div class="section">
                     <h2>システム状態</h2>
         """
-        
+
         if 'system_status' in data:
             status = data['system_status']
             html += f"""
@@ -315,7 +317,7 @@ class EmailNotifier:
             """
         else:
             html += "<p>データなし</p>"
-        
+
         html += """
                 </div>
                 <div class="footer">
@@ -325,16 +327,16 @@ class EmailNotifier:
         </body>
         </html>
         """
-        
+
         return html
-    
+
     def send_daily_report(self, data):
         """
         日次レポートをメール送信
-        
+
         Args:
             data: レポートデータ
-        
+
         Returns:
             bool: 送信成功の場合True、失敗の場合False
         """
@@ -342,7 +344,7 @@ class EmailNotifier:
             # 現在の日時
             now = datetime.datetime.now()
             date_str = self._format_date_jp(now)
-            
+
             # メール設定の取得
             smtp_server = self.config.get('smtp_server')
             smtp_port = self.config.get('smtp_port')
@@ -350,53 +352,53 @@ class EmailNotifier:
             password = self.config.get('smtp_password')
             sender = self.config.get('email_sender')
             recipients = self.config.get('email_recipients')
-            
+
             if not all([smtp_server, smtp_port, username, password, sender, recipients]):
                 self.logger.error("メール設定が不完全です")
                 return False
-            
+
             # 時間帯に応じたメール件名の構築
             time_suffix = "(07時)" if 5 <= now.hour < 12 else "(23時)"
             subject = f"HANAZONOシステム状態レポート {date_str} {time_suffix}"
-            
+
             # メッセージの作成
             msg = MIMEMultipart('alternative')
             msg['Subject'] = subject
             msg['From'] = sender
             msg['To'] = ", ".join(recipients)
-            
+
             # テキストとHTML本文の追加
             text_content = self._generate_text_report(data)
             html_content = self._generate_html_report(data)
-            
+
             text_part = MIMEText(text_content, 'plain', 'utf-8')
             html_part = MIMEText(html_content, 'html', 'utf-8')
-            
+
             msg.attach(text_part)
             msg.attach(html_part)
-            
+
             # メール送信
             server = smtplib.SMTP_SSL(smtp_server, smtp_port)
             server.login(username, password)
             server.sendmail(sender, recipients, msg.as_string())
             server.quit()
-            
+
             self.logger.info(f"レポートメールを送信しました: {subject}")
             return True
-            
+
         except Exception as e:
             self.logger.error(f"メール送信エラー: {e}")
             return False
-    
+
     def send_alert(self, title, message, priority="中"):
         """
         アラートメールを送信
-        
+
         Args:
             title: アラートタイトル
             message: アラート本文
             priority: 優先度（"高", "中", "低"）
-            
+
         Returns:
             bool: 送信成功の場合True、失敗の場合False
         """
@@ -408,32 +410,32 @@ class EmailNotifier:
             password = self.config.get('smtp_password')
             sender = self.config.get('email_sender')
             recipients = self.config.get('email_recipients')
-            
+
             if not all([smtp_server, smtp_port, username, password, sender, recipients]):
                 self.logger.error("メール設定が不完全です")
                 return False
-            
+
             # 優先度に応じた絵文字
             priority_emoji = {
                 "高": "⚠️",
                 "中": "ℹ️",
                 "低": "📝"
             }.get(priority, "ℹ️")
-            
+
             # 現在の日時
             now = datetime.datetime.now()
             date_str = self._format_date_jp(now)
             time_str = now.strftime("%H:%M:%S")
-            
+
             # メール件名
             subject = f"{priority_emoji} [HANAZONO] {title}"
-            
+
             # メッセージの作成
             msg = MIMEMultipart('alternative')
             msg['Subject'] = subject
             msg['From'] = sender
             msg['To'] = ", ".join(recipients)
-            
+
             # テキスト本文
             text_content = f"""
 ===== HANAZONOシステム アラート =====
@@ -445,7 +447,7 @@ class EmailNotifier:
 ---
 このメールはHANAZONOシステムによって自動送信されています
 """
-            
+
             # HTML本文
             html_content = f"""
 <!DOCTYPE html>
@@ -481,22 +483,22 @@ class EmailNotifier:
 </body>
 </html>
 """
-            
+
             text_part = MIMEText(text_content, 'plain', 'utf-8')
             html_part = MIMEText(html_content, 'html', 'utf-8')
-            
+
             msg.attach(text_part)
             msg.attach(html_part)
-            
+
             # メール送信
             server = smtplib.SMTP_SSL(smtp_server, smtp_port)
             server.login(username, password)
             server.sendmail(sender, recipients, msg.as_string())
             server.quit()
-            
+
             self.logger.info(f"アラートメールを送信しました: {subject}")
             return True
-            
+
         except Exception as e:
             self.logger.error(f"アラートメール送信エラー: {e}")
             return False
@@ -507,7 +509,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='HANAZONOシステム メール通知機能')
     parser.add_argument('--test', action='store_true', help='テストモードで実行')
     args = parser.parse_args()
-    
+
     if args.test:
         # ロガーの設定
         logging.basicConfig(
@@ -519,7 +521,7 @@ if __name__ == "__main__":
             ]
         )
         logger = logging.getLogger("EmailNotifier")
-        
+
         # テスト用設定
         test_config = {
             'smtp_server': 'smtp.example.com',
@@ -529,7 +531,7 @@ if __name__ == "__main__":
             'email_sender': 'hanazono@example.com',
             'email_recipients': ['user@example.com']
         }
-        
+
         # テスト用データ
         test_data = {
             'power_data': {
@@ -547,19 +549,19 @@ if __name__ == "__main__":
                 'temperature': 42.5
             }
         }
-        
+
         # メール通知機能のインスタンス化とテスト
         notifier = EmailNotifier(test_config, logger)
-        
+
         # テスト用に実際のメール送信を回避
         logger.info("===== テキストレポートのプレビュー =====")
         text_report = notifier._generate_text_report(test_data)
         logger.info("\n" + text_report)
-        
+
         logger.info("===== HTMLレポートのプレビュー =====")
         html_report = notifier._generate_html_report(test_data)
         logger.info("\n" + html_report)
-        
+
         logger.info("===== 天気絵文字テスト =====")
         test_conditions = [
             "晴れ",
@@ -571,11 +573,10 @@ if __name__ == "__main__":
             "データなし",
             ""
         ]
-        
+
         for condition in test_conditions:
             emoji = notifier._format_weather_emojis(condition)
             formatted = notifier._format_weather_line(condition)
             logger.info(f"'{condition}' → '{emoji}' → '{formatted}'")
-        
-        logger.info("テスト完了")
 
+        logger.info("テスト完了")

@@ -16,38 +16,41 @@ import matplotlib.dates as mdates
 import numpy as np
 import glob
 
+
 class EmailNotifier:
     def __init__(self, settings_file=None):
         # 設定ファイルのパス
         if settings_file is None:
-            self.settings_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'settings.json')
+            self.settings_file = os.path.join(os.path.dirname(
+                os.path.abspath(__file__)), 'settings.json')
         else:
             self.settings_file = settings_file
-        
+
         # 設定の読み込み
         self.settings = self._load_settings()
-        
+
         # データディレクトリ
-        self.data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
-        
+        self.data_dir = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)), 'data')
+
         # 画像ディレクトリ
         self.charts_dir = os.path.join(self.data_dir, 'charts')
         os.makedirs(self.charts_dir, exist_ok=True)
-        
+
         # ロガー設定
         self.logger = logging.getLogger("email_notifier")
         self._setup_logging()
-        
+
         # 注記リスト初期化
         self.notes = []
-    
+
     def _load_settings(self):
         """設定ファイルの読み込み"""
         try:
             if os.path.exists(self.settings_file):
                 with open(self.settings_file, 'r') as f:
                     settings = json.load(f)
-                
+
                 # メール設定がない場合は追加
                 if "email" not in settings:
                     settings["email"] = {
@@ -58,11 +61,11 @@ class EmailNotifier:
                         "sender": "",
                         "recipients": []
                     }
-                    
+
                     # 設定保存
                     with open(self.settings_file, 'w') as f:
                         json.dump(settings, f, indent=2)
-                
+
                 return settings
             else:
                 self.logger.error(f"設定ファイルが見つかりません: {self.settings_file}")
@@ -70,65 +73,69 @@ class EmailNotifier:
         except Exception as e:
             self.logger.error(f"設定ファイル読み込みエラー: {e}")
             return {}
-    
+
     def _setup_logging(self):
         """ロギング設定"""
-        log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs')
+        log_dir = os.path.join(os.path.dirname(
+            os.path.abspath(__file__)), 'logs')
         os.makedirs(log_dir, exist_ok=True)
-        
-        log_file = os.path.join(log_dir, f'email_{datetime.now().strftime("%Y%m%d")}.log')
-        
+
+        log_file = os.path.join(
+            log_dir, f'email_{datetime.now().strftime("%Y%m%d")}.log')
+
         # 既存のハンドラをクリア
         if self.logger.hasHandlers():
             self.logger.handlers.clear()
-        
+
         file_handler = logging.FileHandler(log_file)
         file_handler.setLevel(logging.INFO)
-        
+
         console_handler = logging.StreamHandler()
         console_handler.setLevel(logging.INFO)
-        
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+        formatter = logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         file_handler.setFormatter(formatter)
         console_handler.setFormatter(formatter)
-        
+
         # ハンドラをロガーに追加
         self.logger.addHandler(file_handler)
         self.logger.addHandler(console_handler)
         self.logger.setLevel(logging.INFO)
-        
+
     def _is_unknown_status(self, status):
         """バッテリーの状態が「不明」かどうかを判定する"""
         if status is None:
             return True
         return status.startswith("不明") or "unknown" in status.lower() or "不明" in status
-    
+
     def _generate_battery_soc_chart(self, data, date_str):
         """
         バッテリーSOC推移グラフを生成します。
-        
+
         データはリスト形式またはディクショナリ形式の両方に対応します。
-        
+
         Args:
             data: JSON形式のデータ（リストまたはディクショナリ）
             date_str: 日付文字列（YYYYMMDD形式）
-            
+
         Returns:
             str: 生成されたグラフファイルのパス、失敗した場合はNone
         """
         try:
             # グラフ保存先
-            chart_file = os.path.join(self.charts_dir, f"battery_soc_{date_str}.png")
-            
+            chart_file = os.path.join(
+                self.charts_dir, f"battery_soc_{date_str}.png")
+
             # すでにファイルが存在する場合はそれを返す
             if os.path.exists(chart_file):
                 self.logger.info(f"既存のバッテリーSOCグラフを使用します: {chart_file}")
                 return chart_file
-                
+
             # データからSOC値を取得
             times = []
             soc_values = []
-            
+
             # データ形式に応じた処理
             if isinstance(data, list):
                 # リスト形式データの処理
@@ -136,17 +143,18 @@ class EmailNotifier:
                     if "timestamp" in item and "parameters" in item:
                         # タイムスタンプを日時形式に変換
                         if "datetime" in item:
-                            dt = datetime.strptime(item["datetime"], "%Y-%m-%d %H:%M:%S")
+                            dt = datetime.strptime(
+                                item["datetime"], "%Y-%m-%d %H:%M:%S")
                         else:
                             dt = datetime.fromtimestamp(item["timestamp"])
-                        
+
                         # SOC値を取得
                         if "0x0100" in item["parameters"]:
                             soc = item["parameters"]["0x0100"].get("value")
                             if soc is not None:
                                 times.append(dt)
                                 soc_values.append(soc)
-            
+
             elif isinstance(data, dict) and "parameters" in data:
                 # ディクショナリ形式データの処理
                 for param in data["parameters"]:
@@ -154,13 +162,14 @@ class EmailNotifier:
                         soc = float(param.get("value", 0))
                         try:
                             # ISOフォーマットのタイムスタンプ処理
-                            timestamp = param.get("timestamp").replace("Z", "+00:00")
+                            timestamp = param.get(
+                                "timestamp").replace("Z", "+00:00")
                             dt = datetime.fromisoformat(timestamp)
                             times.append(dt)
                             soc_values.append(soc)
                         except (ValueError, AttributeError) as e:
                             self.logger.warning(f"タイムスタンプ解析エラー: {e}")
-            
+
             # データがない場合や不十分な場合
             if not soc_values:
                 self.logger.warning(f"グラフ生成: SOCデータが存在しません")
@@ -170,31 +179,34 @@ class EmailNotifier:
                 self.logger.info(f"グラフ生成: SOCデータが1つしかないため、同じ値のポイントを追加します")
                 times.append(times[0] + timedelta(hours=1))
                 soc_values.append(soc_values[0])
-            
+
             # グラフ作成
             plt.figure(figsize=(10, 6))
-            plt.plot(times, soc_values, 'b-', marker='o', markersize=4, linewidth=1.5)
+            plt.plot(times, soc_values, 'b-', marker='o',
+                     markersize=4, linewidth=1.5)
             plt.grid(True, linestyle='--', alpha=0.7)
-            plt.fill_between(times, 0, soc_values, alpha=0.1, color='blue')  # 塗りつぶし効果を追加
-            plt.title(f"バッテリーSOC推移 ({self._format_date_jp(date_str)})", fontsize=14)
+            plt.fill_between(times, 0, soc_values, alpha=0.1,
+                             color='blue')  # 塗りつぶし効果を追加
+            plt.title(
+                f"バッテリーSOC推移 ({self._format_date_jp(date_str)})", fontsize=14)
             plt.xlabel("時刻", fontsize=12)
             plt.ylabel("SOC (%)", fontsize=12)
             plt.ylim(0, 100)
-            
+
             # X軸の日時フォーマット
             plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
             plt.gcf().autofmt_xdate()
-            
+
             # レイアウト調整
             plt.tight_layout()
-            
+
             # 保存
             plt.savefig(chart_file, dpi=100, bbox_inches='tight')
             plt.close()
-            
+
             self.logger.info(f"バッテリーSOCグラフを保存しました: {chart_file}")
             return chart_file
-            
+
         except Exception as e:
             self.logger.error(f"グラフ生成エラー: {e}")
             self.logger.debug(traceback.format_exc())
@@ -203,34 +215,38 @@ class EmailNotifier:
     def find_latest_data_file(self, target_date=None):
         """
         指定された日付のデータファイルを検索し、ない場合は最新のファイルを返す
-        
+
         Args:
             target_date: 検索する日付（YYYYMMDD形式、Noneの場合は前日）
-            
+
         Returns:
             ファイルパスと日付
         """
-        data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+        data_dir = os.path.join(os.path.dirname(
+            os.path.abspath(__file__)), "data")
         if not os.path.exists(data_dir):
             self.logger.error(f"データディレクトリが存在しません: {data_dir}")
             return None, None
-        
+
         # 対象日付の設定（指定がなければ前日）
         if target_date is None:
             yesterday = datetime.now() - timedelta(days=1)
             target_date = yesterday.strftime("%Y%m%d")
-        
+
         # ファイル名プレフィックスの取得（settings.jsonから）
-        file_prefix = self.settings.get('files', {}).get('data_prefix', 'data_')
-        
+        file_prefix = self.settings.get(
+            'files', {}).get('data_prefix', 'data_')
+
         # 指定日のファイル検索
-        target_file = os.path.join(data_dir, f"{file_prefix}{target_date}.json")
+        target_file = os.path.join(
+            data_dir, f"{file_prefix}{target_date}.json")
         if os.path.exists(target_file):
             return target_file, target_date
-        
+
         # 指定日のファイルがない場合、全データファイルをリストアップ
-        self.logger.warning(f"日付 {target_date} のデータファイルが見つかりません: {target_file}")
-        
+        self.logger.warning(
+            f"日付 {target_date} のデータファイルが見つかりません: {target_file}")
+
         data_files = []
         file_pattern = os.path.join(data_dir, f"{file_prefix}*.json")
         for file in glob.glob(file_pattern):
@@ -244,16 +260,16 @@ class EmailNotifier:
             except ValueError:
                 # 日付形式が無効な場合はスキップ
                 continue
-        
+
         if not data_files:
             self.logger.error("利用可能なデータファイルがありません")
             return None, None
-        
+
         # 日付でソートして最新のものを取得
         data_files.sort(key=lambda x: x[1], reverse=True)
         latest_file = data_files[0][0]
         latest_date = data_files[0][1]
-        
+
         self.logger.warning(f"最新の利用可能なデータを使用します: {latest_date}")
         return latest_file, latest_date
 
@@ -269,13 +285,13 @@ class EmailNotifier:
         """日次レポートを送信する"""
         try:
             self.logger.info(f"日次レポート送信を開始します（日付: {date or '前日'}）")
-            
+
             # データファイルの特定（フォールバックあり）
             data_file, actual_date = self.find_latest_data_file(date)
             if data_file is None:
                 self.logger.error("レポート用データが見つかりません")
                 return False
-                
+
             # データ読み込み
             try:
                 with open(data_file, 'r') as f:
@@ -283,22 +299,23 @@ class EmailNotifier:
             except Exception as e:
                 self.logger.error(f"データファイル読み込みエラー: {e}")
                 return False
-                
+
             # バッテリー状態データの抽出
             battery_data = self._extract_battery_data(data)
-            
+
             # 季節判定
             season_info = self._determine_season()
-            
+
             # 天気予報取得
             weather_data = self._get_weather_forecast()
-            
+
             # 推奨設定の計算
-            recommended_settings = self._calculate_recommended_settings(season_info, weather_data)
-            
+            recommended_settings = self._calculate_recommended_settings(
+                season_info, weather_data)
+
             # グラフ生成
             chart_path = self._generate_battery_soc_chart(data, actual_date)
-            
+
             # メール件名
             # 今日の日付（レポート生成日）
             # 時間帯判定（12時を境に朝/夜と判断）
@@ -306,42 +323,48 @@ class EmailNotifier:
             time_period = "(07時)" if current_hour < 12 else "(23時)"
             today_formatted = datetime.now().strftime("%Y年%m月%d日")
             subject = f"🌸 HANAZONOシステム 日次レポート {today_formatted} {time_period}"
-            
+
             # レポート本文の生成
             body_text = self._generate_text_report(
                 actual_date, battery_data, season_info, recommended_settings, weather_data
             )
-            
+
             # テスト用ログ出力
-            self.logger.info(f"生成されたテキストレポート: {body_text[:100]}...")  # 最初の100文字だけログ出力
+            # 最初の100文字だけログ出力
+            self.logger.info(f"生成されたテキストレポート: {body_text[:100]}...")
 
             # テキスト内容の修正
             # タイトル修正
-            body_text = body_text.replace('HANAZONOシステム日次レポート', 'HANAZONOシステム 日次レポート')
-            
+            body_text = body_text.replace(
+                'HANAZONOシステム日次レポート', 'HANAZONOシステム 日次レポート')
+
             # 時間から秒を削除
             import re
-            body_text = re.sub(r'(\d{4}年\d{2}月\d{2}日 \d{2}:\d{2}):\d{2}', r'\1', body_text)
-            
+            body_text = re.sub(
+                r'(\d{4}年\d{2}月\d{2}日 \d{2}:\d{2}):\d{2}', r'\1', body_text)
+
             # 小数点以下切り捨て（気温）
-            body_text = re.sub(r'気温: (\d+)\.(\d+)℃ 〜 (\d+)\.(\d+)℃', r'気温: \1℃ 〜 \3℃', body_text)
-            
+            body_text = re.sub(
+                r'気温: (\d+)\.(\d+)℃ 〜 (\d+)\.(\d+)℃', r'気温: \1℃ 〜 \3℃', body_text)
+
             # 電圧小数点調整
-            body_text = re.sub(r'電圧\t([\d\.]+)000+(\d) V', r'電圧\t\1\2 V', body_text)
-            body_text = re.sub(r'電圧\t(\d+\.\d{1,2})\d* V', r'電圧\t\1 V', body_text)
-            
+            body_text = re.sub(
+                r'電圧\t([\d\.]+)000+(\d) V', r'電圧\t\1\2 V', body_text)
+            body_text = re.sub(
+                r'電圧\t(\d+\.\d{1,2})\d* V', r'電圧\t\1 V', body_text)
+
             # 不明状態の非表示
             body_text = re.sub(r'状態\t不明\(\d+\)\n', '', body_text)
-            
+
             body_html = self._generate_html_report(
                 actual_date, battery_data, season_info, recommended_settings, weather_data
             )
-            
+
             # 添付ファイル
             attachments = []
             if chart_path:
                 attachments.append(chart_path)
-            
+
             # メール送信
             result = self._send_email(
                 subject=subject,
@@ -349,14 +372,14 @@ class EmailNotifier:
                 body_html=body_html,
                 attachments=attachments
             )
-            
+
             if result:
                 self.logger.info(f"日次レポート送信成功: {actual_date}")
             else:
                 self.logger.error(f"日次レポート送信失敗: {actual_date}")
-                
+
             return result
-            
+
         except Exception as e:
             self.logger.error(f"レポート送信エラー: {e}")
             import traceback
@@ -366,7 +389,7 @@ class EmailNotifier:
     def append_note(self, note_text):
         """
         レポートに注記を追加する
-        
+
         Args:
             note_text: 追加する注記テキスト
         """
@@ -378,13 +401,13 @@ class EmailNotifier:
     def _extract_battery_data(self, data):
         """
         JSONデータからバッテリー状態情報を抽出します。
-        
+
         データファイルのJSON構造に基づいて、バッテリーのSOC、電圧、電流などを
         抽出して辞書形式で返します。
-        
+
         Args:
             data (dict/list): データファイルから読み込んだJSONデータ
-            
+
         Returns:
             dict: 以下のキーを持つバッテリー情報辞書
                 - soc: バッテリー残量(%)
@@ -401,7 +424,7 @@ class EmailNotifier:
             "power": None,
             "status": None
         }
-        
+
         try:
             # データ形式の確認とパラメータへのアクセス
             if isinstance(data, list) and len(data) > 0:
@@ -409,35 +432,36 @@ class EmailNotifier:
                 data_item = data[0]
                 if "parameters" in data_item and isinstance(data_item["parameters"], dict):
                     params = data_item["parameters"]
-                    
+
                     # SOC
                     if "0x0100" in params:
                         battery_data["soc"] = params["0x0100"].get("value")
-                    
+
                     # 電圧
                     if "0x0101" in params:
                         battery_data["voltage"] = params["0x0101"].get("value")
-                    
+
                     # 電流
                     if "0x0102" in params:
                         battery_data["current"] = params["0x0102"].get("value")
-                    
+
                     # 状態（もし利用可能なら）
                     if "0x020E" in params:
-                        battery_data["status"] = params["0x020E"].get("formatted_value")
-                    
+                        battery_data["status"] = params["0x020E"].get(
+                            "formatted_value")
+
                     # 電力は電圧×電流で計算（電流データが異常値でなければ）
                     if battery_data["voltage"] is not None and battery_data["current"] is not None:
                         current = battery_data["current"]
                         # 電流の値が異常に大きい場合は計算しない
                         if -1000 <= current <= 1000:  # 妥当な範囲内のみ
                             battery_data["power"] = battery_data["voltage"] * current
-            
+
             # 処理結果のログ出力（デバッグ用）
             self.logger.debug(f"バッテリーデータ抽出結果: {battery_data}")
-            
+
             return battery_data
-            
+
         except Exception as e:
             # 例外発生時はエラーをログに記録して初期値を返す
             self.logger.error(f"バッテリーデータ抽出中にエラーが発生しました: {e}")
@@ -447,13 +471,13 @@ class EmailNotifier:
     def _determine_season(self):
         """
         現在の日付から季節を判定します。
-        
+
         季節区分：
         - 冬季(12-3月): 12月から3月まで
         - 春季(4-6月): 4月から6月まで
         - 夏季(7-9月): 7月から9月まで
         - 秋季(10-11月): 10月から11月まで
-        
+
         Returns:
             dict: 季節情報の辞書
                 - name: 季節名（日本語）
@@ -462,7 +486,7 @@ class EmailNotifier:
         """
         now = datetime.now()
         month = now.month
-        
+
         # 月に基づく季節判定
         if month == 12 or 1 <= month <= 3:
             season_name = "冬季"
@@ -480,9 +504,9 @@ class EmailNotifier:
             season_name = "秋季"
             season_emoji = "🍁"
             season_code = "autumn"
-        
+
         self.logger.debug(f"季節判定結果: {season_name}({season_code})")
-        
+
         return {
             "name": season_name,
             "emoji": season_emoji,
@@ -492,10 +516,10 @@ class EmailNotifier:
     def _get_weather_forecast(self):
         """
         OpenWeatherMapから天気予報データを取得します。
-        
+
         config.jsonまたはsettings.jsonからAPIキーと位置情報を取得し、
         3日間の天気予報データを取得して返します。
-        
+
         Returns:
             dict: 天気予報データを含む辞書
                 - current: 現在の天気情報
@@ -503,13 +527,16 @@ class EmailNotifier:
         """
         try:
             # APIキーと位置情報の取得（settings.jsonから）
-            api_key = self.settings.get('openweathermap', {}).get('api_key', '')
-            location = self.settings.get('openweathermap', {}).get('location', '高松市')
-            
+            api_key = self.settings.get(
+                'openweathermap', {}).get('api_key', '')
+            location = self.settings.get(
+                'openweathermap', {}).get('location', '高松市')
+
             if not api_key:
-                self.logger.warning("OpenWeatherMap APIキーが設定されていません。モックデータを使用します。")
+                self.logger.warning(
+                    "OpenWeatherMap APIキーが設定されていません。モックデータを使用します。")
                 return self._get_mock_weather_data()
-            
+
             # OpenWeatherMap APIリクエストURLの構築
             base_url = "https://api.openweathermap.org/data/2.5/forecast"
             params = {
@@ -518,40 +545,41 @@ class EmailNotifier:
                 'units': 'metric',  # 摂氏温度を使用
                 'lang': 'ja'        # 日本語の天気説明
             }
-            
+
             # APIリクエストの送信
             import requests
             response = requests.get(base_url, params=params)
-            
+
             if response.status_code != 200:
-                self.logger.error(f"天気予報の取得に失敗: {response.status_code} - {response.text}")
+                self.logger.error(
+                    f"天気予報の取得に失敗: {response.status_code} - {response.text}")
                 return self._get_mock_weather_data()
-            
+
             # レスポンスデータの解析
             forecast_data = response.json()
-            
+
             # 現在時刻と日付
             now = datetime.now()
             today = now.date()
             tomorrow = today + timedelta(days=1)
             day_after = today + timedelta(days=2)
-            
+
             # 日付ごとの予報データ収集
             daily_forecasts = {
                 'today': {'condition': '', 'max_temp': -100, 'min_temp': 100},
                 'tomorrow': {'condition': '', 'max_temp': -100, 'min_temp': 100},
                 'day_after': {'condition': '', 'max_temp': -100, 'min_temp': 100}
             }
-            
+
             # 各予報データを処理
             for item in forecast_data.get('list', []):
                 forecast_dt = datetime.fromtimestamp(item['dt'])
                 forecast_date = forecast_dt.date()
-                
+
                 # 気温と天気の取得
                 temp = item['main']['temp']
                 condition = item['weather'][0]['description']
-                
+
                 # 日付に応じてデータを格納
                 target_dict = None
                 if forecast_date == today:
@@ -560,31 +588,33 @@ class EmailNotifier:
                     target_dict = daily_forecasts['tomorrow']
                 elif forecast_date == day_after:
                     target_dict = daily_forecasts['day_after']
-                
+
                 if target_dict:
                     if temp > target_dict['max_temp']:
                         target_dict['max_temp'] = temp
                     if temp < target_dict['min_temp']:
                         target_dict['min_temp'] = temp
-                    
+
                     # 昼間（12時頃）の天気を優先的に使用
                     if forecast_dt.hour in [11, 12, 13, 14] and not target_dict['condition']:
                         target_dict['condition'] = condition
-            
+
             # 未設定の天気条件を先頭のデータで補完
             for day, data in daily_forecasts.items():
                 if not data['condition'] and forecast_data.get('list'):
                     data['condition'] = forecast_data['list'][0]['weather'][0]['description']
-            
+
             # 未設定の天気条件と極端な温度値を現在の値で補完
             if daily_forecasts['today']['max_temp'] == -100 or daily_forecasts['today']['min_temp'] == 100:
                 if forecast_data.get('list'):
                     current_temp = forecast_data['list'][0]['main']['temp']
-                    daily_forecasts['today']['max_temp'] = max(daily_forecasts['today']['max_temp'], current_temp)
-                    daily_forecasts['today']['min_temp'] = min(daily_forecasts['today']['min_temp'], current_temp)
+                    daily_forecasts['today']['max_temp'] = max(
+                        daily_forecasts['today']['max_temp'], current_temp)
+                    daily_forecasts['today']['min_temp'] = min(
+                        daily_forecasts['today']['min_temp'], current_temp)
                     if not daily_forecasts['today']['condition']:
                         daily_forecasts['today']['condition'] = forecast_data['list'][0]['weather'][0]['description']
-            
+
             # 結果を整形
             result = {
                 'current': {
@@ -611,30 +641,32 @@ class EmailNotifier:
                     }
                 }
             }
-            
+
             # 天気条件の日数をカウント
-            sunny_days = sum(1 for day in daily_forecasts.values() if '晴' in day['condition'])
-            rainy_days = sum(1 for day in daily_forecasts.values() if '雨' in day['condition'])
+            sunny_days = sum(1 for day in daily_forecasts.values()
+                             if '晴' in day['condition'])
+            rainy_days = sum(1 for day in daily_forecasts.values()
+                             if '雨' in day['condition'])
             result['forecast']['sunny_days'] = sunny_days
             result['forecast']['rainy_days'] = rainy_days
-            
+
             self.logger.debug(f"天気予報データを取得しました: {location}")
             return result
-            
+
         except Exception as e:
             self.logger.error(f"天気予報データの取得中にエラーが発生しました: {e}")
             self.logger.debug(traceback.format_exc())
             return self._get_mock_weather_data()
-    
+
     def _get_mock_weather_data(self):
         """
         APIキーがない場合や取得に失敗した場合に使用するモックデータを生成
-        
+
         Returns:
             dict: モック天気予報データ
         """
         now = datetime.now()
-        
+
         return {
             'current': {
                 'date': now.strftime('%Y-%m-%d'),
@@ -666,11 +698,11 @@ class EmailNotifier:
     def _calculate_recommended_settings(self, season_info, weather_data=None):
         """
         季節と天気に基づいて推奨設定値を計算します。
-        
+
         Args:
             season_info (dict): 季節情報（_determine_season()メソッドの戻り値）
             weather_data (dict): 天気予報データ（_get_weather_forecast()メソッドの戻り値）
-            
+
         Returns:
             dict: 推奨設定情報の辞書
                 - charge_current: 推奨充電電流(A)
@@ -706,36 +738,36 @@ class EmailNotifier:
                 "type": "B"
             }
         }
-        
+
         # 季節コードから基本設定を取得
         season_code = season_info["code"]
         settings = base_settings.get(season_code, base_settings["spring"])
-        
+
         # 天気データに基づく調整（実装例）
         if weather_data and "forecast" in weather_data:
             forecast = weather_data["forecast"]
-            
+
             # 3日以上の晴天予報時
             if forecast.get("sunny_days", 0) >= 3:
                 settings["charge_current"] -= 5
                 settings["charge_time"] -= 5
                 settings["output_soc"] -= 5
                 settings["weather_note"] = "晴天が続くため、パラメーターを下方調整"
-            
+
             # 3日以上の雨天予報時
             elif forecast.get("rainy_days", 0) >= 3:
                 settings["charge_current"] += 5
                 settings["charge_time"] += 10
                 settings["output_soc"] += 10
                 settings["weather_note"] = "雨天が続くため、パラメーターを上方調整"
-            
+
             # 猛暑日予報時（最高気温35℃以上）
             elif forecast.get("today", {}).get("max_temp", 0) >= 35:
                 settings["charge_current"] -= 10
                 settings["charge_time"] -= 10
                 settings["output_soc"] -= 10
                 settings["weather_note"] = "猛暑日予報のため、パラメーターを下方調整"
-        
+
         return settings
 
     def _generate_text_report(self, date_str, battery_data, season_info, recommended_settings, weather_data):
@@ -743,21 +775,23 @@ class EmailNotifier:
         # 対象日付と現在時刻（タイトルと同じフォーマットを使用）
         formatted_date = datetime.now().strftime("%Y年%m月%d日")
         current_time = datetime.now().strftime("%H:%M")
-        
+
         # レポートタイトル
         text = f"HANAZONOシステム 日次レポート\n{formatted_date} {current_time}\n\n"
-        
+
         # 天気予報のセクション
         text += "■天気予報\n"
         if weather_data and 'forecast' in weather_data:
             forecast = weather_data['forecast']
-            
+
             # 今日の天気
             if 'today' in forecast:
                 today = datetime.now().date()
                 today_weather = forecast['today']
-                weather_info = self._parse_weather_condition(today_weather["condition"])
+                weather_info = self._parse_weather_condition(
+                    today_weather["condition"])
                 text += f"【今日】{today.month}月{today.day}日({self._get_weekday(today)}):\n{weather_info["emoji_line"]}\n{weather_info["text_line"]}\n\n"
+
     def _parse_weather_condition(self, condition):
         """
         複合的な天気条件を解析し、構造化データを返します。
@@ -782,7 +816,7 @@ class EmailNotifier:
         # 基本的な天気パターンを抽出
         transitions = ["後", "のち", "から", "一時", "時々", "所により"]
         patterns = []
-        
+
         # 複合的な天気条件を分割
         parts = []
         current_part = ""
@@ -794,10 +828,10 @@ class EmailNotifier:
                 parts.append({"transition": word})
             else:
                 current_part += " " + word
-        
+
         if current_part:
             parts.append({"condition": current_part.strip()})
-        
+
         # 単純な天気条件の場合
         if len(parts) <= 1:
             emoji = self._get_weather_emoji(condition)
@@ -806,11 +840,11 @@ class EmailNotifier:
                 "emoji_line": emoji,
                 "text_line": condition
             }
-        
+
         # 複合的な天気条件の場合
         emoji_line = ""
         text_line = ""
-        
+
         for i, part in enumerate(parts):
             if "condition" in part:
                 emoji = self._get_weather_emoji(part["condition"])
@@ -820,14 +854,14 @@ class EmailNotifier:
                 if i < len(parts) - 1:  # 最後の要素でなければ
                     emoji_line += " → "
                     text_line += f" {part['transition']} "
-        
+
         return {
             "patterns": parts,
             "emoji_line": emoji_line,
             "text_line": text_line
         }
                 text += f"気温: {int(round(today_weather['min_temp']))}℃ 〜 {int(round(today_weather['max_temp']))}℃\n\n"
-            
+
             # 明日の天気
             if 'tomorrow' in forecast:
                 tomorrow = today + timedelta(days=1)

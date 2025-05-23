@@ -3,19 +3,21 @@
 
 import datetime
 
+
 def get_current_season():
     """
     現在の月から季節を判定する
     戻り値: 'winter', 'spring_fall', 'summer'のいずれか
     """
     current_month = datetime.datetime.now().month
-    
+
     if current_month in [12, 1, 2, 3]:
         return "winter"
     elif current_month in [4, 5, 6, 10, 11]:
         return "spring_fall"
     else:  # 7, 8, 9月
         return "summer"
+
 
 def get_detailed_season():
     """
@@ -25,7 +27,7 @@ def get_detailed_season():
     now = datetime.datetime.now()
     month = now.month
     day = now.day
-    
+
     # 月ごとに季節を詳細に判定
     if month == 1:  # 1月
         return "winter_mid"
@@ -64,10 +66,11 @@ def get_detailed_season():
     else:  # 12月
         return "winter_early"
 
+
 def get_season_name(season_code):
     """
     季節コードから日本語の季節名を取得
-    
+
     引数:
         season_code: 季節コード
     戻り値:
@@ -87,11 +90,11 @@ def get_season_name(season_code):
         "autumn_early": "初秋",
         "autumn_mid": "秋",
         "autumn_late": "晩秋",
-        
+
         # 後方互換性のための名称
         "winter": "冬季",
         "spring_fall": "春秋季",
         "summer": "夏季"
     }
-    
+
     return season_names.get(season_code, "不明")

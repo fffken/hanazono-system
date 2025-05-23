@@ -82,17 +82,20 @@ extract_battery_data_method = '''
 if "_extract_battery_data" in content:
     # 既存のメソッドを新しいものに置き換え
     pattern = r'def _extract_battery_data\(self, data\):.*?(?=\n    def |$)'
-    content = re.sub(pattern, extract_battery_data_method.strip(), content, flags=re.DOTALL)
+    content = re.sub(pattern, extract_battery_data_method.strip(),
+                     content, flags=re.DOTALL)
 else:
     # クラス内の適切な位置に新しいメソッドを追加
     # 例えば、generate_notes_html メソッドの後に追加
     pattern = r'def _generate_notes_html\(self.*?\n        return ""\n'
     if re.search(pattern, content, re.DOTALL):
-        content = re.sub(pattern, lambda m: m.group(0) + extract_battery_data_method, content, flags=re.DOTALL)
+        content = re.sub(pattern, lambda m: m.group(
+            0) + extract_battery_data_method, content, flags=re.DOTALL)
     else:
         # 別の位置を試す、クラスの最後
         pattern = r'(class EmailNotifier:.*?)$'
-        content = re.sub(pattern, lambda m: m.group(1) + extract_battery_data_method, content, flags=re.DOTALL)
+        content = re.sub(pattern, lambda m: m.group(
+            1) + extract_battery_data_method, content, flags=re.DOTALL)
 
 # 変更内容をファイルに書き込む
 with open('email_notifier.py', 'w') as f:

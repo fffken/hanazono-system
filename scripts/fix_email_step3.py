@@ -40,11 +40,13 @@ with open('email_notifier.py', 'r') as f:
 
 # send_daily_report関数を置換
 send_daily_pattern = r'def send_daily_report\([^)]*\):.*?try:'
-modified_content = re.sub(send_daily_pattern, new_function, content, flags=re.DOTALL)
+modified_content = re.sub(
+    send_daily_pattern, new_function, content, flags=re.DOTALL)
 
 # 件名設定の行を置換
 subject_pattern = r'subject = .*?LVYUANソーラー日次レポート.*'
-modified_content = re.sub(subject_pattern, subject_code, modified_content, flags=re.DOTALL)
+modified_content = re.sub(subject_pattern, subject_code,
+                          modified_content, flags=re.DOTALL)
 
 # 修正内容を保存
 with open('email_notifier.py', 'w') as f:

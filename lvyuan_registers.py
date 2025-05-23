@@ -5,15 +5,15 @@ SETTINGS_REGISTERS = {
     # 充電電流関連
     0xE001: {"name": "PV_Charge_Current", "unit": "A", "factor": 0.1, "access": "RW", "range": (0, 100), "default": 60},
     0xE20A: {"name": "Max_Charge_Current", "unit": "A", "factor": 0.1, "access": "RW", "range": (0, 150), "default": 80},
-    
+
     # 充電時間関連
     0xE011: {"name": "Equalizing_Charge_Time", "unit": "min", "factor": 1, "access": "RW", "range": (0, 600), "default": 120},
     0xE012: {"name": "Boost_Charge_Time", "unit": "min", "factor": 1, "access": "RW", "range": (10, 600), "default": 120},
     0xE013: {"name": "Equalizing_Charge_Interval", "unit": "day", "factor": 1, "access": "RW", "range": (0, 255), "default": 30},
     0xE023: {"name": "Equalizing_Charge_Timeout", "unit": "min", "factor": 1, "access": "RW", "range": (5, 900), "default": 240},
-    
+
     # SOC設定関連
-    0xE00F: {"name": "SOC_Cutoff", "unit": "%", "factor": 1, "access": "RW", "range": (0, 100), "default": 5, 
+    0xE00F: {"name": "SOC_Cutoff", "unit": "%", "factor": 1, "access": "RW", "range": (0, 100), "default": 5,
              "note": "High 8bits: Charge cutoff SOC, Low 8bits: Discharge cutoff SOC"}
 }
 
@@ -32,9 +32,12 @@ REGISTER_GROUPS = [
 ]
 
 # SOC設定値の操作ヘルパー関数
+
+
 def encode_soc_cutoff(charge_cutoff, discharge_cutoff):
     """充電カットオフSOCと放電カットオフSOCを1つのレジスタ値に符号化"""
     return ((charge_cutoff & 0xFF) << 8) | (discharge_cutoff & 0xFF)
+
 
 def decode_soc_cutoff(register_value):
     """レジスタ値から充電カットオフSOCと放電カットオフSOCをデコード"""

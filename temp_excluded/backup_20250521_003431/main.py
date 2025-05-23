@@ -89,20 +89,16 @@ def send_daily_report():
         notifier = EmailNotifier(settings["email"], logger)
 
         # 設定ファイルの読み込み（エラーハンドリング強化）
-        # 既に読み込み済みの設定を使用
-# 重複処理削除:         try:
-        # settings_managerで既に読み込み済みのため、直接利用
-        if not settings:
-            logger.error("設定が正しく読み込まれていません")
+        settings = {}
+        try:
+            with open('settings.json', 'r') as settings_file:
+                settings = json.load(settings_file)
+        except FileNotFoundError:
+            logger.error("設定ファイルが見つかりません")
             return False
-# 重複処理削除:             with open('settings.json', 'r') as settings_file:
-# 重複処理削除:                 settings = json.load(settings_file)
-# 重複処理削除:         except FileNotFoundError:
-# 重複処理削除:             logger.error("設定ファイルが見つかりません")
-# 重複処理削除:             return False
-# 重複処理削除:         except json.JSONDecodeError:
-# 重複処理削除:             logger.error("設定ファイルのJSONフォーマットが不正です")
-# 重複処理削除:             return False
+        except json.JSONDecodeError:
+            logger.error("設定ファイルのJSONフォーマットが不正です")
+            return False
 
         # 前日のファイルパスを取得（YYYYMMDDのフォーマット）
         yesterday = (datetime.now() - timedelta(days=1)).strftime('%Y%m%d')

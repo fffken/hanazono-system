@@ -61,7 +61,8 @@ with open('email_notifier.py', 'r') as f:
 
 # クラス定義の後に関数を追加
 class_pattern = r'class EmailNotifier:'
-modified_content = re.sub(class_pattern, f'class EmailNotifier:{new_function}', content)
+modified_content = re.sub(
+    class_pattern, f'class EmailNotifier:{new_function}', content)
 
 # 修正内容を保存
 with open('email_notifier.py', 'w') as f:
