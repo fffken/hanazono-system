@@ -106,3 +106,23 @@ else
 fi
 echo ""
 
+
+# Phase 5: AI最適化提案システム実行
+echo "🤖 Phase 5: AI最適化提案システム実行中..."
+if [ -f "auto_generated_executables/AI_Optimization_Proposal_System_v5.sh" ]; then
+    bash auto_generated_executables/AI_Optimization_Proposal_System_v5.sh
+    echo "✅ AI最適化提案システム完了"
+else
+    echo "⚠️ AI最適化提案システムが見つかりません"
+fi
+echo ""
+
+# Phase 6: 自動改善実行システム実行
+echo "⚡ Phase 6: 自動改善実行システム実行中..."
+if [ -f "auto_generated_executables/Auto_Improvement_Execution_System_v5.sh" ]; then
+    bash auto_generated_executables/Auto_Improvement_Execution_System_v5.sh
+    echo "✅ 自動改善実行システム完了"
+else
+    echo "⚠️ 自動改善実行システムが見つかりません"
+fi
+echo ""
