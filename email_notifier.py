@@ -1,4 +1,5 @@
 import logging
+from enhanced_email_system import EnhancedEmailSystem
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -13,6 +14,7 @@ class EmailNotifier:
     def __init__(self, config, logger):
         self.config = config
         self.logger = logger
+        self.enhanced_system = EnhancedEmailSystem(config, logger)
         self.settings_recommender = SettingsRecommender()
 
     def send_daily_report(self, data):
@@ -58,65 +60,27 @@ class EmailNotifier:
             return False
 
     def _generate_intelligent_report(self, data):
-        report = "=== HANAZONOシステム 最適化レポート ===\n"
-
+        """拡張版インテリジェントレポート生成"""
         try:
-            # 1. 天気予報取得
-            self.logger.info("天気予報を取得中...")
-            weather = get_weather_forecast()
-
-            # 2. 季節判定
-            season = get_current_season()
-            detailed_season = get_detailed_season()
-
-            # 3. 現在のバッテリー状態
+            # 天気予報取得
+            from weather_forecast import get_weather_forecast
+            weather_data = get_weather_forecast()
+            
+            # バッテリー情報取得
             battery_info = self._extract_battery_info(data)
-            report += f"\n■ 現在の状態"
-            report += f"\n{battery_info}\n"
-
-            # 4. 天気予報分析
-            report += f"\n■ 天気予報分析"
-            if weather:
-                today_weather = weather.get('today', {})
-                tomorrow_weather = weather.get('tomorrow', {})
-
-                report += f"\n今日: {today_weather.get('weather', 'データなし')}"
-                report += f"\n明日: {tomorrow_weather.get('weather', 'データなし')}\n"
-
-                # 5. 最適化推奨（HANAZONOシステムの核心機能）
-                try:
-                    season_detail, setting_type, params = self.settings_recommender.recommend_settings(
-                        weather)
-                    report += f"\n■ 推奨設定"
-                    report += f"\ntypeA（標準設定）"
-                    report += f"\n設定項目\t推奨値\tパラメータID"
-                    report += f"\n充電電流\t{params.get('charge_current', 'N/A')} A\t07"
-                    report += f"\n充電時間\t{params.get('charge_time', 'N/A')} 分\t10"
-                    report += f"\nSOC設定\t{params.get('soc', 'N/A')} %\t62\n"
-                except Exception as e:
-                    report += f"■ 推奨設定\n推奨設定取得エラー: {e}\n"
-
-                # 6. 最適化推奨（運用アドバイス）
-                recommendations = self._generate_recommendations(
-                    weather, season, battery_info)
-
-            else:
-                report += "\n天気データ取得失敗\n"
-                report += f"■ 最適化推奨"
-                report += "\n天気データなしのため基本推奨を適用\n"
-
-            # 6. システム状態
-            report += f"\n■ システム情報"
-            report += f"\n季節判定: {season} ({detailed_season})"
-            report += f"\nデータ更新: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-
+            
+            # 拡張システムでHTMLレポート生成
+            html_report = self.enhanced_system.generate_complete_report(
+                data, weather_data, battery_info
+            )
+            
+            return html_report
+            
         except Exception as e:
-            self.logger.error(f"レポート生成エラー: {e}")
-            report += f"レポート生成中にエラーが発生しました: {e}\n"
-
-        report += "\n--- HANAZONOシステム 自動最適化 ---"
-        return report
-
+            self.logger.error(f"拡張レポート生成エラー: {e}")
+            # フォールバック：従来のテキストレポート
+            return self._generate_fallback_report(data)
+    
     def _extract_battery_info(self, data):
         """バッテリー情報を抽出（修正版）"""
         try:
