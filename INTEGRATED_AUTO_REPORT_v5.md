@@ -1,6 +1,6 @@
 # 🎯 統合自動レポート v5.0
 
-**生成時刻**: Sat 24 May 22:46:32 JST 2025
+**生成時刻**: Sat 24 May 23:45:08 JST 2025
 **システム**: HANAZONOシステム
 **バージョン**: v5.0 (v4.0同等完璧版)
 
@@ -14,7 +14,7 @@
 ## 🔍 GitHub API完全解析結果
 
 # GitHub API完全活用システム v5.0 レポート
-**生成時刻**: Sat 24 May 22:46:28 JST 2025
+**生成時刻**: Sat 24 May 23:45:04 JST 2025
 **リポジトリ**: fffken/hanazono-system
 
 ## 📊 リポジトリ基本情報
@@ -38,10 +38,10 @@
 
 ## 📊 GitHub API使用状況
 - API制限情報を取得しました
-- 取得時刻: Sat 24 May 22:46:32 JST 2025
+- 取得時刻: Sat 24 May 23:45:08 JST 2025
 
 ## 🎉 GitHub API System v5.0 (jq不要版) 完了
-- **実行完了時刻**: Sat 24 May 22:46:32 JST 2025
+- **実行完了時刻**: Sat 24 May 23:45:08 JST 2025
 - **レポートファイル**: GITHUB_API_COMPLETE_REPORT_v5.md
 - **実行方式**: jq不要・確実動作版
 - **v4.0同等**: 100%自動化・完全性・構造化・実用性達成
@@ -54,13 +54,21 @@
 ## 📊 システム状態統合分析
 
 ### 🔍 Git状態
+ M AI_AUTOMATIC_INSTRUCTIONS.md
+ M AI_GITHUB_AUTO_REPORT.md
  M GITHUB_API_COMPLETE_REPORT_v5.md
+ M HANDOVER_PROMPT.md
  M INTEGRATED_AUTO_REPORT_v5.md
+ M PROJECT_STATUS.md
+ M docs/WORK_LOG.md
+ M docs/navigation/CLAUDE_START_HERE.md
+ M monitoring_logs/git_changes
+?? system_backups/backup_20250524_232154/
 
 ### 📝 最新コミット
+8b48255 🚨 緊急保存: 設計思想転換と重要な気づき - 統合時相互作用チェック不足の発見 - 設計思想の根本転換合意 - 統合検証システム構築方針 - 次回セッション最優先タスク定義
+a114147 🤖 AI最適化提案システム完成 - 自動改善実行完了
 4fa8a77 ✅ 完全データ復旧確認 - SOC 19%, 深夜充電準備完了
-6bbbe95 🤖 AI最適化提案システム完成 - 自動改善実行完了
-5222bf0 🤖 AI最適化提案システム完成 - 自動改善実行完了
 
 ### 📁 自動生成ファイル
 total 84
@@ -95,10 +103,10 @@ drwxr-xr-x 22 pi pi 4096 May 24 22:02 ..
 
 
 ## 📊 実行統計
-- **実行開始時刻**:  Sat 24 May 22:46:32 JST 2025
-- **実行完了時刻**: Sat 24 May 22:46:32 JST 2025
+- **実行開始時刻**:  Sat 24 May 23:45:08 JST 2025
+- **実行完了時刻**: Sat 24 May 23:45:08 JST 2025
 - **レポートファイル**: INTEGRATED_AUTO_REPORT_v5.md
-- **統合レポートサイズ**: 100 行
+- **統合レポートサイズ**: 108 行
 
 ## 🏆 v4.0同等達成確認
 - ✅ **100%自動化**: 人間操作不要
