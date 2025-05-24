@@ -688,3 +688,17 @@ main "$@"
     echo "- ✅ プロジェクト文脈: 100%保持済み" >> $REPORT_FILE
     echo "- 🎯 **記憶喪失問題: 完全解決**" >> $REPORT_FILE
 
+
+    # AI自動緊急対応コマンド（既存システムから統合）
+    echo -e "\n## 🛠️ AI自動緊急対応コマンド" >> $REPORT_FILE
+    echo '```bash' >> $REPORT_FILE
+    echo '# システム自動確認' >> $REPORT_FILE
+    echo 'python3 main.py --check-cron' >> $REPORT_FILE
+    echo '' >> $REPORT_FILE
+    echo '# メール機能自動テスト' >> $REPORT_FILE
+    echo 'python3 main.py --daily-report --debug' >> $REPORT_FILE
+    echo '' >> $REPORT_FILE
+    echo '# 自動復旧（問題時）' >> $REPORT_FILE
+    echo 'bash scripts/version_manager.sh restore' >> $REPORT_FILE
+    echo '```' >> $REPORT_FILE
+
