@@ -118,18 +118,25 @@ class EmailNotifier:
         return report
 
     def _extract_battery_info(self, data):
-        """バッテリー情報を抽出"""
-        if 'solar_data' in data and data['solar_data']:
-            solar_data = data['solar_data']
-            if isinstance(solar_data, list) and len(solar_data) > 0:
-                latest = solar_data[0]
-                if 'parameters' in latest:
-                    params = latest['parameters']
-                    soc = params.get('0x0100', {}).get('value', 'N/A')
-                    voltage = params.get('0x0101', {}).get('value', 'N/A')
-                    current = params.get('0x0102', {}).get('value', 'N/A')
-                    return f"バッテリー残量: {soc}%, 電圧: {voltage:.1f}V, 電流: {current:.1f}A"
-        return "バッテリー情報: データなし"
+        """バッテリー情報を抽出（修正版）"""
+        try:
+            if isinstance(data, tuple) and len(data) > 0:
+                actual_data = data[0]
+            elif isinstance(data, dict):
+                actual_data = data
+            else:
+                return "バッテリー情報: データ形式エラー"
+            if 'parameters' in actual_data:
+                params = actual_data['parameters']
+                soc_value = params.get('0x0100', {}).get('value', 'N/A')
+                voltage_value = params.get('0x0101', {}).get('value', 'N/A')
+                current_value = params.get('0x0102', {}).get('value', 'N/A')
+                timestamp = actual_data.get('datetime', 'N/A')
+                return f"🔋 バッテリー残量: {soc_value}% (取得時刻: {timestamp})\n⚡ 電圧: {voltage_value}V 🔌 電流: {current_value}A"
+            else:
+                return "バッテリー情報: parametersが見つかりません"
+        except Exception as e:
+            return f"バッテリー情報取得エラー: {e}"
 
     def _generate_recommendations(self, weather, season, battery_info):
         """天気予報と季節に基づく最適化推奨を生成"""
