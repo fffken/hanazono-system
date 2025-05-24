@@ -664,13 +664,6 @@ class EnhancedEmailSystem:
             'total_grid_consumption': round(total_grid, 2)
         }
 
-    def _generate_html_report(self, analysis):
-        """HTMLレポート生成"""
-        return f"<html><body><h2>🌞 HANAZONOシステム</h2><p>SOC: {analysis['battery_soc']}%</p></body></html>"
-
-    def _generate_text_report(self, analysis):
-        """テキストレポート生成"""
-        return f"HANAZONOシステム\nSOC: {analysis['battery_soc']}%"
 
     def _send_email(self, subject, html_content, text_content):
         """メール送信"""
