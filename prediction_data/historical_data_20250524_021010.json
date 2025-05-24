@@ -1,0 +1,185 @@
+{
+  "system_metrics": [
+    {
+      "timestamp": "2025-05-24 02:00:40",
+      "cpu_usage": 15,
+      "memory_usage": 35,
+      "disk_usage": 7
+    },
+    {
+      "timestamp": "2025-05-24 02:01:10",
+      "cpu_usage": 15,
+      "memory_usage": 35,
+      "disk_usage": 7
+    }
+  ],
+  "error_logs": [],
+  "performance_data": [
+    {
+      "test_name": "git_status",
+      "execution_time": 0.3232414722442627,
+      "timestamp": "2025-05-24T02:10:10.310797",
+      "status": "success"
+    },
+    {
+      "test_name": "python_import",
+      "execution_time": 0.25562000274658203,
+      "timestamp": "2025-05-24T02:10:10.566536",
+      "status": "success"
+    },
+    {
+      "test_name": "file_read",
+      "execution_time": 0.01015615463256836,
+      "timestamp": "2025-05-24T02:10:10.576840",
+      "status": "success"
+    }
+  ],
+  "usage_patterns": {
+    "file_access_frequency": {
+      "main.py": {
+        "last_modified": "2025-05-23T02:14:48.657158",
+        "last_accessed": "2025-05-21T00:40:33.938265",
+        "size": 12377
+      },
+      "email_notifier.py": {
+        "last_modified": "2025-05-23T02:17:59.747963",
+        "last_accessed": "2025-05-23T02:17:59.747963",
+        "size": 7143
+      },
+      "settings.json": {
+        "last_modified": "2025-05-21T00:40:33.938265",
+        "last_accessed": "2025-05-21T00:40:33.938265",
+        "size": 6459
+      }
+    },
+    "command_usage": {},
+    "time_patterns": {
+      "commits_by_hour": {
+        "2": 46
+      }
+    },
+    "seasonal_usage": {}
+  },
+  "maintenance_history": [
+    {
+      "type": "backup",
+      "file": "latest_backup.txt",
+      "timestamp": "2025-05-24T00:32:29.453018",
+      "size": 23
+    },
+    {
+      "type": "backup",
+      "file": "master_progress_controller.sh",
+      "timestamp": "2025-05-24T01:46:19.764641",
+      "size": 13978
+    },
+    {
+      "type": "backup",
+      "file": "email_notifier_backup_20250518_155417.py",
+      "timestamp": "2025-05-23T02:15:13.112978",
+      "size": 52087
+    },
+    {
+      "type": "backup",
+      "file": "main.py.backup_20250523_021759",
+      "timestamp": "2025-05-23T15:07:21.473826",
+      "size": 12377
+    },
+    {
+      "type": "backup",
+      "file": "setup_auto_update.sh",
+      "timestamp": "2025-05-24T01:46:19.768641",
+      "size": 941
+    },
+    {
+      "type": "backup",
+      "file": "cron_backup.txt",
+      "timestamp": "2025-05-23T02:14:28.881311",
+      "size": 611
+    },
+    {
+      "type": "backup",
+      "file": "lvyuan_collector.py.backup_20250523_021800",
+      "timestamp": "2025-05-23T15:07:21.473826",
+      "size": 16309
+    },
+    {
+      "type": "backup",
+      "file": "register_write_test.py",
+      "timestamp": "2025-05-23T02:15:13.828973",
+      "size": 2415
+    },
+    {
+      "type": "backup",
+      "file": "data_util.py.backup_20250523_021800",
+      "timestamp": "2025-05-23T15:07:21.473826",
+      "size": 2996
+    },
+    {
+      "type": "backup",
+      "file": "write_test_alternative.py",
+      "timestamp": "2025-05-23T02:15:14.452968",
+      "size": 1752
+    },
+    {
+      "type": "backup",
+      "file": "simple_write_test.py",
+      "timestamp": "2025-05-23T02:15:15.140963",
+      "size": 2764
+    },
+    {
+      "type": "backup",
+      "file": "password_auth_test.py",
+      "timestamp": "2025-05-23T02:15:15.856958",
+      "size": 3681
+    },
+    {
+      "type": "backup",
+      "file": "backup_and_change.sh",
+      "timestamp": "2025-05-23T02:14:28.881311",
+      "size": 1109
+    },
+    {
+      "type": "backup",
+      "file": "settings_manager.py.backup_20250523_021759",
+      "timestamp": "2025-05-23T15:07:21.473826",
+      "size": 5116
+    },
+    {
+      "type": "backup",
+      "file": "crontab_backup.txt",
+      "timestamp": "2025-05-23T02:14:28.881311",
+      "size": 1589
+    },
+    {
+      "type": "backup",
+      "file": "email_notifier.py.current_backup",
+      "timestamp": "2025-05-23T02:14:28.881311",
+      "size": 55055
+    },
+    {
+      "type": "backup",
+      "file": "device_control_test.py",
+      "timestamp": "2025-05-23T02:15:16.544953",
+      "size": 2945
+    },
+    {
+      "type": "backup",
+      "file": "email_notifier.py.backup_20250523_021759",
+      "timestamp": "2025-05-23T15:07:21.473826",
+      "size": 7143
+    },
+    {
+      "type": "backup",
+      "file": "single_register_test.py",
+      "timestamp": "2025-05-23T02:15:17.156949",
+      "size": 1309
+    },
+    {
+      "type": "backup",
+      "file": "email_notifier.py.weather_backup",
+      "timestamp": "2025-05-23T02:14:28.881311",
+      "size": 74220
+    }
+  ]
+}
