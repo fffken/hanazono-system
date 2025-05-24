@@ -150,21 +150,3 @@ HANAZONOシステム 簡易レポート
         except Exception as e:
             return f"エラー: レポート生成に失敗しました - {str(e)}"
 
-    def _generate_fallback_report(self, data):
-        """フォールバック用シンプルレポート生成"""
-        try:
-            battery_info = self._extract_battery_info(data)
-            return f"""
-HANAZONOシステム 簡易レポート
-
-バッテリー状態:
-- SOC: {battery_info.get('soc', 'N/A')}%
-- 電圧: {battery_info.get('voltage', 'N/A')}V
-
-データファイル: {data.get('source_file', 'N/A')}
-生成時刻: {data.get('timestamp', 'N/A')}
-
-※ 詳細レポート生成でエラーが発生したため、簡易版を表示しています。
-"""
-        except Exception as e:
-            return f"エラー: レポート生成に失敗しました - {str(e)}"
