@@ -125,3 +125,12 @@ class SettingsManager:
             "　夜　", "　夜遅く　", "　所により　",
             "　で　", "　から　", "　または　"
         ])
+
+    def get(self, key, default=None):
+        """設定値を取得するためのメソッド"""
+        return self._settings.get(key, default)
+
+    @property  
+    def settings(self):
+        """下位互換性のための settings プロパティ"""
+        return self._settings
