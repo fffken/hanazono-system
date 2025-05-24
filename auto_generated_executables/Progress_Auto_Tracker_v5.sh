@@ -4,7 +4,7 @@ echo "📊 進行状況自動追跡システム v5.0 開始..."
 echo "🎯 記憶喪失完全防止システム"
 
 # 追跡ファイル
-PROGRESS_TRACK="AUTO_PROGRESS_TRACKER_v5.md"
+PROGRESS_TRACK="PROGRESS_TRACKING_v5.md"
 TIMESTAMP=$(date)
 
 # 追跡レポートヘッダー

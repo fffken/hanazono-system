@@ -18,7 +18,7 @@ CURRENT_TIME=$(date)
 COMPLETED_SYSTEMS=$(ls auto_generated_executables/*.sh | wc -l)
 
 # 自動更新レポート生成
-cat > AUTO_PROGRESS_TRACKER_v5.md << UPDATE_EOF
+cat > PROGRESS_UPDATE_v5.md << UPDATE_EOF
 # 📊 進行状況自動追跡レポート v5.0
 
 **自動更新時刻**: $CURRENT_TIME
@@ -42,7 +42,7 @@ cat > AUTO_PROGRESS_TRACKER_v5.md << UPDATE_EOF
 UPDATE_EOF
 
 echo "✅ 進行状況自動更新完了"
-echo "📋 更新レポート: AUTO_PROGRESS_TRACKER_v5.md"
+echo "📋 更新レポート: PROGRESS_UPDATE_v5.md"
 
 # ULTIMATE_SYSTEM_REPORT自動更新
 echo "📋 最終レポート自動更新中..."

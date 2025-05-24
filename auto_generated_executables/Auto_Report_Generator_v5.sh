@@ -38,11 +38,11 @@ echo "✅ 統合レポートヘッダー生成完了"
 echo "🔗 GitHub API情報統合中..."
 
 # GitHub API v5.0の結果を統合
-if [ -f "GITHUB_API_COMPLETE_REPORT_v5.md" ]; then
+if [ -f "GITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoJQ_REPORT_v5.md" ]; then
     echo "" >> $INTEGRATED_REPORT
     echo "## 🔍 GitHub API完全解析結果" >> $INTEGRATED_REPORT
     echo "" >> $INTEGRATED_REPORT
-    cat GITHUB_API_COMPLETE_REPORT_v5.md >> $INTEGRATED_REPORT
+    cat GITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoJQ_REPORT_v5.md >> $INTEGRATED_REPORT
     echo "✅ GitHub API情報統合完了"
 else
     echo "⚠️ GitHub API レポートが見つかりません"

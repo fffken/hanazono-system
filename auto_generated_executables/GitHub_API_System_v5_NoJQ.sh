@@ -24,7 +24,7 @@ REPO="$GITHUB_REPO"
 API_BASE="https://api.github.com/repos/$REPO"
 
 # レポートファイル初期化
-REPORT_FILE="GITHUB_API_COMPLETE_REPORT_v5.md"
+REPORT_FILE="GITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoJQ_REPORT_v5.md"
 echo "# GitHub API完全活用システム v5.0 レポート" > $REPORT_FILE
 echo "**生成時刻**: $(date)" >> $REPORT_FILE
 echo "**リポジトリ**: $REPO" >> $REPORT_FILE
