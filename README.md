@@ -20,3 +20,63 @@ bash scripts/github_efficiency.sh
 
 ## ドキュメント
 詳細なドキュメントは「docs」ディレクトリに保存されています。
+
+## 🤖 AI引き継ぎ用クイックスタート
+
+新しいAIセッション開始時は、以下のコマンドを実行してください：
+
+\`\`\`bash
+# 完全引き継ぎ情報取得
+bash scripts/ai_handover_complete.sh
+\`\`\`
+
+### GitHub API利用方法
+\`\`\`python
+from github_auto_fetch import GitHubAutoFetch
+fetcher = GitHubAutoFetch()
+content = fetcher.get_file_content('ファイル名')
+\`\`\`
+
+### 重要設定
+- GitHubトークン: 自動設定済み
+- API権限: プライベートリポジトリアクセス可能
+- 有効期限: 2025年8月19日
+
+## 🤖 AI引き継ぎ用クイックスタート
+
+新しいAIセッション開始時は、以下のコマンドを実行してください：
+
+bash scripts/ai_handover_complete.sh
+
+### GitHub API利用方法
+Python環境で以下を実行：
+from github_auto_fetch import GitHubAutoFetch
+fetcher = GitHubAutoFetch()
+
+### 重要設定
+- GitHubトークン: 自動設定済み
+- API権限: プライベートリポジトリアクセス可能
+
+## 🤖 AI引き継ぎ用クイックスタート
+
+新しいAIセッション開始時は、以下のコマンドを実行してください：
+
+bash scripts/ai_handover_complete.sh
+
+### GitHub API利用方法
+Python環境で以下を実行：
+from github_auto_fetch import GitHubAutoFetch
+fetcher = GitHubAutoFetch()
+
+### 重要設定
+- GitHubトークン: 自動設定済み
+- API権限: プライベートリポジトリアクセス可能
+
+### GitHub API利用方法
+Python環境で以下を実行：
+from github_auto_fetch import GitHubAutoFetch
+fetcher = GitHubAutoFetch()
+
+### 重要設定
+- GitHubトークン: 自動設定済み
+- API権限: プライベートリポジトリアクセス可能
