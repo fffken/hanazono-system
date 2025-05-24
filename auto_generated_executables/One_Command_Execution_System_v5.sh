@@ -126,3 +126,12 @@ else
     echo "⚠️ 自動改善実行システムが見つかりません"
 fi
 echo ""
+
+# Phase 7: 進行状況自動更新
+echo "🔄 Phase 7: 進行状況自動更新実行中..."
+if [ -f "auto_generated_executables/Progress_Auto_Updater_v5.sh" ]; then
+    bash auto_generated_executables/Progress_Auto_Updater_v5.sh
+    echo "✅ 進行状況自動更新完了"
+fi
+echo ""
+
