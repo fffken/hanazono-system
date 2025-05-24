@@ -372,7 +372,6 @@ main() {
             update_auto_work_log
             update_ai_start_guide
             
-bash auto_generated_executables/Auto_Progress_Tracker.sh
             echo -e "${GREEN}=== 完全自動進行管理システム実行完了 ===${NC}"
             echo -e "${GREEN}🤖 AI自動判定: ${urgency_level}緊急度${NC}"
             echo -e "${GREEN}🔒 自動安全機能: 全て有効${NC}"
