@@ -1,6 +1,6 @@
 # AI用GitHub自動取得レポート v4.0（100点満点完全版）
 
-**生成時刻**: 2025-05-24 03:18:54
+**生成時刻**: 2025-05-24 15:04:45
 **目的**: 新しいAIセッション開始時の100%完全状況把握
 **完成度**: 🏆 **100点/100点満点達成**
 
@@ -8,9 +8,9 @@
 
 ### 📊 リポジトリ基本情報
 - **ブランチ**: main
-- **最新コミット**: 59ca252 🏆 世界初！AI完全把握システム100点満点達成
+- **最新コミット**: 4265548 🎉 完全版メールシステム実装完了 - 美しいHTMLメールテンプレート - 達成率評価システム - コスト計算・節約効果表示 - 絵文字豊富な視認性向上 - モチベーション維持機能
 - **リモートURL**: git@github.com:fffken/hanazono-system.git
-- **未コミット変更**: 16 件
+- **未コミット変更**: 21 件
 
 ### ⚠️ 未コミット変更詳細
 ```
@@ -20,25 +20,30 @@
  M PROJECT_STATUS.md
  M docs/WORK_LOG.md
  M docs/navigation/CLAUDE_START_HERE.md
-?? INTEGRATED_REVOLUTIONARY_REPORT.md
-?? ai_auto_fix_system.py
-?? monitoring_logs/
-?? prediction_data/
-?? prediction_models/
-?? prediction_reports/
-?? predictive_analysis_system.py
-?? scripts/integrated_revolutionary_system.sh
-?? scripts/realtime_monitor.sh
-?? system_backups/
+ M monitoring_logs/git_changes
+ M monitoring_logs/hash_email_notifier.py
+ M monitoring_logs/hash_settings.json
+ M scripts/ai_handover_complete.sh
+ M settings.json
+?? PROJECT_UNDERSTANDING.md
+?? connection_manager.py
+?? email_notifier.py.backup_20250524_100602
+?? monitoring_logs/backup_20250524_101936_email_notifier.py
+?? monitoring_logs/backup_20250524_102440_settings.json
+?? monitoring_logs/backup_20250524_120045_email_notifier.py
+?? monitoring_logs/backup_20250524_120549_settings.json
+?? monitoring_logs/backup_20250524_122059_settings.json
+?? scripts/verify_github_docs.sh
+?? system_backups/backup_20250524_145739/
 ```
 
 ### 📝 最近のコミット履歴（5件）
 ```
-59ca252 🏆 世界初！AI完全把握システム100点満点達成
-7fb43d0 🏆 GitHub自動取得システム v3.0完成
-45233d6 🚀 GitHub完全版自動取得システム完成
-7373e78 🎯 コード品質大幅改善
-4919140 🎯 AI完全自動化システム最終調整
+4265548 🎉 完全版メールシステム実装完了 - 美しいHTMLメールテンプレート - 達成率評価システム - コスト計算・節約効果表示 - 絵文字豊富な視認性向上 - モチベーション維持機能
+17f9a5b 🔧 GitHub完全連携システム構築 - GitHub API自動設定・認証システム - AI引き継ぎ完全自動化スクリプト - プライベートリポジトリアクセス確立
+c845232 📋 プロジェクトルール制定・健全性監視完成 - 20行以内コマンド制限ルール制定 - 制御された健全性チェック機能完成 - 定期監視(7時・19時)設定
+75b5ab2 🎉 バッテリー残量乖離問題完全解決 - email_notifier.py: タプルデータ構造対応、実際のSOC値表示 - settings.json: Modbusポートを8899に修正 - リアルタイムバッテリー残量37%を正確に表示
+f9f4e60 🔧 SettingsManager: get()メソッドとsettingsプロパティ追加 - EmailNotifier互換性修正
 ```
 
 ## 🔬 段階1: ファイル内容深掘り分析
@@ -134,17 +139,25 @@
     "email": {
       "enabled": true,
       "template": {
-        "subject": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-        "subject_with_warning": "\u26a0\ufe0f \u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-        "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011 \u8a2d\u5b9a\u63a8\u5968\u901a\u77e5",
-        "footer": "\u203b\u3053\u306e\u8a2d\u5b9a\u306f\u5929\u6c17\u4e88\u5831\u3068\u5b63\u7bc0\u306b\u57fa\u3065\u3044\u3066\u81ea\u52d5\u7684\u306b\u8a08\u7b97\u3055\u308c\u3066\u3044\u307e\u3059\u3002\n\u203b\u5b9f\u969b\u306e\u8a2d\u5b9a\u5909\u66f4\u306f\u624b\u52d5\u3067\u884c\u3046\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\n\n-----\n\u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u9001\u4fe1\u3055\u308c\u3066\u3044\u307e\u3059\u3002"
-      }
+        "subject": "【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+        "subject_with_warning": "⚠️ 【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+        "title": "【ソーラー蓄電システム】 設定推奨通知",
+        "footer": "※この設定は天気予報と季節に基づいて自動的に計算されています。\n※実際の設定変更は手動で行う必要があります。\n\n-----\n本メールは自動送信されています。"
+      },
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
+      "email_sender": "fffken@gmail.com",
+      "email_recipients": [
+        "fffken@gmail.com"
+      ],
+      "smtp_user": "fffken@gmail.com",
+      "smtp_password": "bbzpgdsvqlcemyxi"
     },
     "line": {
       "enabled": false,
       "template": {
-        "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968",
-        "footer": "\u203b\u81ea\u52d5\u8a08\u7b97\u3055\u308c\u305f\u63a8\u5968\u8a2d\u5b9a\u3067\u3059"
+        "title": "【ソーラー蓄電システム】設定推奨",
+        "footer": "※自動計算された推奨設定です"
       }
     },
     "telegram": {
@@ -152,48 +165,48 @@
       "bot_token": "",
       "chat_id": "",
       "template": {
-        "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968",
-        "footer": "\u203b\u81ea\u52d5\u8a08\u7b97\u3055\u308c\u305f\u63a8\u5968\u8a2d\u5b9a\u3067\u3059"
+        "title": "【ソーラー蓄電システム】設定推奨",
+        "footer": "※自動計算された推奨設定です"
       }
     }
   },
   "weather_connectors": [
-    "\u3000\u5f8c\u3000",
-    "\u3000\u306e\u3061\u3000",
-    "\u3000\u6642\u3005\u3000",
-    "\u3000\u4e00\u6642\u3000",
-    "\u3000\u591c\u3000",
-    "\u3000\u591c\u9045\u304f\u3000",
-    "\u3000\u6240\u306b\u3088\u308a\u3000",
-    "\u3000\u3067\u3000",
-    "\u3000\u304b\u3089\u3000",
-    "\u3000\u307e\u305f\u306f\u3000"
+    "　後　",
+    "　のち　",
+    "　時々　",
+    "　一時　",
+    "　夜　",
+    "　夜遅く　",
+    "　所により　",
+    "　で　",
+    "　から　",
+    "　または　"
   ],
   "weather_icons": {
-    "\u6674": "\u2600\ufe0f",
-    "\u6674\u308c": "\u2600\ufe0f",
-    "\u66c7": "\u2601\ufe0f",
-    "\u66c7\u308a": "\u2601\ufe0f",
-    "\u304f\u3082\u308a": "\u2601\ufe0f",
-    "\u96e8": "\ud83c\udf27\ufe0f",
-    "\u96ea": "\u2744\ufe0f",
-    "\u96f7": "\u26a1",
-    "\u9727": "\ud83c\udf2b\ufe0f"
+    "晴": "☀️",
+    "晴れ": "☀️",
+    "曇": "☁️",
+    "曇り": "☁️",
+    "くもり": "☁️",
+    "雨": "🌧️",
+    "雪": "❄️",
+    "雷": "⚡",
+    "霧": "🌫️"
   },
   "season_icons": {
-    "winter_early": "\ud83c\udf42\u2744\ufe0f",
-    "winter_mid": "\u2744\ufe0f\u2603\ufe0f",
-    "winter_late": "\u2744\ufe0f\ud83c\udf31",
-    "spring_early": "\ud83c\udf38\ud83c\udf31",
-    "spring_mid": "\ud83c\udf38\ud83c\udf37",
-    "spring_late": "\ud83c\udf3f\ud83c\udf26\ufe0f",
-    "rainy": "\u2614\ud83c\udf3f",
-    "summer_early": "\u2600\ufe0f\ud83c\udf3f",
-    "summer_mid": "\u2600\ufe0f\ud83c\udfd6\ufe0f",
-    "summer_late": "\u2600\ufe0f\ud83c\udf43",
-    "autumn_early": "\ud83c\udf41\ud83c\udf43",
-    "autumn_mid": "\ud83c\udf42\ud83c\udf41",
-    "autumn_late": "\ud83c\udf42\u2744\ufe0f"
+    "winter_early": "🍂❄️",
+    "winter_mid": "❄️☃️",
+    "winter_late": "❄️🌱",
+    "spring_early": "🌸🌱",
+    "spring_mid": "🌸🌷",
+    "spring_late": "🌿🌦️",
+    "rainy": "☔🌿",
+    "summer_early": "☀️🌿",
+    "summer_mid": "☀️🏖️",
+    "summer_late": "☀️🍃",
+    "autumn_early": "🍁🍃",
+    "autumn_mid": "🍂🍁",
+    "autumn_late": "🍂❄️"
   },
   "inverter": {
     "ip": "192.168.0.202",
@@ -229,38 +242,38 @@
     "key_registers": [
       {
         "address": "0x0100",
-        "name": "\u30d0\u30c3\u30c6\u30ea\u30fcSOC",
+        "name": "バッテリーSOC",
         "unit": "%",
         "factor": 1,
-        "emoji": "\ud83d\udd0b"
+        "emoji": "🔋"
       },
       {
         "address": "0x0101",
-        "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u96fb\u5727",
+        "name": "バッテリー電圧",
         "unit": "V",
         "factor": 0.1,
-        "emoji": "\u26a1"
+        "emoji": "⚡"
       },
       {
         "address": "0x0102",
-        "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u96fb\u6d41",
+        "name": "バッテリー電流",
         "unit": "A",
         "factor": 0.1,
-        "emoji": "\ud83d\udd0c"
+        "emoji": "🔌"
       },
       {
         "address": "0x020E",
-        "name": "\u6a5f\u5668\u72b6\u614b",
+        "name": "機器状態",
         "unit": "",
         "factor": 1,
-        "emoji": "\ud83d\udcca"
+        "emoji": "📊"
       },
       {
         "address": "0xE012",
-        "name": "\u30d6\u30fc\u30b9\u30c8\u5145\u96fb\u6642\u9593",
-        "unit": "\u5206",
+        "name": "ブースト充電時間",
+        "unit": "分",
         "factor": 1,
-        "emoji": "\u23f1\ufe0f"
+        "emoji": "⏱️"
       }
     ]
   },
@@ -271,7 +284,11 @@
   },
   "openweathermap": {
     "api_key": "f03c7c0d5051735e9af4a782d0be60c1",
-    "location": "\u9ad8\u677e\u5e02"
+    "location": "高松市"
+  },
+  "modbus": {
+    "port": 8899,
+    "host": "192.168.0.202"
   }
 }```
 
@@ -283,14 +300,25 @@
     "email": {
       "enabled": true,
       "template": {
-        "subject": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-        "subject_with_warning": "\u26a0\ufe0f \u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-        "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011 \u8a2d\u5b9a\u63a8\u5968\u901a\u77e5",
-        "footer": "\u203b\u3053\u306e\u8a2d\u5b9a\u306f\u5929\u6c17\u4e88\u5831\u3068\u5b63\u7bc0\u306b\u57fa\u3065\u3044\u3066\u81ea\u52d5\u7684\u306b\u8a08\u7b97\u3055\u308c\u3066\u3044\u307e\u3059\u3002\n\u203b\u5b9f\u969b\u306e\u8a2d\u5b9a\u5909\u66f4\u306f\u624b\u52d5\u3067\u884c\u3046\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\n\n-----\n\u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u9001\u4fe1\u3055\u308c\u3066\u3044\u307e\u3059\u3002"
-      }
+        "subject": "【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+        "subject_with_warning": "⚠️ 【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+        "title": "【ソーラー蓄電システム】 設定推奨通知",
+        "footer": "※この設定は天気予報と季節に基づいて自動的に計算されています。\n※実際の設定変更は手動で行う必要があります。\n\n-----\n本メールは自動送信されています。"
+      },
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
+      "email_sender": "fffken@gmail.com",
+      "email_recipients": [
+        "fffken@gmail.com"
+      ],
+      "smtp_user": "fffken@gmail.com",
+      "smtp_password": "bbzpgdsvqlcemyxi"
     },
     "line": {
       "enabled": false,
+      "template": {
+        "title": "【ソーラー蓄電システム】設定推奨",
+        "footer": "※自動計算された推奨設定です"
 --
     "subnet": "192.168.0.0/24"
   },
@@ -367,13 +395,13 @@
 --
       "enabled": true,
       "template": {
-        "subject": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-        "subject_with_warning": "\u26a0\ufe0f \u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-        "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011 \u8a2d\u5b9a\u63a8\u5968\u901a\u77e5",
-        "footer": "\u203b\u3053\u306e\u8a2d\u5b9a\u306f\u5929\u6c17\u4e88\u5831\u3068\u5b63\u7bc0\u306b\u57fa\u3065\u3044\u3066\u81ea\u52d5\u7684\u306b\u8a08\u7b97\u3055\u308c\u3066\u3044\u307e\u3059\u3002\n\u203b\u5b9f\u969b\u306e\u8a2d\u5b9a\u5909\u66f4\u306f\u624b\u52d5\u3067\u884c\u3046\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\n\n-----\n\u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u9001\u4fe1\u3055\u308c\u3066\u3044\u307e\u3059\u3002"
-      }
-    },
-    "line": {
+        "subject": "【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+        "subject_with_warning": "⚠️ 【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+        "title": "【ソーラー蓄電システム】 設定推奨通知",
+        "footer": "※この設定は天気予報と季節に基づいて自動的に計算されています。\n※実際の設定変更は手動で行う必要があります。\n\n-----\n本メールは自動送信されています。"
+      },
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
 --
   },
   "monitoring": {
@@ -381,7 +409,7 @@
     "key_registers": [
       {
         "address": "0x0100",
-        "name": "\u30d0\u30c3\u30c6\u30ea\u30fcSOC",
+        "name": "バッテリーSOC",
         "unit": "%",
 ```
 **閾値・制御設定:**
@@ -495,6 +523,7 @@ _hanazono_logger_instance = None
 #### 📬 メール設定・認証情報
 ```python
 import logging
+from enhanced_email_system import EnhancedEmailSystem
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -551,65 +580,31 @@ class EmailNotifier:
             return False
 
     def _generate_intelligent_report(self, data):
-        report = "=== HANAZONOシステム 最適化レポート ===\n"
-
+        """拡張版インテリジェントレポート生成"""
         try:
-            # 1. 天気予報取得
-            self.logger.info("天気予報を取得中...")
-            weather = get_weather_forecast()
---
-            # 3. 現在のバッテリー状態
+            # 天気予報取得
+            from weather_forecast import get_weather_forecast
+            weather_data = get_weather_forecast()
+            
+            # バッテリー情報取得
             battery_info = self._extract_battery_info(data)
-            report += f"\n■ 現在の状態"
-            report += f"\n{battery_info}\n"
-
-            # 4. 天気予報分析
-            report += f"\n■ 天気予報分析"
-            if weather:
-                today_weather = weather.get('today', {})
-                tomorrow_weather = weather.get('tomorrow', {})
-
-                report += f"\n今日: {today_weather.get('weather', 'データなし')}"
-                report += f"\n明日: {tomorrow_weather.get('weather', 'データなし')}\n"
-
-                # 5. 最適化推奨（HANAZONOシステムの核心機能）
-                try:
-                    season_detail, setting_type, params = self.settings_recommender.recommend_settings(
-                        weather)
-                    report += f"\n■ 推奨設定"
-                    report += f"\ntypeA（標準設定）"
-                    report += f"\n設定項目\t推奨値\tパラメータID"
-                    report += f"\n充電電流\t{params.get('charge_current', 'N/A')} A\t07"
-                    report += f"\n充電時間\t{params.get('charge_time', 'N/A')} 分\t10"
-                    report += f"\nSOC設定\t{params.get('soc', 'N/A')} %\t62\n"
-                except Exception as e:
-                    report += f"■ 推奨設定\n推奨設定取得エラー: {e}\n"
-
-                # 6. 最適化推奨（運用アドバイス）
-                recommendations = self._generate_recommendations(
-                    weather, season, battery_info)
-
-            else:
-                report += "\n天気データ取得失敗\n"
-                report += f"■ 最適化推奨"
-                report += "\n天気データなしのため基本推奨を適用\n"
-
-            # 6. システム状態
-            report += f"\n■ システム情報"
-            report += f"\n季節判定: {season} ({detailed_season})"
-            report += f"\nデータ更新: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-
+            
+            # 拡張システムでHTMLレポート生成
+            html_report = self.enhanced_system.generate_complete_report(
+                data, weather_data, battery_info
+            )
+            
+            return html_report
+            
         except Exception as e:
-            self.logger.error(f"レポート生成エラー: {e}")
-            report += f"レポート生成中にエラーが発生しました: {e}\n"
-
-        report += "\n--- HANAZONOシステム 自動最適化 ---"
-        return report
-
+            self.logger.error(f"拡張レポート生成エラー: {e}")
+            # フォールバック：従来のテキストレポート
+            return self._generate_fallback_report(data)
+    
     def _extract_battery_info(self, data):
-        """バッテリー情報を抽出"""
-        if 'solar_data' in data and data['solar_data']:
-            solar_data = data['solar_data']
+        """バッテリー情報を抽出（修正版）"""
+        try:
+            if isinstance(data, tuple) and len(data) > 0:
 ```
 
 #### 🚀 メール送信ロジック
@@ -653,43 +648,37 @@ class EmailNotifier:
             return False
 
     def _generate_intelligent_report(self, data):
-        report = "=== HANAZONOシステム 最適化レポート ===\n"
-
+        """拡張版インテリジェントレポート生成"""
         try:
-            # 1. 天気予報取得
-            self.logger.info("天気予報を取得中...")
-            weather = get_weather_forecast()
-
-            # 2. 季節判定
+            # 天気予報取得
+            from weather_forecast import get_weather_forecast
+            weather_data = get_weather_forecast()
+            
+            # バッテリー情報取得
 --
-
-                # 5. 最適化推奨（HANAZONOシステムの核心機能）
-                try:
-                    season_detail, setting_type, params = self.settings_recommender.recommend_settings(
-                        weather)
-                    report += f"\n■ 推奨設定"
-                    report += f"\ntypeA（標準設定）"
-                    report += f"\n設定項目\t推奨値\tパラメータID"
---
-                    report += f"\n充電時間\t{params.get('charge_time', 'N/A')} 分\t10"
-                    report += f"\nSOC設定\t{params.get('soc', 'N/A')} %\t62\n"
-                except Exception as e:
-                    report += f"■ 推奨設定\n推奨設定取得エラー: {e}\n"
-
-                # 6. 最適化推奨（運用アドバイス）
-                recommendations = self._generate_recommendations(
-                    weather, season, battery_info)
---
-            report += f"\nデータ更新: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-
+            return html_report
+            
         except Exception as e:
-            self.logger.error(f"レポート生成エラー: {e}")
-            report += f"レポート生成中にエラーが発生しました: {e}\n"
-
-        report += "\n--- HANAZONOシステム 自動最適化 ---"
-        return report
-
+            self.logger.error(f"拡張レポート生成エラー: {e}")
+            # フォールバック：従来のテキストレポート
+            return self._generate_fallback_report(data)
+    
+    def _extract_battery_info(self, data):
+        """バッテリー情報を抽出（修正版）"""
+        try:
+            if isinstance(data, tuple) and len(data) > 0:
+                actual_data = data[0]
+            elif isinstance(data, dict):
+                actual_data = data
+            else:
 --
+            else:
+                return "バッテリー情報: parametersが見つかりません"
+        except Exception as e:
+            return f"バッテリー情報取得エラー: {e}"
+
+    def _generate_recommendations(self, weather, season, battery_info):
+        """天気予報と季節に基づく最適化推奨を生成"""
         recommendations = []
 
         try:
@@ -965,9 +954,9 @@ if __name__ == "__main__":
 
 **./solar_control.log:**
 ```
-2025-05-24 03:16:30,152 - INFO - スケジューラ: 現在時刻 2025-05-24 03:16:30
-2025-05-24 03:17:30,153 - INFO - スケジューラ: 現在時刻 2025-05-24 03:17:30
-2025-05-24 03:18:30,155 - INFO - スケジューラ: 現在時刻 2025-05-24 03:18:30
+2025-05-24 15:02:32,960 - INFO - スケジューラ: 現在時刻 2025-05-24 15:02:32
+2025-05-24 15:03:32,962 - INFO - スケジューラ: 現在時刻 2025-05-24 15:03:32
+2025-05-24 15:04:32,963 - INFO - スケジューラ: 現在時刻 2025-05-24 15:04:32
 ```
 
 **./predictive_analysis.log:**
@@ -1012,17 +1001,17 @@ J������W�n�5�5������g�';�<�<�� ���G�d� #� #� #� #� !� �
 
 #### 🐍 Python関連プロセス
 ```
-pi           462  0.0  0.7  19192  3384 ?        Ss   May06   0:38 python /home/pi/lvyuan_solar_control/solar_control_scheduler.py
+pi           462  0.0  1.0  19192  4412 ?        Ss   May06   0:39 python /home/pi/lvyuan_solar_control/solar_control_scheduler.py
 ```
 
 #### 💾 システムリソース状況
 ```
 === CPU・メモリ使用状況 ===
-top - 03:18:57 up 17 days,  5:48,  1 user,  load average: 0.00, 0.07, 0.07
-Tasks: 146 total,   1 running, 145 sleeping,   0 stopped,   0 zombie
+top - 15:04:49 up 17 days, 17:34,  1 user,  load average: 0.00, 0.01, 0.00
+Tasks: 148 total,   1 running, 147 sleeping,   0 stopped,   0 zombie
 %Cpu(s): 14.3 us, 14.3 sy,  0.0 ni, 71.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
-MiB Mem :    416.8 total,    127.8 free,    148.4 used,    200.4 buff/cache     
-MiB Swap:    512.0 total,    466.1 free,     45.9 used.    268.4 avail Mem 
+MiB Mem :    416.8 total,    116.5 free,    158.5 used,    202.9 buff/cache     
+MiB Swap:    512.0 total,    469.1 free,     42.8 used.    258.2 avail Mem 
 
 === ディスク使用状況 ===
 Filesystem      Size  Used Avail Use% Mounted on
@@ -1037,8 +1026,8 @@ tmpfs           209M     0  209M   0% /dev/shm
 #### 📅 重要ファイルの最終更新時刻
 ```
 main.py: 2025-05-23 02:14:48.657158467 +0900
-email_notifier.py: 2025-05-23 02:17:59.747963182 +0900
-settings_manager.py: 2025-05-23 02:17:59.923962285 +0900
+email_notifier.py: 2025-05-24 12:00:37.471863493 +0900
+settings_manager.py: 2025-05-24 09:44:52.900293633 +0900
 lvyuan_collector.py: 2025-05-23 02:14:59.325078596 +0900
 ```
 
@@ -1048,6 +1037,8 @@ lvyuan_collector.py: 2025-05-23 02:14:59.325078596 +0900
 0 7 * * * /bin/bash -c "cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --daily-report" >> /home/pi/lvyuan_solar_control/logs/cron_daily_report_morning.log 2>&1
 0 23 * * * /bin/bash -c "cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --daily-report" >> /home/pi/lvyuan_solar_control/logs/cron_daily_report_night.log 2>&1
 0 0 * * * cd /home/pi/lvyuan_solar_control && bash scripts/auto_update/update_handover.sh
+0 7,19 * * * cd /home/pi/lvyuan_solar_control && python3 -c 'from system_health_monitor import run_controlled_health_check; run_controlled_health_check()' >> logs/daily_health.log 2>&1
+0 7,19 * * * cd /home/pi/lvyuan_solar_control && python3 -c 'from system_health_monitor import run_controlled_health_check; run_controlled_health_check()' >> logs/daily_health.log 2>&1
 ```
 
 ## 🌍 段階3: 詳細環境情報確認（2点向上）
@@ -1153,14 +1144,14 @@ vulture            2.14
 === システム基本情報 ===
 OS: Linux solarpi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64 GNU/Linux
 Hostname: solarpi
-Uptime:  03:19:04 up 17 days,  5:48,  1 user,  load average: 0.15, 0.10, 0.08
+Uptime:  15:04:55 up 17 days, 17:34,  1 user,  load average: 0.16, 0.04, 0.01
 Current user: pi
 Working directory: /home/pi/lvyuan_solar_control
 
 === メモリ使用状況詳細 ===
                total        used        free      shared  buff/cache   available
-Mem:           416Mi       149Mi       129Mi       8.0Ki       198Mi       267Mi
-Swap:          511Mi        45Mi       466Mi
+Mem:           416Mi       156Mi       122Mi       8.0Ki       198Mi       259Mi
+Swap:          511Mi        42Mi       469Mi
 
 === ディスク使用状況詳細 ===
 Filesystem      Size  Used Avail Use% Mounted on
@@ -1204,13 +1195,14 @@ Core(s) per cluster:                  4
 ```
 === 重要ファイルの権限 ===
 -rw-r--r-- 1 pi pi 12377 May 23 02:14 main.py
--rw-r--r-- 1 pi pi 7143 May 23 02:17 email_notifier.py
--rw-r--r-- 1 pi pi 6459 May 21 00:40 settings.json
+-rw-r--r-- 1 pi pi 5734 May 24 12:00 email_notifier.py
+-rw-r--r-- 1 pi pi 5666 May 24 12:17 settings.json
 
 === 実行権限確認 ===
 -rwxr-xr-x 1 pi pi 13978 May 24 01:13 scripts/master_progress_controller.sh
 -rwxr-xr-x 1 pi pi 1349 May 17 16:57 scripts/github_efficiency.sh
 -rwxr-xr-x 1 pi pi 1469 May 10 19:39 scripts/fix_dates.sh
+-rwxr-xr-x 1 pi pi 97 May 24 11:24 scripts/ai_github_fetch.sh
 -rwxr-xr-x 1 pi pi 941 May 24 01:13 scripts/setup_auto_update.sh
 -rwxr-xr-x 1 pi pi 5992 May 17 16:06 scripts/generate_handover.sh
 -rwxr-xr-x 1 pi pi 4043 May 11 18:39 scripts/fix_indentation.sh
@@ -1219,8 +1211,10 @@ Core(s) per cluster:                  4
 -rwxr-xr-x 1 pi pi 1538 May 11 12:27 scripts/fix_script.sh
 -rwxr-xr-x 1 pi pi 1007 May 17 15:05 scripts/project_status.sh
 -rwxr-xr-x 1 pi pi 10611 May 23 01:48 scripts/ai_code_analyzer.sh
+-rwxr-xr-x 1 pi pi 344 May 24 11:28 scripts/setup_github.sh
 -rwxr-xr-x 1 pi pi 25373 May 24 01:42 scripts/github_auto_fetch.sh
 -rwxr-xr-x 1 pi pi 1443 May 17 15:05 scripts/organize_files.sh
+-rwxr-xr-x 1 pi pi 685 May 24 14:54 scripts/verify_github_docs.sh
 -rwxr-xr-x 1 pi pi 4281 May  2 17:01 scripts/fix_email_notifier.sh
 -rwxr-xr-x 1 pi pi 1327 May 17 20:14 scripts/generate_handover_pack.sh
 -rwxr-xr-x 1 pi pi 491 May 17 17:04 scripts/backup_file.sh
@@ -1237,6 +1231,7 @@ Core(s) per cluster:                  4
 -rwxr-xr-x 1 pi pi 0 May 17 16:11 scripts/handover/part3.sh
 -rwxr-xr-x 1 pi pi 1272 May 17 16:12 scripts/handover/part2.sh
 -rwxr-xr-x 1 pi pi 1456 May 17 14:06 scripts/restore_email_template.sh
+-rwxr-xr-x 1 pi pi 1606 May 24 14:54 scripts/ai_handover_complete.sh
 -rwxr-xr-x 1 pi pi 4498 May 23 00:51 scripts/version_manager.sh
 -rwxr-xr-x 1 pi pi 10856 May 24 02:12 scripts/integrated_revolutionary_system.sh
 -rwxr-xr-x 1 pi pi 1377 May 17 16:06 scripts/handover_part1.sh
@@ -1257,19 +1252,34 @@ Core(s) per cluster:                  4
     "email": {
       "enabled": true,
       "template": {
-        "subject": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-        "subject_with_warning": "\u26a0\ufe0f \u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-        "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011 \u8a2d\u5b9a\u63a8\u5968\u901a\u77e5",
-        "footer": "\u203b\u3053\u306e\u8a2d\u5b9a\u306f\u5929\u6c17\u4e88\u5831\u3068\u5b63\u7bc0\u306b\u57fa\u3065\u3044\u3066\u81ea\u52d5\u7684\u306b\u8a08\u7b97\u3055\u308c\u3066\u3044\u307e\u3059\u3002\n\u203b\u5b9f\u969b\u306e\u8a2d\u5b9a\u5909\u66f4\u306f\u624b\u52d5\u3067\u884c\u3046\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\n\n-----\n\u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u9001\u4fe1\u3055\u308c\u3066\u3044\u307e\u3059\u3002"
-      }
+        "subject": "【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+        "subject_with_warning": "⚠️ 【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+        "title": "【ソーラー蓄電システム】 設定推奨通知",
+        "footer": "※この設定は天気予報と季節に基づいて自動的に計算されています。\n※実際の設定変更は手動で行う必要があります。\n\n-----\n本メールは自動送信されています。"
+      },
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
+      "email_sender": "fffken@gmail.com",
+      "email_recipients": [
+        "fffken@gmail.com"
+      ],
+      "smtp_user": "fffken@gmail.com",
+      "smtp_password": "bbzpgdsvqlcemyxi"
     },
     "line": {
       "enabled": false,
       "template": {
-        "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968",
-        "footer": "\u203b\u81ea\u52d5\u8a08\u7b97\u3055\u308c\u305f\u63a8\u5968\u8a2d\u5b9a\u3067\u3059"
+        "title": "【ソーラー蓄電システム】設定推奨",
+        "footer": "※自動計算された推奨設定です"
       }
     },
+    "telegram": {
+      "enabled": false,
+      "bot_token": "",
+      "chat_id": "",
+      "template": {
+        "title": "【ソーラー蓄電システム】設定推奨",
+        "footer": "※自動計算された推奨設定です"
 --
     "mb_slave_id": 1
   },
@@ -1300,14 +1310,14 @@ Core(s) per cluster:                  4
     "key_registers": [
       {
         "address": "0x0100",
-        "name": "\u30d0\u30c3\u30c6\u30ea\u30fcSOC",
+        "name": "バッテリーSOC",
         "unit": "%",
         "factor": 1,
-        "emoji": "\ud83d\udd0b"
+        "emoji": "🔋"
       },
       {
         "address": "0x0101",
-        "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u96fb\u5727",
+        "name": "バッテリー電圧",
         "unit": "V",
 ✅ settings.jsonにメール設定が存在
 ```
@@ -1316,6 +1326,7 @@ Core(s) per cluster:                  4
 ```python
 === SMTP設定確認 ===
 import logging
+from enhanced_email_system import EnhancedEmailSystem
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -1417,14 +1428,14 @@ class EmailNotifier:
 ```markdown
 # HANAZONOシステム プロジェクト状態 (完全自動生成)
 
-**最終更新**: 2025-05-24 03:10:54
-**セッションID**: 20250524_031054
+**最終更新**: 2025-05-24 14:57:39
+**セッションID**: 20250524_145739
 **緊急度レベル**: 通常
 
 ## 🤖 AI自動分析結果
 - **現在のフェーズ**: 開発作業中（未コミット: 16件）
 - **Git状態**: 16 files changed
-- **最新コミット**: 59ca252 🏆 世界初！AI完全把握システム100点満点達成
+- **最新コミット**: 4265548 🎉 完全版メールシステム実装完了 - 美しいHTMLメールテンプレート - 達成率評価システム - コスト計算・節約効果表示 - 絵文字豊富な視認性向上 - モチベーション維持機能
 - **AI推奨アクション**: 適切なタイミングでのコミット推奨
 
 ## 🔒 自動安全機能状態
@@ -1439,10 +1450,10 @@ class EmailNotifier:
 
 ### 📄 HANDOVER_PROMPT.md
 ```markdown
-# v20_HANAZONOシステム／完全自動記憶継承プロンプト-2025-05-24
+# v22_HANAZONOシステム／完全自動記憶継承プロンプト-2025-05-24
 
-**自動生成**: 2025-05-24 03:10:54
-**セッションID**: 20250524_031054
+**自動生成**: 2025-05-24 14:57:39
+**セッションID**: 20250524_145739
 **緊急度**: 通常
 
 ## ⚡ AI自動実行必須手順（人間の記憶不要）
@@ -1463,9 +1474,9 @@ cat AI_AUTOMATIC_INSTRUCTIONS.md
 
 ### 📄 AI_AUTOMATIC_INSTRUCTIONS.md
 ```markdown
-# AI自動作業指示書 - セッション20250524_031054
+# AI自動作業指示書 - セッション20250524_145739
 
-**生成時刻**: 2025-05-24 03:10:54
+**生成時刻**: 2025-05-24 14:57:39
 **緊急度**: 通常
 
 ## 🤖 AIが自動実行すべき必須アクション
@@ -1475,7 +1486,7 @@ cat AI_AUTOMATIC_INSTRUCTIONS.md
 
 ### システム自動確認項目
 1. **Git状態確認**: 16 files changed
-2. **最新コミット**: 59ca252 🏆 世界初！AI完全把握システム100点満点達成
+2. **最新コミット**: 4265548 🎉 完全版メールシステム実装完了 - 美しいHTMLメールテンプレート - 達成率評価システム - コスト計算・節約効果表示 - 絵文字豊富な視認性向上 - モチベーション維持機能
 3. **フェーズ判定**: 開発作業中（未コミット: 16件）
 4. **推奨アクション**: 適切なタイミングでのコミット推奨
 

@@ -27,15 +27,6 @@ for check, result in health['checks'].items():
 echo ""
 
 # 4. GitHub API動作確認
-echo "【5. GitHubトークン状況】"
-echo "トークン: HANAZONOシステム用"
-echo "有効期限: 2025年8月19日"
-if command -v gh >/dev/null 2>&1; then
-    echo "状態: $(gh auth status 2>/dev/null && echo '有効' || echo '要確認')"
-else
-    echo "状態: gh CLI未インストール - Python APIで確認中"
-fi
-echo ""
 echo "【4. GitHub API動作確認】"
 python3 -c "
 from github_auto_fetch import GitHubAutoFetch

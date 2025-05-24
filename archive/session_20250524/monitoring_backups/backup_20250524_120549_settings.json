@@ -94,12 +94,10 @@
       },
       "smtp_server": "smtp.gmail.com",
       "smtp_port": 587,
-      "email_sender": "fffken@gmail.com",
+      "email_sender": "your-email@gmail.com",
       "email_recipients": [
-        "fffken@gmail.com"
-      ],
-      "smtp_user": "fffken@gmail.com",
-      "smtp_password": "bbzpgdsvqlcemyxi"
+        "recipient@example.com"
+      ]
     },
     "line": {
       "enabled": false,
