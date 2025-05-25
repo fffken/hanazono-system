@@ -201,5 +201,42 @@ ID07: {ai['ID07']}A  ID10: {ai['ID10']}分  ID62: {ai['ID62']}%
         except Exception as e:
             return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
 
+    def _battle_results_section(self):
+        """人間 vs AI 対戦成績セクション"""
+        if not hasattr(self, 'ai_db') or not self.ai_db:
+            return ""
+        
+        try:
+            from ai_learning_database import AILearningDatabase
+            if not self.ai_db:
+                self.ai_db = AILearningDatabase()
+            
+            stats = self.ai_db.get_battle_statistics()
+            if stats['total_battles'] == 0:
+                return ""
+            
+            recent_battles = self.ai_db.get_recent_battles(3)
+            recent_text = ""
+            for battle in recent_battles:
+                date = battle[0]
+                winner = battle[8] 
+                savings = battle[9]
+                winner_emoji = "🏆" if winner == "human" else "🤖"
+                recent_text += f"  {date}: {winner_emoji} ¥{int(savings)}\n"
+            
+            return f"""
+🔥 人間 vs AI 対戦成績
+--------------------
+📊 総対戦数: {stats['total_battles']}戦
+🥇 人間の知恵: {stats['human_wins']}勝 ({stats['human_win_rate']}%)
+🥈 AI学習: {stats['ai_wins']}勝 ({stats['ai_win_rate']}%)
+💰 平均節約: ¥{stats['avg_savings']}/日
+
+📈 最近の対戦結果:
+{recent_text.rstrip()}"""
+            
+        except Exception as e:
+            return ""
+
 # 互換性のためのエイリアス
 EnhancedEmailSystem = EnhancedEmailSystemV2
