@@ -169,3 +169,53 @@ class EmailNotifier:
         report += "\n--- HANAZONOシステム 自動最適化 ---"
         return report
 
+    def _extract_battery_info(self, data):
+        """バッテリー情報を抽出（安全版）"""
+        try:
+            if isinstance(data, tuple) and len(data) > 0:
+                actual_data = data[0]
+            elif isinstance(data, dict):
+                actual_data = data
+            else:
+                return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
+            
+            if isinstance(actual_data, dict) and 'parameters' in actual_data:
+                params = actual_data['parameters']
+                return {
+                    'soc': params.get('バッテリーSOC', 'N/A'),
+                    'voltage': params.get('バッテリー電圧', 'N/A'),
+                    'current': params.get('バッテリー電流', 'N/A')
+                }
+            else:
+                return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
+                
+        except Exception as e:
+            return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
+    def _generate_recommendations(self, weather, season, battery_info):
+        """天気予報と季節に基づく最適化推奨を生成"""
+        recommendations = []
+
+        try:
+            if weather:
+                tomorrow = weather.get('tomorrow', {})
+                condition = tomorrow.get('weather', '')
+
+                if '雨' in condition or '曇' in condition:
+                    recommendations.append("☔ 明日は発電量低下予想")
+                    recommendations.append("→ 今夜の放電を控えめに設定推奨")
+                    recommendations.append("→ バッテリー残量80%以上を維持")
+
+                elif '晴' in condition:
+                    recommendations.append("☀️ 明日は好天で高発電予想")
+                    recommendations.append("→ 今夜は積極的放電OK")
+                    recommendations.append("→ バッテリー残量50%程度まで使用可能")
+
+                if season == '夏':
+                    recommendations.append("🌞 夏期間: 午後の高温による効率低下注意")
+                elif season == '冬':
+                    recommendations.append("❄️ 冬期間: 朝の霜・積雪チェック推奨")
+
+            return "\n".join(recommendations) if recommendations else "標準運用を継続"
+
+        except Exception as e:
+            return f"推奨生成エラー: {e}"

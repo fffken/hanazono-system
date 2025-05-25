@@ -200,3 +200,6 @@ ID07: {ai['ID07']}A  ID10: {ai['ID10']}分  ID62: {ai['ID62']}%
                 
         except Exception as e:
             return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
+
+# 互換性のためのエイリアス
+EnhancedEmailSystem = EnhancedEmailSystemV2

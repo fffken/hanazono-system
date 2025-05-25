@@ -1,6 +1,6 @@
 # AI用GitHub自動取得レポート v4.0（100点満点完全版）
 
-**生成時刻**: 2025-05-25 10:34:38
+**生成時刻**: 2025-05-25 19:30:09
 **目的**: 新しいAIセッション開始時の100%完全状況把握
 **完成度**: 🏆 **100点/100点満点達成**
 
@@ -8,9 +8,9 @@
 
 ### 📊 リポジトリ基本情報
 - **ブランチ**: main
-- **最新コミット**: 496bbf9 🏆 AI記憶喪失防止システム100点満点達成 - 2025-05-25 02:03
+- **最新コミット**: e0999a0 🌤️ 天気予報・絵文字機能改善完了
 - **リモートURL**: git@github.com:fffken/hanazono-system.git
-- **未コミット変更**: 32 件
+- **未コミット変更**: 19 件
 
 ### ⚠️ 未コミット変更詳細
 ```
@@ -18,43 +18,30 @@
  M AI_GITHUB_AUTO_REPORT.md
  M HANDOVER_PROMPT.md
  M PROJECT_STATUS.md
- M auto_generated_executables/Syntax_Error_Auto_Fixer.sh
  M docs/WORK_LOG.md
  M docs/navigation/CLAUDE_START_HERE.md
  M email_notifier.py
- M enhanced_email_system.py
- D enhanced_email_system_before_fix.py
+ M enhanced_email_system_v2.py
  M monitoring_logs/git_changes
  M monitoring_logs/hash_email_notifier.py
-?? .last_backup_location
-?? CRITICAL_DEVELOPMENT_RULES.md
-?? CURRENT_OBJECTIVE.md
-?? auto_generated_executables/Auto_Backup_Recovery_System.sh
-?? auto_generated_executables/Auto_Problem_Detector_Fixer.sh
-?? auto_generated_executables/Consistency_Assurance_System.sh
-?? auto_generated_executables/Email_Display_Fix.sh
-?? auto_generated_executables/Email_Format_Fix.sh
-?? auto_generated_executables/HTML_Content_Fix.sh
-?? auto_generated_executables/Line_Split_Rule_System.sh
-?? auto_generated_executables/No_Regression_Prevention_System.sh
-?? backup_list.tmp
-?? backup_scores.tmp
-?? monitoring_logs/backup_20250525_022537_email_notifier.py
-?? monitoring_logs/backup_20250525_025558_email_notifier.py
-?? monitoring_logs/backup_20250525_040647_email_notifier.py
-?? monitoring_logs/backup_20250525_101601_email_notifier.py
-?? monitoring_logs/backup_20250525_102104_email_notifier.py
-?? safety_backups/
-?? system_backups/backup_20250525_103056/
+?? AI_LEARNING_DATABASE_COMPLETION_RECORD.md
+?? WEATHER_EMOJI_IMPROVEMENT_RECORD.md
+?? ai_learning_database.py
+?? data/ai_learning.db
+?? design_violation_detector.py
+?? enhanced_email_system_v2_temp.py
+?? monitoring_logs/backup_20250525_185154_email_notifier.py
+?? monitoring_logs/backup_20250525_192718_email_notifier.py
+?? system_backups/backup_20250525_191549/
 ```
 
 ### 📝 最近のコミット履歴（5件）
 ```
+e0999a0 🌤️ 天気予報・絵文字機能改善完了
+064b850 🏆 13:39レベル高機能メール完全復活成功！
+78bf9fd 🏆 Enhanced Email System v2.0 完成 - 13:39レベル高機能メール復活
 496bbf9 🏆 AI記憶喪失防止システム100点満点達成 - 2025-05-25 02:03
 483d82a 🎯 Work_Progress_Tracker v1.0完成！記憶喪失防止+7点改善達成
-9fa91ee 🔮 ユーザーパターン予測システム計画保存 - 思考先読みAIパートナー実現計画
-6d25e42 🧠 AIの記憶喪失防止システム分析完了 - 100点満点評価・優先順位付き改善計画
-7e3898c 🎉 真の100%完成達成！統合検証＆自動修正システム成功 ✅ 全ファイル競合自動解決 ✅ 完全自動検証・修正・再検証サイクル実現 🏆 HANAZONOシステム究極完成
 ```
 
 ## 🔬 段階1: ファイル内容深掘り分析
@@ -544,7 +531,7 @@ def strip_html_tags(html_content):
 --
     return text.strip()
 
-# from enhanced_email_system import EnhancedEmailSystem
+from enhanced_email_system_v2 import EnhancedEmailSystem
 import logging
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -579,7 +566,7 @@ class EmailNotifier:
             # インテリジェントレポート生成
             now = datetime.datetime.now()
 --
-            subject = f"HANAZONOシステム最適化レポート {date_str} {time_suffix}"
+            subject = f"{season_emoji} HANAZONOシステム最適化レポート {date_str} {time_suffix}"
 
             text_content = self._generate_intelligent_report(data)
 
@@ -603,24 +590,26 @@ class EmailNotifier:
 
     def _generate_intelligent_report(self, data):
         try:
-            from weather_forecast import get_weather_forecast
-            weather_data = get_weather_forecast()
-            battery_info = self._extract_battery_info(data)
+            # 天気データ取得（エラー時はNoneを返す）
+            try:
+                from weather_forecast import get_weather_forecast
+                weather_data = get_weather_forecast()
+            except Exception as e:
+                self.logger.warning(f"天気データ取得エラー: {e}")
+                weather_data = None
             
-            html_report = self.enhanced_system.generate_complete_report(
+--
+            
+            # EnhancedEmailSystemV2でレポート生成
+            report = self.enhanced_system.generate_complete_report(
                 data, weather_data, battery_info
             )
             
-            import re
-            text_report = re.sub(r'<[^>]+>', '', html_report)
-            text_report = text_report.replace('&nbsp;', ' ')
-            text_report = re.sub(r'\n\s*\n', '\n\n', text_report)
-            return text_report.strip()
-            
+            return report
+
         except Exception as e:
             self.logger.error(f"Enhanced report error: {e}")
-            return "Enhanced report generation failed"
-    
+            return self._generate_fallback_report(data)
     def _generate_fallback_report(self, data):
         report = "=== HANAZONOシステム 最適化レポート ===\n"
 
@@ -630,7 +619,7 @@ class EmailNotifier:
             weather = get_weather_forecast()
 --
             # 3. 現在のバッテリー状態
-            battery_info = self._extract_battery_info(data)
+            battery_info = self.enhanced_system._extract_battery_info(data)
             report += f"\n■ 現在の状態"
             report += f"\n{battery_info}\n"
 
@@ -677,10 +666,6 @@ class EmailNotifier:
         report += "\n--- HANAZONOシステム 自動最適化 ---"
         return report
 
-    def _extract_battery_info(self, data):
-        """バッテリー情報を抽出（修正版）"""
-        try:
-            if isinstance(data, tuple) and len(data) > 0:
 ```
 
 #### 🚀 メール送信ロジック
@@ -725,18 +710,22 @@ class EmailNotifier:
 
     def _generate_intelligent_report(self, data):
         try:
-            from weather_forecast import get_weather_forecast
-            weather_data = get_weather_forecast()
-            battery_info = self._extract_battery_info(data)
+            # 天気データ取得（エラー時はNoneを返す）
+            try:
+                from weather_forecast import get_weather_forecast
+                weather_data = get_weather_forecast()
+            except Exception as e:
+                self.logger.warning(f"天気データ取得エラー: {e}")
+                weather_data = None
             
-            html_report = self.enhanced_system.generate_complete_report(
+            # enhanced_system_v2の_extract_battery_infoメソッドを使用
+            battery_info = self.enhanced_system._extract_battery_info(data)
 --
-            return text_report.strip()
-            
+            return report
+
         except Exception as e:
             self.logger.error(f"Enhanced report error: {e}")
-            return "Enhanced report generation failed"
-    
+            return self._generate_fallback_report(data)
     def _generate_fallback_report(self, data):
         report = "=== HANAZONOシステム 最適化レポート ===\n"
 
@@ -774,35 +763,6 @@ class EmailNotifier:
         report += "\n--- HANAZONOシステム 自動最適化 ---"
         return report
 
-    def _extract_battery_info(self, data):
-        """バッテリー情報を抽出（修正版）"""
-        try:
-            if isinstance(data, tuple) and len(data) > 0:
-                actual_data = data[0]
-            elif isinstance(data, dict):
-                actual_data = data
-            else:
---
-            else:
-                return "バッテリー情報: parametersが見つかりません"
-        except Exception as e:
-            return f"バッテリー情報取得エラー: {e}"
-
-    def _generate_recommendations(self, weather, season, battery_info):
-        """天気予報と季節に基づく最適化推奨を生成"""
-        recommendations = []
-
-        try:
-            if weather:
-                tomorrow = weather.get('tomorrow', {})
-                condition = tomorrow.get('weather', '')
-
-                if '雨' in condition or '曇' in condition:
---
-            return "\n".join(recommendations) if recommendations else "標準運用を継続"
-
-        except Exception as e:
-            return f"推奨生成エラー: {e}"
 ```
 
 ### 🔌 lvyuan_collector.py データ収集詳細分析
@@ -1065,9 +1025,9 @@ if __name__ == "__main__":
 
 **./solar_control.log:**
 ```
-2025-05-25 10:32:37,516 - INFO - スケジューラ: 現在時刻 2025-05-25 10:32:37
-2025-05-25 10:33:37,517 - INFO - スケジューラ: 現在時刻 2025-05-25 10:33:37
-2025-05-25 10:34:37,519 - INFO - スケジューラ: 現在時刻 2025-05-25 10:34:37
+2025-05-25 19:27:40,228 - INFO - スケジューラ: 現在時刻 2025-05-25 19:27:40
+2025-05-25 19:28:40,229 - INFO - スケジューラ: 現在時刻 2025-05-25 19:28:40
+2025-05-25 19:29:40,231 - INFO - スケジューラ: 現在時刻 2025-05-25 19:29:40
 ```
 
 **./predictive_analysis.log:**
@@ -1112,17 +1072,17 @@ J������W�n�5�5������g�';�<�<�� ���G�d� #� #� #� #� !� �
 
 #### 🐍 Python関連プロセス
 ```
-pi           462  0.0  1.2  19192  5220 ?        Ss   May06   0:41 python /home/pi/lvyuan_solar_control/solar_control_scheduler.py
+pi           462  0.0  1.2  19192  5348 ?        Ss   May06   0:42 python /home/pi/lvyuan_solar_control/solar_control_scheduler.py
 ```
 
 #### 💾 システムリソース状況
 ```
 === CPU・メモリ使用状況 ===
-top - 10:34:43 up 18 days, 13:04,  1 user,  load average: 0.02, 0.04, 0.01
-Tasks: 149 total,   1 running, 148 sleeping,   0 stopped,   0 zombie
-%Cpu(s): 25.0 us, 12.5 sy,  0.0 ni, 62.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
-MiB Mem :    416.8 total,    133.0 free,    162.3 used,    184.0 buff/cache     
-MiB Swap:    512.0 total,    472.5 free,     39.5 used.    254.5 avail Mem 
+top - 19:30:13 up 18 days, 21:59,  1 user,  load average: 0.00, 0.01, 0.00
+Tasks: 146 total,   1 running, 145 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 11.1 us, 22.2 sy,  0.0 ni, 66.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :    416.8 total,    126.6 free,    160.3 used,    191.1 buff/cache     
+MiB Swap:    512.0 total,    472.5 free,     39.5 used.    256.4 avail Mem 
 
 === ディスク使用状況 ===
 Filesystem      Size  Used Avail Use% Mounted on
@@ -1137,7 +1097,7 @@ tmpfs           209M     0  209M   0% /dev/shm
 #### 📅 重要ファイルの最終更新時刻
 ```
 main.py: 2025-05-25 02:45:27.929138044 +0900
-email_notifier.py: 2025-05-25 10:16:15.665228743 +0900
+email_notifier.py: 2025-05-25 19:27:19.522447501 +0900
 settings_manager.py: 2025-05-24 09:44:52.900293633 +0900
 lvyuan_collector.py: 2025-05-23 02:14:59.325078596 +0900
 ```
@@ -1255,13 +1215,13 @@ vulture            2.14
 === システム基本情報 ===
 OS: Linux solarpi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64 GNU/Linux
 Hostname: solarpi
-Uptime:  10:34:49 up 18 days, 13:04,  1 user,  load average: 0.10, 0.05, 0.01
+Uptime:  19:30:20 up 18 days, 21:59,  1 user,  load average: 0.15, 0.05, 0.01
 Current user: pi
 Working directory: /home/pi/lvyuan_solar_control
 
 === メモリ使用状況詳細 ===
                total        used        free      shared  buff/cache   available
-Mem:           416Mi       166Mi       128Mi        24Ki       184Mi       249Mi
+Mem:           416Mi       158Mi       128Mi       8.0Ki       191Mi       258Mi
 Swap:          511Mi        39Mi       472Mi
 
 === ディスク使用状況詳細 ===
@@ -1306,7 +1266,7 @@ Core(s) per cluster:                  4
 ```
 === 重要ファイルの権限 ===
 -rw-r--r-- 1 pi pi 12377 May 25 02:45 main.py
--rw-r--r-- 1 pi pi 8851 May 25 10:16 email_notifier.py
+-rw-r--r-- 1 pi pi 7195 May 25 19:27 email_notifier.py
 -rw-r--r-- 1 pi pi 5666 May 25 02:45 settings.json
 
 === 実行権限確認 ===
@@ -1442,7 +1402,7 @@ Core(s) per cluster:                  4
 #### 📬 email_notifier.py設定解析
 ```python
 === SMTP設定確認 ===
-# from enhanced_email_system import EnhancedEmailSystem
+from enhanced_email_system_v2 import EnhancedEmailSystem
 import logging
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -1473,9 +1433,9 @@ class EmailNotifier:
             now = datetime.datetime.now()
             time_suffix = "(07時)" if 5 <= now.hour < 12 else "(23時)"
             date_str = now.strftime("%Y年%m月%d日")
-            subject = f"HANAZONOシステム最適化レポート {date_str} {time_suffix}"
-
-            text_content = self._generate_intelligent_report(data)
+            # 季節判定による絵文字追加
+            now = datetime.datetime.now()
+            month = now.month
 --
             msg.attach(MIMEText(text_content, 'plain', 'utf-8'))
 
@@ -1511,7 +1471,7 @@ class EmailNotifier:
 ✅ 構文チェック: 正常
 定義された関数の数: 1
 定義されたクラスの数: 1
-エラーハンドリング: try=6, except=6
+エラーハンドリング: try=5, except=5
 ✅ エラーハンドリング: 適切
 ```
 
@@ -1545,15 +1505,15 @@ class EmailNotifier:
 ```markdown
 # HANAZONOシステム プロジェクト状態 (完全自動生成)
 
-**最終更新**: 2025-05-25 10:30:56
-**セッションID**: 20250525_103056
+**最終更新**: 2025-05-25 19:15:48
+**セッションID**: 20250525_191548
 **緊急度レベル**: 通常
 
 ## 🤖 AI自動分析結果
-- **現在のフェーズ**: 大規模開発中（未コミット: 27件）- 要整理
-- **Git状態**: 27 files changed
-- **最新コミット**: 496bbf9 🏆 AI記憶喪失防止システム100点満点達成 - 2025-05-25 02:03
-- **AI推奨アクション**: Git状態の整理とコミットが必要
+- **現在のフェーズ**: 開発作業中（未コミット: 14件）
+- **Git状態**: 14 files changed
+- **最新コミット**: e0999a0 🌤️ 天気予報・絵文字機能改善完了
+- **AI推奨アクション**: 適切なタイミングでのコミット推奨
 
 ## 🔒 自動安全機能状態
 - **自動バックアップ**: ✅ 実行済み
@@ -1567,10 +1527,10 @@ class EmailNotifier:
 
 ### 📄 HANDOVER_PROMPT.md
 ```markdown
-# v43_HANAZONOシステム／完全自動記憶継承プロンプト-2025-05-25
+# v45_HANAZONOシステム／完全自動記憶継承プロンプト-2025-05-25
 
-**自動生成**: 2025-05-25 10:30:56
-**セッションID**: 20250525_103056
+**自動生成**: 2025-05-25 19:15:48
+**セッションID**: 20250525_191548
 **緊急度**: 通常
 
 ## ⚡ AI自動実行必須手順（人間の記憶不要）
@@ -1591,9 +1551,9 @@ cat AI_AUTOMATIC_INSTRUCTIONS.md
 
 ### 📄 AI_AUTOMATIC_INSTRUCTIONS.md
 ```markdown
-# AI自動作業指示書 - セッション20250525_103056
+# AI自動作業指示書 - セッション20250525_191548
 
-**生成時刻**: 2025-05-25 10:30:56
+**生成時刻**: 2025-05-25 19:15:48
 **緊急度**: 通常
 
 ## 🤖 AIが自動実行すべき必須アクション
@@ -1602,10 +1562,10 @@ cat AI_AUTOMATIC_INSTRUCTIONS.md
 
 
 ### システム自動確認項目
-1. **Git状態確認**: 27 files changed
-2. **最新コミット**: 496bbf9 🏆 AI記憶喪失防止システム100点満点達成 - 2025-05-25 02:03
-3. **フェーズ判定**: 大規模開発中（未コミット: 27件）- 要整理
-4. **推奨アクション**: Git状態の整理とコミットが必要
+1. **Git状態確認**: 14 files changed
+2. **最新コミット**: e0999a0 🌤️ 天気予報・絵文字機能改善完了
+3. **フェーズ判定**: 開発作業中（未コミット: 14件）
+4. **推奨アクション**: 適切なタイミングでのコミット推奨
 
 ### AI自動実行ルール
 - バックアップは既に自動実行済み（人間による操作不要）
@@ -2324,14 +2284,28 @@ CREATE TABLE parameter_history (
   - 自動バックアップ: 実行済み
   - AI推奨アクション: Git状態の整理とコミットが必要
 
+[2025-05-25 10:34:53] 完全自動進行管理システム実行（セッション: 20250525_103453）
+  - フェーズ: 大規模開発中（未コミット: 33件）- 要整理
+  - 緊急度: 高
+  - Git状態: 33 files changed
+  - 自動バックアップ: 実行済み
+  - AI推奨アクション: Git状態の整理とコミットが必要
+
+[2025-05-25 19:15:48] 完全自動進行管理システム実行（セッション: 20250525_191548）
+  - フェーズ: 開発作業中（未コミット: 14件）
+  - 緊急度: 通常
+  - Git状態: 14 files changed
+  - 自動バックアップ: 実行済み
+  - AI推奨アクション: 適切なタイミングでのコミット推奨
+
 ```
 
 ### 🧭 CLAUDE_START_HERE.md（AI開始手順）
 ```markdown
 # 🤖 AI専用 - 完全自動記憶継承スタートガイド v3.0
 
-**最終自動更新**: 2025-05-25 10:30:56
-**セッションID**: 20250525_103056
+**最終自動更新**: 2025-05-25 19:15:48
+**セッションID**: 20250525_191548
 **緊急度**: 通常
 
 ## ⚡ AI完全自動実行手順（人間の記憶・操作不要）
@@ -2351,11 +2325,11 @@ cat HANDOVER_PROMPT.md
 
 ## 🤖 AI自動判定済み現況（リアルタイム）
 
-- **フェーズ**: 大規模開発中（未コミット: 27件）- 要整理
+- **フェーズ**: 開発作業中（未コミット: 14件）
 - **緊急度**: 通常
-- **Git変更**: 27 files
-- **最新コミット**: 496bbf9 🏆 AI記憶喪失防止システム100点満点達成 - 2025-05-25 02:03
-- **AI推奨**: Git状態の整理とコミットが必要
+- **Git変更**: 14 files
+- **最新コミット**: e0999a0 🌤️ 天気予報・絵文字機能改善完了
+- **AI推奨**: 適切なタイミングでのコミット推奨
 
 ## 🔒 完全自動安全機能（AI監視中）
 - ✅ 自動バックアップ: 常時有効
@@ -3050,14 +3024,28 @@ CREATE TABLE parameter_history (
   - 自動バックアップ: 実行済み
   - AI推奨アクション: Git状態の整理とコミットが必要
 
+[2025-05-25 10:34:53] 完全自動進行管理システム実行（セッション: 20250525_103453）
+  - フェーズ: 大規模開発中（未コミット: 33件）- 要整理
+  - 緊急度: 高
+  - Git状態: 33 files changed
+  - 自動バックアップ: 実行済み
+  - AI推奨アクション: Git状態の整理とコミットが必要
+
+[2025-05-25 19:15:48] 完全自動進行管理システム実行（セッション: 20250525_191548）
+  - フェーズ: 開発作業中（未コミット: 14件）
+  - 緊急度: 通常
+  - Git状態: 14 files changed
+  - 自動バックアップ: 実行済み
+  - AI推奨アクション: 適切なタイミングでのコミット推奨
+
 ```
 
 ### 🧭 CLAUDE_START_HERE.md（AI開始手順）
 ```markdown
 # 🤖 AI専用 - 完全自動記憶継承スタートガイド v3.0
 
-**最終自動更新**: 2025-05-25 10:30:56
-**セッションID**: 20250525_103056
+**最終自動更新**: 2025-05-25 19:15:48
+**セッションID**: 20250525_191548
 **緊急度**: 通常
 
 ## ⚡ AI完全自動実行手順（人間の記憶・操作不要）
@@ -3077,11 +3065,11 @@ cat HANDOVER_PROMPT.md
 
 ## 🤖 AI自動判定済み現況（リアルタイム）
 
-- **フェーズ**: 大規模開発中（未コミット: 27件）- 要整理
+- **フェーズ**: 開発作業中（未コミット: 14件）
 - **緊急度**: 通常
-- **Git変更**: 27 files
-- **最新コミット**: 496bbf9 🏆 AI記憶喪失防止システム100点満点達成 - 2025-05-25 02:03
-- **AI推奨**: Git状態の整理とコミットが必要
+- **Git変更**: 14 files
+- **最新コミット**: e0999a0 🌤️ 天気予報・絵文字機能改善完了
+- **AI推奨**: 適切なタイミングでのコミット推奨
 
 ## 🔒 完全自動安全機能（AI監視中）
 - ✅ 自動バックアップ: 常時有効
