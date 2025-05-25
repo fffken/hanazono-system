@@ -82,10 +82,8 @@ class EmailNotifier:
                 self.logger.warning(f"天気データ取得エラー: {e}")
                 weather_data = None
             
-            # enhanced_system_v2の_extract_battery_infoメソッドを使用
-            battery_info = self.enhanced_system._extract_battery_info(data)
-            self.logger.info(f"DEBUG: 抽出されたバッテリー情報: {battery_info}")
-            self.logger.info(f"DEBUG: データ型: {type(data)}, キー: {list(data.keys()) if isinstance(data, dict) else 'not dict'}")
+            # バッテリー情報抽出
+            battery_info = self._extract_battery_info(data)
             
             # EnhancedEmailSystemV2でレポート生成
             report = self.enhanced_system.generate_complete_report(
@@ -110,7 +108,7 @@ class EmailNotifier:
             detailed_season = get_detailed_season()
 
             # 3. 現在のバッテリー状態
-            battery_info = self.enhanced_system._extract_battery_info(data)
+            battery_info = self._extract_battery_info(data)
             report += f"\n■ 現在の状態"
             report += f"\n{battery_info}\n"
 

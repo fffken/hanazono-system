@@ -84,8 +84,6 @@ class EmailNotifier:
             
             # enhanced_system_v2の_extract_battery_infoメソッドを使用
             battery_info = self.enhanced_system._extract_battery_info(data)
-            self.logger.info(f"DEBUG: 抽出されたバッテリー情報: {battery_info}")
-            self.logger.info(f"DEBUG: データ型: {type(data)}, キー: {list(data.keys()) if isinstance(data, dict) else 'not dict'}")
             
             # EnhancedEmailSystemV2でレポート生成
             report = self.enhanced_system.generate_complete_report(
