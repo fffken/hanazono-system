@@ -1,16 +1,4 @@
-
-def strip_html_tags(html_content):
-    """HTMLタグを除去してテキストに変換"""
-    import re
-    text = re.sub(r'<[^>]+>', '', html_content)
-    text = text.replace('&nbsp;', ' ')
-    text = text.replace('&amp;', '&')
-    text = text.replace('&lt;', '<')
-    text = text.replace('&gt;', '>')
-    text = re.sub(r'\n\s*\n', '\n\n', text)
-    return text.strip()
-
-from enhanced_email_system_v2 import EnhancedEmailSystemV2
+from enhanced_email_system import EnhancedEmailSystem
 import logging
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -27,7 +15,7 @@ class EmailNotifier:
         self.config = config
         self.logger = logger
         self.settings_recommender = SettingsRecommender()
-        self.enhanced_system = EnhancedEmailSystemV2(None, self.logger)
+        self.enhanced_system = EnhancedEmailSystem(None, self.logger)
 
     def send_daily_report(self, data):
         try:
@@ -56,7 +44,6 @@ class EmailNotifier:
             msg['Subject'] = subject
             msg['From'] = sender
             msg['To'] = ", ".join(recipients)
-            text_content = strip_html_tags(text_content)
             msg.attach(MIMEText(text_content, 'plain', 'utf-8'))
 
             server = smtplib.SMTP(smtp_server, smtp_port)
@@ -74,27 +61,24 @@ class EmailNotifier:
 
     def _generate_intelligent_report(self, data):
         try:
-            # 天気データ取得（エラー時はNoneを返す）
-            try:
-                from weather_forecast import get_weather_forecast
-                weather_data = get_weather_forecast()
-            except Exception as e:
-                self.logger.warning(f"天気データ取得エラー: {e}")
-                weather_data = None
-            
-            # バッテリー情報抽出
+            from weather_forecast import get_weather_forecast
+            weather_data = get_weather_forecast()
             battery_info = self._extract_battery_info(data)
             
-            # EnhancedEmailSystemV2でレポート生成
-            report = self.enhanced_system.generate_complete_report(
+            html_report = self.enhanced_system.generate_complete_report(
                 data, weather_data, battery_info
             )
             
-            return report
-
+            import re
+            text_report = re.sub(r'<[^>]+>', '', html_report)
+            text_report = text_report.replace('&nbsp;', ' ')
+            text_report = re.sub(r'\n\s*\n', '\n\n', text_report)
+            return text_report.strip()
+            
         except Exception as e:
             self.logger.error(f"Enhanced report error: {e}")
-            return self._generate_fallback_report(data)
+            return "Enhanced report generation failed"
+    
     def _generate_fallback_report(self, data):
         report = "=== HANAZONOシステム 最適化レポート ===\n"
 
@@ -156,27 +140,26 @@ class EmailNotifier:
         return report
 
     def _extract_battery_info(self, data):
-        """バッテリー情報を抽出（安全版）"""
+        """バッテリー情報を抽出（修正版）"""
         try:
             if isinstance(data, tuple) and len(data) > 0:
                 actual_data = data[0]
             elif isinstance(data, dict):
                 actual_data = data
             else:
-                return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
-            
-            if isinstance(actual_data, dict) and 'parameters' in actual_data:
+                return "バッテリー情報: データ形式エラー"
+            if 'parameters' in actual_data:
                 params = actual_data['parameters']
-                return {
-                    'soc': params.get('バッテリーSOC', 'N/A'),
-                    'voltage': params.get('バッテリー電圧', 'N/A'),
-                    'current': params.get('バッテリー電流', 'N/A')
-                }
+                soc_value = params.get('0x0100', {}).get('value', 'N/A')
+                voltage_value = params.get('0x0101', {}).get('value', 'N/A')
+                current_value = params.get('0x0102', {}).get('value', 'N/A')
+                timestamp = actual_data.get('datetime', 'N/A')
+                return f"🔋 バッテリー残量: {soc_value}% (取得時刻: {timestamp})\n⚡ 電圧: {voltage_value}V 🔌 電流: {current_value}A"
             else:
-                return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
-                
+                return "バッテリー情報: parametersが見つかりません"
         except Exception as e:
-            return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
+            return f"バッテリー情報取得エラー: {e}"
+
     def _generate_recommendations(self, weather, season, battery_info):
         """天気予報と季節に基づく最適化推奨を生成"""
         recommendations = []

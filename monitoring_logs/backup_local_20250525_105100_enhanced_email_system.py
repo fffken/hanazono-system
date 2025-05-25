@@ -51,13 +51,13 @@ class EnhancedEmailSystem:
         recommendations = self._generate_recommendations(weather_data, achievements)
 
         # HTMLレポート生成
-        html_report = self._generate_html_report(
+        text_report = self._generate_text_report(
             timestamp, solar_data, weather_data,
             battery_info, achievements, cost_analysis,
             weather_analysis, recommendations
         )
 
-        return html_report
+        return text_report
 
     def _calculate_daily_achievements(self, solar_data):
         """1日の達成率計算（詳細版）"""
@@ -192,7 +192,7 @@ class EnhancedEmailSystem:
 
         return recommendations
 
-    def _generate_html_report(self, timestamp, solar_data, weather_data, battery_info, achievements, cost_analysis, weather_analysis, recommendations):
+    def _generate_text_report(self, timestamp, solar_data, weather_data, battery_info, achievements, cost_analysis, weather_analysis, recommendations):
         """美しいHTMLレポート生成 - Phase A修正版"""
 
         # 全体的な評価
@@ -349,12 +349,20 @@ class EnhancedEmailSystem:
         </html>
         """
 
-        return html
+        # HTMLタグを除去してテキストに変換
+import re
+text = re.sub(r'<[^>]+>', '', html)
+text = text.replace('&nbsp;', ' ')
+text = text.replace('&amp;', '&')
+text = text.replace('&lt;', '<')
+text = text.replace('&gt;', '>')
+text = re.sub(r'\n\s*\n', '\n\n', text)
+return text.strip()
 
-    def _generate_enhanced_recommendations_html(self, recommendations):
-        """改善された推奨設定のHTML生成 - Phase A版"""
-        if not recommendations:
-            return '''
+def _generate_enhanced_recommendations_html(self, recommendations):
+    """改善された推奨設定のHTML生成 - Phase A版"""
+    if not recommendations:
+    return '''
             <div class="recommendation-item no-change">
                 <div style="text-align: center; font-size: 16px;">
                     <span style="color: #9E9E9E;">🔧 現在の季節設定を継続</span>
@@ -420,7 +428,15 @@ class EnhancedEmailSystem:
             </div>
             """
 
-        return html
+        # HTMLタグを除去してテキストに変換
+import re
+text = re.sub(r'<[^>]+>', '', html)
+text = text.replace('&nbsp;', ' ')
+text = text.replace('&amp;', '&')
+text = text.replace('&lt;', '<')
+text = text.replace('&gt;', '>')
+text = re.sub(r'\n\s*\n', '\n\n', text)
+return text.strip()
 
     def _get_current_parameter_value(self, param_id):
         """現在のパラメータ値を取得（季節設定から）"""
@@ -617,4 +633,63 @@ class EnhancedEmailSystem:
                 'load_power': 0,
                 'daily_stats': {}
             }
+
+
+    def _analyze_data(self, data):
+        """データ分析・統計計算"""
+        try:
+            latest = data[-1] if data else {}
+            battery_soc = latest.get('battery_soc', 0)
+            battery_voltage = latest.get('battery_voltage', 0)
+            pv_power = latest.get('pv_power', 0)
+            grid_power = latest.get('grid_power', 0)
+            load_power = latest.get('load_power', 0)
+            daily_stats = self._calculate_daily_stats(data)
+            
+            return {
+                'date': datetime.now().strftime('%Y年%m月%d日'),
+                'time': datetime.now().strftime('%H:%M'),
+                'battery_soc': battery_soc,
+                'battery_voltage': battery_voltage,
+                'pv_power': pv_power,
+                'grid_power': grid_power,
+                'load_power': load_power,
+                'daily_stats': daily_stats
+            }
+            
+        except Exception as e:
+            self.logger.error(f"データ分析エラー: {e}")
+            return {
+                'date': datetime.now().strftime('%Y年%m月%d日'),
+                'time': datetime.now().strftime('%H:%M'),
+                'battery_soc': 0, 'battery_voltage': 0,
+                'pv_power': 0, 'grid_power': 0, 'load_power': 0,
+                'daily_stats': {}
+            }
+
+    def _calculate_daily_stats(self, data):
+        """日間統計計算"""
+        if not data:
+            return {'total_pv_generation': 0, 'total_grid_consumption': 0}
+        
+        total_pv = sum(d.get('pv_power', 0) for d in data) / 4
+        total_grid = sum(d.get('grid_power', 0) for d in data) / 4
+        
+        return {
+            'total_pv_generation': round(total_pv, 2),
+            'total_grid_consumption': round(total_grid, 2)
+        }
+
+    def _generate_text_report(self, analysis):
+        """HTMLレポート生成"""
+        return f"<html><body><h2>🌞 HANAZONOシステム</h2><p>SOC: {analysis['battery_soc']}%</p></body></html>"
+
+    def _generate_text_report(self, analysis):
+        """テキストレポート生成"""
+        return f"HANAZONOシステム\nSOC: {analysis['battery_soc']}%"
+
+    def _send_email(self, subject, html_content, text_content):
+        """メール送信"""
+        self.logger.info(f"メール送信: {subject}")
+        return True
 
