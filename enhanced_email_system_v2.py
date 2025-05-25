@@ -48,7 +48,7 @@ class EnhancedEmailSystemV2:
             return "レポート生成エラー"
 
     def _weather_section(self, weather_data):
-        """天気予報セクション"""
+        """天気予報セクション（気温対応版）"""
         try:
             if not weather_data or not isinstance(weather_data, dict):
                 return """🌤️ 天気予報と発電予測
@@ -57,17 +57,24 @@ class EnhancedEmailSystemV2:
 ⚡ 発電予測: 標準レベル"""
             
             today = weather_data.get('today', {})
-            weather = today.get('weather', '情報なし') if isinstance(today, dict) else '情報なし'
-            temp = today.get('temperature', 'N/A') if isinstance(today, dict) else 'N/A'
+            tomorrow = weather_data.get('tomorrow', {})
             
-            emoji = "☀️" if "晴" in str(weather) else "☁️" if "曇" in str(weather) else "🌧️" if "雨" in str(weather) else "🌤️"
+            # 今日の情報
+            today_weather = today.get('weather', '情報なし')
+            today_temp = today.get('temperature', 'N/A')
+            today_emoji = "☀️" if "晴" in str(today_weather) else "☁️" if "曇" in str(today_weather) else "🌧️" if "雨" in str(today_weather) else "🌤️"
+            
+            # 明日の情報
+            tomorrow_weather = tomorrow.get('weather', '情報なし')
+            tomorrow_temp = tomorrow.get('temperature', 'N/A')
+            tomorrow_emoji = "☀️" if "晴" in str(tomorrow_weather) else "☁️" if "曇" in str(tomorrow_weather) else "🌧️" if "雨" in str(tomorrow_weather) else "🌤️"
             
             return f"""🌤️ 天気予報と発電予測
 --------------------
-{emoji}
-今日: {weather}
-🌡️ 気温: {temp}°C
+今日: {today_emoji} {today_weather} ({today_temp})
+明日: {tomorrow_emoji} {tomorrow_weather} ({tomorrow_temp})
 ⚡ 発電予測: 標準レベル"""
+            
         except Exception as e:
             return """🌤️ 天気予報と発電予測
 --------------------
@@ -75,25 +82,25 @@ class EnhancedEmailSystemV2:
 ⚡ 発電予測: 標準レベル"""
 
     def _battle_section(self, data, weather_data):
-        """人間 vs AI対戦セクション"""
+        """人間 vs AI対戦セクション（色丸対応版）"""
         human = self._get_human_settings(weather_data)
         ai = self._get_ai_settings(data, weather_data)
         
         return f"""🔋 今日の推奨設定（人間 vs AI対戦）
-    ================================================
+================================================
 
-    📚 設定ガイド推奨（人間の知恵）
-    ID07: {human['ID07']}A  ID10: {human['ID10']}分  ID62: {human['ID62']}%
-    理由: {human['reason']}
-    信頼度: ⭐⭐⭐⭐⭐
+🟢 📚 設定ガイド推奨（人間の知恵）
+ID07: {human['ID07']}A  ID10: {human['ID10']}分  ID62: {human['ID62']}%
+理由: {human['reason']}
+信頼度: ⭐⭐⭐⭐⭐
 
-    🤖 AI推奨（機械学習）
-    ID07: {ai['ID07']}A  ID10: {ai['ID10']}分  ID62: {ai['ID62']}%
-    理由: {ai['reason']}
-    信頼度: ⭐⭐⭐⚪⚪
-    予測節約: +¥23/日
+🟡 🤖 AI推奨（機械学習）
+ID07: {ai['ID07']}A  ID10: {ai['ID10']}分  ID62: {ai['ID62']}%
+理由: {ai['reason']}
+信頼度: ⭐⭐⭐⚪⚪
+予測節約: +¥23/日
 
-    🎯 採用推奨: 📚 設定ガイド (安定性重視)"""
+🎯 採用推奨: 🟢 📚 設定ガイド (安定性重視)"""
 
     def _battery_section(self, battery_info):
         """バッテリー状況セクション（動的版）"""
