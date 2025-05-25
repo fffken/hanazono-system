@@ -10,6 +10,15 @@ class EnhancedEmailSystemV2:
         self.logger = logger
         self.version = "2.0"
         
+        # AI学習データベース初期化
+        try:
+            from ai_learning_database import AILearningDatabase
+            self.ai_db = AILearningDatabase()
+        except Exception as e:
+            if self.logger:
+                self.logger.warning(f'AI学習データベース初期化エラー: {e}')
+            self.ai_db = None
+        
         # 安全装置
         self.SAFETY_LIMITS = {
             'ID07': {'min': 20, 'max': 80},
@@ -32,6 +41,8 @@ class EnhancedEmailSystemV2:
 {self._weather_section(weather_data)}
 
 {self._battle_section(data, weather_data)}
+
+{self._battle_results_section()}
 
 {self._battery_section(battery_info)}
 
