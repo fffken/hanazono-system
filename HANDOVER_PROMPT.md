@@ -17,7 +17,7 @@ python3 main.py --daily-report
 絶対禁止事項
 ❌ cat >> でのPython編集 ❌ セーフポイントなしでの変更 ❌ 複数ファイル同時編集
 
-⚡ ESSENTIAL - 5分で完全把握
+## ⚡ ESSENTIAL - 5分で完全把握
 最重要戦略（必読）
 Copycat EFFICIENCY_PRIORITY_ROADMAP.md | head -20
 今回セッション必須実行順序
@@ -34,7 +34,7 @@ git reset --hard HEAD
 新AI情報把握: 2分以内
 作業開始: 5分以内
 効率向上: 前回比20分短縮
-📚 DETAILED - 詳細情報
+## 📚 DETAILED - 詳細情報
 プロジェクト概要
 LVYUAN太陽光蓄電システム自動最適化 + AI学習データベース 開発哲学: 人間は意図のみ、システムが全実装
 
