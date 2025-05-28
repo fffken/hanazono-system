@@ -15,7 +15,7 @@ TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 CHANGES=$(git diff --cached --name-only | wc -l)
 
 # コミット実行
-source scripts/github_auto_enhanced.sh && auto_commit
+git commit -m "🚀 開発進捗自動保存 - $TIMESTAMP
 
 ✅ 変更ファイル数: $CHANGES件
 📊 自動保存システムによる確実な進捗保存
