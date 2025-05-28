@@ -31,3 +31,7 @@ source scripts/github_auto_enhanced.sh && github_status
 echo ""
 echo "🔍 ファクトチェックシステム統合済み"
 echo "実行: bash scripts/fact_check_system.sh"
+
+echo ""
+echo "🤖 自然言語インターフェース統合済み"
+echo "使用例: ask '天気絵文字を改善して'"
