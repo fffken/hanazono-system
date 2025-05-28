@@ -35,5601 +35,11201 @@ analyze_and_execute() {
     
     # パターンマッチング解析
     case "$input" in
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"確認"*|*"check"*|*"状況"*|*"status"*)
             echo "📊 解釈: システム状況の確認"
             execute_status_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"実行"*|*"run"*|*"開始"*|*"start"*)
             echo "🚀 解釈: 推奨タスクの実行"
             execute_recommended_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"修正"*|*"fix"*|*"直す"*|*"エラー"*)
             echo "🔧 解釈: エラー修正・問題解決"
             execute_auto_fix
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"効率"*|*"efficiency"*|*"最適化"*|*"optimize"*)
             echo "⚡ 解釈: 効率化システムの確認"
             execute_efficiency_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"保存"*|*"save"*|*"セーブ"*)
             echo "💾 解釈: プロジェクトの保存"
             execute_save
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"確認"*|*"check"*|*"状況"*|*"status"*)
             echo "📊 解釈: システム状況の確認"
             execute_status_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"実行"*|*"run"*|*"開始"*|*"start"*)
             echo "🚀 解釈: 推奨タスクの実行"
             execute_recommended_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"修正"*|*"fix"*|*"直す"*|*"エラー"*)
             echo "🔧 解釈: エラー修正・問題解決"
             execute_auto_fix
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"効率"*|*"efficiency"*|*"最適化"*|*"optimize"*)
             echo "⚡ 解釈: 効率化システムの確認"
             execute_efficiency_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"天気"*"絵文字"*|*"weather"*"emoji"*)
             echo "🌤️ 解釈: 天気絵文字機能の改善"
             execute_weather_emoji_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"確認"*|*"check"*|*"状況"*|*"status"*)
             echo "📊 解釈: システム状況の確認"
             execute_status_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"実行"*|*"run"*|*"開始"*|*"start"*)
             echo "🚀 解釈: 推奨タスクの実行"
             execute_recommended_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"修正"*|*"fix"*|*"直す"*|*"エラー"*)
             echo "🔧 解釈: エラー修正・問題解決"
             execute_auto_fix
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"効率"*|*"efficiency"*|*"最適化"*|*"optimize"*)
             echo "⚡ 解釈: 効率化システムの確認"
             execute_efficiency_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"保存"*|*"save"*|*"セーブ"*)
             echo "💾 解釈: プロジェクトの保存"
             execute_save
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"確認"*|*"check"*|*"状況"*|*"status"*)
             echo "📊 解釈: システム状況の確認"
             execute_status_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"実行"*|*"run"*|*"開始"*|*"start"*)
             echo "🚀 解釈: 推奨タスクの実行"
             execute_recommended_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"修正"*|*"fix"*|*"直す"*|*"エラー"*)
             echo "🔧 解釈: エラー修正・問題解決"
             execute_auto_fix
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"効率"*|*"efficiency"*|*"最適化"*|*"optimize"*)
             echo "⚡ 解釈: 効率化システムの確認"
             execute_efficiency_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"メール"*"テスト"*|*"email"*"test"*)
             echo "📧 解釈: メール機能のテスト実行"
             execute_email_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"確認"*|*"check"*|*"状況"*|*"status"*)
             echo "📊 解釈: システム状況の確認"
             execute_status_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"実行"*|*"run"*|*"開始"*|*"start"*)
             echo "🚀 解釈: 推奨タスクの実行"
             execute_recommended_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"修正"*|*"fix"*|*"直す"*|*"エラー"*)
             echo "🔧 解釈: エラー修正・問題解決"
             execute_auto_fix
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"効率"*|*"efficiency"*|*"最適化"*|*"optimize"*)
             echo "⚡ 解釈: 効率化システムの確認"
             execute_efficiency_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"保存"*|*"save"*|*"セーブ"*)
             echo "💾 解釈: プロジェクトの保存"
             execute_save
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"確認"*|*"check"*|*"状況"*|*"status"*)
             echo "📊 解釈: システム状況の確認"
             execute_status_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"実行"*|*"run"*|*"開始"*|*"start"*)
             echo "🚀 解釈: 推奨タスクの実行"
             execute_recommended_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"修正"*|*"fix"*|*"直す"*|*"エラー"*)
             echo "🔧 解釈: エラー修正・問題解決"
             execute_auto_fix
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"効率"*|*"efficiency"*|*"最適化"*|*"optimize"*)
             echo "⚡ 解釈: 効率化システムの確認"
             execute_efficiency_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"統合"*"開発"*|*"dev"*"command"*)
             echo "🔧 解釈: 統合開発コマンドの改善"
             execute_dev_command_improvement
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"確認"*|*"check"*|*"状況"*|*"status"*)
             echo "📊 解釈: システム状況の確認"
             execute_status_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"実行"*|*"run"*|*"開始"*|*"start"*)
             echo "🚀 解釈: 推奨タスクの実行"
             execute_recommended_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"修正"*|*"fix"*|*"直す"*|*"エラー"*)
             echo "🔧 解釈: エラー修正・問題解決"
             execute_auto_fix
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"効率"*|*"efficiency"*|*"最適化"*|*"optimize"*)
             echo "⚡ 解釈: 効率化システムの確認"
             execute_efficiency_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"保存"*|*"save"*|*"セーブ"*)
             echo "💾 解釈: プロジェクトの保存"
             execute_save
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"確認"*|*"check"*|*"状況"*|*"status"*)
             echo "📊 解釈: システム状況の確認"
             execute_status_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"実行"*|*"run"*|*"開始"*|*"start"*)
             echo "🚀 解釈: 推奨タスクの実行"
             execute_recommended_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"修正"*|*"fix"*|*"直す"*|*"エラー"*)
             echo "🔧 解釈: エラー修正・問題解決"
             execute_auto_fix
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"効率"*|*"efficiency"*|*"最適化"*|*"optimize"*)
             echo "⚡ 解釈: 効率化システムの確認"
             execute_efficiency_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"引き継ぎ"*|*"handover"*)
             echo "📋 解釈: 引き継ぎシステムの確認"
             execute_handover_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"確認"*|*"check"*|*"状況"*|*"status"*)
             echo "📊 解釈: システム状況の確認"
             execute_status_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"実行"*|*"run"*|*"開始"*|*"start"*)
             echo "🚀 解釈: 推奨タスクの実行"
             execute_recommended_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"修正"*|*"fix"*|*"直す"*|*"エラー"*)
             echo "🔧 解釈: エラー修正・問題解決"
             execute_auto_fix
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"効率"*|*"efficiency"*|*"最適化"*|*"optimize"*)
             echo "⚡ 解釈: 効率化システムの確認"
             execute_efficiency_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"保存"*|*"save"*|*"セーブ"*)
             echo "💾 解釈: プロジェクトの保存"
             execute_save
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"確認"*|*"check"*|*"状況"*|*"status"*)
             echo "📊 解釈: システム状況の確認"
             execute_status_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"実行"*|*"run"*|*"開始"*|*"start"*)
             echo "🚀 解釈: 推奨タスクの実行"
             execute_recommended_task
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"修正"*|*"fix"*|*"直す"*|*"エラー"*)
             echo "🔧 解釈: エラー修正・問題解決"
             execute_auto_fix
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"効率"*|*"efficiency"*|*"最適化"*|*"optimize"*)
             echo "⚡ 解釈: 効率化システムの確認"
             execute_efficiency_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"分析"*|*"analyze"*|*"レポート"*|*"report"*)
             echo "📊 解釈: 詳細分析レポート生成"
             execute_detailed_analysis
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"進捗"*|*"progress"*|*"現状"*)
             echo "📈 解釈: 進捗状況の確認"
             execute_progress_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"次"*|*"next"*|*"おすすめ"*|*"推奨"*)
             echo "🎯 解釈: 次の推奨タスク表示"
             execute_next_recommendation
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"完了"*|*"complete"*|*"終了"*|*"finish"*)
             echo "✅ 解釈: 作業完了処理"
             dev_complete
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"テスト"*|*"test"*|*"動作確認"*)
             echo "🧪 解釈: システムテスト実行"
             execute_system_test
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"ファイル"*|*"file"*|*"リスト"*|*"一覧"*)
             echo "📁 解釈: 重要ファイル一覧表示"
             execute_file_list
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *"表示"*|*"display"*|*"見やすく"*)
             echo "🎨 解釈: 表示方法の改善確認"
             source scripts/fact_check_system.sh && display_quality_check
             ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
+            ;;
         *"説明書"*|*"manual"*|*"マニュアル"*|*"使い方"*)
             echo "📚 解釈: システム完全説明書の表示"
             show_complete_manual
+            ;;
+        *"アシスタント"*|*"assistant"*|*"支援"*|*"相談"*)
+            echo "🤖 解釈: AI開発アシスタントの起動"
+            source scripts/ai_development_assistant.sh && ai_assistant "$input"
             ;;
         *)
             echo "❓ 解釈できませんでした"
