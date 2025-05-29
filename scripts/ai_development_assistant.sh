@@ -147,6 +147,10 @@ advanced_problem_detection() {
     
     # 4. セキュリティチェック
     echo "  🔒 セキュリティチェック中..."
+    
+    # 結果レポート
+    generate_problem_report "$issues_found" warnings errors
+}
 
 # ファイル整合性チェック
 check_file_integrity() {
