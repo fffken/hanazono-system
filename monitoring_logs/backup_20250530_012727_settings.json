@@ -99,7 +99,7 @@
         "fffken@gmail.com"
       ],
       "smtp_user": "fffken@gmail.com",
-      "smtp_password": "${SMTP_PASSWORD}"
+      "smtp_password": "MASKED_FOR_SECURITY"
     },
     "line": {
       "enabled": false,
@@ -170,7 +170,7 @@
     "smtp_server": "smtp.gmail.com",
     "smtp_port": 587,
     "smtp_user": "fffken@gmail.com",
-    "smtp_password": "${SMTP_PASSWORD}",
+    "smtp_password": "MASKED_FOR_SECURITY",
     "sender": "fffken@gmail.com",
     "recipients": [
       "fffken@gmail.com"

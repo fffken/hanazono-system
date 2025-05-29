@@ -53,3 +53,13 @@ register_scans/
 # docs の一部ファイル (管理対象外)
 docs/versions/
 docs/references/
+.env.production
+settings.json.security_backup
+.env.production
+.env.production
+.env.production
+.env.production
+.env.production
+.env.production
+.env.production
+.env.production
