@@ -1,14 +1,16 @@
+import re
 import logging
 import datetime
 from datetime import datetime
 
+
 class EnhancedEmailSystem:
     """拡張版メールシステム - Phase A改善版"""
-    
+
     def __init__(self, settings_manager, logger=None):
         self.settings = settings_manager
         self.logger = logger or logging.getLogger(__name__)
-        
+
         # 天気予報の絵文字マッピング
         self.weather_emojis = {
             '晴れ': '☀️',
@@ -17,20 +19,20 @@ class EnhancedEmailSystem:
             '雪': '❄️',
             '不明': '🌫️'
         }
-        
+
         # 達成率の基準値
         self.targets = {
             'solar_generation': 25.0,  # kWh/日
             'battery_efficiency': 0.85,  # 85%
             'grid_independence': 0.70   # 70%
         }
-        
+
         # コスト計算の基準値
         self.cost_rates = {
             'grid_purchase': 28.5,      # 円/kWh
-            'feed_in_tariff': 17.0      # 円/kWh  
+            'feed_in_tariff': 17.0      # 円/kWh
         }
-        
+
         # 目標設定
         self.annual_savings_target = 200000  # 年間20万円節約目標
 
@@ -48,7 +50,8 @@ class EnhancedEmailSystem:
         weather_analysis = self._analyze_weather(weather_data)
 
         # 推奨設定生成
-        recommendations = self._generate_recommendations(weather_data, achievements)
+        recommendations = self._generate_recommendations(
+            weather_data, achievements)
 
         # HTMLレポート生成
         text_report = self._generate_text_report(
@@ -61,15 +64,16 @@ class EnhancedEmailSystem:
 
     def _calculate_daily_achievements(self, solar_data):
         """1日の達成率計算（詳細版）"""
-        
+
         # 太陽光発電達成率
         solar_generation = self._extract_solar_generation(solar_data)
-        solar_rate = min((solar_generation / self.targets['solar_generation']) * 100, 120)
-        
-        # バッテリー効率達成率  
+        solar_rate = min(
+    (solar_generation / self.targets['solar_generation']) * 100, 120)
+
+        # バッテリー効率達成率
         battery_efficiency = self._calculate_battery_efficiency(solar_data)
         battery_rate = min(battery_efficiency * 100, 120)
-        
+
         achievements = {
             'solar': {
                 'rate': solar_rate,
@@ -84,55 +88,57 @@ class EnhancedEmailSystem:
                 'grade': self._get_grade(battery_efficiency)
             }
         }
-        
+
         return achievements
 
     def _calculate_cost_savings(self, solar_data):
         """コスト削減効果計算"""
-        
+
         # 基本的な計算（実際のデータがない場合のフォールバック）
         solar_generation = self._extract_solar_generation(solar_data)
         consumption = self._extract_consumption(solar_data)
-        
+
         # 電力料金設定（関西電力従量電灯A想定）
         grid_rate = self.cost_rates['grid_purchase']  # 円/kWh
-        
+
         # 自家消費による節約
         self_consumption = min(solar_generation, consumption)
         daily_savings = self_consumption * grid_rate
-        
+
         # 月間・年間予測
         monthly_projection = daily_savings * 30
         yearly_projection = daily_savings * 365
-        
+
         # 目標達成率
-        target_achievement = min((yearly_projection / self.annual_savings_target) * 100, 150)
-        
+        target_achievement = min(
+    (yearly_projection / self.annual_savings_target) * 100, 150)
+
         cost_analysis = {
             'daily_savings': daily_savings,
-            'monthly_projection': monthly_projection, 
+            'monthly_projection': monthly_projection,
             'yearly_projection': yearly_projection,
             'target_achievement': target_achievement,
             'emoji': '💰' if target_achievement >= 80 else '📊'
         }
-        
+
         return cost_analysis
 
     def _analyze_weather(self, weather_data):
         """天気予報分析"""
-        
+
         if not weather_data:
             return self._get_default_weather_analysis()
-            
+
         today = weather_data.get('today', {})
         tomorrow = weather_data.get('tomorrow', {})
-        
+
         today_weather = today.get('weather', '不明')
         tomorrow_weather = tomorrow.get('weather', '不明')
-        
+
         # 天気に基づく推奨度分析
-        solar_forecast = self._calculate_solar_forecast(today_weather, tomorrow_weather)
-        
+        solar_forecast = self._calculate_solar_forecast(
+            today_weather, tomorrow_weather)
+
         return {
             'today': {
                 'weather': today_weather,
@@ -192,11 +198,13 @@ class EnhancedEmailSystem:
 
         return recommendations
 
-    def _generate_text_report(self, timestamp, solar_data, weather_data, battery_info, achievements, cost_analysis, weather_analysis, recommendations):
+    def _generate_text_report(self, timestamp, solar_data, weather_data, battery_info,
+                              achievements, cost_analysis, weather_analysis, recommendations):
         """美しいHTMLレポート生成 - Phase A修正版"""
 
         # 全体的な評価
-        overall_grade = self._calculate_overall_grade(achievements, cost_analysis)
+        overall_grade = self._calculate_overall_grade(
+            achievements, cost_analysis)
 
         html = f"""
         <!DOCTYPE html>
@@ -350,7 +358,6 @@ class EnhancedEmailSystem:
         """
 
         # HTMLタグを除去してテキストに変換
-import re
 text = re.sub(r'<[^>]+>', '', html)
 text = text.replace('&nbsp;', ' ')
 text = text.replace('&amp;', '&')
@@ -358,6 +365,7 @@ text = text.replace('&lt;', '<')
 text = text.replace('&gt;', '>')
 text = re.sub(r'\n\s*\n', '\n\n', text)
 return text.strip()
+
 
 def _generate_enhanced_recommendations_html(self, recommendations):
     """改善された推奨設定のHTML生成 - Phase A版"""
@@ -373,7 +381,7 @@ def _generate_enhanced_recommendations_html(self, recommendations):
             </div>
             '''
 
-        html = ""
+       html = ""
         for rec in recommendations:
             # 優先度による色分け
             if rec['priority'] == 'high':
@@ -382,7 +390,7 @@ def _generate_enhanced_recommendations_html(self, recommendations):
                 priority_bg = '#fff3f3'
                 priority_text = '🔴 設定変更推奨'
             elif rec['priority'] == 'medium':
-                priority_class = 'medium-priority' 
+                priority_class = 'medium-priority'
                 priority_color = '#FF9800'
                 priority_bg = '#fff8f0'
                 priority_text = '🟡 設定変更検討'
@@ -391,10 +399,10 @@ def _generate_enhanced_recommendations_html(self, recommendations):
                 priority_color = '#4CAF50'
                 priority_bg = '#f0f8ff'
                 priority_text = '🟢 設定変更推奨'
-            
+
             # 現在値を取得（季節設定から）
             current_value = self._get_current_parameter_value(rec['param_id'])
-            
+
             html += f"""
             <div class="recommendation-item {priority_class}" style="background: {priority_bg}; border-left-color: {priority_color};">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
@@ -403,12 +411,12 @@ def _generate_enhanced_recommendations_html(self, recommendations):
                         ID {rec['param_id']}
                     </span>
                 </div>
-                
+
                 <div style="margin-bottom: 15px;">
                     <div style="font-size: 16px; font-weight: bold; color: #333; margin-bottom: 5px;">
                         {rec['emoji']} {self._get_parameter_name(rec['param_id'])}
                     </div>
-                    
+
                     <div class="setting-change" style="background: {priority_bg}; border: 2px solid {priority_color};">
                         <span style="color: #666;">ID {rec['param_id']}:</span>
                         <span style="color: {priority_color}; font-weight: bold;">
@@ -416,7 +424,7 @@ def _generate_enhanced_recommendations_html(self, recommendations):
                         </span>
                     </div>
                 </div>
-                
+
                 <div style="background: white; padding: 10px; border-radius: 8px; margin-top: 10px;">
                     <div style="font-size: 14px; color: #333; margin-bottom: 5px;">
                         <strong>📝 理由:</strong> {rec['reason']}
@@ -429,7 +437,6 @@ def _generate_enhanced_recommendations_html(self, recommendations):
             """
 
         # HTMLタグを除去してテキストに変換
-import re
 text = re.sub(r'<[^>]+>', '', html)
 text = text.replace('&nbsp;', ' ')
 text = text.replace('&amp;', '&')
@@ -438,15 +445,15 @@ text = text.replace('&gt;', '>')
 text = re.sub(r'\n\s*\n', '\n\n', text)
 return text.strip()
 
-    def _get_current_parameter_value(self, param_id):
+   def _get_current_parameter_value(self, param_id):
         """現在のパラメータ値を取得（季節設定から）"""
         # PROJECT_UNDERSTANDING.mdの季節設定に基づく
         current_season = self._get_current_season()
-        
+
         parameter_values = {
             '07': {  # 最大充電電流
                 'winter': '60A',
-                'spring_autumn': '50A', 
+                'spring_autumn': '50A',
                 'summer': '35A'
             },
             '10': {  # 最大充電電圧充電時間
@@ -460,14 +467,14 @@ return text.strip()
                 'summer': '35%'
             }
         }
-        
+
         return parameter_values.get(param_id, {}).get(current_season, '未設定')
 
     def _get_parameter_name(self, param_id):
         """パラメータIDから日本語名を取得"""
         parameter_names = {
             '07': '最大充電電流',
-            '10': '最大充電電圧充電時間', 
+            '10': '最大充電電圧充電時間',
             '62': 'インバータ出力切替SOC'
         }
         return parameter_names.get(param_id, f'パラメータ{param_id}')
@@ -476,7 +483,7 @@ return text.strip()
         """現在の季節を取得"""
         import datetime
         month = datetime.datetime.now().month
-        
+
         if month in [12, 1, 2, 3]:
             return 'winter'
         elif month in [7, 8, 9]:
@@ -491,7 +498,7 @@ return text.strip()
                 # 実際のデータから発電量を抽出
                 return float(solar_data.get('solar_generation', 20.5))
             return 20.5  # デフォルト値
-        except:
+        except BaseException:
             return 20.5
 
     def _extract_consumption(self, solar_data):
@@ -500,7 +507,7 @@ return text.strip()
             if isinstance(solar_data, dict):
                 return float(solar_data.get('consumption', 18.0))
             return 18.0  # デフォルト値
-        except:
+        except BaseException:
             return 18.0
 
     def _calculate_battery_efficiency(self, solar_data):
@@ -562,9 +569,9 @@ return text.strip()
         solar_rate = achievements['solar']['rate'] / 100
         battery_rate = achievements['battery']['rate'] / 100
         cost_rate = min(cost_analysis['target_achievement'] / 100, 1.0)
-        
+
         overall_rate = (solar_rate + battery_rate + cost_rate) / 3
-        
+
         if overall_rate >= 0.9:
             return {'emoji': '🏆', 'grade': 'S級', 'color': '#FFD700', 'message': '素晴らしい運用状況です！'}
         elif overall_rate >= 0.8:
@@ -597,19 +604,19 @@ return text.strip()
         try:
             # 基本統計
             latest = data[-1] if data else {}
-            
+
             # バッテリー情報
             battery_soc = latest.get('battery_soc', 0)
             battery_voltage = latest.get('battery_voltage', 0)
-            
+
             # 発電・消費情報
             pv_power = latest.get('pv_power', 0)
             grid_power = latest.get('grid_power', 0)
             load_power = latest.get('load_power', 0)
-            
+
             # 日間統計計算
             daily_stats = self._calculate_daily_stats(data)
-            
+
             return {
                 'date': datetime.now().strftime('%Y年%m月%d日'),
                 'time': datetime.now().strftime('%H:%M'),
@@ -620,7 +627,7 @@ return text.strip()
                 'load_power': load_power,
                 'daily_stats': daily_stats
             }
-            
+
         except Exception as e:
             self.logger.error(f"データ分析エラー: {e}")
             return {
@@ -634,7 +641,6 @@ return text.strip()
                 'daily_stats': {}
             }
 
-
     def _analyze_data(self, data):
         """データ分析・統計計算"""
         try:
@@ -645,7 +651,7 @@ return text.strip()
             grid_power = latest.get('grid_power', 0)
             load_power = latest.get('load_power', 0)
             daily_stats = self._calculate_daily_stats(data)
-            
+
             return {
                 'date': datetime.now().strftime('%Y年%m月%d日'),
                 'time': datetime.now().strftime('%H:%M'),
@@ -656,7 +662,7 @@ return text.strip()
                 'load_power': load_power,
                 'daily_stats': daily_stats
             }
-            
+
         except Exception as e:
             self.logger.error(f"データ分析エラー: {e}")
             return {
@@ -671,10 +677,10 @@ return text.strip()
         """日間統計計算"""
         if not data:
             return {'total_pv_generation': 0, 'total_grid_consumption': 0}
-        
+
         total_pv = sum(d.get('pv_power', 0) for d in data) / 4
         total_grid = sum(d.get('grid_power', 0) for d in data) / 4
-        
+
         return {
             'total_pv_generation': round(total_pv, 2),
             'total_grid_consumption': round(total_grid, 2)
@@ -692,4 +698,3 @@ return text.strip()
         """メール送信"""
         self.logger.info(f"メール送信: {subject}")
         return True
-
