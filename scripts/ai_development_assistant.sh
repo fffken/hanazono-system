@@ -292,3 +292,35 @@ advanced_problem_detection() {
     fi
 }
 # --- v2.3 改良版パッチ ここまで ---
+
+# --- v2.4 アップデートパッチ ここから ---
+
+# [v2.4 新機能] Pythonファイルのコードスタイルを自動整形する
+auto_format_python_files() {
+    echo "🐍 Pythonコードの自動フォーマットを開始します..."
+    echo "   整形対象: プロジェクト内の全 .py ファイル (venv除く)"
+
+    # venvディレクトリを除外して.pyファイルを検索し、autopep8を適用
+    # ファイル名にスペースがあっても安全なように-print0とxargs -0を使用
+    find . -path ./venv -prune -o -name "*.py" -print0 | xargs -0 python3 -m autopep8 --in-place --aggressive
+
+    echo "✅ フォーマットが完了しました。"
+    echo "   git diff で変更内容を確認できます。"
+}
+
+# --- v2.4 アップデートパッチ ここまで ---
+# --- v2.5 アップデートパッチ ここから ---
+run_code_health_check() {
+    echo "🩺 コードの健康診断を開始します..."
+    echo "========================================"
+    echo ""
+    echo "--- 1. Pyflakes (未使用の変数/インポート等) ---"
+    find . -path ./venv -prune -o -name "*.py" -exec python3 -m pyflakes {} +
+    echo ""
+    echo "--- 2. Vulture (デッドコード/到達不能コード) ---"
+    python3 -m vulture --min-confidence 80 --exclude venv .
+    echo ""
+    echo "========================================"
+    echo "✅ 健康診断が完了しました。"
+}
+# --- v2.5 アップデートパッチ ここまで ---
