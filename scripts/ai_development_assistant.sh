@@ -349,3 +349,36 @@ fully_autonomous_system() {
     echo "🏁 自律システム実行完了。"
 }
 # --- v3.1 完成版パッチここまで ---
+# --- v3.2 アップデートパッチ ここから ---
+check_for_remote_changes() {
+    echo "📡 GitHubリモートリポジトリの変更を確認中..."
+    local last_sha_file=".last_remote_sha"
+    local previous_sha=""
+    local current_sha=""
+
+    if [ -f "$last_sha_file" ]; then
+        previous_sha=$(cat "$last_sha_file")
+    fi
+    git fetch origin >/dev/null 2>&1
+    if [ $? -ne 0 ]; then
+        echo "❌エラー: 'git fetch origin' に失敗しました。ネットワーク接続を確認してください。"
+        return 1
+    fi
+    current_sha=$(git rev-parse origin/main 2>/dev/null)
+    if [ -z "$current_sha" ]; then
+        echo "❌エラー: 'origin/main' のコミットIDを取得できませんでした。"
+        return 1
+    fi
+    if [ "$current_sha" != "$previous_sha" ]; then
+        echo "🎉 新しいリモートの変更を検出しました！"
+        echo "   最新のコミットID: $current_sha"
+        [ -n "$previous_sha" ] && echo "   前回のコミットID: $previous_sha"
+        echo "$current_sha" > "$last_sha_file"
+        echo "   (今後、この変更をトリガーに自動分析を開始します)"
+        return 0 # 変更あり
+    else
+        echo "✅ リモートの変更はありません。 (最新: $current_sha)"
+        return 1 # 変更なし
+    fi
+}
+# --- v3.2 アップデートパッチ ここまで ---
