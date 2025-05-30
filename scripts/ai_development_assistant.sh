@@ -1327,3 +1327,58 @@ fully_autonomous_system() {
         echo "⚠️ 最大試行回数到達: $current_score/$target_score"
     fi
 }
+
+# --- v2.1 高速アップデートパッチ ここから ---
+
+# [v2.1 新機能] 構造的整合性チェック - 関数の開始/終了が対応しているか検証
+check_structural_integrity_v2_1() {
+    local -n warnings_ref=$1
+    local -n issues_count_ref=$2
+    
+    local func_starts=$(grep -c "^[a-zA-Z_][a-zA-Z0-9_]*() {" scripts/ai_development_assistant.sh)
+    local func_ends=$(grep -c "^}" scripts/ai_development_assistant.sh)
+
+    if [[ "$func_starts" -ne "$func_ends" ]]; then
+        warnings_ref+=("🚨 重大警告: 関数定義の開始({)と終了(})の数が一致しません。($func_starts 対 $func_ends) ファイルが破損している可能性があります。")
+        issues_count_ref=$((issues_count_ref + 1))
+    fi
+}
+
+# [v2.1 新機能] 論理整合性チェック - 危険な検索ロジックを警告
+check_logic_consistency_v2_1() {
+    local -n warnings_ref=$1
+    local -n issues_count_ref=$2
+
+    # venv等を除外しない広範囲なgrep -rを検出する
+    if grep -q 'grep -r .* --include=.* .' scripts/ai_development_assistant.sh && ! grep -q 'grep -r .* --exclude-dir="venv"' scripts/ai_development_assistant.sh; then
+        warnings_ref+=("⚠️ 論理的警告: venvを除外しない 'grep -r' が使用されています。誤検出の可能性があります。")
+        issues_count_ref=$((issues_count_ref + 1))
+    fi
+}
+
+# 既存の advanced_problem_detection 関数をv2.1にアップグレード
+upgrade_to_v2_1() {
+    # 元の関数をバックアップ（念のため）
+    eval "$(declare -f advanced_problem_detection | sed 's/advanced_problem_detection/advanced_problem_detection_v2_0/')"
+    
+    # v2.1版の新しい関数を定義
+    advanced_problem_detection() {
+        echo "✅ v2.1 高速アップデート適用済み"
+        echo "🔍 次世代問題検出システム実行中..."
+        
+        local issues_found=0
+        local warnings=()
+        local errors=()
+
+        # [v2.1] 新しいチェック機能を追加
+        check_structural_integrity_v2_1 warnings issues_found
+        check_logic_consistency_v2_1 warnings issues_found
+        
+        # v2.0の既存チェックも実行
+        advanced_problem_detection_v2_0
+
+        # レポート生成は既存のものを利用
+    }
+}
+
+# --- v2.1 高速アップデートパッチ ここまで ---
