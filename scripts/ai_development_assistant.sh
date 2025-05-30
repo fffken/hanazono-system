@@ -385,35 +385,112 @@ check_for_remote_changes() {
 # --- v3.3 アップデートパッチ ここから ---
 
 # [v3.3 新機能] リモートの変更を検知後、コードを取得し各種分析を実行
+# --- v3.4 アップデートパッチ ここから ---
+# --- v3.4 デバッグ用パッチ ここから ---
 process_remote_changes() {
-    echo "🔄 リモート変更処理システム v3.3 起動..."
-    if check_for_remote_changes; then # v3.2で実装した関数を利用
+    echo "🔄 リモート変更処理システム v3.4 (デバッグモード) 起動..."
+    if check_for_remote_changes; then
         echo "  🚚 新しい変更をローカルに適用します ('git pull origin main')..."
         git pull origin main
-        if [ $? -ne 0 ]; then
-            echo "  ❌エラー: 'git pull origin main' に失敗しました。コンフリクト等を確認してください。"
-            return 1
+        if [ $? -ne 0 ]; then echo "  ❌エラー: 'git pull'失敗"; return 1; fi
+        echo "  ✅ ローカルリポジトリ更新完了。"
+        echo ""
+        echo "  🔬 初期自動分析開始..."
+        advanced_problem_detection; run_code_health_check; auto_format_python_files
+        echo ""
+        echo "  --- DEBUG: auto_format_python_files 実行後の action_test.py の内容 ---"
+        cat action_test.py 2>/dev/null || echo "  DEBUG: action_test.py がこの時点で見つかりません"
+        echo "  --- DEBUG: get_problem_count 直前の grep テスト ---"
+        if grep -r "os.popen" --include="*.py" . | grep -v "venv" >/dev/null 2>&1; then
+            echo "  DEBUG: ✅ この時点のgrepは 'os.popen' を検出しました。"
+        else
+            echo "  DEBUG: ❌ この時点のgrepは 'os.popen' を検出しませんでした。"
         fi
-        echo "  ✅ ローカルリポジトリを更新しました。"
-        echo ""
-        echo "  🔬 更新されたコードの自動分析を開始します..."
-        echo "  ----------------------------------------"
-        advanced_problem_detection # v2.3 診断レポート機能付き
-        echo "  ----------------------------------------"
-        echo ""
-        echo "  🩺 コード健康診断を実行します..."
-        echo "  ----------------------------------------"
-        run_code_health_check      # v2.5 健康診断機能
-        echo "  ----------------------------------------"
-        echo ""
-        echo "  🎨 コードフォーマットを適用します..."
-        echo "  ----------------------------------------"
-        auto_format_python_files   # v2.4 フォーマット機能
-        echo "  ----------------------------------------"
-        echo ""
-        echo "  🏁 全ての自動分析・整形処理が完了しました。"
+        echo "  ----------------------------------------------------------------"
+        local final_problem_count=$(get_problem_count)
+        if [ "$final_problem_count" -gt 0 ]; then
+            echo "🚨 初期自動分析の結果、${final_problem_count}件の問題が残っています。"
+            read -r -p "🔧 fully_autonomous_system を実行して自動修正を試みますか？ (y/N): " response
+            if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+                fully_autonomous_system; echo "再度、最終状態を確認します..."; advanced_problem_detection 
+            else
+                echo "自動修正はスキップされました。"
+            fi
+        else
+            echo "✅ 初期自動分析の結果、全ての問題は解決済み、または問題はありませんでした。"
+        fi
+        echo ""; echo "  🏁 全ての処理が完了しました。"
     else
-        echo "  👍 リモートに変更はありませんでした。分析はスキップします。"
+        echo "  👍 リモートに変更はありませんでした。処理はスキップします。"
     fi
 }
-# --- v3.3 アップデートパッチ ここまで ---
+# --- v3.4 デバッグ用パッチ ここまで ---
+# --- v3.4.1 アップデートパッチ ここから ---
+run_ast_based_refactoring() {
+    echo "  -> 🧬 ASTリファクタリング用Pythonスクリプトを準備中 (/tmp/ast_refactor.py)..."
+    cat > /tmp/ast_refactor.py << 'PYTHON_EOF'
+import ast
+import sys
+
+class OsPopenTransformer(ast.NodeTransformer):
+    def visit_Call(self, node):
+        if (isinstance(node.func, ast.Attribute) and
+            isinstance(node.func.value, ast.Name) and
+            node.func.value.id == 'os' and
+            node.func.attr == 'popen'):
+            
+            new_func = ast.Attribute(
+                value=ast.Name(id='subprocess', ctx=ast.Load()),
+                attr='run',
+                ctx=ast.Load()
+            )
+            new_node = ast.Call(
+                func=new_func,
+                args=node.args,
+                keywords=[
+                    ast.keyword(arg='shell', value=ast.Constant(value=True)),
+                    ast.keyword(arg='capture_output', value=ast.Constant(value=True)),
+                    ast.keyword(arg='text', value=ast.Constant(value=True))
+                ]
+            )
+            return ast.copy_location(new_node, node)
+        return self.generic_visit(node)
+
+def refactor_file(filename):
+    try:
+        with open(filename, 'r') as f:
+            source = f.read()
+        
+        tree = ast.parse(source)
+        transformer = OsPopenTransformer()
+        new_tree = transformer.visit(tree)
+        ast.fix_missing_locations(new_tree)
+        
+        new_source = ast.unparse(new_tree)
+
+        if source != new_source:
+            with open(filename, 'w') as f:
+                f.write(new_source)
+            print(f"  -> ✅ ファイルをリファクタリング: {filename}")
+        # else:
+            # print(f"  -> 🔩 リファクタリング不要: {filename}") # ログが冗長なのでコメントアウト
+            
+    except Exception as e:
+        print(f"  -> ❌ エラー {filename}: {e}")
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        refactor_file(sys.argv[1])
+PYTHON_EOF
+    echo "  -> 🔬 ASTベースのリファクタリングを実行中..."
+    find . -path ./venv -prune -o -name "*.py" -print0 | while IFS= read -r -d '' file; do
+        # 存在するファイルのみを対象 (特にテスト用の一時ファイルなど)
+        if [ -f "$file" ]; then
+            python3 /tmp/ast_refactor.py "$file"
+        fi
+    done
+    rm /tmp/ast_refactor.py # 実行後に一時Pythonスクリプトを削除
+    echo "========================================"
+    echo "✅ ASTベースのリファクタリングが完了しました。"
+}
+# --- v3.4.1 アップデートパッチ ここまで ---
