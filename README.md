@@ -80,3 +80,4 @@ fetcher = GitHubAutoFetch()
 ### 重要設定
 - GitHubトークン: 自動設定済み
 - API権限: プライベートリポジトリアクセス可能
+- 
