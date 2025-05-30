@@ -324,3 +324,28 @@ run_code_health_check() {
     echo "✅ 健康診断が完了しました。"
 }
 # --- v2.5 アップデートパッチ ここまで ---
+# --- v3.1 完成版パッチ ---
+get_problem_count() {
+    local issues_found=0
+    if grep -r "os.popen" --include="*.py" . | grep -v "venv" >/dev/null 2>&1; then
+        issues_found=$((issues_found + 1))
+    fi
+    echo "$issues_found"
+}
+fully_autonomous_system() {
+    echo "🤖 完全自律実行システム v3.1 (最終版) 起動..."
+    local max_loops=5; local loop_count=1
+    while [[ $loop_count -le $max_loops ]]; do
+        echo ""; echo "🔄 自律サイクル ${loop_count}/${max_loops} を開始..."
+        local problem_count=$(get_problem_count)
+        echo "  [1/3] 🔍 現在の問題数: ${problem_count}件"
+        if [[ "$problem_count" -eq 0 ]]; then echo "🏆 問題0件。自律処理完了。"; break; fi
+        echo "  [2/3] 🔧 自動修正(AST)を実行します..."
+        run_ast_based_refactoring
+        echo "  [3/3] ⚙️ 修正反映のため1秒待機..."; sleep 1
+        ((loop_count++))
+    done
+    if [[ $loop_count -gt $max_loops ]]; then echo "⚠️ 最大ループ回数到達。"; fi
+    echo "🏁 自律システム実行完了。"
+}
+# --- v3.1 完成版パッチここまで ---
