@@ -1428,39 +1428,3 @@ upgrade_to_v2_2() {
     }
 }
 # --- v2.2 高速アップデートパッチ ここまで ---
-
-# --- v2.2 高速アップデートパッチ ここから ---
-check_static_analysis_v2_2() {
-    local -n warnings_ref=$1
-    local -n issues_count_ref=$2
-    local target_script="scripts/ai_development_assistant.sh"
-    local report_file="/tmp/shellcheck_report.txt"
-    if command -v shellcheck &> /dev/null; then
-        if ! shellcheck -e SC2154,SC2034 "$target_script" > "$report_file" 2>&1; then
-            if [ -s "$report_file" ]; then
-                warnings_ref+=("🤖 shellcheckで問題が指摘されました (詳細は ${report_file} )")
-                issues_count_ref=$((issues_count_ref + 1))
-            fi
-        else
-             rm -f "$report_file"
-        fi
-    fi
-}
-upgrade_to_v2_2() {
-    type upgrade_to_v2_1 >/dev/null 2>&1 && upgrade_to_v2_1
-    eval "$(declare -f advanced_problem_detection | sed 's/advanced_problem_detection/advanced_problem_detection_v2_1/')"
-    advanced_problem_detection() {
-        echo "✅ v2.2 AI能力向上アップデート適用済み"
-        advanced_problem_detection_v2_1
-        echo "  🧠 静的解析チェック中 (shellcheck)..."
-        local issues_found=0; local warnings=()
-        check_static_analysis_v2_2 warnings issues_found
-        if [[ "$issues_found" -gt 0 ]]; then
-            echo ""
-            echo "--- 静的解析レポート ---"
-            for warning in "${warnings[@]}"; do echo "$warning"; done
-            echo "------------------------"
-        fi
-    }
-}
-# --- v2.2 高速アップデートパッチ ここまで ---
