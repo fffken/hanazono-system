@@ -90,42 +90,33 @@ class EnhancedEmailSystemV2:
         return {'ID07': max(20, min(80, human['ID07'] - 2)), 'ID10': max(10, min(90, human['ID10'] - 3)), 'ID62': max(20, min(80, human['ID62'] - 2)), 'reason': '過去30日実績分析'}
 
     def _extract_battery_info(self, data):
-        """バッテリー情報を抽出（report_data形式対応版）"""
+        """バッテリー情報を抽出（新データ構造対応版）"""
         try:
-            # report_data形式の場合
-            if isinstance(data, dict) and "solar_data" in data:
-                solar_data = data["solar_data"]
-                if isinstance(solar_data, list) and len(solar_data) > 0:
-                    actual_data = solar_data[0]
-                else:
-                    actual_data = solar_data
-            elif isinstance(data, list) and len(data) > 0:
+            if isinstance(data, list) and len(data) > 0:
                 actual_data = data[0]
             elif isinstance(data, dict):
                 actual_data = data
             else:
-                return {"soc": "N/A", "voltage": "N/A", "current": "N/A"}
-            
-            if isinstance(actual_data, dict) and "parameters" in actual_data:
-                params = actual_data["parameters"]
-                soc = "N/A"
-                voltage = "N/A"
-                current = "N/A"
-                
-                if "0x0100" in params and isinstance(params["0x0100"], dict):
-                    soc = params["0x0100"].get("value", "N/A")
-                if "0x0101" in params and isinstance(params["0x0101"], dict):
-                    voltage_val = params["0x0101"].get("value", "N/A")
-                    voltage = round(voltage_val, 1) if isinstance(voltage_val, (int, float)) else "N/A"
-                if "0x0102" in params and isinstance(params["0x0102"], dict):
-                    current_val = params["0x0102"].get("value", "N/A")
-                    current = round(current_val, 1) if isinstance(current_val, (int, float)) else "N/A"
-                
-                return {"soc": soc, "voltage": voltage, "current": current}
+                return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
+            if isinstance(actual_data, dict) and 'parameters' in actual_data:
+                params = actual_data['parameters']
+                soc = 'N/A'
+                voltage = 'N/A'
+                current = 'N/A'
+                if '0x0100' in params and isinstance(params['0x0100'], dict):
+                    soc = params['0x0100'].get('value', 'N/A')
+                if '0x0101' in params and isinstance(params['0x0101'], dict):
+                    voltage_val = params['0x0101'].get('value', 'N/A')
+                    voltage = round(voltage_val, 1) if isinstance(voltage_val, (int, float)) else 'N/A'
+                if '0x0102' in params and isinstance(params['0x0102'], dict):
+                    current_val = params['0x0102'].get('value', 'N/A')
+                    current = round(current_val, 1) if isinstance(current_val, (int, float)) else 'N/A'
+                return {'soc': soc, 'voltage': voltage, 'current': current}
             else:
-                return {"soc": "N/A", "voltage": "N/A", "current": "N/A"}
+                return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
         except Exception as e:
-            return {"soc": "N/A", "voltage": "N/A", "current": "N/A"}
+            return {'soc': 'N/A', 'voltage': 'N/A', 'current': 'N/A'}
+
     def _battle_results_section(self):
         """人間 vs AI 対戦成績セクション"""
         if not hasattr(self, 'ai_db') or not self.ai_db:
