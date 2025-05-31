@@ -62,6 +62,7 @@ class EmailNotifier:
             msg.attach(MIMEText(text_content, 'plain', 'utf-8'))
             server = smtplib.SMTP(smtp_server, smtp_port)
             server.starttls()
+            self.logger.debug(f"SMTP DEBUG: User='{username}', Pass='{password[:4]}{'*'*(len(password)-8)}{password[-4:] if len(password) > 8 else ''}' (Length: {len(password)})")
             server.login(username, password)
             server.sendmail(sender, recipients, msg.as_string())
             server.quit()
