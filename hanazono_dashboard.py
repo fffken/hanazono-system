@@ -34,10 +34,13 @@ class HANAZONODashboard:
             files = list(data_dir.glob("lvyuan_data_*.json"))
             if not files:
                 return None
-                
             latest_file = max(files, key=lambda f: f.stat().st_mtime)
             with open(latest_file) as f:
                 data = json.load(f)
+                
+            # リスト形式データの処理
+            if isinstance(data, list) and len(data) > 0 and data[0] is not None:
+                data = data[0]
             
             # データを整理
             if isinstance(data, dict) and 'parameters' in data:
