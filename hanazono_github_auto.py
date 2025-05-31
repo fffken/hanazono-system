@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-HANAZONO GitHub自動引き継ぎシステム v3.0
-新AIが「hanazono」と入力するだけで完全把握
-洗練されたチャット体験
+HANAZONO GitHub自動引き継ぎシステム v3.1（完全自動コピペ版）
+新AIが即座に完全把握・高効率作業開始
 """
 
 import json
@@ -18,24 +17,58 @@ class HANAZONOGitHubAuto:
         
     def execute_handover(self):
         """メイン引き継ぎ実行"""
-        print("🏆 HANAZONOシステム - 究極引き継ぎ v3.0")
+        print("🏆 HANAZONOシステム - 究極引き継ぎ v3.1")
         print("=" * 50)
         
         # Step 1: GitHub情報更新
         self.update_github_info()
         
-        # Step 2: 新AI向けメッセージ表示
-        self.show_ai_message()
-        
-        # Step 3: GitHub自動読み取り情報生成
+        # Step 2: GitHub自動読み取り情報生成
         self.generate_github_handover()
         
-        print("\n🎉 引き継ぎ準備完了！新AIは以下を実行してください：")
+        # Step 3: 新AIセッション用コピペテキスト表示
+        self.show_copy_paste_text()
+        
+    def show_copy_paste_text(self):
+        """新AIセッション用コピペテキスト表示"""
+        print("\n" + "=" * 60)
+        print("📋 【新AIセッション用コピペテキスト】")
         print("=" * 60)
-        print("📋 新AIセッション開始手順：")
-        print("1. 「hanazono」と入力")
-        print("2. GitHub自動読み取り指示を表示")
-        print("3. 即座に完全状況把握・作業開始")
+        
+        copy_text = f"""新AIセッション開始。HANAZONOソーラー蓄電システムの作業を継続します。
+
+以下のGitHubファイルをweb_searchで読み取って完全状況把握してください：
+
+1. https://github.com/fffken/hanazono-system/blob/main/AI_WORK_RULES.md
+   → AI作業ルール・効率化手法・コピーマーカー使用法
+
+2. https://github.com/fffken/hanazono-system/blob/main/PROJECT_STATUS.md  
+   → プロジェクト現在状況・進捗・システム概要
+
+3. https://github.com/fffken/hanazono-system/blob/main/github_auto_handover.md
+   → 最新システム状態・推奨アクション・利用可能コマンド
+
+読み取り完了後、即座に以下のコマンドが使用可能です：
+
+🔧 効率化コマンド：
+- h 'システム状態確認'    # 統合システム確認
+- ai 'バグ修正して'        # AI自動開発  
+- dashboard               # リアルタイム監視画面
+- hanazono detail         # 詳細情報確認
+
+⚡ Git管理：
+- bash scripts/auto_git_organize_push.sh  # Git自動整理
+
+📊 現在状況：{self.get_current_git_status()}
+📅 更新時刻：{datetime.now().strftime('%Y-%m-%d %H:%M')}
+
+GitHub読み取り完了後、効率化システムにより高速作業継続が可能です。"""
+
+        print(copy_text)
+        
+        print("=" * 60)
+        print("📋 上記テキストを新AIセッションにコピペしてください")
+        print("🎯 新AIが即座に完全状況把握・高効率作業開始します")
         print("=" * 60)
     
     def update_github_info(self):
@@ -59,25 +92,6 @@ class HANAZONOGitHubAuto:
             
         except Exception as e:
             print(f"⚠️ GitHub更新部分失敗: {e}")
-    
-    def show_ai_message(self):
-        """新AI向けメッセージ"""
-        print("\n🤖 新AIセッション向け情報:")
-        print("━" * 40)
-        
-        # 重要な状況サマリー
-        git_status = self.get_current_git_status()
-        system_status = self.get_current_system_status()
-        
-        print(f"📊 現在状況: {git_status}")
-        print(f"🔄 システム: {system_status}")
-        print(f"📅 更新時刻: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-        
-        print("\n💡 GitHub自動読み取りで以下が把握可能:")
-        print("   • プロジェクト全体概要・技術仕様")
-        print("   • AI作業ルール・効率化コマンド")
-        print("   • 最新の進捗・変更履歴")
-        print("   • システム状態・推奨アクション")
     
     def generate_github_handover(self):
         """GitHub自動読み取り用情報生成"""
@@ -160,16 +174,6 @@ https://github.com/fffken/hanazono-system/tree/main
             return f"{changes}件の未コミット変更"
         except:
             return "Git状態確認失敗"
-    
-    def get_current_system_status(self):
-        """現在のシステム状態（簡潔版）"""
-        try:
-            result = subprocess.run(['pgrep', '-f', 'python.*lvyuan'], 
-                                  capture_output=True, text=True)
-            processes = len(result.stdout.strip().split('\n')) if result.stdout.strip() else 0
-            return f"{processes}個のプロセス実行中"
-        except:
-            return "システム確認失敗"
     
     def get_detailed_git_status(self):
         """詳細Git状態"""
