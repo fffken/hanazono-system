@@ -1,0 +1,164 @@
+name: HANAZONO System CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 7 * * *'  # 毎朝7時に自動実行
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: 🧪 システムテスト
+    
+    steps:
+    - name: 📥 コードチェックアウト
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Python 3.11 セットアップ
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: 📦 依存関係インストール
+      run: |
+        python -m pip install --upgrade pip
+        pip install pysolarmanv5 requests matplotlib seaborn pandas numpy
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        
+    - name: 🔍 構文チェック
+      run: |
+        python -m py_compile main.py
+        python -m py_compile email_notifier.py
+        python -m py_compile lvyuan_collector.py
+        python -m py_compile settings_manager.py
+        echo "✅ 全ファイル構文チェック成功"
+        
+    - name: ⚙️ 設定ファイル検証
+      run: |
+        python -c "import json; json.load(open('settings.json'))"
+        echo "✅ settings.json 検証成功"
+        
+    - name: 🧪 統合テスト実行
+      run: |
+        python -c "
+        import sys
+        sys.path.append('.')
+        try:
+            from settings_manager import SettingsManager
+            sm = SettingsManager()
+            print('✅ SettingsManager テスト成功')
+        except Exception as e:
+            print(f'❌ SettingsManager テスト失敗: {e}')
+            sys.exit(1)
+        "
+        
+    - name: 📊 テスト結果通知
+      if: always()
+      run: |
+        echo "🎉 HANAZONOシステム自動テスト完了"
+        echo "コミット: ${{ github.sha }}"
+        echo "ブランチ: ${{ github.ref }}"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    name: 🚀 自動デプロイ
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: 📥 コードチェックアウト
+      uses: actions/checkout@v4
+      
+    - name: 📚 ドキュメント自動更新
+      run: |
+        # 最新コミット情報を取得
+        COMMIT_MSG=$(git log -1 --pretty=format:"%s")
+        COMMIT_HASH=$(git log -1 --pretty=format:"%h")
+        DATE=$(date '+%Y-%m-%d %H:%M:%S')
+        
+        # CHANGELOG.md 自動更新
+        echo "## [$DATE] - $COMMIT_HASH" >> CHANGELOG_AUTO.md
+        echo "### 変更内容" >> CHANGELOG_AUTO.md
+        echo "- $COMMIT_MSG" >> CHANGELOG_AUTO.md
+        echo "" >> CHANGELOG_AUTO.md
+        
+        # README.md のバッジ更新
+        if [ -f README.md ]; then
+          sed -i "s/Last Update: .*/Last Update: $DATE/g" README.md
+        fi
+        
+        echo "✅ ドキュメント自動更新完了"
+        
+    - name: 🏷️ 自動タグ作成
+      run: |
+        # バージョン番号を自動生成（年月日.時分）
+        VERSION=$(date '+%Y.%m.%d.%H%M')
+        git config user.name "HANAZONO Auto"
+        git config user.email "auto@hanazono.system"
+        git tag -a "v$VERSION" -m "自動リリース: $VERSION"
+        echo "✅ タグ v$VERSION 作成完了"
+        
+    - name: 📈 システム統計更新
+      run: |
+        # プロジェクト統計の生成
+        TOTAL_LINES=$(find . -name "*.py" -exec wc -l {} + | tail -1 | awk '{print $1}')
+        TOTAL_FILES=$(find . -name "*.py" | wc -l)
+        
+        echo "# HANAZONOシステム統計" > STATS.md
+        echo "- 総Python行数: $TOTAL_LINES" >> STATS.md
+        echo "- 総Pythonファイル数: $TOTAL_FILES" >> STATS.md
+        echo "- 最終更新: $(date '+%Y-%m-%d %H:%M:%S')" >> STATS.md
+        
+        echo "✅ システム統計更新完了"
+
+  monitor:
+    runs-on: ubuntu-latest
+    name: 📊 システム監視
+    if: github.event_name == 'schedule'
+    
+    steps:
+    - name: 📥 コードチェックアウト
+      uses: actions/checkout@v4
+      
+    - name: 🔍 システムヘルスチェック
+      run: |
+        echo "🔍 HANAZONOシステム定期ヘルスチェック"
+        
+        # ファイル存在確認
+        REQUIRED_FILES=("main.py" "email_notifier.py" "lvyuan_collector.py" "settings.json")
+        for file in "${REQUIRED_FILES[@]}"; do
+          if [ -f "$file" ]; then
+            echo "✅ $file 存在確認"
+          else
+            echo "❌ $file が見つかりません"
+            exit 1
+          fi
+        done
+        
+        # 設定ファイル整合性確認
+        python -c "
+        import json
+        with open('settings.json') as f:
+            settings = json.load(f)
+        required_keys = ['inverter', 'email', 'monitoring']
+        missing = [key for key in required_keys if key not in settings]
+        if missing:
+            print(f'❌ 設定キー不足: {missing}')
+            exit(1)
+        else:
+            print('✅ settings.json 整合性確認')
+        "
+        
+        echo "🎉 システムヘルスチェック完了"
+        
+    - name: 📊 定期レポート生成
+      run: |
+        echo "# HANAZONOシステム定期レポート" > HEALTH_REPORT.md
+        echo "実行日時: $(date '+%Y-%m-%d %H:%M:%S')" >> HEALTH_REPORT.md
+        echo "## システム状態: ✅ 正常" >> HEALTH_REPORT.md
+        echo "## 次回チェック: 明日 7:00 AM" >> HEALTH_REPORT.md
+        
+        echo "✅ 定期レポート生成完了"
