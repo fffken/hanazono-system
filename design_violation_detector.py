@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import os
 import sys
 
@@ -6,32 +5,18 @@ def check_for_temp_files():
     """
     /tmp に残存するべきでない一時的なテストファイルが存在するかチェックする。
     """
-    temp_files_to_check = [
-        '/tmp/ast_refactor.py',
-        '/tmp/patch_v2.2.sh',
-        '/tmp/patch_v2.3.sh',
-        '/tmp/patch_v2.4.sh',
-        '/tmp/patch_v2.5.sh',
-        '/tmp/patch_v2.6.sh',
-        '/tmp/patch_v3.1.sh'
-    ]
-    
+    temp_files_to_check = ['/tmp/ast_refactor.py', '/tmp/patch_v2.2.sh', '/tmp/patch_v2.3.sh', '/tmp/patch_v2.4.sh', '/tmp/patch_v2.5.sh', '/tmp/patch_v2.6.sh', '/tmp/patch_v3.1.sh']
     for f in temp_files_to_check:
         if os.path.exists(f):
-            print(f"   - 警告: 一時ファイル {f} が残存しています。")
-
+            print(f'   - 警告: 一時ファイル {f} が残存しています。')
 
 def main():
     """
     メインのチェック処理
     """
-    print("🛡️ 設計思想違反検出システム v1.1 実行中...")
-    
-    # 一時ファイルのチェック
+    print('🛡️ 設計思想違反検出システム v1.1 実行中...')
     check_for_temp_files()
-    
-    print("✅ 設計思想チェック通過")
+    print('✅ 設計思想チェック通過')
     sys.exit(0)
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
