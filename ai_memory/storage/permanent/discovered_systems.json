@@ -1,0 +1,66 @@
+{
+  "discovery_time": "2025-06-01T23:12:37.554531",
+  "source": "詳細システム調査",
+  "active_automation_systems": {
+    "UltimateIntegratedSystem": {
+      "processes": 10,
+      "functions": [
+        "統合監視システム（10秒間隔）",
+        "自律進化システム（30分間隔）",
+        "量子予測システム（1分間隔）",
+        "完全最適化システム（5分間隔）",
+        "意識システム（30秒間隔）"
+      ],
+      "status": "稼働中",
+      "total_actions": "9000+",
+      "evolution_cycles": "55+",
+      "predictions": "1600+"
+    },
+    "web_dashboard_server": {
+      "port": "unknown",
+      "status": "稼働中",
+      "api_endpoints": [
+        "/api/data"
+      ]
+    },
+    "manual_auto_update": {
+      "mode": "watch",
+      "status": "稼働中"
+    }
+  },
+  "ml_email_system": {
+    "status": "実装済み・稼働中",
+    "file": "ultimate_email_integration.py",
+    "features": [
+      "6年データ統合システム",
+      "5段階バトルシステム",
+      "AI予測エンジン",
+      "🟠タイトル絵文字システム"
+    ],
+    "last_success": "2025-06-01 19:01:58"
+  },
+  "database_systems": {
+    "comprehensive_electric_data.db": "統合電力データ",
+    "hanazono_analysis.db": "HANAZONO分析データ",
+    "ai_learning.db": "AI学習データ",
+    "electric_bills.db": "電気料金データ"
+  },
+  "cron_automation": {
+    "data_collection": "15分間隔",
+    "daily_reports": "朝7時・夜23時",
+    "hanazono_optimization": "毎朝3時・6時",
+    "ai_evolution": "2時間間隔",
+    "health_checks": "15分間隔"
+  },
+  "detected_issues": {
+    "pysolarmanv5_missing": "システムヘルスで検出",
+    "psutil_missing": "オプティマイザーで検出",
+    "smtp_auth_error": "メール認証エラー"
+  },
+  "working_systems": {
+    "data_collection": "インバーター接続正常（192.168.0.202）",
+    "email_integration": "ultimate_email_integration動作中",
+    "web_dashboard": "アクセスログ正常",
+    "ai_evolution": "進化サイクル55回完了"
+  }
+}
