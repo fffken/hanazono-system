@@ -1,0 +1,76 @@
+{
+  "last_updated": "2025-06-01T22:38:51.144494",
+  "source": "ローカル完全調査",
+  "seasonal_settings": {
+    "winter": {
+      "typeA": {
+        "charge_current": 50,
+        "charge_time": 45,
+        "soc": 50
+      },
+      "typeB": {
+        "charge_current": 60,
+        "charge_time": 60,
+        "soc": 60
+      }
+    },
+    "spring_fall": {
+      "typeA": {
+        "charge_current": 40,
+        "charge_time": 30,
+        "soc": 35
+      },
+      "typeB": {
+        "charge_current": 50,
+        "charge_time": 45,
+        "soc": 45
+      }
+    },
+    "summer": {
+      "typeA": {
+        "charge_current": 25,
+        "charge_time": 15,
+        "soc": 25
+      },
+      "typeB": {
+        "charge_current": 35,
+        "charge_time": 30,
+        "soc": 35
+      }
+    }
+  },
+  "inverter_parameters": {
+    "charge_current_id": "07",
+    "charge_time_id": "10",
+    "soc_setting_id": "62"
+  },
+  "python_modules": {
+    "HANAZONOAIAssistant": "AIアシスタント機能",
+    "EmailNotifier": "メール通知システム",
+    "battery_data_extraction": "バッテリーデータ抽出機能"
+  },
+  "development_philosophy": {
+    "goal": "人間を技術的詳細から完全に解放",
+    "principle": "ゼロ思考負荷の法則",
+    "focus": "創造性と判断力のみに集中"
+  },
+  "power_data": {
+    "2023_2024_total_usage": "9,363kWh",
+    "2023_2024_total_cost": "¥216,687",
+    "battle_system_win_rate": "75%"
+  },
+  "documentation": {
+    "references": [
+      "INVERTER_REGISTERS.md",
+      "IMPLEMENTATION_DETAILS.md",
+      "PARAMETER_SETTINGS.md"
+    ],
+    "guides": [
+      "settings_adjustment_guide.md"
+    ],
+    "project": [
+      "ROADMAP_COMPLETE.md",
+      "PROJECT_MASTER.md"
+    ]
+  }
+}
