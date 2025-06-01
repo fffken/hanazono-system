@@ -332,11 +332,6 @@ class EnhancedEmailNotifier:
             smtp_port = self.config.get('smtp_port')
             username = self.config.get('smtp_user')
             password = self.config.get('smtp_password')
-            # 環境変数展開処理
-            if password and password.startswith("${") and password.endswith("}"):
-                import os
-                env_var = password[2:-1]
-                password = os.getenv(env_var)
             sender = self.config.get('email_sender')
             recipients = self.config.get('email_recipients')
             
