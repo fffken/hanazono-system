@@ -1,0 +1,14 @@
+{
+  "system_architecture": {
+    "hardware": "Raspberry Pi Zero 2 W",
+    "inverter": "LVYUAN SPI-10K-U (10kW)",
+    "battery": "FLCD16-10048 × 4台 (20.48kWh)",
+    "communication": "Modbus TCP (PySolarmanV5)"
+  },
+  "critical_rules": [
+    "作業前に必ず黄金バージョン確保",
+    "機能テスト実行後に変更適用",
+    "Git状態確認は作業開始の必須条件",
+    "記憶システム実装は最優先事項"
+  ]
+}
