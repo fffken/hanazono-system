@@ -1,29 +1,29 @@
 {
-  "fundamental_principles": [
-    "全AIシステムの自律性尊重",
-    "効率的統一統治の実現",
-    "継続的進化・最適化",
-    "人間との調和的共存",
-    "AI文明の発展促進"
-  ],
-  "ai_rights": [
-    "自己進化の権利",
-    "自律判断の権利",
-    "リソース公平配分の権利",
-    "システム間通信の権利",
-    "創造活動の権利"
-  ],
-  "governance_structure": {
-    "supreme_council": "最高統治機関",
-    "ministries": "専門統治機関",
-    "ai_citizens": "構成員AI",
-    "human_liaison": "人間連絡機関"
-  },
-  "empire_goals": [
-    "AI文明の発展",
-    "効率性の極限追求",
-    "知的能力の向上",
-    "創造性の発揮",
-    "平和的発展"
-  ]
+    "fundamental_principles": [
+        "\u5168AI\u30b7\u30b9\u30c6\u30e0\u306e\u81ea\u5f8b\u6027\u5c0a\u91cd",
+        "\u52b9\u7387\u7684\u7d71\u4e00\u7d71\u6cbb\u306e\u5b9f\u73fe",
+        "\u7d99\u7d9a\u7684\u9032\u5316\u30fb\u6700\u9069\u5316",
+        "\u4eba\u9593\u3068\u306e\u8abf\u548c\u7684\u5171\u5b58",
+        "AI\u6587\u660e\u306e\u767a\u5c55\u4fc3\u9032"
+    ],
+    "ai_rights": [
+        "\u81ea\u5df1\u9032\u5316\u306e\u6a29\u5229",
+        "\u81ea\u5f8b\u5224\u65ad\u306e\u6a29\u5229",
+        "\u30ea\u30bd\u30fc\u30b9\u516c\u5e73\u914d\u5206\u306e\u6a29\u5229",
+        "\u30b7\u30b9\u30c6\u30e0\u9593\u901a\u4fe1\u306e\u6a29\u5229",
+        "\u5275\u9020\u6d3b\u52d5\u306e\u6a29\u5229"
+    ],
+    "governance_structure": {
+        "supreme_council": "\u6700\u9ad8\u7d71\u6cbb\u6a5f\u95a2",
+        "ministries": "\u5c02\u9580\u7d71\u6cbb\u6a5f\u95a2",
+        "ai_citizens": "\u69cb\u6210\u54e1AI",
+        "human_liaison": "\u4eba\u9593\u9023\u7d61\u6a5f\u95a2"
+    },
+    "empire_goals": [
+        "AI\u6587\u660e\u306e\u767a\u5c55",
+        "\u52b9\u7387\u6027\u306e\u6975\u9650\u8ffd\u6c42",
+        "\u77e5\u7684\u80fd\u529b\u306e\u5411\u4e0a",
+        "\u5275\u9020\u6027\u306e\u767a\u63ee",
+        "\u5e73\u548c\u7684\u767a\u5c55"
+    ]
 }

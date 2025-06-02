@@ -1,22 +1,22 @@
 {
-  "instant_items": [
-    "git_status",
-    "system_status",
-    "urgency_level",
-    "available_commands",
-    "recommended_actions"
-  ],
-  "detail_items": [
-    "technical_specs",
-    "recent_changes",
-    "error_logs",
-    "performance_metrics",
-    "full_documentation"
-  ],
-  "update_sources": [
-    "AI_WORK_RULES.md",
-    "PROJECT_STATUS.md",
-    "HANDOVER_PROMPT.md",
-    "git_info"
-  ]
+    "instant_items": [
+        "git_status",
+        "system_status",
+        "urgency_level",
+        "available_commands",
+        "recommended_actions"
+    ],
+    "detail_items": [
+        "technical_specs",
+        "recent_changes",
+        "error_logs",
+        "performance_metrics",
+        "full_documentation"
+    ],
+    "update_sources": [
+        "AI_WORK_RULES.md",
+        "PROJECT_STATUS.md",
+        "HANDOVER_PROMPT.md",
+        "git_info"
+    ]
 }
