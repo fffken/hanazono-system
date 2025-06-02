@@ -18,9 +18,9 @@ generate_ai_github_report() {
     cat > $REPORT_FILE << REPORT_EOF
 # AI用GitHub自動取得レポート v4.0（100点満点完全版）
 
-**生成時刻**: $TIMESTAMP
-**目的**: 新しいAIセッション開始時の100%完全状況把握
-**完成度**: 🏆 **100点/100点満点達成**
+*生成時刻*: $TIMESTAMP
+*目的*: 新しいAIセッション開始時の100%完全状況把握
+*完成度*: 🏆 *100点/100点満点達成*
 
 ## 🔍 Git状態の完全把握
 
@@ -28,13 +28,13 @@ generate_ai_github_report() {
 REPORT_EOF
 
     # Git基本情報
-    echo "- **ブランチ**: $(git branch --show-current)" >> $REPORT_FILE
-    echo "- **最新コミット**: $(git log -1 --oneline)" >> $REPORT_FILE
-    echo "- **リモートURL**: $(git remote get-url origin)" >> $REPORT_FILE
+    echo "- *ブランチ*: $(git branch --show-current)" >> $REPORT_FILE
+    echo "- *最新コミット*: $(git log -1 --oneline)" >> $REPORT_FILE
+    echo "- *リモートURL*: $(git remote get-url origin)" >> $REPORT_FILE
     
     # 変更状況
     local changes=$(git status --porcelain | wc -l)
-    echo "- **未コミット変更**: $changes 件" >> $REPORT_FILE
+    echo "- *未コミット変更*: $changes 件" >> $REPORT_FILE
     
     if [ $changes -gt 0 ]; then
         echo -e "\n### ⚠️ 未コミット変更詳細" >> $REPORT_FILE
@@ -63,21 +63,21 @@ deep_analyze_files() {
         
         # 重要設定の抽出
         echo -e "\n#### 🎯 重要設定値の解析" >> $REPORT_FILE
-        echo "**メール設定:**" >> $REPORT_FILE
+        echo "*メール設定:*" >> $REPORT_FILE
         if grep -q "email" settings.json; then
             echo '```' >> $REPORT_FILE
             grep -A 10 -B 2 "email" settings.json >> $REPORT_FILE
             echo '```' >> $REPORT_FILE
         fi
         
-        echo "**スケジュール設定:**" >> $REPORT_FILE
+        echo "*スケジュール設定:*" >> $REPORT_FILE
         if grep -q "schedule\|interval\|time" settings.json; then
             echo '```' >> $REPORT_FILE
             grep -A 5 -B 2 "schedule\|interval\|time" settings.json >> $REPORT_FILE
             echo '```' >> $REPORT_FILE
         fi
         
-        echo "**閾値・制御設定:**" >> $REPORT_FILE
+        echo "*閾値・制御設定:*" >> $REPORT_FILE
         if grep -q "threshold\|limit\|max\|min" settings.json; then
             echo '```' >> $REPORT_FILE
             grep -A 3 -B 1 "threshold\|limit\|max\|min" settings.json >> $REPORT_FILE
@@ -182,7 +182,7 @@ check_system_operation() {
         echo -e "\n#### 🕐 最新ログエントリ（最新3件）" >> $REPORT_FILE
         for log_file in "${found_logs[@]}"; do
             if [ -f "$log_file" ] && [ -r "$log_file" ]; then
-                echo -e "\n**$log_file:**" >> $REPORT_FILE
+                echo -e "\n*$log_file:*" >> $REPORT_FILE
                 echo '```' >> $REPORT_FILE
                 tail -3 "$log_file" 2>/dev/null >> $REPORT_FILE
                 echo '```' >> $REPORT_FILE
@@ -465,11 +465,11 @@ test_email_and_integrity() {
     local total_issues=$((email_config_issues + import_errors))
     
     if [ $total_issues -eq 0 ]; then
-        echo "🎉 **設定整合性: 完璧** - 全ての設定が適切に構成されています" >> $REPORT_FILE
+        echo "🎉 *設定整合性: 完璧* - 全ての設定が適切に構成されています" >> $REPORT_FILE
     elif [ $total_issues -le 2 ]; then
-        echo "⚠️ **設定整合性: 良好** - 軽微な問題が $total_issues 件あります" >> $REPORT_FILE
+        echo "⚠️ *設定整合性: 良好* - 軽微な問題が $total_issues 件あります" >> $REPORT_FILE
     else
-        echo "🔧 **設定整合性: 要改善** - $total_issues 件の問題が検出されました" >> $REPORT_FILE
+        echo "🔧 *設定整合性: 要改善* - $total_issues 件の問題が検出されました" >> $REPORT_FILE
     fi
 }
 
@@ -493,9 +493,9 @@ check_all_important_files() {
     done
     
     if [ $syntax_errors -eq 0 ]; then
-        echo -e "\n🎉 **全ての重要ファイルが正常動作可能**" >> $REPORT_FILE
+        echo -e "\n🎉 *全ての重要ファイルが正常動作可能*" >> $REPORT_FILE
     else
-        echo -e "\n⚠️ **$syntax_errors 個のファイルに構文エラー**" >> $REPORT_FILE
+        echo -e "\n⚠️ *$syntax_errors 個のファイルに構文エラー*" >> $REPORT_FILE
     fi
 }
 
@@ -519,19 +519,19 @@ generate_final_summary() {
     echo -e "\n## 🏆 100点満点達成総括" >> $REPORT_FILE
     
     echo -e "\n### 🎯 完成度評価" >> $REPORT_FILE
-    echo "- **段階1 (5点)**: ✅ ファイル内容深掘り分析完了" >> $REPORT_FILE
-    echo "- **段階2 (3点)**: ✅ システム動作状況詳細確認完了" >> $REPORT_FILE
-    echo "- **段階3 (2点)**: ✅ 詳細環境情報確認完了" >> $REPORT_FILE
-    echo "- **段階4 (3点)**: ✅ メール機能実テスト・設定整合性確認完了" >> $REPORT_FILE
-    echo "- **基本システム (87点)**: ✅ 全て正常動作中" >> $REPORT_FILE
+    echo "- *段階1 (5点)*: ✅ ファイル内容深掘り分析完了" >> $REPORT_FILE
+    echo "- *段階2 (3点)*: ✅ システム動作状況詳細確認完了" >> $REPORT_FILE
+    echo "- *段階3 (2点)*: ✅ 詳細環境情報確認完了" >> $REPORT_FILE
+    echo "- *段階4 (3点)*: ✅ メール機能実テスト・設定整合性確認完了" >> $REPORT_FILE
+    echo "- *基本システム (87点)*: ✅ 全て正常動作中" >> $REPORT_FILE
     
     echo -e "\n### 🌟 達成された機能" >> $REPORT_FILE
-    echo "1. **完全自動情報取得**: Git, ファイル, 設定, 環境の全自動把握" >> $REPORT_FILE
-    echo "2. **深掘り内容分析**: 設定値, 実装内容の詳細確認" >> $REPORT_FILE
-    echo "3. **動作状況監視**: ログ, プロセス, リソースの完全監視" >> $REPORT_FILE
-    echo "4. **環境完全把握**: Python環境, システム, ネットワークの詳細情報" >> $REPORT_FILE
-    echo "5. **機能実テスト**: メール機能, データ収集の実動作確認" >> $REPORT_FILE
-    echo "6. **設定整合性**: 全設定ファイルの整合性自動検証" >> $REPORT_FILE
+    echo "1. *完全自動情報取得*: Git, ファイル, 設定, 環境の全自動把握" >> $REPORT_FILE
+    echo "2. *深掘り内容分析*: 設定値, 実装内容の詳細確認" >> $REPORT_FILE
+    echo "3. *動作状況監視*: ログ, プロセス, リソースの完全監視" >> $REPORT_FILE
+    echo "4. *環境完全把握*: Python環境, システム, ネットワークの詳細情報" >> $REPORT_FILE
+    echo "5. *機能実テスト*: メール機能, データ収集の実動作確認" >> $REPORT_FILE
+    echo "6. *設定整合性*: 全設定ファイルの整合性自動検証" >> $REPORT_FILE
     
     echo -e "\n### 🎊 新しいAIが即座に把握できる情報（100%完全版）" >> $REPORT_FILE
     echo "- 📊 プロジェクト状態・Git履歴・未コミット変更の完全把握" >> $REPORT_FILE
@@ -544,13 +544,13 @@ generate_final_summary() {
     echo "- 🔧 構文チェック・依存関係・権限設定の確認結果" >> $REPORT_FILE
     
     echo -e "\n### 🚀 次回AIセッションでの即座対応可能な項目" >> $REPORT_FILE
-    echo "1. **設定変更**: 季節別設定の即座調整提案" >> $REPORT_FILE
-    echo "2. **問題解決**: 検出された問題の具体的解決手順提示" >> $REPORT_FILE
-    echo "3. **機能改善**: 現在の実装状況に基づく改善提案" >> $REPORT_FILE
-    echo "4. **メンテナンス**: システム状況に応じたメンテナンス計画" >> $REPORT_FILE
-    echo "5. **トラブル対応**: ログ・エラー情報に基づく迅速対応" >> $REPORT_FILE
+    echo "1. *設定変更*: 季節別設定の即座調整提案" >> $REPORT_FILE
+    echo "2. *問題解決*: 検出された問題の具体的解決手順提示" >> $REPORT_FILE
+    echo "3. *機能改善*: 現在の実装状況に基づく改善提案" >> $REPORT_FILE
+    echo "4. *メンテナンス*: システム状況に応じたメンテナンス計画" >> $REPORT_FILE
+    echo "5. *トラブル対応*: ログ・エラー情報に基づく迅速対応" >> $REPORT_FILE
     
-    echo -e "\n🏆 **HANAZONOシステム AI完全把握機能 100点満点達成！**" >> $REPORT_FILE
+    echo -e "\n🏆 *HANAZONOシステム AI完全把握機能 100点満点達成！*" >> $REPORT_FILE
 }
 
 # メイン実行
@@ -639,7 +639,7 @@ main "$@"
     echo "- ✅ システム状態: 100%取得済み" >> $REPORT_FILE
     echo "- ✅ 重要ドキュメント: 100%取得済み" >> $REPORT_FILE
     echo "- ✅ プロジェクト文脈: 100%保持済み" >> $REPORT_FILE
-    echo "- 🎯 **記憶喪失問題: 完全解決**" >> $REPORT_FILE
+    echo "- 🎯 *記憶喪失問題: 完全解決*" >> $REPORT_FILE
 
 
     # 重要ドキュメントの完全自動取得
@@ -686,7 +686,7 @@ main "$@"
     echo "- ✅ システム状態: 100%取得済み" >> $REPORT_FILE
     echo "- ✅ 重要ドキュメント: 100%取得済み" >> $REPORT_FILE
     echo "- ✅ プロジェクト文脈: 100%保持済み" >> $REPORT_FILE
-    echo "- 🎯 **記憶喪失問題: 完全解決**" >> $REPORT_FILE
+    echo "- 🎯 *記憶喪失問題: 完全解決*" >> $REPORT_FILE
 
 
     # AI自動緊急対応コマンド（既存システムから統合）

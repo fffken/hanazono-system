@@ -50,7 +50,7 @@ fi
 
 # 分類4: バックアップ・ログファイル
 echo "🗂️ [4/5] バックアップ・ログファイルをコミット..."
-git add monitoring_logs/ system_backups/ logs/ *.backup* **/backup_* 2>/dev/null
+git add monitoring_logs/ system_backups/ logs/ *.backup* */backup_* 2>/dev/null
 if [ $? -eq 0 ]; then
     git commit -m "🗂️ backup: 自動バックアップ・モニタリングログの整理" 2>/dev/null
     echo "   ✅ バックアップ・ログ完了"

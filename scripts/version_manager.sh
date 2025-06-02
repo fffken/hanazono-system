@@ -45,10 +45,10 @@ update_version() {
     cat > PROGRESS_SYSTEM_VERSION.md << VERSION_EOF
 # 進行管理システム バージョン情報
 
-**現在のバージョン**: $new_version
-**最終更新**: $TIMESTAMP
-**作成者**: AI Assistant + User
-**目的**: AIセッション間完全記憶継承システム
+*現在のバージョン*: $new_version
+*最終更新*: $TIMESTAMP
+*作成者*: AI Assistant + User
+*目的*: AIセッション間完全記憶継承システム
 
 ## バージョン履歴
 - $new_version ($TIMESTAMP): システム更新

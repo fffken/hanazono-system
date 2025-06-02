@@ -248,9 +248,9 @@ generate_dev_report() {
     cat > "$report_file" << REPORT_EOF
 # 開発レポート: $task_name
 
-**開始時刻**: $(date)
-**ブランチ**: $(git branch --show-current)
-**Git変更**: $(git status --short | wc -l)件
+*開始時刻*: $(date)
+*ブランチ*: $(git branch --show-current)
+*Git変更*: $(git status --short | wc -l)件
 
 ## 開発環境状況
 - システム状態: $(python3 main.py --daily-report >/dev/null 2>&1 && echo "正常" || echo "エラー")

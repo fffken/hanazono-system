@@ -21,9 +21,9 @@ TIMESTAMP=$(date)
 cat > $INTEGRATED_REPORT << HEADER_EOF
 # 🎯 統合自動レポート v5.0
 
-**生成時刻**: $TIMESTAMP
-**システム**: HANAZONOシステム
-**バージョン**: v5.0 (v4.0同等完璧版)
+*生成時刻*: $TIMESTAMP
+*システム*: HANAZONOシステム
+*バージョン*: v5.0 (v4.0同等完璧版)
 
 ## 🏆 システム完成度
 - ✅ GitHub自動情報取得システム v4.0: 完成
@@ -80,15 +80,15 @@ echo "" >> $INTEGRATED_REPORT
 echo "## 🤖 AI即座理解サマリー" >> $INTEGRATED_REPORT
 echo "" >> $INTEGRATED_REPORT
 echo "### 🎯 現在のシステム状態" >> $INTEGRATED_REPORT
-echo "- **GitHub API System v5.0**: 実行完了・レポート生成済み" >> $INTEGRATED_REPORT
-echo "- **Enhanced Auto-File Generator**: 稼働中・ターミナル制限問題解決済み" >> $INTEGRATED_REPORT
-echo "- **統合レポート生成**: 実行中" >> $INTEGRATED_REPORT
+echo "- *GitHub API System v5.0*: 実行完了・レポート生成済み" >> $INTEGRATED_REPORT
+echo "- *Enhanced Auto-File Generator*: 稼働中・ターミナル制限問題解決済み" >> $INTEGRATED_REPORT
+echo "- *統合レポート生成*: 実行中" >> $INTEGRATED_REPORT
 echo "" >> $INTEGRATED_REPORT
 
 echo "### 📋 次回セッション用情報" >> $INTEGRATED_REPORT
-echo "- **完了済み**: GitHub API完全活用システム、自動レポート生成機能" >> $INTEGRATED_REPORT
-echo "- **次の実装**: 1コマンド実行システム（最優先第3段階）" >> $INTEGRATED_REPORT
-echo "- **実行方法**: \`bash auto_generated_executables/ファイル名.sh\`" >> $INTEGRATED_REPORT
+echo "- *完了済み*: GitHub API完全活用システム、自動レポート生成機能" >> $INTEGRATED_REPORT
+echo "- *次の実装*: 1コマンド実行システム（最優先第3段階）" >> $INTEGRATED_REPORT
+echo "- *実行方法*: \`bash auto_generated_executables/ファイル名.sh\`" >> $INTEGRATED_REPORT
 echo "" >> $INTEGRATED_REPORT
 
 echo "✅ AI最適化形式出力完了"
@@ -98,19 +98,19 @@ echo "🎉 最終処理・次回継承情報生成中..."
 # 実行統計
 echo "" >> $INTEGRATED_REPORT
 echo "## 📊 実行統計" >> $INTEGRATED_REPORT
-echo "- **実行開始時刻**: $(head -n 5 $INTEGRATED_REPORT | grep "生成時刻" | cut -d: -f2-)" >> $INTEGRATED_REPORT
-echo "- **実行完了時刻**: $(date)" >> $INTEGRATED_REPORT
-echo "- **レポートファイル**: $INTEGRATED_REPORT" >> $INTEGRATED_REPORT
-echo "- **統合レポートサイズ**: $(wc -l < $INTEGRATED_REPORT) 行" >> $INTEGRATED_REPORT
+echo "- *実行開始時刻*: $(head -n 5 $INTEGRATED_REPORT | grep "生成時刻" | cut -d: -f2-)" >> $INTEGRATED_REPORT
+echo "- *実行完了時刻*: $(date)" >> $INTEGRATED_REPORT
+echo "- *レポートファイル*: $INTEGRATED_REPORT" >> $INTEGRATED_REPORT
+echo "- *統合レポートサイズ*: $(wc -l < $INTEGRATED_REPORT) 行" >> $INTEGRATED_REPORT
 echo "" >> $INTEGRATED_REPORT
 
 # v4.0同等達成確認
 echo "## 🏆 v4.0同等達成確認" >> $INTEGRATED_REPORT
-echo "- ✅ **100%自動化**: 人間操作不要" >> $INTEGRATED_REPORT
-echo "- ✅ **完全性**: GitHub API + システム状態完全取得" >> $INTEGRATED_REPORT
-echo "- ✅ **構造化**: AI即座理解形式" >> $INTEGRATED_REPORT
-echo "- ✅ **実用性**: 1コマンド実行" >> $INTEGRATED_REPORT
-echo "- ✅ **継続性**: 次回セッション継承情報完備" >> $INTEGRATED_REPORT
+echo "- ✅ *100%自動化*: 人間操作不要" >> $INTEGRATED_REPORT
+echo "- ✅ *完全性*: GitHub API + システム状態完全取得" >> $INTEGRATED_REPORT
+echo "- ✅ *構造化*: AI即座理解形式" >> $INTEGRATED_REPORT
+echo "- ✅ *実用性*: 1コマンド実行" >> $INTEGRATED_REPORT
+echo "- ✅ *継続性*: 次回セッション継承情報完備" >> $INTEGRATED_REPORT
 
 echo ""
 echo "🎉 自動レポート生成機能 v5.0 完了！"

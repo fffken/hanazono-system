@@ -26,8 +26,8 @@ API_BASE="https://api.github.com/repos/$REPO"
 # レポートファイル初期化
 REPORT_FILE="GITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoGITHUB_API_NoJQ_REPORT_v5.md"
 echo "# GitHub API完全活用システム v5.0 レポート" > $REPORT_FILE
-echo "**生成時刻**: $(date)" >> $REPORT_FILE
-echo "**リポジトリ**: $REPO" >> $REPORT_FILE
+echo "*生成時刻*: $(date)" >> $REPORT_FILE
+echo "*リポジトリ*: $REPO" >> $REPORT_FILE
 echo "" >> $REPORT_FILE
 
 # リポジトリ基本情報（シンプル版）
@@ -86,10 +86,10 @@ echo "" >> $REPORT_FILE
 
 # 完了情報
 echo "## 🎉 GitHub API System v5.0 (jq不要版) 完了" >> $REPORT_FILE
-echo "- **実行完了時刻**: $(date)" >> $REPORT_FILE
-echo "- **レポートファイル**: $REPORT_FILE" >> $REPORT_FILE
-echo "- **実行方式**: jq不要・確実動作版" >> $REPORT_FILE
-echo "- **v4.0同等**: 100%自動化・完全性・構造化・実用性達成" >> $REPORT_FILE
+echo "- *実行完了時刻*: $(date)" >> $REPORT_FILE
+echo "- *レポートファイル*: $REPORT_FILE" >> $REPORT_FILE
+echo "- *実行方式*: jq不要・確実動作版" >> $REPORT_FILE
+echo "- *v4.0同等*: 100%自動化・完全性・構造化・実用性達成" >> $REPORT_FILE
 echo "" >> $REPORT_FILE
 
 # 次回セッション用の情報

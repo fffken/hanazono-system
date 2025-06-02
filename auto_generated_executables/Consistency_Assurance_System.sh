@@ -21,8 +21,8 @@ function set_clear_objective() {
     cat > CURRENT_OBJECTIVE.md << OBJECTIVE
 # 🎯 現在の明確な目標
 
-**設定日時**: $(date)
-**目標**: $objective
+*設定日時*: $(date)
+*目標*: $objective
 
 ## 📋 目標達成のための制約
 - ❌ 機能削除・無効化は禁止
