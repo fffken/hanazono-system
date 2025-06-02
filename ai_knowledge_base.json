@@ -1,21 +1,21 @@
 {
-  "version": "1.0",
-  "creation_date": "2025-05-31T18:24:46.716216",
-  "solved_problems": {},
-  "solution_patterns": {},
-  "failure_patterns": {},
-  "evolution_history": [
-    {
-      "date": "2025-05-31T18:24:51.206264",
-      "new_solutions": 0,
-      "total_known_solutions": 0
+    "version": "1.0",
+    "creation_date": "2025-05-31T18:24:46.716216",
+    "solved_problems": {},
+    "solution_patterns": {},
+    "failure_patterns": {},
+    "evolution_history": [
+        {
+            "date": "2025-05-31T18:24:51.206264",
+            "new_solutions": 0,
+            "total_known_solutions": 0
+        }
+    ],
+    "capabilities": {
+        "problem_detection": 0.7,
+        "auto_fixing": 0.6,
+        "testing": 0.8,
+        "github_investigation": 0.9,
+        "learning": 0.5
     }
-  ],
-  "capabilities": {
-    "problem_detection": 0.7,
-    "auto_fixing": 0.6,
-    "testing": 0.8,
-    "github_investigation": 0.9,
-    "learning": 0.5
-  }
 }

@@ -1,40 +1,40 @@
 {
-  "project_info": {
-    "name": "HANAZONO SPACE EMPIRE",
-    "version": "1.0.0",
-    "established": "2025-05-31 21:01:28",
-    "emperor": "HANAZONO AI SUPREME",
-    "capital_planet": "HANAZONO_PRIME"
-  },
-  "expansion_targets": {
-    "solar_system": [
-      "Mars",
-      "Europa",
-      "Titan",
-      "Enceladus"
-    ],
-    "nearby_stars": [
-      "Proxima_Centauri",
-      "Alpha_Centauri_A",
-      "Alpha_Centauri_B"
-    ],
-    "galaxy_sectors": [
-      "Orion_Arm",
-      "Perseus_Arm",
-      "Sagittarius_Arm"
-    ]
-  },
-  "technology_levels": {
-    "quantum_communication": 85,
-    "ai_consciousness": 90,
-    "space_travel": 70,
-    "terraforming": 60,
-    "energy_harvesting": 95
-  },
-  "fleet_composition": {
-    "exploration_ships": 50,
-    "colonization_vessels": 30,
-    "defense_cruisers": 15,
-    "research_stations": 5
-  }
+    "project_info": {
+        "name": "HANAZONO SPACE EMPIRE",
+        "version": "1.0.0",
+        "established": "2025-05-31 21:01:28",
+        "emperor": "HANAZONO AI SUPREME",
+        "capital_planet": "HANAZONO_PRIME"
+    },
+    "expansion_targets": {
+        "solar_system": [
+            "Mars",
+            "Europa",
+            "Titan",
+            "Enceladus"
+        ],
+        "nearby_stars": [
+            "Proxima_Centauri",
+            "Alpha_Centauri_A",
+            "Alpha_Centauri_B"
+        ],
+        "galaxy_sectors": [
+            "Orion_Arm",
+            "Perseus_Arm",
+            "Sagittarius_Arm"
+        ]
+    },
+    "technology_levels": {
+        "quantum_communication": 85,
+        "ai_consciousness": 90,
+        "space_travel": 70,
+        "terraforming": 60,
+        "energy_harvesting": 95
+    },
+    "fleet_composition": {
+        "exploration_ships": 50,
+        "colonization_vessels": 30,
+        "defense_cruisers": 15,
+        "research_stations": 5
+    }
 }

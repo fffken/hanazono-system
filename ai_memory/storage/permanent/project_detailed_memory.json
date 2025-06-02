@@ -1,89 +1,89 @@
 {
-  "last_updated": "2025-06-01T22:38:51.144494",
-  "source": "\u30ed\u30fc\u30ab\u30eb\u5b8c\u5168\u8abf\u67fb",
-  "seasonal_settings": {
-    "winter": {
-      "typeA": {
-        "charge_current": 50,
-        "charge_time": 45,
-        "soc": 50
-      },
-      "typeB": {
-        "charge_current": 60,
-        "charge_time": 60,
-        "soc": 60
-      }
+    "last_updated": "2025-06-01T22:38:51.144494",
+    "source": "\u30ed\u30fc\u30ab\u30eb\u5b8c\u5168\u8abf\u67fb",
+    "seasonal_settings": {
+        "winter": {
+            "typeA": {
+                "charge_current": 50,
+                "charge_time": 45,
+                "soc": 50
+            },
+            "typeB": {
+                "charge_current": 60,
+                "charge_time": 60,
+                "soc": 60
+            }
+        },
+        "spring_fall": {
+            "typeA": {
+                "charge_current": 40,
+                "charge_time": 30,
+                "soc": 35
+            },
+            "typeB": {
+                "charge_current": 50,
+                "charge_time": 45,
+                "soc": 45
+            }
+        },
+        "summer": {
+            "typeA": {
+                "charge_current": 25,
+                "charge_time": 15,
+                "soc": 25
+            },
+            "typeB": {
+                "charge_current": 35,
+                "charge_time": 30,
+                "soc": 35
+            }
+        }
     },
-    "spring_fall": {
-      "typeA": {
-        "charge_current": 40,
-        "charge_time": 30,
-        "soc": 35
-      },
-      "typeB": {
-        "charge_current": 50,
-        "charge_time": 45,
-        "soc": 45
-      }
+    "inverter_parameters": {
+        "charge_current_id": "07",
+        "charge_time_id": "10",
+        "soc_setting_id": "62"
     },
-    "summer": {
-      "typeA": {
-        "charge_current": 25,
-        "charge_time": 15,
-        "soc": 25
-      },
-      "typeB": {
-        "charge_current": 35,
-        "charge_time": 30,
-        "soc": 35
-      }
+    "python_modules": {
+        "HANAZONOAIAssistant": "AI\u30a2\u30b7\u30b9\u30bf\u30f3\u30c8\u6a5f\u80fd",
+        "EmailNotifier": "\u30e1\u30fc\u30eb\u901a\u77e5\u30b7\u30b9\u30c6\u30e0",
+        "battery_data_extraction": "\u30d0\u30c3\u30c6\u30ea\u30fc\u30c7\u30fc\u30bf\u62bd\u51fa\u6a5f\u80fd"
+    },
+    "development_philosophy": {
+        "goal": "\u4eba\u9593\u3092\u6280\u8853\u7684\u8a73\u7d30\u304b\u3089\u5b8c\u5168\u306b\u89e3\u653e",
+        "principle": "\u30bc\u30ed\u601d\u8003\u8ca0\u8377\u306e\u6cd5\u5247",
+        "focus": "\u5275\u9020\u6027\u3068\u5224\u65ad\u529b\u306e\u307f\u306b\u96c6\u4e2d"
+    },
+    "power_data": {
+        "2023_2024_total_usage": "9,363kWh",
+        "2023_2024_total_cost": "\u00a5216,687",
+        "battle_system_win_rate": "75%"
+    },
+    "documentation": {
+        "references": [
+            "INVERTER_REGISTERS.md",
+            "IMPLEMENTATION_DETAILS.md",
+            "PARAMETER_SETTINGS.md"
+        ],
+        "guides": [
+            "settings_adjustment_guide.md"
+        ],
+        "project": [
+            "ROADMAP_COMPLETE.md",
+            "PROJECT_MASTER.md"
+        ]
+    },
+    "automation_discovery": {
+        "timestamp": "2025-06-01T23:35:06.386129",
+        "scripts_count": 47,
+        "ml_systems_confirmed": true,
+        "data_accumulation_massive": true
+    },
+    "treasure_data_utilization": {
+        "timestamp": "2025-06-01T23:48:38.582848",
+        "status": "\u5b8c\u5168\u6d3b\u7528\u4e2d",
+        "value_level": "\u696d\u754c\u6700\u9ad8\u6c34\u6e96",
+        "systems_count": 3,
+        "critical_importance": "AI\u8a18\u61b6\u30b7\u30b9\u30c6\u30e0\u767a\u5c55\u57fa\u76e4"
     }
-  },
-  "inverter_parameters": {
-    "charge_current_id": "07",
-    "charge_time_id": "10",
-    "soc_setting_id": "62"
-  },
-  "python_modules": {
-    "HANAZONOAIAssistant": "AI\u30a2\u30b7\u30b9\u30bf\u30f3\u30c8\u6a5f\u80fd",
-    "EmailNotifier": "\u30e1\u30fc\u30eb\u901a\u77e5\u30b7\u30b9\u30c6\u30e0",
-    "battery_data_extraction": "\u30d0\u30c3\u30c6\u30ea\u30fc\u30c7\u30fc\u30bf\u62bd\u51fa\u6a5f\u80fd"
-  },
-  "development_philosophy": {
-    "goal": "\u4eba\u9593\u3092\u6280\u8853\u7684\u8a73\u7d30\u304b\u3089\u5b8c\u5168\u306b\u89e3\u653e",
-    "principle": "\u30bc\u30ed\u601d\u8003\u8ca0\u8377\u306e\u6cd5\u5247",
-    "focus": "\u5275\u9020\u6027\u3068\u5224\u65ad\u529b\u306e\u307f\u306b\u96c6\u4e2d"
-  },
-  "power_data": {
-    "2023_2024_total_usage": "9,363kWh",
-    "2023_2024_total_cost": "\u00a5216,687",
-    "battle_system_win_rate": "75%"
-  },
-  "documentation": {
-    "references": [
-      "INVERTER_REGISTERS.md",
-      "IMPLEMENTATION_DETAILS.md",
-      "PARAMETER_SETTINGS.md"
-    ],
-    "guides": [
-      "settings_adjustment_guide.md"
-    ],
-    "project": [
-      "ROADMAP_COMPLETE.md",
-      "PROJECT_MASTER.md"
-    ]
-  },
-  "automation_discovery": {
-    "timestamp": "2025-06-01T23:35:06.386129",
-    "scripts_count": 47,
-    "ml_systems_confirmed": true,
-    "data_accumulation_massive": true
-  },
-  "treasure_data_utilization": {
-    "timestamp": "2025-06-01T23:48:38.582848",
-    "status": "\u5b8c\u5168\u6d3b\u7528\u4e2d",
-    "value_level": "\u696d\u754c\u6700\u9ad8\u6c34\u6e96",
-    "systems_count": 3,
-    "critical_importance": "AI\u8a18\u61b6\u30b7\u30b9\u30c6\u30e0\u767a\u5c55\u57fa\u76e4"
-  }
 }

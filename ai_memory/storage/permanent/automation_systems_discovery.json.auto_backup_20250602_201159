@@ -1,0 +1,42 @@
+{
+  "discovery_session": "20250601_231500",
+  "automation_systems": {
+    "total_scripts": 47,
+    "key_automation": {
+      "master_progress_controller.sh": "GitHub自動情報取得機能統合版",
+      "ai_development_assistant.sh": "AI開発アシスタント v1.0",
+      "ai_code_analyzer.sh": "完全自動コード解析システム",
+      "natural_language_interface.sh": "自然言語インターフェース",
+      "syntax_error_auto_fixer.sh": "構文エラー自動修正システム",
+      "integrated_revolutionary_system.sh": "統合革命的システム",
+      "github_auto_fetch.sh": "GitHub自動情報取得システム v4.0完全版",
+      "hanazono_start.sh": "究極モード起動システム"
+    }
+  },
+  "machine_learning_systems": {
+    "revolutionary_battle_system.py": "学習効果システム実装済み",
+    "predictive_analysis_system.py": "29,589バイト - 本格的予測分析",
+    "zero_touch_operation.py": "予測故障検出システム",
+    "comprehensive_data_integrator.py": "17,201バイト統合システム",
+    "electric_data_manager.py": "14,878バイト電力データ管理",
+    "data_analyzer.py": "11,171バイト データ分析システム"
+  },
+  "data_accumulation": {
+    "daily_collection": "15分間隔データ 2025-05-19～2025-06-01",
+    "learning_data_dir": "learning_data/ - 経験データ蓄積",
+    "prediction_data_dir": "prediction_data/ - 履歴データ最大15,983バイト",
+    "total_data_files": "500+個のデータファイル",
+    "databases": ["ai_learning.db", "comprehensive_electric_data.db", "hanazono_analysis.db"]
+  },
+  "cleanup_candidates": [
+    "ai_empire_constitution.json",
+    "galactic_domination_project.py", 
+    "space_empire_dashboard_fixed.py",
+    "ai_empire_system.py",
+    "space_empire.db"
+  ],
+  "github_security_issue": {
+    "exposed_token": "scripts/ai_docs_fetch.sh",
+    "status": "要対応"
+  }
+}

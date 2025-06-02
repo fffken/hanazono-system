@@ -1,13 +1,13 @@
 {
-  "self_evolution_system": {
-    "記録日時": "2025-06-02 18:00:05",
-    "目的": "失敗→学習→進化→完璧化の自動サイクル",
-    "進化データベース": "system_evolution/learning_database.json",
-    "進化ログ": "logs/evolution_20250602_180001.log",
-    "自動生成スクリプト保存場所": "scripts/auto_generated/",
-    "完璧性評価システム": "有効",
-    "学習能力": "全自動",
-    "自己改善サイクル": "4時間ごと",
-    "記憶統合": "完了"
-  }
+    "self_evolution_system": {
+        "\u8a18\u9332\u65e5\u6642": "2025-06-02 18:00:05",
+        "\u76ee\u7684": "\u5931\u6557\u2192\u5b66\u7fd2\u2192\u9032\u5316\u2192\u5b8c\u74a7\u5316\u306e\u81ea\u52d5\u30b5\u30a4\u30af\u30eb",
+        "\u9032\u5316\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9": "system_evolution/learning_database.json",
+        "\u9032\u5316\u30ed\u30b0": "logs/evolution_20250602_180001.log",
+        "\u81ea\u52d5\u751f\u6210\u30b9\u30af\u30ea\u30d7\u30c8\u4fdd\u5b58\u5834\u6240": "scripts/auto_generated/",
+        "\u5b8c\u74a7\u6027\u8a55\u4fa1\u30b7\u30b9\u30c6\u30e0": "\u6709\u52b9",
+        "\u5b66\u7fd2\u80fd\u529b": "\u5168\u81ea\u52d5",
+        "\u81ea\u5df1\u6539\u5584\u30b5\u30a4\u30af\u30eb": "4\u6642\u9593\u3054\u3068",
+        "\u8a18\u61b6\u7d71\u5408": "\u5b8c\u4e86"
+    }
 }

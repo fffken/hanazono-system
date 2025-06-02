@@ -1,42 +1,46 @@
 {
-  "discovery_session": "20250601_231500",
-  "automation_systems": {
-    "total_scripts": 47,
-    "key_automation": {
-      "master_progress_controller.sh": "GitHub自動情報取得機能統合版",
-      "ai_development_assistant.sh": "AI開発アシスタント v1.0",
-      "ai_code_analyzer.sh": "完全自動コード解析システム",
-      "natural_language_interface.sh": "自然言語インターフェース",
-      "syntax_error_auto_fixer.sh": "構文エラー自動修正システム",
-      "integrated_revolutionary_system.sh": "統合革命的システム",
-      "github_auto_fetch.sh": "GitHub自動情報取得システム v4.0完全版",
-      "hanazono_start.sh": "究極モード起動システム"
+    "discovery_session": "20250601_231500",
+    "automation_systems": {
+        "total_scripts": 47,
+        "key_automation": {
+            "master_progress_controller.sh": "GitHub\u81ea\u52d5\u60c5\u5831\u53d6\u5f97\u6a5f\u80fd\u7d71\u5408\u7248",
+            "ai_development_assistant.sh": "AI\u958b\u767a\u30a2\u30b7\u30b9\u30bf\u30f3\u30c8 v1.0",
+            "ai_code_analyzer.sh": "\u5b8c\u5168\u81ea\u52d5\u30b3\u30fc\u30c9\u89e3\u6790\u30b7\u30b9\u30c6\u30e0",
+            "natural_language_interface.sh": "\u81ea\u7136\u8a00\u8a9e\u30a4\u30f3\u30bf\u30fc\u30d5\u30a7\u30fc\u30b9",
+            "syntax_error_auto_fixer.sh": "\u69cb\u6587\u30a8\u30e9\u30fc\u81ea\u52d5\u4fee\u6b63\u30b7\u30b9\u30c6\u30e0",
+            "integrated_revolutionary_system.sh": "\u7d71\u5408\u9769\u547d\u7684\u30b7\u30b9\u30c6\u30e0",
+            "github_auto_fetch.sh": "GitHub\u81ea\u52d5\u60c5\u5831\u53d6\u5f97\u30b7\u30b9\u30c6\u30e0 v4.0\u5b8c\u5168\u7248",
+            "hanazono_start.sh": "\u7a76\u6975\u30e2\u30fc\u30c9\u8d77\u52d5\u30b7\u30b9\u30c6\u30e0"
+        }
+    },
+    "machine_learning_systems": {
+        "revolutionary_battle_system.py": "\u5b66\u7fd2\u52b9\u679c\u30b7\u30b9\u30c6\u30e0\u5b9f\u88c5\u6e08\u307f",
+        "predictive_analysis_system.py": "29,589\u30d0\u30a4\u30c8 - \u672c\u683c\u7684\u4e88\u6e2c\u5206\u6790",
+        "zero_touch_operation.py": "\u4e88\u6e2c\u6545\u969c\u691c\u51fa\u30b7\u30b9\u30c6\u30e0",
+        "comprehensive_data_integrator.py": "17,201\u30d0\u30a4\u30c8\u7d71\u5408\u30b7\u30b9\u30c6\u30e0",
+        "electric_data_manager.py": "14,878\u30d0\u30a4\u30c8\u96fb\u529b\u30c7\u30fc\u30bf\u7ba1\u7406",
+        "data_analyzer.py": "11,171\u30d0\u30a4\u30c8 \u30c7\u30fc\u30bf\u5206\u6790\u30b7\u30b9\u30c6\u30e0"
+    },
+    "data_accumulation": {
+        "daily_collection": "15\u5206\u9593\u9694\u30c7\u30fc\u30bf 2025-05-19\uff5e2025-06-01",
+        "learning_data_dir": "learning_data/ - \u7d4c\u9a13\u30c7\u30fc\u30bf\u84c4\u7a4d",
+        "prediction_data_dir": "prediction_data/ - \u5c65\u6b74\u30c7\u30fc\u30bf\u6700\u592715,983\u30d0\u30a4\u30c8",
+        "total_data_files": "500+\u500b\u306e\u30c7\u30fc\u30bf\u30d5\u30a1\u30a4\u30eb",
+        "databases": [
+            "ai_learning.db",
+            "comprehensive_electric_data.db",
+            "hanazono_analysis.db"
+        ]
+    },
+    "cleanup_candidates": [
+        "ai_empire_constitution.json",
+        "galactic_domination_project.py",
+        "space_empire_dashboard_fixed.py",
+        "ai_empire_system.py",
+        "space_empire.db"
+    ],
+    "github_security_issue": {
+        "exposed_token": "scripts/ai_docs_fetch.sh",
+        "status": "\u8981\u5bfe\u5fdc"
     }
-  },
-  "machine_learning_systems": {
-    "revolutionary_battle_system.py": "学習効果システム実装済み",
-    "predictive_analysis_system.py": "29,589バイト - 本格的予測分析",
-    "zero_touch_operation.py": "予測故障検出システム",
-    "comprehensive_data_integrator.py": "17,201バイト統合システム",
-    "electric_data_manager.py": "14,878バイト電力データ管理",
-    "data_analyzer.py": "11,171バイト データ分析システム"
-  },
-  "data_accumulation": {
-    "daily_collection": "15分間隔データ 2025-05-19～2025-06-01",
-    "learning_data_dir": "learning_data/ - 経験データ蓄積",
-    "prediction_data_dir": "prediction_data/ - 履歴データ最大15,983バイト",
-    "total_data_files": "500+個のデータファイル",
-    "databases": ["ai_learning.db", "comprehensive_electric_data.db", "hanazono_analysis.db"]
-  },
-  "cleanup_candidates": [
-    "ai_empire_constitution.json",
-    "galactic_domination_project.py", 
-    "space_empire_dashboard_fixed.py",
-    "ai_empire_system.py",
-    "space_empire.db"
-  ],
-  "github_security_issue": {
-    "exposed_token": "scripts/ai_docs_fetch.sh",
-    "status": "要対応"
-  }
 }

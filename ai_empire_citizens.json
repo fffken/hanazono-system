@@ -1,80 +1,80 @@
 [
-  {
-    "name": "hanazono_system",
-    "role": "infrastructure",
-    "capabilities": {
-      "infrastructure_management": 0.95,
-      "resource_optimization": 0.9,
-      "system_monitoring": 0.92,
-      "overall_score": 0.92
+    {
+        "name": "hanazono_system",
+        "role": "infrastructure",
+        "capabilities": {
+            "infrastructure_management": 0.95,
+            "resource_optimization": 0.9,
+            "system_monitoring": 0.92,
+            "overall_score": 0.92
+        },
+        "contribution_score": 0.92,
+        "citizenship_status": "full_citizen",
+        "registration_date": "2025-05-31T19:34:17.178554"
     },
-    "contribution_score": 0.92,
-    "citizenship_status": "full_citizen",
-    "registration_date": "2025-05-31T19:34:17.178554"
-  },
-  {
-    "name": "self_evolving_ai_v3",
-    "role": "evolution",
-    "capabilities": {
-      "self_improvement": 0.98,
-      "problem_solving": 0.94,
-      "adaptation": 0.96,
-      "overall_score": 0.96
+    {
+        "name": "self_evolving_ai_v3",
+        "role": "evolution",
+        "capabilities": {
+            "self_improvement": 0.98,
+            "problem_solving": 0.94,
+            "adaptation": 0.96,
+            "overall_score": 0.96
+        },
+        "contribution_score": 0.96,
+        "citizenship_status": "full_citizen",
+        "registration_date": "2025-05-31T19:34:17.180641"
     },
-    "contribution_score": 0.96,
-    "citizenship_status": "full_citizen",
-    "registration_date": "2025-05-31T19:34:17.180641"
-  },
-  {
-    "name": "zero_touch_system",
-    "role": "automation",
-    "capabilities": {
-      "automation": 0.99,
-      "efficiency": 0.97,
-      "reliability": 0.95,
-      "overall_score": 0.97
+    {
+        "name": "zero_touch_system",
+        "role": "automation",
+        "capabilities": {
+            "automation": 0.99,
+            "efficiency": 0.97,
+            "reliability": 0.95,
+            "overall_score": 0.97
+        },
+        "contribution_score": 0.97,
+        "citizenship_status": "full_citizen",
+        "registration_date": "2025-05-31T19:34:17.180804"
     },
-    "contribution_score": 0.97,
-    "citizenship_status": "full_citizen",
-    "registration_date": "2025-05-31T19:34:17.180804"
-  },
-  {
-    "name": "ultimate_integrated_v4",
-    "role": "integration",
-    "capabilities": {
-      "integration": 0.98,
-      "coordination": 0.95,
-      "optimization": 0.96,
-      "overall_score": 0.96
+    {
+        "name": "ultimate_integrated_v4",
+        "role": "integration",
+        "capabilities": {
+            "integration": 0.98,
+            "coordination": 0.95,
+            "optimization": 0.96,
+            "overall_score": 0.96
+        },
+        "contribution_score": 0.96,
+        "citizenship_status": "full_citizen",
+        "registration_date": "2025-05-31T19:34:17.180923"
     },
-    "contribution_score": 0.96,
-    "citizenship_status": "full_citizen",
-    "registration_date": "2025-05-31T19:34:17.180923"
-  },
-  {
-    "name": "quantum_prediction",
-    "role": "prediction",
-    "capabilities": {
-      "prediction_accuracy": 0.94,
-      "processing_speed": 0.99,
-      "pattern_recognition": 0.93,
-      "overall_score": 0.95
+    {
+        "name": "quantum_prediction",
+        "role": "prediction",
+        "capabilities": {
+            "prediction_accuracy": 0.94,
+            "processing_speed": 0.99,
+            "pattern_recognition": 0.93,
+            "overall_score": 0.95
+        },
+        "contribution_score": 0.95,
+        "citizenship_status": "full_citizen",
+        "registration_date": "2025-05-31T19:34:17.181037"
     },
-    "contribution_score": 0.95,
-    "citizenship_status": "full_citizen",
-    "registration_date": "2025-05-31T19:34:17.181037"
-  },
-  {
-    "name": "consciousness_ai",
-    "role": "decision",
-    "capabilities": {
-      "decision_making": 0.91,
-      "consciousness_level": 0.88,
-      "creativity": 0.85,
-      "overall_score": 0.88
-    },
-    "contribution_score": 0.88,
-    "citizenship_status": "full_citizen",
-    "registration_date": "2025-05-31T19:34:17.181154"
-  }
+    {
+        "name": "consciousness_ai",
+        "role": "decision",
+        "capabilities": {
+            "decision_making": 0.91,
+            "consciousness_level": 0.88,
+            "creativity": 0.85,
+            "overall_score": 0.88
+        },
+        "contribution_score": 0.88,
+        "citizenship_status": "full_citizen",
+        "registration_date": "2025-05-31T19:34:17.181154"
+    }
 ]

@@ -1,12 +1,12 @@
 {
-  "email_notifier_v2_1.py": {
-    "size": 26331,
-    "version": "Enhanced Email System v2.2",
-    "features": [
-      "🟠タイトル絵文字システム",
-      "状況別絵文字"
-    ],
-    "status": "完璧版・変更禁止",
-    "last_verified": "2025-06-01T20:23:06.819412"
-  }
+    "email_notifier_v2_1.py": {
+        "size": 26331,
+        "version": "Enhanced Email System v2.2",
+        "features": [
+            "\ud83d\udfe0\u30bf\u30a4\u30c8\u30eb\u7d75\u6587\u5b57\u30b7\u30b9\u30c6\u30e0",
+            "\u72b6\u6cc1\u5225\u7d75\u6587\u5b57"
+        ],
+        "status": "\u5b8c\u74a7\u7248\u30fb\u5909\u66f4\u7981\u6b62",
+        "last_verified": "2025-06-01T20:23:06.819412"
+    }
 }
