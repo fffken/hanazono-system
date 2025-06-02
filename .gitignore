@@ -63,3 +63,7 @@ settings.json.security_backup
 .env.production
 .env.production
 .env.production
+*.auto_backup_*
+*.tmp
+*backup_scores.tmp
+*backup_list.tmp
