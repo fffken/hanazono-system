@@ -1,233 +1,233 @@
 {
-  "inverter_parameters": {
-    "charge_current_id": "07",
-    "charge_time_id": "10",
-    "soc_setting_id": "62"
-  },
-  "seasonal_settings": {
-    "winter": {
-      "typeA": {
-        "charge_current": 50,
-        "charge_time": 45,
-        "soc": 50
-      },
-      "typeB": {
-        "charge_current": 60,
-        "charge_time": 60,
-        "soc": 60
-      }
+    "inverter_parameters": {
+        "charge_current_id": "07",
+        "charge_time_id": "10",
+        "soc_setting_id": "62"
     },
-    "spring_fall": {
-      "typeA": {
-        "charge_current": 40,
-        "charge_time": 30,
-        "soc": 35
-      },
-      "typeB": {
-        "charge_current": 50,
-        "charge_time": 45,
-        "soc": 45
-      }
+    "seasonal_settings": {
+        "winter": {
+            "typeA": {
+                "charge_current": 50,
+                "charge_time": 45,
+                "soc": 50
+            },
+            "typeB": {
+                "charge_current": 60,
+                "charge_time": 60,
+                "soc": 60
+            }
+        },
+        "spring_fall": {
+            "typeA": {
+                "charge_current": 40,
+                "charge_time": 30,
+                "soc": 35
+            },
+            "typeB": {
+                "charge_current": 50,
+                "charge_time": 45,
+                "soc": 45
+            }
+        },
+        "summer": {
+            "typeA": {
+                "charge_current": 25,
+                "charge_time": 15,
+                "soc": 25
+            },
+            "typeB": {
+                "charge_current": 35,
+                "charge_time": 30,
+                "soc": 35
+            }
+        }
     },
-    "summer": {
-      "typeA": {
-        "charge_current": 25,
-        "charge_time": 15,
-        "soc": 25
-      },
-      "typeB": {
-        "charge_current": 35,
-        "charge_time": 30,
-        "soc": 35
-      }
-    }
-  },
-  "detailed_seasonal_settings": {
-    "winter_early": {
-      "reference": "winter"
+    "detailed_seasonal_settings": {
+        "winter_early": {
+            "reference": "winter"
+        },
+        "winter_mid": {
+            "reference": "winter"
+        },
+        "winter_late": {
+            "reference": "winter"
+        },
+        "spring_early": {
+            "reference": "spring_fall"
+        },
+        "spring_mid": {
+            "reference": "spring_fall"
+        },
+        "spring_late": {
+            "reference": "spring_fall"
+        },
+        "rainy": {
+            "reference": "spring_fall"
+        },
+        "summer_early": {
+            "reference": "summer"
+        },
+        "summer_mid": {
+            "reference": "summer"
+        },
+        "summer_late": {
+            "reference": "summer"
+        },
+        "autumn_early": {
+            "reference": "spring_fall"
+        },
+        "autumn_mid": {
+            "reference": "spring_fall"
+        },
+        "autumn_late": {
+            "reference": "spring_fall"
+        }
     },
-    "winter_mid": {
-      "reference": "winter"
+    "notification": {
+        "email": {
+            "enabled": true,
+            "template": {
+                "subject": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
+                "subject_with_warning": "\u26a0\ufe0f \u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
+                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011 \u8a2d\u5b9a\u63a8\u5968\u901a\u77e5",
+                "footer": "\u203b\u3053\u306e\u8a2d\u5b9a\u306f\u5929\u6c17\u4e88\u5831\u3068\u5b63\u7bc0\u306b\u57fa\u3065\u3044\u3066\u81ea\u52d5\u7684\u306b\u8a08\u7b97\u3055\u308c\u3066\u3044\u307e\u3059\u3002\n\u203b\u5b9f\u969b\u306e\u8a2d\u5b9a\u5909\u66f4\u306f\u624b\u52d5\u3067\u884c\u3046\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\n\n-----\n\u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u9001\u4fe1\u3055\u308c\u3066\u3044\u307e\u3059\u3002"
+            }
+        },
+        "line": {
+            "enabled": false,
+            "template": {
+                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968",
+                "footer": "\u203b\u81ea\u52d5\u8a08\u7b97\u3055\u308c\u305f\u63a8\u5968\u8a2d\u5b9a\u3067\u3059"
+            }
+        },
+        "telegram": {
+            "enabled": false,
+            "bot_token": "",
+            "chat_id": "",
+            "template": {
+                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968",
+                "footer": "\u203b\u81ea\u52d5\u8a08\u7b97\u3055\u308c\u305f\u63a8\u5968\u8a2d\u5b9a\u3067\u3059"
+            }
+        }
     },
-    "winter_late": {
-      "reference": "winter"
+    "weather_connectors": [
+        "\u3000\u5f8c\u3000",
+        "\u3000\u306e\u3061\u3000",
+        "\u3000\u6642\u3005\u3000",
+        "\u3000\u4e00\u6642\u3000",
+        "\u3000\u591c\u3000",
+        "\u3000\u591c\u9045\u304f\u3000",
+        "\u3000\u6240\u306b\u3088\u308a\u3000",
+        "\u3000\u3067\u3000",
+        "\u3000\u304b\u3089\u3000",
+        "\u3000\u307e\u305f\u306f\u3000"
+    ],
+    "weather_icons": {
+        "\u6674": "\u2600\ufe0f",
+        "\u6674\u308c": "\u2600\ufe0f",
+        "\u66c7": "\u2601\ufe0f",
+        "\u66c7\u308a": "\u2601\ufe0f",
+        "\u304f\u3082\u308a": "\u2601\ufe0f",
+        "\u96e8": "\ud83c\udf27\ufe0f",
+        "\u96ea": "\u2744\ufe0f",
+        "\u96f7": "\u26a1",
+        "\u9727": "\ud83c\udf2b\ufe0f"
     },
-    "spring_early": {
-      "reference": "spring_fall"
+    "season_icons": {
+        "winter_early": "\ud83c\udf42\u2744\ufe0f",
+        "winter_mid": "\u2744\ufe0f\u2603\ufe0f",
+        "winter_late": "\u2744\ufe0f\ud83c\udf31",
+        "spring_early": "\ud83c\udf38\ud83c\udf31",
+        "spring_mid": "\ud83c\udf38\ud83c\udf37",
+        "spring_late": "\ud83c\udf3f\ud83c\udf26\ufe0f",
+        "rainy": "\u2614\ud83c\udf3f",
+        "summer_early": "\u2600\ufe0f\ud83c\udf3f",
+        "summer_mid": "\u2600\ufe0f\ud83c\udfd6\ufe0f",
+        "summer_late": "\u2600\ufe0f\ud83c\udf43",
+        "autumn_early": "\ud83c\udf41\ud83c\udf43",
+        "autumn_mid": "\ud83c\udf42\ud83c\udf41",
+        "autumn_late": "\ud83c\udf42\u2744\ufe0f"
     },
-    "spring_mid": {
-      "reference": "spring_fall"
+    "inverter": {
+        "ip": "192.168.0.202",
+        "serial": 3528830226,
+        "mac": "D4:27:87:16:7A:F8",
+        "port": 8899,
+        "mb_slave_id": 1
     },
-    "spring_late": {
-      "reference": "spring_fall"
+    "network": {
+        "subnet": "192.168.0.0/24"
     },
-    "rainy": {
-      "reference": "spring_fall"
-    },
-    "summer_early": {
-      "reference": "summer"
-    },
-    "summer_mid": {
-      "reference": "summer"
-    },
-    "summer_late": {
-      "reference": "summer"
-    },
-    "autumn_early": {
-      "reference": "spring_fall"
-    },
-    "autumn_mid": {
-      "reference": "spring_fall"
-    },
-    "autumn_late": {
-      "reference": "spring_fall"
-    }
-  },
-  "notification": {
     "email": {
-      "enabled": true,
-      "template": {
-        "subject": "【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
-        "subject_with_warning": "⚠️ 【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
-        "title": "【ソーラー蓄電システム】 設定推奨通知",
-        "footer": "※この設定は天気予報と季節に基づいて自動的に計算されています。\n※実際の設定変更は手動で行う必要があります。\n\n-----\n本メールは自動送信されています。"
-      }
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "smtp_user": "fffken@gmail.com",
+        "smtp_password": "bbzpgdsvqlcemyxi",
+        "sender": "fffken@gmail.com",
+        "recipients": [
+            "fffken@gmail.com"
+        ],
+        "admin_email": "fffken@gmail.com",
+        "recipient": "fffken@gmail.com",
+        "email_sender": "fffken@gmail.com",
+        "email_recipients": [
+            "fffken@gmail.com"
+        ],
+        "smtp_username": "fffken@gmail.com",
+        "smtp_use_tls": true,
+        "smtp_use_ssl": false
     },
-    "line": {
-      "enabled": false,
-      "template": {
-        "title": "【ソーラー蓄電システム】設定推奨",
-        "footer": "※自動計算された推奨設定です"
-      }
+    "monitoring": {
+        "interval_minutes": 15,
+        "key_registers": [
+            {
+                "address": "0x0100",
+                "name": "\u30d0\u30c3\u30c6\u30ea\u30fcSOC",
+                "unit": "%",
+                "factor": 1,
+                "emoji": "\ud83d\udd0b"
+            },
+            {
+                "address": "0x0101",
+                "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u96fb\u5727",
+                "unit": "V",
+                "factor": 0.1,
+                "emoji": "\u26a1"
+            },
+            {
+                "address": "0x0102",
+                "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u96fb\u6d41",
+                "unit": "A",
+                "factor": 0.1,
+                "emoji": "\ud83d\udd0c"
+            },
+            {
+                "address": "0x020E",
+                "name": "\u6a5f\u5668\u72b6\u614b",
+                "unit": "",
+                "factor": 1,
+                "emoji": "\ud83d\udcca"
+            },
+            {
+                "address": "0xE012",
+                "name": "\u30d6\u30fc\u30b9\u30c8\u5145\u96fb\u6642\u9593",
+                "unit": "\u5206",
+                "factor": 1,
+                "emoji": "\u23f1\ufe0f"
+            }
+        ]
     },
-    "telegram": {
-      "enabled": false,
-      "bot_token": "",
-      "chat_id": "",
-      "template": {
-        "title": "【ソーラー蓄電システム】設定推奨",
-        "footer": "※自動計算された推奨設定です"
-      }
+    "files": {
+        "data_prefix": "data_",
+        "date_format": "%Y%m%d",
+        "data_directory": "data"
+    },
+    "openweathermap": {
+        "api_key": "f03c7c0d5051735e9af4a782d0be60c1",
+        "location": "\u9ad8\u677e\u5e02"
+    },
+    "modbus": {
+        "port": 8899,
+        "host": "192.168.0.202"
     }
-  },
-  "weather_connectors": [
-    "　後　",
-    "　のち　",
-    "　時々　",
-    "　一時　",
-    "　夜　",
-    "　夜遅く　",
-    "　所により　",
-    "　で　",
-    "　から　",
-    "　または　"
-  ],
-  "weather_icons": {
-    "晴": "☀️",
-    "晴れ": "☀️",
-    "曇": "☁️",
-    "曇り": "☁️",
-    "くもり": "☁️",
-    "雨": "🌧️",
-    "雪": "❄️",
-    "雷": "⚡",
-    "霧": "🌫️"
-  },
-  "season_icons": {
-    "winter_early": "🍂❄️",
-    "winter_mid": "❄️☃️",
-    "winter_late": "❄️🌱",
-    "spring_early": "🌸🌱",
-    "spring_mid": "🌸🌷",
-    "spring_late": "🌿🌦️",
-    "rainy": "☔🌿",
-    "summer_early": "☀️🌿",
-    "summer_mid": "☀️🏖️",
-    "summer_late": "☀️🍃",
-    "autumn_early": "🍁🍃",
-    "autumn_mid": "🍂🍁",
-    "autumn_late": "🍂❄️"
-  },
-  "inverter": {
-    "ip": "192.168.0.202",
-    "serial": 3528830226,
-    "mac": "D4:27:87:16:7A:F8",
-    "port": 8899,
-    "mb_slave_id": 1
-  },
-  "network": {
-    "subnet": "192.168.0.0/24"
-  },
-  "email": {
-    "smtp_server": "smtp.gmail.com",
-    "smtp_port": 587,
-    "smtp_user": "fffken@gmail.com",
-    "smtp_password": "bbzpgdsvqlcemyxi",
-    "sender": "fffken@gmail.com",
-    "recipients": [
-      "fffken@gmail.com"
-    ],
-    "admin_email": "fffken@gmail.com",
-    "recipient": "fffken@gmail.com",
-    "email_sender": "fffken@gmail.com",
-    "email_recipients": [
-      "fffken@gmail.com"
-    ],
-    "smtp_username": "fffken@gmail.com",
-    "smtp_use_tls": true,
-    "smtp_use_ssl": false
-  },
-  "monitoring": {
-    "interval_minutes": 15,
-    "key_registers": [
-      {
-        "address": "0x0100",
-        "name": "バッテリーSOC",
-        "unit": "%",
-        "factor": 1,
-        "emoji": "🔋"
-      },
-      {
-        "address": "0x0101",
-        "name": "バッテリー電圧",
-        "unit": "V",
-        "factor": 0.1,
-        "emoji": "⚡"
-      },
-      {
-        "address": "0x0102",
-        "name": "バッテリー電流",
-        "unit": "A",
-        "factor": 0.1,
-        "emoji": "🔌"
-      },
-      {
-        "address": "0x020E",
-        "name": "機器状態",
-        "unit": "",
-        "factor": 1,
-        "emoji": "📊"
-      },
-      {
-        "address": "0xE012",
-        "name": "ブースト充電時間",
-        "unit": "分",
-        "factor": 1,
-        "emoji": "⏱️"
-      }
-    ]
-  },
-  "files": {
-    "data_prefix": "data_",
-    "date_format": "%Y%m%d",
-    "data_directory": "data"
-  },
-  "openweathermap": {
-    "api_key": "f03c7c0d5051735e9af4a782d0be60c1",
-    "location": "高松市"
-  },
-  "modbus": {
-    "port": 8899,
-    "host": "192.168.0.202"
-  }
 }

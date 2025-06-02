@@ -1,0 +1,139 @@
+{
+    "failures": {
+        "c04fc5437409d037dda2b2e26340ebc7": {
+            "timestamp": "2025-06-02 15:12:07",
+            "logfile": "logs/collector_20250602.log",
+            "error_context": "2025-06-02 11:00:03,089 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 11:00:03,238 - lvyuan_collector - INFO - \u73fe\u5728\u306eIP\u30a2\u30c9\u30ec\u30b9 (192.168.0.202) \u306b\u63a5\u7d9a\u3067\u304d\u307e\u3059\n--\n2025-06-02 14:00:03,148 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 14:00:03,403 - lvyuan_collector - INFO - \u73fe\u5728\u306eIP\u30a2\u30c9\u30ec\u30b9 (192.168.0.202) \u306b\u63a5\u7d9a\u3067\u304d\u307e\u3059\n2025-06-02 14:00:04,389 - lvyuan_collector - INFO - \u30c7\u30fc\u30bf\u53ce\u96c6\u6210\u529f: 5\u30d1\u30e9\u30e1\u30fc\u30bf\u30fc, \u30a4\u30f3\u30d0\u30fc\u30bf\u30fcIP: 192.168.0.202\n2025-06-02 14:15:03,027 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 14:15:08,087 - lvyuan_collector - INFO - \u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30b9\u30ad\u30e3\u30f3\u5b9f\u884c\u4e2d... (192.168.0.0/24)\n2025-06-02 14:15:08,125 - lvyuan_collector - ERROR - \u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30b9\u30ad\u30e3\u30f3\u30a8\u30e9\u30fc: [Errno 2] No such file or directory: 'arp'\n2025-06-02 14:15:08,126 - lvyuan_collector - ERROR - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093\n2025-06-02 14:30:02,910 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 14:30:03,044 - lvyuan_collector - INFO - \u73fe\u5728\u306eIP\u30a2\u30c9\u30ec\u30b9 (192.168.0.202) \u306b\u63a5\u7d9a\u3067\u304d\u307e\u3059\n2025-06-02 14:30:04,166 - lvyuan_collector - INFO - \u30c7\u30fc\u30bf\u53ce\u96c6\u6210\u529f: 5\u30d1\u30e9\u30e1\u30fc\u30bf\u30fc, \u30a4\u30f3\u30d0\u30fc\u30bf\u30fcIP: 192.168.0.202\n2025-06-02 14:45:02,899 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 14:45:03,045 - lvyuan_collector - INFO - \u73fe\u5728\u306eIP\u30a2\u30c9\u30ec\u30b9 (192.168.0.202) \u306b\u63a5\u7d9a\u3067\u304d\u307e\u3059\n2025-06-02 14:45:04,036 - lvyuan_collector - INFO - \u30c7\u30fc\u30bf\u53ce\u96c6\u6210\u529f: 5\u30d1\u30e9\u30e1\u30fc\u30bf\u30fc, \u30a4\u30f3\u30d0\u30fc\u30bf\u30fcIP: 192.168.0.202\n2025-06-02 15:00:02,826 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 15:00:03,402 - lvyuan_collector - INFO - \u73fe\u5728\u306eIP\u30a2\u30c9\u30ec\u30b9 (192.168.0.202) \u306b\u63a5\u7d9a\u3067\u304d\u307e\u3059\n2025-06-02 15:00:13,425 - lvyuan_collector - ERROR - \u30ec\u30b8\u30b9\u30bf 0x0100 (\u30d0\u30c3\u30c6\u30ea\u30fcSOC) \u306e\u8aad\u307f\u53d6\u308a\u30a8\u30e9\u30fc: \n2025-06-02 15:00:15,137 - lvyuan_collector - INFO - \u30c7\u30fc\u30bf\u53ce\u96c6\u6210\u529f: 4\u30d1\u30e9\u30e1\u30fc\u30bf\u30fc, \u30a4\u30f3\u30d0\u30fc\u30bf\u30fcIP: 192.168.0.202",
+            "status": "unresolved"
+        },
+        "c6b8f2cda655400ecc3dd8f5eb82080b": {
+            "timestamp": "2025-06-02 18:00:03",
+            "logfile": "logs/hanazono.log",
+            "error_context": "2025-06-01 23:00:04,136 - hanazono_logger - ERROR - \u30e1\u30fc\u30eb\u8a2d\u5b9a\u304c\u4e0d\u5b8c\u5168\u3067\u3059\n2025-06-01 23:00:04,138 - hanazono_logger - ERROR - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u5931\u6557\n2025-06-01 23:00:04,139 - hanazono_logger - INFO - HANAZONO\u30b7\u30b9\u30c6\u30e0\u81ea\u52d5\u6700\u9069\u5316\u3092\u7d42\u4e86\u3057\u307e\u3059\n2025-06-01 23:00:05,212 - hanazono_logger - INFO - \u30c7\u30fc\u30bf\u3092\u4fdd\u5b58\u3057\u307e\u3057\u305f: data/lvyuan_data_20250601_230005.json\n2025-06-01 23:00:05,213 - hanazono_logger - INFO - HANAZONO\u30b7\u30b9\u30c6\u30e0\u81ea\u52d5\u6700\u9069\u5316\u3092\u7d42\u4e86\u3057\u307e\u3059\n2025-06-01 23:05:20,854 - hanazono_logger - INFO - HANAZONO\u30b7\u30b9\u30c6\u30e0\u81ea\u52d5\u6700\u9069\u5316\u3092\u958b\u59cb\u3057\u307e\u3059\n2025-06-01 23:05:20,867 - hanazono_logger - INFO - cron\u30b8\u30e7\u30d6\u306f\u6b63\u3057\u304f\u8a2d\u5b9a\u3055\u308c\u3066\u3044\u307e\u3059\n--\n2025-06-02 06:45:03,952 - hanazono_logger - INFO - HANAZONO\u30b7\u30b9\u30c6\u30e0\u81ea\u52d5\u6700\u9069\u5316\u3092\u7d42\u4e86\u3057\u307e\u3059\n2025-06-02 07:00:03,570 - hanazono_logger - INFO - HANAZONO\u30b7\u30b9\u30c6\u30e0\u81ea\u52d5\u6700\u9069\u5316\u3092\u958b\u59cb\u3057\u307e\u3059\n2025-06-02 07:00:03,576 - hanazono_logger - INFO - HANAZONO\u30b7\u30b9\u30c6\u30e0\u81ea\u52d5\u6700\u9069\u5316\u3092\u958b\u59cb\u3057\u307e\u3059\n2025-06-02 07:00:03,591 - hanazono_logger - INFO - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u3092\u958b\u59cb\u3057\u307e\u3059\n2025-06-02 07:00:03,659 - hanazono_logger - INFO - \u30ec\u30dd\u30fc\u30c8\u751f\u6210\u306b\u4f7f\u7528\u3059\u308b\u30d5\u30a1\u30a4\u30eb: data/lvyuan_data_20250601_234505.json\n2025-06-02 07:00:03,662 - hanazono_logger - ERROR - \u30e1\u30fc\u30eb\u8a2d\u5b9a\u304c\u4e0d\u5b8c\u5168\u3067\u3059\n2025-06-02 07:00:03,664 - hanazono_logger - ERROR - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u5931\u6557\n2025-06-02 07:00:03,665 - hanazono_logger - INFO - HANAZONO\u30b7\u30b9\u30c6\u30e0\u81ea\u52d5\u6700\u9069\u5316\u3092\u7d42\u4e86\u3057\u307e\u3059\n2025-06-02 07:00:05,039 - hanazono_logger - INFO - \u30c7\u30fc\u30bf\u3092\u4fdd\u5b58\u3057\u307e\u3057\u305f: data/lvyuan_data_20250602_070005.json\n2025-06-02 07:00:05,040 - hanazono_logger - INFO - HANAZONO\u30b7\u30b9\u30c6\u30e0\u81ea\u52d5\u6700\u9069\u5316\u3092\u7d42\u4e86\u3057\u307e\u3059\n2025-06-02 07:15:03,253 - hanazono_logger - INFO - HANAZONO\u30b7\u30b9\u30c6\u30e0\u81ea\u52d5\u6700\u9069\u5316\u3092\u958b\u59cb\u3057\u307e\u3059\n2025-06-02 07:15:04,539 - hanazono_logger - INFO - \u30c7\u30fc\u30bf\u3092\u4fdd\u5b58\u3057\u307e\u3057\u305f: data/lvyuan_data_20250602_071504.json",
+            "status": "unresolved"
+        },
+        "c96d717ccef5b4d43d70eeb1841ba6ee": {
+            "timestamp": "2025-06-02 15:12:08",
+            "logfile": "logs/evolution_20250602_151207.log",
+            "error_context": "[2025-06-02 15:12:07] \ud83e\uddec \u81ea\u5df1\u9032\u5316\u30b7\u30b9\u30c6\u30e0\u30a8\u30f3\u30b8\u30f3\u958b\u59cb\n[2025-06-02 15:12:07] \ud83e\uddec \u81ea\u5df1\u9032\u5316\u30b5\u30a4\u30af\u30eb\u958b\u59cb\n[2025-06-02 15:12:07] \ud83d\udd0d \u30b7\u30b9\u30c6\u30e0\u5931\u6557\u691c\u51fa\u4e2d...\n[2025-06-02 15:12:08] \ud83d\udcdd \u5931\u6557\u8a18\u9332: c04fc5437409d037dda2b2e26340ebc7\n[2025-06-02 15:12:08] \ud83d\udcdd \u5931\u6557\u8a18\u9332: c6b8f2cda655400ecc3dd8f5eb82080b",
+            "status": "unresolved"
+        },
+        "ab66a4363afc1b51ef9cafe4da21056e": {
+            "timestamp": "2025-06-02 16:00:03",
+            "logfile": "logs/auto_system_generator_20250602_150833.log",
+            "error_context": "[2025-06-02 15:08:34] \ud83d\udccb \u691c\u51fa: cron\u7ba1\u7406\u4f5c\u696d\u30d1\u30bf\u30fc\u30f3\n[2025-06-02 15:08:34] \ud83d\udccb \u691c\u51fa: \u69cb\u6587\u30a8\u30e9\u30fc\u4fee\u6b63\u30d1\u30bf\u30fc\u30f3\n[2025-06-02 15:08:34] \ud83d\udccb \u691c\u51fa: \u30d5\u30a1\u30a4\u30eb\u7de8\u96c6\u30d1\u30bf\u30fc\u30f3\n[2025-06-02 15:08:34] \ud83c\udfaf 22\u500b\u306e\u4f5c\u696d\u30d1\u30bf\u30fc\u30f3\u3092\u691c\u51fa\n[2025-06-02 15:08:34] \ud83d\udee0\ufe0f [2025-06-02\u306e\u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u4e2d...\n[2025-06-02 15:08:34] \u2705 \u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u5b8c\u4e86: scripts/generated/auto_[2025-06-02_system.sh\n[2025-06-02 15:08:34] \ud83d\udee0\ufe0f 15:08:33]\u306e\u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u4e2d...\n--\n[2025-06-02 15:08:34] \u2705 \u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u5b8c\u4e86: scripts/generated/auto_15:08:34]_system.sh\n[2025-06-02 15:08:34] \ud83d\udee0\ufe0f \ud83d\udccb\u306e\u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u4e2d...\n[2025-06-02 15:08:34] \u2705 \u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u5b8c\u4e86: scripts/generated/auto_\ud83d\udccb_system.sh\n[2025-06-02 15:08:34] \ud83d\udee0\ufe0f \u691c\u51fa:\u306e\u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u4e2d...\n[2025-06-02 15:08:34] \u2705 \u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u5b8c\u4e86: scripts/generated/auto_\u691c\u51fa:_system.sh\n[2025-06-02 15:08:35] \ud83d\udee0\ufe0f \u69cb\u6587\u30a8\u30e9\u30fc\u4fee\u6b63\u30d1\u30bf\u30fc\u30f3\u306e\u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u4e2d...\n[2025-06-02 15:08:35] \u2705 \u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u5b8c\u4e86: scripts/generated/auto_\u69cb\u6587\u30a8\u30e9\u30fc\u4fee\u6b63\u30d1\u30bf\u30fc\u30f3_system.sh\n[2025-06-02 15:08:35] \ud83d\udee0\ufe0f [2025-06-02\u306e\u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u4e2d...\n[2025-06-02 15:08:35] \u2705 \u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u5b8c\u4e86: scripts/generated/auto_[2025-06-02_system.sh\n[2025-06-02 15:08:35] \ud83d\udee0\ufe0f 15:08:34]\u306e\u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u4e2d...\n[2025-06-02 15:08:35] \u2705 \u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u5b8c\u4e86: scripts/generated/auto_15:08:34]_system.sh\n[2025-06-02 15:08:35] \ud83d\udee0\ufe0f \ud83d\udccb\u306e\u81ea\u52d5\u5316\u30b7\u30b9\u30c6\u30e0\u751f\u6210\u4e2d...",
+            "status": "unresolved"
+        },
+        "c43f4f9fdf9c2bc7916ab3d4fec3d4aa": {
+            "timestamp": "2025-06-02 16:00:03",
+            "logfile": "logs/ultimate_cron_fix_20250602_150347.log",
+            "error_context": "[2025-06-02 15:03:47] \ud83e\udd16 \u7a76\u6975\u306ecron\u81ea\u52d5\u4fee\u6b63\u30b7\u30b9\u30c6\u30e0\u958b\u59cb\n[2025-06-02 15:03:47] \ud83d\udd0d cron\u69cb\u6587\u30a8\u30e9\u30fc\u691c\u51fa\u4e2d...\n[2025-06-02 15:03:47] \ud83d\udea8 cron\u69cb\u6587\u30a8\u30e9\u30fc\u3092\u691c\u51fa - \u81ea\u52d5\u4fee\u6b63\u3092\u958b\u59cb\n[2025-06-02 15:03:47] \ud83d\udd27 \u81ea\u52d5\u4fee\u6b63\u5b9f\u884c\u4e2d...\n[2025-06-02 15:03:47] \ud83d\udcc1 \u30d0\u30c3\u30af\u30a2\u30c3\u30d7\u4f5c\u6210: /tmp/cron_backup_20250602_150347.txt\n[2025-06-02 15:03:47] \u2705 \u5b8c\u74a7\u306acron\u8a2d\u5b9a\u3092\u9069\u7528\n[2025-06-02 15:03:47] \ud83d\udd0d cron\u69cb\u6587\u30a8\u30e9\u30fc\u691c\u51fa\u4e2d...\n[2025-06-02 15:03:47] \u274c \u4fee\u6b63\u5f8c\u3082\u30a8\u30e9\u30fc\u304c\u6b8b\u5b58 - \u30b7\u30b9\u30c6\u30e0\u554f\u984c\u306e\u53ef\u80fd\u6027",
+            "status": "unresolved"
+        },
+        "a36b850423e9257917eba07019761ed2": {
+            "timestamp": "2025-06-02 16:00:01",
+            "logfile": "logs/hanazono_error.log",
+            "error_context": "2025-06-01 23:00:04,136 - hanazono_logger - ERROR - \u30e1\u30fc\u30eb\u8a2d\u5b9a\u304c\u4e0d\u5b8c\u5168\u3067\u3059\n2025-06-01 23:00:04,138 - hanazono_logger - ERROR - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u5931\u6557\n2025-06-01 23:05:22,434 - hanazono_logger - DEBUG - \u30c7\u30d0\u30c3\u30b0\u30e2\u30fc\u30c9\u3067\u5b9f\u884c\u4e2d\n2025-06-01 23:05:22,435 - hanazono_logger - INFO - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u3092\u958b\u59cb\u3057\u307e\u3059\n2025-06-01 23:05:22,487 - hanazono_logger - INFO - \u30ec\u30dd\u30fc\u30c8\u751f\u6210\u306b\u4f7f\u7528\u3059\u308b\u30d5\u30a1\u30a4\u30eb: data/lvyuan_data_20250531_234503.json\n2025-06-01 23:05:26,427 - hanazono_logger - INFO - \u6700\u9069\u5316\u30ec\u30dd\u30fc\u30c8\u3092\u9001\u4fe1\u3057\u307e\u3057\u305f: \ud83d\udfe0 HANAZONO\u30b7\u30b9\u30c6\u30e0\u6700\u9069\u5316\u30ec\u30dd\u30fc\u30c8 2025\u5e7406\u670801\u65e5 (23\u6642)\n2025-06-01 23:05:26,428 - hanazono_logger - INFO - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u6210\u529f\n--\n2025-06-01 23:55:47,244 - hanazono_logger - INFO - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u3092\u958b\u59cb\u3057\u307e\u3059\n2025-06-01 23:55:47,297 - hanazono_logger - INFO - \u30ec\u30dd\u30fc\u30c8\u751f\u6210\u306b\u4f7f\u7528\u3059\u308b\u30d5\u30a1\u30a4\u30eb: data/lvyuan_data_20250531_234503.json\n2025-06-01 23:55:50,334 - hanazono_logger - INFO - \u6700\u9069\u5316\u30ec\u30dd\u30fc\u30c8\u3092\u9001\u4fe1\u3057\u307e\u3057\u305f: \ud83d\udfe0 HANAZONO\u30b7\u30b9\u30c6\u30e0\u6700\u9069\u5316\u30ec\u30dd\u30fc\u30c8 2025\u5e7406\u670801\u65e5 (23\u6642)\n2025-06-01 23:55:50,335 - hanazono_logger - INFO - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u6210\u529f\n2025-06-01 23:55:50,336 - hanazono_logger - INFO - HANAZONO\u30b7\u30b9\u30c6\u30e0\u81ea\u52d5\u6700\u9069\u5316\u3092\u7d42\u4e86\u3057\u307e\u3059\n2025-06-02 07:00:03,662 - hanazono_logger - ERROR - \u30e1\u30fc\u30eb\u8a2d\u5b9a\u304c\u4e0d\u5b8c\u5168\u3067\u3059\n2025-06-02 07:00:03,664 - hanazono_logger - ERROR - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u5931\u6557\n2025-06-02 15:22:13,904 - hanazono_logger - DEBUG - \u30c7\u30d0\u30c3\u30b0\u30e2\u30fc\u30c9\u3067\u5b9f\u884c\u4e2d\n2025-06-02 15:22:13,907 - hanazono_logger - INFO - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u3092\u958b\u59cb\u3057\u307e\u3059\n2025-06-02 15:22:13,961 - hanazono_logger - INFO - \u30ec\u30dd\u30fc\u30c8\u751f\u6210\u306b\u4f7f\u7528\u3059\u308b\u30d5\u30a1\u30a4\u30eb: data/lvyuan_data_20250601_234505.json\n2025-06-02 15:22:17,057 - hanazono_logger - INFO - \u6700\u9069\u5316\u30ec\u30dd\u30fc\u30c8\u3092\u9001\u4fe1\u3057\u307e\u3057\u305f: \ud83d\udd35 HANAZONO\u30b7\u30b9\u30c6\u30e0\u6700\u9069\u5316\u30ec\u30dd\u30fc\u30c8 2025\u5e7406\u670802\u65e5 (23\u6642)\n2025-06-02 15:22:17,058 - hanazono_logger - INFO - \u65e5\u6b21\u30ec\u30dd\u30fc\u30c8\u9001\u4fe1\u6210\u529f",
+            "status": "unresolved"
+        },
+        "f678e031eb3a4f428da95c70411b22d5": {
+            "timestamp": "2025-06-02 18:00:02",
+            "logfile": "logs/collector_20250602.log",
+            "error_context": "2025-06-02 14:00:03,403 - lvyuan_collector - INFO - \u73fe\u5728\u306eIP\u30a2\u30c9\u30ec\u30b9 (192.168.0.202) \u306b\u63a5\u7d9a\u3067\u304d\u307e\u3059\n2025-06-02 14:00:04,389 - lvyuan_collector - INFO - \u30c7\u30fc\u30bf\u53ce\u96c6\u6210\u529f: 5\u30d1\u30e9\u30e1\u30fc\u30bf\u30fc, \u30a4\u30f3\u30d0\u30fc\u30bf\u30fcIP: 192.168.0.202\n2025-06-02 14:15:03,027 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 14:15:08,087 - lvyuan_collector - INFO - \u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30b9\u30ad\u30e3\u30f3\u5b9f\u884c\u4e2d... (192.168.0.0/24)\n2025-06-02 14:15:08,125 - lvyuan_collector - ERROR - \u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30b9\u30ad\u30e3\u30f3\u30a8\u30e9\u30fc: [Errno 2] No such file or directory: 'arp'\n2025-06-02 14:15:08,126 - lvyuan_collector - ERROR - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093\n2025-06-02 14:30:02,910 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 14:30:03,044 - lvyuan_collector - INFO - \u73fe\u5728\u306eIP\u30a2\u30c9\u30ec\u30b9 (192.168.0.202) \u306b\u63a5\u7d9a\u3067\u304d\u307e\u3059\n2025-06-02 14:30:04,166 - lvyuan_collector - INFO - \u30c7\u30fc\u30bf\u53ce\u96c6\u6210\u529f: 5\u30d1\u30e9\u30e1\u30fc\u30bf\u30fc, \u30a4\u30f3\u30d0\u30fc\u30bf\u30fcIP: 192.168.0.202\n2025-06-02 14:45:02,899 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 14:45:03,045 - lvyuan_collector - INFO - \u73fe\u5728\u306eIP\u30a2\u30c9\u30ec\u30b9 (192.168.0.202) \u306b\u63a5\u7d9a\u3067\u304d\u307e\u3059\n2025-06-02 14:45:04,036 - lvyuan_collector - INFO - \u30c7\u30fc\u30bf\u53ce\u96c6\u6210\u529f: 5\u30d1\u30e9\u30e1\u30fc\u30bf\u30fc, \u30a4\u30f3\u30d0\u30fc\u30bf\u30fcIP: 192.168.0.202\n2025-06-02 15:00:02,826 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 15:00:03,402 - lvyuan_collector - INFO - \u73fe\u5728\u306eIP\u30a2\u30c9\u30ec\u30b9 (192.168.0.202) \u306b\u63a5\u7d9a\u3067\u304d\u307e\u3059\n2025-06-02 15:00:13,425 - lvyuan_collector - ERROR - \u30ec\u30b8\u30b9\u30bf 0x0100 (\u30d0\u30c3\u30c6\u30ea\u30fcSOC) \u306e\u8aad\u307f\u53d6\u308a\u30a8\u30e9\u30fc: \n2025-06-02 15:00:15,137 - lvyuan_collector - INFO - \u30c7\u30fc\u30bf\u53ce\u96c6\u6210\u529f: 4\u30d1\u30e9\u30e1\u30fc\u30bf\u30fc, \u30a4\u30f3\u30d0\u30fc\u30bf\u30fcIP: 192.168.0.202\n2025-06-02 15:15:02,796 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...\n2025-06-02 15:15:02,943 - lvyuan_collector - INFO - \u73fe\u5728\u306eIP\u30a2\u30c9\u30ec\u30b9 (192.168.0.202) \u306b\u63a5\u7d9a\u3067\u304d\u307e\u3059\n2025-06-02 15:15:04,069 - lvyuan_collector - INFO - \u30c7\u30fc\u30bf\u53ce\u96c6\u6210\u529f: 5\u30d1\u30e9\u30e1\u30fc\u30bf\u30fc, \u30a4\u30f3\u30d0\u30fc\u30bf\u30fcIP: 192.168.0.202\n2025-06-02 15:16:25,316 - lvyuan_collector - INFO - \u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u306eIP\u30a2\u30c9\u30ec\u30b9\u3092\u691c\u7d22\u4e2d...",
+            "status": "unresolved"
+        },
+        "c03f087593e327a01de8d7bfa5efaf3c": {
+            "timestamp": "2025-06-02 16:00:02",
+            "logfile": "logs/evolution_20250602_160001.log",
+            "error_context": "[2025-06-02 16:00:01] \ud83e\uddec \u81ea\u5df1\u9032\u5316\u30b7\u30b9\u30c6\u30e0\u30a8\u30f3\u30b8\u30f3\u958b\u59cb\n[2025-06-02 16:00:01] \ud83e\uddec \u81ea\u5df1\u9032\u5316\u30b5\u30a4\u30af\u30eb\u958b\u59cb\n[2025-06-02 16:00:01] \ud83d\udd0d \u30b7\u30b9\u30c6\u30e0\u5931\u6557\u691c\u51fa\u4e2d...\n[2025-06-02 16:00:02] \ud83d\udcdd \u5931\u6557\u8a18\u9332: a36b850423e9257917eba07019761ed2\n[2025-06-02 16:00:02] \ud83d\udcdd \u5931\u6557\u8a18\u9332: f678e031eb3a4f428da95c70411b22d5",
+            "status": "unresolved"
+        },
+        "5b19dd66cf9dfe1d7eca958f4bb1ed20": {
+            "timestamp": "2025-06-02 16:00:03",
+            "logfile": "logs/evolution_20250602_151207.log",
+            "error_context": "[2025-06-02 15:12:07] \ud83e\uddec \u81ea\u5df1\u9032\u5316\u30b7\u30b9\u30c6\u30e0\u30a8\u30f3\u30b8\u30f3\u958b\u59cb\n[2025-06-02 15:12:07] \ud83e\uddec \u81ea\u5df1\u9032\u5316\u30b5\u30a4\u30af\u30eb\u958b\u59cb\n[2025-06-02 15:12:07] \ud83d\udd0d \u30b7\u30b9\u30c6\u30e0\u5931\u6557\u691c\u51fa\u4e2d...\n[2025-06-02 15:12:08] \ud83d\udcdd \u5931\u6557\u8a18\u9332: c04fc5437409d037dda2b2e26340ebc7\n[2025-06-02 15:12:08] \ud83d\udcdd \u5931\u6557\u8a18\u9332: c6b8f2cda655400ecc3dd8f5eb82080b\n[2025-06-02 15:12:08] \ud83d\udcdd \u5931\u6557\u8a18\u9332: c96d717ccef5b4d43d70eeb1841ba6ee\n[2025-06-02 15:12:08] \ud83d\udcdd \u5931\u6557\u8a18\u9332: ab66a4363afc1b51ef9cafe4da21056e\n[2025-06-02 15:12:08] \ud83d\udcdd \u5931\u6557\u8a18\u9332: c43f4f9fdf9c2bc7916ab3d4fec3d4aa\n[2025-06-02 15:12:08] \ud83c\udfaf \u6210\u529f\u89e3\u6c7a\u65b9\u6cd5\u691c\u51fa\u4e2d...\n[2025-06-02 15:12:08] \ud83d\udee0\ufe0f \u65b0\u6a5f\u80fd\u81ea\u52d5\u751f\u6210: [2025-06-02\n[2025-06-02 15:12:08] \u2705 \u65b0\u6a5f\u80fd\u751f\u6210\u5b8c\u4e86: scripts/auto_generated/auto_[2025-06-02_v20250602_151208.sh\n[2025-06-02 15:12:09] \ud83d\udcda \u9032\u5316\u5c65\u6b74\u8a18\u9332: feature_generation - \u65b0\u6a5f\u80fd\u751f\u6210: [2025-06-02\n[2025-06-02 15:12:09] \ud83d\udee0\ufe0f \u65b0\u6a5f\u80fd\u81ea\u52d5\u751f\u6210: 15:12:08]",
+            "status": "unresolved"
+        },
+        "e4b37b6b89b879ca74637b86faa3b59b": {
+            "timestamp": "2025-06-02 18:00:03",
+            "logfile": "logs/evolution_20250602_180001.log",
+            "error_context": "[2025-06-02 18:00:01] \ud83e\uddec \u81ea\u5df1\u9032\u5316\u30b7\u30b9\u30c6\u30e0\u30a8\u30f3\u30b8\u30f3\u958b\u59cb\n[2025-06-02 18:00:01] \ud83e\uddec \u81ea\u5df1\u9032\u5316\u30b5\u30a4\u30af\u30eb\u958b\u59cb\n[2025-06-02 18:00:02] \ud83d\udd0d \u30b7\u30b9\u30c6\u30e0\u5931\u6557\u691c\u51fa\u4e2d...\n[2025-06-02 18:00:02] \ud83d\udcdd \u5931\u6557\u8a18\u9332: f678e031eb3a4f428da95c70411b22d5\n[2025-06-02 18:00:03] \ud83d\udcdd \u5931\u6557\u8a18\u9332: c6b8f2cda655400ecc3dd8f5eb82080b",
+            "status": "unresolved"
+        }
+    },
+    "solutions": {},
+    "evolution_history": [
+        {
+            "timestamp": "2025-06-02 15:12:08",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: [2025-06-02",
+            "evolution_version": "20250602_151208"
+        },
+        {
+            "timestamp": "2025-06-02 15:12:09",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: 15:12:08]",
+            "evolution_version": "20250602_151209"
+        },
+        {
+            "timestamp": "2025-06-02 15:12:09",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: \ud83c\udfaf",
+            "evolution_version": "20250602_151209"
+        },
+        {
+            "timestamp": "2025-06-02 15:12:09",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: \u6210\u529f\u89e3\u6c7a\u65b9\u6cd5\u691c\u51fa\u4e2d...",
+            "evolution_version": "20250602_151209"
+        },
+        {
+            "timestamp": "2025-06-02 16:00:04",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: [2025-06-02",
+            "evolution_version": "20250602_160004"
+        },
+        {
+            "timestamp": "2025-06-02 16:00:04",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: 16:00:04]",
+            "evolution_version": "20250602_160004"
+        },
+        {
+            "timestamp": "2025-06-02 16:00:04",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: \ud83c\udfaf",
+            "evolution_version": "20250602_160004"
+        },
+        {
+            "timestamp": "2025-06-02 16:00:04",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: \u6210\u529f\u89e3\u6c7a\u65b9\u6cd5\u691c\u51fa\u4e2d...",
+            "evolution_version": "20250602_160004"
+        },
+        {
+            "timestamp": "2025-06-02 18:00:03",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: [2025-06-02",
+            "evolution_version": "20250602_180003"
+        },
+        {
+            "timestamp": "2025-06-02 18:00:04",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: 18:00:03]",
+            "evolution_version": "20250602_180004"
+        },
+        {
+            "timestamp": "2025-06-02 18:00:04",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: \ud83c\udfaf",
+            "evolution_version": "20250602_180004"
+        },
+        {
+            "timestamp": "2025-06-02 18:00:04",
+            "type": "feature_generation",
+            "description": "\u65b0\u6a5f\u80fd\u751f\u6210: \u6210\u529f\u89e3\u6c7a\u65b9\u6cd5\u691c\u51fa\u4e2d...",
+            "evolution_version": "20250602_180004"
+        }
+    ]
+}

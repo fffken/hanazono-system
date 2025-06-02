@@ -1,0 +1,10 @@
+{
+    "efficiency_history": [
+        {
+            "timestamp": "2025-06-02 15:45:36",
+            "metrics": "[2025-06-02 15:45:35] \ud83d\udcca \u52b9\u7387\u6e2c\u5b9a\u958b\u59cb [2025-06-02 15:45:35] \ud83d\udcc8 \u52b9\u7387\u6e2c\u5b9a\u5b8c\u4e86: 5\u500b\u306e\u6307\u6a19 task_speed:180 automation_rate:66 error_reduction:50 system_response:92 learning_rate:60",
+            "bottlenecks": "[2025-06-02 15:45:35] \ud83d\udd0d \u52b9\u7387\u30dc\u30c8\u30eb\u30cd\u30c3\u30af\u81ea\u52d5\u691c\u51fa\u958b\u59cb [2025-06-02 15:45:35] \ud83d\udc0c \u9ad8CPU\u4f7f\u7528\u30d7\u30ed\u30bb\u30b9\u691c\u51fa high_cpu_processes",
+            "generated_boosters": 9
+        }
+    ]
+}
