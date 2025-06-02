@@ -1,0 +1,30 @@
+[
+  {
+    "id": "change_1",
+    "timestamp": "2025-06-02T23:05:31.663395",
+    "description": "新機能追加",
+    "type": "機能拡張",
+    "implementation_script": "new_feature.sh",
+    "options": [
+      "シンプル版",
+      "高機能版",
+      "カスタム版"
+    ],
+    "status": "PENDING_APPROVAL",
+    "priority": "NORMAL"
+  },
+  {
+    "id": "change_2",
+    "timestamp": "2025-06-02T23:10:41.955249",
+    "description": "新機能追加",
+    "type": "機能拡張",
+    "implementation_script": "new_feature.sh",
+    "options": [
+      "シンプル版",
+      "高機能版",
+      "カスタム版"
+    ],
+    "status": "PENDING_APPROVAL",
+    "priority": "NORMAL"
+  }
+]
