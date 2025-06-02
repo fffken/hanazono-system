@@ -1,203 +1,203 @@
 {
-  "prediction_date": "2025-05-24T02:33:15.740803",
-  "horizon_days": 7,
-  "resource_usage": {
-    "status": "success",
-    "predictions": {
-      "day_0_hour_0": {
-        "cpu_usage": 28.16,
-        "memory_usage": 46.96
-      },
-      "day_1_hour_0": {
-        "cpu_usage": 28.16,
-        "memory_usage": 46.96
-      },
-      "day_2_hour_0": {
-        "cpu_usage": 28.16,
-        "memory_usage": 46.96
-      },
-      "day_3_hour_0": {
-        "cpu_usage": 28.16,
-        "memory_usage": 46.96
-      },
-      "day_4_hour_0": {
-        "cpu_usage": 28.16,
-        "memory_usage": 46.96
-      },
-      "day_5_hour_0": {
-        "cpu_usage": 28.16,
-        "memory_usage": 46.96
-      },
-      "day_6_hour_0": {
-        "cpu_usage": 28.16,
-        "memory_usage": 46.96
-      },
-      "day_0_hour_4": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_1_hour_4": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_2_hour_4": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_3_hour_4": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_4_hour_4": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_5_hour_4": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_6_hour_4": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_0_hour_8": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_1_hour_8": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_2_hour_8": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_3_hour_8": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_4_hour_8": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_5_hour_8": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_6_hour_8": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_0_hour_12": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_1_hour_12": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_2_hour_12": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_3_hour_12": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_4_hour_12": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_5_hour_12": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_6_hour_12": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_0_hour_16": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_1_hour_16": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_2_hour_16": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_3_hour_16": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_4_hour_16": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_5_hour_16": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_6_hour_16": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_0_hour_20": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_1_hour_20": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_2_hour_20": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_3_hour_20": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_4_hour_20": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_5_hour_20": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      },
-      "day_6_hour_20": {
-        "cpu_usage": 33.52,
-        "memory_usage": 42.56
-      }
+    "prediction_date": "2025-05-24T02:33:15.740803",
+    "horizon_days": 7,
+    "resource_usage": {
+        "status": "success",
+        "predictions": {
+            "day_0_hour_0": {
+                "cpu_usage": 28.16,
+                "memory_usage": 46.96
+            },
+            "day_1_hour_0": {
+                "cpu_usage": 28.16,
+                "memory_usage": 46.96
+            },
+            "day_2_hour_0": {
+                "cpu_usage": 28.16,
+                "memory_usage": 46.96
+            },
+            "day_3_hour_0": {
+                "cpu_usage": 28.16,
+                "memory_usage": 46.96
+            },
+            "day_4_hour_0": {
+                "cpu_usage": 28.16,
+                "memory_usage": 46.96
+            },
+            "day_5_hour_0": {
+                "cpu_usage": 28.16,
+                "memory_usage": 46.96
+            },
+            "day_6_hour_0": {
+                "cpu_usage": 28.16,
+                "memory_usage": 46.96
+            },
+            "day_0_hour_4": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_1_hour_4": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_2_hour_4": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_3_hour_4": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_4_hour_4": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_5_hour_4": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_6_hour_4": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_0_hour_8": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_1_hour_8": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_2_hour_8": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_3_hour_8": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_4_hour_8": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_5_hour_8": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_6_hour_8": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_0_hour_12": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_1_hour_12": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_2_hour_12": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_3_hour_12": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_4_hour_12": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_5_hour_12": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_6_hour_12": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_0_hour_16": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_1_hour_16": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_2_hour_16": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_3_hour_16": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_4_hour_16": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_5_hour_16": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_6_hour_16": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_0_hour_20": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_1_hour_20": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_2_hour_20": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_3_hour_20": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_4_hour_20": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_5_hour_20": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            },
+            "day_6_hour_20": {
+                "cpu_usage": 33.52,
+                "memory_usage": 42.56
+            }
+        },
+        "high_usage_periods": [],
+        "summary": {
+            "avg_cpu": 32.62666666666667,
+            "avg_memory": 43.29333333333334,
+            "peak_cpu": 33.52,
+            "peak_memory": 46.96
+        }
     },
-    "high_usage_periods": [],
-    "summary": {
-      "avg_cpu": 32.62666666666667,
-      "avg_memory": 43.29333333333334,
-      "peak_cpu": 33.52,
-      "peak_memory": 46.96
-    }
-  },
-  "error_frequency": {},
-  "performance_trends": {
-    "status": "success",
-    "future_performance": {},
-    "overall_trend": "degrading"
-  },
-  "maintenance_schedule": {
-    "status": "success",
-    "next_maintenance_date": "2025-05-24T03:41:57.765237",
-    "days_until_maintenance": 0,
-    "urgency": "high",
-    "maintenance_types": {
-      "backup": 20
-    }
-  },
-  "recommendations": [
-    "\ud83d\udcc9 \u30b7\u30b9\u30c6\u30e0\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u306e\u4f4e\u4e0b\u50be\u5411\u3002\u6700\u9069\u5316\u4f5c\u696d\u304c\u63a8\u5968\u3055\u308c\u307e\u3059",
-    "\ud83d\udd27 0\u65e5\u4ee5\u5185\u306b\u30e1\u30f3\u30c6\u30ca\u30f3\u30b9\u304c\u5fc5\u8981\u3067\u3059"
-  ]
+    "error_frequency": {},
+    "performance_trends": {
+        "status": "success",
+        "future_performance": {},
+        "overall_trend": "degrading"
+    },
+    "maintenance_schedule": {
+        "status": "success",
+        "next_maintenance_date": "2025-05-24T03:41:57.765237",
+        "days_until_maintenance": 0,
+        "urgency": "high",
+        "maintenance_types": {
+            "backup": 20
+        }
+    },
+    "recommendations": [
+        "\ud83d\udcc9 \u30b7\u30b9\u30c6\u30e0\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u306e\u4f4e\u4e0b\u50be\u5411\u3002\u6700\u9069\u5316\u4f5c\u696d\u304c\u63a8\u5968\u3055\u308c\u307e\u3059",
+        "\ud83d\udd27 0\u65e5\u4ee5\u5185\u306b\u30e1\u30f3\u30c6\u30ca\u30f3\u30b9\u304c\u5fc5\u8981\u3067\u3059"
+    ]
 }
