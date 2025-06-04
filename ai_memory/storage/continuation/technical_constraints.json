@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-06-04T11:02:34.104369+00:00",
+  "resolved_issues": [],
+  "current_constraints": [
+    {
+      "constraint": "ラズパイターミナル行数制限",
+      "impact": "コピペ30-40行制限",
+      "priority": "high",
+      "recorded_at": "2025-06-04T11:02:34.104297+00:00"
+    }
+  ],
+  "technical_decisions": []
+}
