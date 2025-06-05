@@ -20,5 +20,16 @@
       "expected_savings": 50600
     },
     "ml_engine_version": "Phase1_v1.0"
+  },
+  {
+    "timestamp": "2025-06-05 21:47:25",
+    "date": "06/05 21:47",
+    "charge_current": "46A",
+    "charge_time": "38分",
+    "soc_setting": "40%",
+    "confidence": "62.4%",
+    "ml_status": "active",
+    "data_count": 1147,
+    "savings_prediction": 55449.56906392694
   }
 ]
