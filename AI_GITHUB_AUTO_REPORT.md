@@ -1,6 +1,6 @@
 # AI用GitHub自動取得レポート v4.0（100点満点完全版）
 
-*生成時刻*: 2025-06-05 21:06:21
+*生成時刻*: 2025-06-05 23:29:11
 *目的*: 新しいAIセッション開始時の100%完全状況把握
 *完成度*: 🏆 *100点/100点満点達成*
 
@@ -8,9 +8,9 @@
 
 ### 📊 リポジトリ基本情報
 - *ブランチ*: main
-- *最新コミット*: f9f8714 🤖 自動保存: 2025-06-05 21:00 - AI記憶システム更新 (286件)
+- *最新コミット*: ac147fa 🤖 自動保存: 2025-06-05 22:00 - AI記憶システム更新 (301件)
 - *リモートURL*: git@github.com:fffken/hanazono-system.git
-- *未コミット変更*: 286 件
+- *未コミット変更*: 294 件
 
 ### ⚠️ 未コミット変更詳細
 ```
@@ -214,6 +214,7 @@
 ?? data_util.py.before_fix
 ?? design_violation_detector.py.strict
 ?? dynamic_settings_manager.py
+?? dynamic_settings_manager_v1_backup.py
 ?? email_notifier_GOLDEN_MASTER_20250604_010604.py
 ?? email_notifier_SAFE_WORKING_20250604_003114.py
 ?? email_notifier_SAFE_WORKING_20250604_003408.py
@@ -236,6 +237,7 @@
 ?? email_notifier_v2_1_github.py
 ?? email_protection_vault/
 ?? emergency_backup_20250603_084722/
+?? enhanced_email_notifier.py
 ?? fix_syntax.py
 ?? hanazono_safe_guardian.py
 ?? hcqas_implementation/
@@ -247,6 +249,11 @@
 ?? main.py.backup_before_daily_report_fix
 ?? main_broken_backup.py
 ?? ml_enhancement_phase1.py
+?? ml_enhancement_phase1_v2.py
+?? ml_enhancement_phase1_v3.py
+?? ml_enhancement_phase1_v4.py
+?? ml_enhancement_phase1_v4_backup.py
+?? ml_news_generator.py
 ?? monitoring_logs/backup_20250603_052855_email_notifier.py
 ?? monitoring_logs/backup_20250603_052855_lvyuan_collector.py
 ?? monitoring_logs/backup_20250603_052855_main.py
@@ -293,6 +300,7 @@
 ?? system_backups/backup_20250605_091013/
 ?? system_backups/backup_20250605_125154/
 ?? system_backups/backup_20250605_141000/
+?? system_backups/backup_20250605_210646/
 ?? ultimate_backup_20250603_090708/
 ?? ultimate_fix.py
 ?? ultimate_protection_system.py
@@ -304,11 +312,11 @@
 
 ### 📝 最近のコミット履歴（5件）
 ```
+ac147fa 🤖 自動保存: 2025-06-05 22:00 - AI記憶システム更新 (301件)
 f9f8714 🤖 自動保存: 2025-06-05 21:00 - AI記憶システム更新 (286件)
 8231b59 🤖 自動保存: 2025-06-05 16:00 - AI記憶システム更新 (283件)
 45447f4 🤖 自動保存: 2025-06-05 15:00 - AI記憶システム更新 (287件)
 d03c4ff 🎉 1年前比較システム実装完了 + 完全自動化効率システム構築
-01a646b 🤖 自動保存: 2025-06-05 13:00 - AI記憶システム更新 (281件)
 ```
 
 ## 🔬 段階1: ファイル内容深掘り分析
@@ -1309,9 +1317,9 @@ if __name__ == '__main__':
 
 *./solar_control.log:*
 ```
-2025-06-05 21:04:20,497 - INFO - スケジューラ: 現在時刻 2025-06-05 21:04:20
-2025-06-05 21:05:20,499 - INFO - スケジューラ: 現在時刻 2025-06-05 21:05:20
-2025-06-05 21:06:20,501 - INFO - スケジューラ: 現在時刻 2025-06-05 21:06:20
+2025-06-05 23:26:21,207 - INFO - スケジューラ: 現在時刻 2025-06-05 23:26:21
+2025-06-05 23:27:21,208 - INFO - スケジューラ: 現在時刻 2025-06-05 23:27:21
+2025-06-05 23:28:21,210 - INFO - スケジューラ: 現在時刻 2025-06-05 23:28:21
 ```
 
 */var/log/dpkg.log.1:*
@@ -1337,21 +1345,21 @@ if __name__ == '__main__':
 
 #### 🐍 Python関連プロセス
 ```
-pi           462  0.0  0.8  19192  3648 ?        Ss   May06   1:08 python /home/pi/lvyuan_solar_control/solar_control_scheduler.py
-pi        590183  0.0  0.6  25664  2900 ?        S    May31   0:07 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/quantum_prediction.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🌌 量子予測システム開始') logging.info('量子予測システム開始')  while True:     try:         system._execute_quantum_predictions()         logging.info(f'量子予測完了 - 予測数: {system.perfect_predictions}')         time.sleep(60)  # 1分     except Exception as e:         logging.error(f'量子予測エラー: {e}')         time.sleep(120) 
-pi        590184  0.0  0.6  25780  2936 ?        S    May31   0:04 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/perfect_optimization.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('⚡ 完全最適化システム開始') logging.info('完全最適化システム開始')  while True:     try:         system._execute_perfect_optimization()         logging.info('完全最適化実行完了')         time.sleep(300)  # 5分     except Exception as e:         logging.error(f'完全最適化エラー: {e}')         time.sleep(600) 
-pi        590185  0.0  0.6  25788  2568 ?        S    May31   0:12 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/consciousness.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🧠 意識システム開始') logging.info('意識システム開始')  while True:     try:         system._execute_conscious_decisions()         logging.info('意識的決定実行完了')         time.sleep(30)  # 30秒     except Exception as e:         logging.error(f'意識システムエラー: {e}')         time.sleep(60) 
-pi        590315  0.0  0.6  25664  2648 ?        S    May31   0:07 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/quantum_prediction.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🌌 量子予測システム開始') logging.info('量子予測システム開始')  while True:     try:         system._execute_quantum_predictions()         logging.info(f'量子予測完了 - 予測数: {system.perfect_predictions}')         time.sleep(60)  # 1分     except Exception as e:         logging.error(f'量子予測エラー: {e}')         time.sleep(120) 
+pi           462  0.0  0.8  19192  3548 ?        Ss   May06   1:08 python /home/pi/lvyuan_solar_control/solar_control_scheduler.py
+pi        590183  0.0  0.7  25664  3256 ?        S    May31   0:08 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/quantum_prediction.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🌌 量子予測システム開始') logging.info('量子予測システム開始')  while True:     try:         system._execute_quantum_predictions()         logging.info(f'量子予測完了 - 予測数: {system.perfect_predictions}')         time.sleep(60)  # 1分     except Exception as e:         logging.error(f'量子予測エラー: {e}')         time.sleep(120) 
+pi        590184  0.0  0.7  25780  3028 ?        S    May31   0:04 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/perfect_optimization.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('⚡ 完全最適化システム開始') logging.info('完全最適化システム開始')  while True:     try:         system._execute_perfect_optimization()         logging.info('完全最適化実行完了')         time.sleep(300)  # 5分     except Exception as e:         logging.error(f'完全最適化エラー: {e}')         time.sleep(600) 
+pi        590185  0.0  0.6  25788  2624 ?        S    May31   0:12 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/consciousness.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🧠 意識システム開始') logging.info('意識システム開始')  while True:     try:         system._execute_conscious_decisions()         logging.info('意識的決定実行完了')         time.sleep(30)  # 30秒     except Exception as e:         logging.error(f'意識システムエラー: {e}')         time.sleep(60) 
+pi        590315  0.0  0.6  25664  2984 ?        S    May31   0:07 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/quantum_prediction.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🌌 量子予測システム開始') logging.info('量子予測システム開始')  while True:     try:         system._execute_quantum_predictions()         logging.info(f'量子予測完了 - 予測数: {system.perfect_predictions}')         time.sleep(60)  # 1分     except Exception as e:         logging.error(f'量子予測エラー: {e}')         time.sleep(120) 
 ```
 
 #### 💾 システムリソース状況
 ```
 === CPU・メモリ使用状況 ===
-top - 21:06:27 up 29 days, 23:36,  1 user,  load average: 0.50, 0.41, 0.30
-Tasks: 164 total,   3 running, 161 sleeping,   0 stopped,   0 zombie
-%Cpu(s): 36.4 us, 18.2 sy,  0.0 ni, 45.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
-MiB Mem :    416.8 total,     54.1 free,    257.6 used,    169.4 buff/cache     
-MiB Swap:    512.0 total,    394.2 free,    117.8 used.    159.2 avail Mem 
+top - 23:29:17 up 30 days,  1:58,  1 user,  load average: 0.47, 0.26, 0.22
+Tasks: 159 total,   1 running, 158 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  6.7 us, 13.3 sy,  0.0 ni, 80.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :    416.8 total,    102.2 free,    194.9 used,    183.9 buff/cache     
+MiB Swap:    512.0 total,    389.5 free,    122.5 used.    221.9 avail Mem 
 
 === ディスク使用状況 ===
 Filesystem      Size  Used Avail Use% Mounted on
@@ -1389,39 +1397,14 @@ lvyuan_collector.py: 2025-06-04 09:10:32.795933913 +0900
 === Python基本情報 ===
 Python version: Python 3.11.2
 Python path: /home/pi/lvyuan_solar_control/venv/bin/python3
-Pip version: pip 23.0.1 from /usr/lib/python3/dist-packages/pip (python 3.11)
+Pip version: pip 23.0.1 from /home/pi/lvyuan_solar_control/venv/lib/python3.11/site-packages/pip (python 3.11)
 Virtual env: /home/pi/lvyuan_solar_control/venv
 
 === インストール済みパッケージ完全版 ===
-Package            Version
------------------- ---------
-beautifulsoup4     4.11.2
-certifi            2022.9.24
-chardet            5.1.0
-charset-normalizer 3.0.1
-colorzero          2.0
-distro             1.8.0
-gpiozero           2.0.1
-html5lib           1.1
-idna               3.3
-lgpio              0.2.2.0
-lxml               4.9.2
-pigpio             1.78
-pip                23.0.1
-pycryptodomex      3.11.0
-python-apt         2.6.0
-requests           2.28.1
-rpi-lgpio          0.6
-setuptools         66.1.1
-six                1.16.0
-smbus2             0.4.2
-soupsieve          2.3.2
-spidev             3.5
-ssh-import-id      5.10
-toml               0.10.2
-urllib3            1.26.12
-webencodings       0.5.1
-wheel              0.38.4
+Package    Version
+---------- -------
+pip        23.0.1
+setuptools 66.1.1
 ```
 
 ### 💻 システムリソース詳細分析
@@ -1429,14 +1412,14 @@ wheel              0.38.4
 === システム基本情報 ===
 OS: Linux solarpi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64 GNU/Linux
 Hostname: solarpi
-Uptime:  21:06:35 up 29 days, 23:36,  1 user,  load average: 0.81, 0.48, 0.33
+Uptime:  23:29:23 up 30 days,  1:59,  1 user,  load average: 0.51, 0.27, 0.23
 Current user: pi
 Working directory: /home/pi/lvyuan_solar_control
 
 === メモリ使用状況詳細 ===
                total        used        free      shared  buff/cache   available
-Mem:           416Mi       269Mi        96Mi       4.0Ki       115Mi       147Mi
-Swap:          511Mi       121Mi       390Mi
+Mem:           416Mi       199Mi       120Mi       8.0Ki       160Mi       216Mi
+Swap:          511Mi       122Mi       389Mi
 
 === ディスク使用状況詳細 ===
 Filesystem      Size  Used Avail Use% Mounted on
@@ -1790,14 +1773,14 @@ def expand_env_vars(config):
 ```markdown
 # HANAZONOシステム プロジェクト状態 (完全自動生成)
 
-*最終更新*: 2025-06-05 14:10:00
-*セッションID*: 20250605_141000
+*最終更新*: 2025-06-05 21:06:46
+*セッションID*: 20250605_210646
 *緊急度レベル*: 高
 
 ## 🤖 AI自動分析結果
-- *現在のフェーズ*: 大規模開発中（未コミット: 283件）- 要整理
-- *Git状態*: 283 files changed
-- *最新コミット*: d03c4ff 🎉 1年前比較システム実装完了 + 完全自動化効率システム構築
+- *現在のフェーズ*: 大規模開発中（未コミット: 287件）- 要整理
+- *Git状態*: 287 files changed
+- *最新コミット*: f9f8714 🤖 自動保存: 2025-06-05 21:00 - AI記憶システム更新 (286件)
 - *AI推奨アクション*: Git状態の整理とコミットが必要
 
 ## 🔒 自動安全機能状態
@@ -1812,10 +1795,10 @@ def expand_env_vars(config):
 
 ### 📄 HANDOVER_PROMPT.md
 ```markdown
-# v28_HANAZONOシステム／完全自動記憶継承プロンプト-2025-06-05
+# v29_HANAZONOシステム／完全自動記憶継承プロンプト-2025-06-05
 
-*自動生成*: 2025-06-05 14:10:00
-*セッションID*: 20250605_141000
+*自動生成*: 2025-06-05 21:06:46
+*セッションID*: 20250605_210646
 *緊急度*: 高
 
 ## ⚡ AI自動実行必須手順（人間の記憶不要）
@@ -1836,9 +1819,9 @@ cat AI_AUTOMATIC_INSTRUCTIONS.md
 
 ### 📄 AI_AUTOMATIC_INSTRUCTIONS.md
 ```markdown
-# AI自動作業指示書 - セッション20250605_141000
+# AI自動作業指示書 - セッション20250605_210646
 
-*生成時刻*: 2025-06-05 14:10:00
+*生成時刻*: 2025-06-05 21:06:46
 *緊急度*: 高
 
 ## 🤖 AIが自動実行すべき必須アクション
@@ -1847,9 +1830,9 @@ cat AI_AUTOMATIC_INSTRUCTIONS.md
 \n- 大量の未コミット変更の整理が緊急に必要
 
 ### システム自動確認項目
-1. *Git状態確認*: 283 files changed
-2. *最新コミット*: d03c4ff 🎉 1年前比較システム実装完了 + 完全自動化効率システム構築
-3. *フェーズ判定*: 大規模開発中（未コミット: 283件）- 要整理
+1. *Git状態確認*: 287 files changed
+2. *最新コミット*: f9f8714 🤖 自動保存: 2025-06-05 21:00 - AI記憶システム更新 (286件)
+3. *フェーズ判定*: 大規模開発中（未コミット: 287件）- 要整理
 4. *推奨アクション*: Git状態の整理とコミットが必要
 
 ### AI自動実行ルール
@@ -2123,8 +2106,8 @@ CREATE TABLE parameter_history (
 ```markdown
 # ソーラー蓄電システムの設定調整ガイド
 
-*🤖 機械学習による動的更新システム 最終更新: 2025年06月05日 20:38*  
-*📊 ML信頼度: 15.0% | 予想年間削減額: ¥50,600*
+*🤖 機械学習による動的更新システム 最終更新: 2025年06月05日 21:47*  
+*📊 ML信頼度: 62.4% | 予想年間削減額: ¥55,449.56906392694*
 
 ## 目次
 
@@ -2165,7 +2148,7 @@ CREATE TABLE parameter_history (
 - 深夜にダイキン エコキュート EQ46NFVを使用（沸き上げ時間の設定はマニュアルで設定不可能な機種）
 - 深夜に食洗機（200V）を使用（ミーレのG 7104 C SCi）
 - 運用開始日：2024/08/25
-- **機械学習データ蓄積期間**: 6年分（約210万データポイント活用中）
+- **機械学習データ蓄積期間**: 6年分（約1,147データポイント活用中）
 - 深夜価格帯と昼の価格帯の時間に合わせ、グリッド切替を無理なく行える設定を目指す
 - 可能な限り、オフグリッド環境に近づけることが目標
 
@@ -2183,19 +2166,19 @@ CREATE TABLE parameter_history (
 
 | 季節区分 | 設定期間 | ML最適充電時間 | ML最適充電電流 | ML最適SOC設定 | 信頼度 | 削減予測 |
 |----------|----------|----------------|----------------|---------------|--------|----------|
-| 冬季 | 12月-3月 | 60 | 60 | 60 | 15.0% | +¥1,518/月 |
-| 春秋季 | 4月-6月<br>10月-11月 | 45分 | 50A | 45% | 15.0% | +¥1,771/月 |
-| 夏季 | 7月-9月 | 30 | 35 | 35 | 15.0% | +¥1,433/月 |
+| 冬季 | 12月-3月 | 60分 | 60A | 60% | 62.4% | +¥404.0/月 |
+| 春秋季 | 4月-6月<br>10月-11月 | 38分 | 46A | 40% | 62.4% | +¥404.0/月 |
+| 夏季 | 7月-9月 | 30分 | 35A | 35% | 62.4% | +¥404.0/月 |
 
 ### タイプA：状況別設定（変動型）
 
 | 設定項目 | 冬季（12月-3月） | 春秋季（4-6月, 10-11月） | 夏季（7-9月） |
 |----------|-----------------|-----------------------|--------------|
 | | 通常時 | 晴天予報時<br>(3日以上) | 雨天予報時<br>(3日以上) | 通常時 | 晴天予報時<br>(3日以上) | 雨天予報時<br>(3日以上) | 通常時 | 晴天予報時<br>(3日以上) | 雨天予報時<br>(3日以上) |
-| 最大充電電流(ID 07) | 60A | 50A | 70A | 50A | 40A | 65A | 35A | 25A | 45A |
-| 最大充電電圧充電時間(ID 10) | 60分 | 45分 | 75分 | 45分 | 30分 | 60分 | 30分 | 15分 | 45分 |
+| 最大充電電流(ID 07) | 60A | 50A | 70A | 46A | 41A | 61A | 35A | 25A | 45A |
+| 最大充電電圧充電時間(ID 10) | 60分 | 45分 | 75分 | 38分 | 23分 | 68分 | 30分 | 15分 | 45分 |
 | 第1充電終了時間(ID 41) | 03:00 | 02:30 | 03:30 | 03:00 | 02:30 | 03:30 | 03:00 | 02:30 | 03:30 |
-| インバータ出力切替SOC(ID 62) | 60% | 50% | 70% | 45% | 35% | 60% | 35% | 25% | 45% |
+| インバータ出力切替SOC(ID 62) | 60% | 50% | 70% | 40% | 30% | 55% | 35% | 25% | 45% |
 
 ## 経済性とコスト対効果
 
@@ -2204,16 +2187,16 @@ CREATE TABLE parameter_history (
 | 運用方式 | 年間削減額 | ML追加効果 | 改善率 | 予測精度 |
 |----------|------------|------------|--------|----------|
 | 従来タイプB | ¥50,600 | - | - | 30% |
-| **ML強化版** | **¥50,600** | **+¥0** | **+0.0%** | **15.0%** |
+| **ML強化版** | **¥55,449.56906392694** | **+¥4,849.5690639269405** | **+9.6%** | **62.4%** |
 
 ### タイプB（省管理型・年3回設定）の予測経済効果
 
 | 季節区分 | 月数 | 平均月間削減額 | 季節合計 | ML強化効果 |
 |----------|------|----------------|-----------|--------------------|
-| 冬季<br>(12-3月) | 4 | 約¥6,072 | 約¥24,288 | +¥0 |
-| 春秋季<br>(4-6,10-11月) | 5 | 約¥8,855 | 約¥44,275 | +¥0 |
-| 夏季<br>(7-9月) | 3 | 約¥4,299 | 約¥12,897 | +¥0 |
-| 年間合計 | 12 | 約¥4,217 | 約¥50,600 | +¥0 |
+| 冬季<br>(12-3月) | 4 | 約¥4,620.0 | 約¥18,483.0 | +¥1,616.0 |
+| 春秋季<br>(4-6,10-11月) | 5 | 約¥4,620.0 | 約¥27,724.0 | +¥2,424.0 |
+| 夏季<br>(7-9月) | 3 | 約¥4,620.0 | 約¥13,862.0 | +¥1,212.0 |
+| 年間合計 | 12 | 約¥4,620.0 | 約¥55,449.56906392694 | +¥4,849.5690639269405 |
 
 ## 機械学習による設定最適化
 
@@ -2226,27 +2209,27 @@ CREATE TABLE parameter_history (
 - **統合推奨システム**: 複数データソース統合
 
 **データ活用状況:**
-- **総データポイント**: 約210万ポイント
-- **分析期間**: 6年分（2018-2024年）
+- **総データポイント**: 約1,147ポイント
+- **分析期間**: 0.0年分（2018-2024年）
 - **更新頻度**: リアルタイム学習
-- **予測精度**: 15.0%（従来30%から向上）
+- **予測精度**: 62.4%（従来30%から向上）
 
 ### 最新ML分析結果
 
 **📊 現在の推奨設定:**
-- 充電電流: 50A
-- 充電時間: 45分
-- SOC設定: 45%
-- 信頼度: 15.0%
+- 充電電流: 46A
+- 充電時間: 38分
+- SOC設定: 40%
+- 信頼度: 62.4%
 
 **💰 期待効果:**
-- 年間削減額: ¥50,600
-- ML追加効果: +¥0
-- 改善率: +0.0%
+- 年間削減額: ¥55,449.56906392694
+- ML追加効果: +¥4,849.5690639269405
+- 改善率: +9.6%
 
 ### 設定更新履歴
 
-*最終更新: 2025年06月05日 20:38*  
+*最終更新: 2025年06月05日 21:47*  
 *次回自動更新: ML学習による変化検出時*
 
 ---
@@ -2258,7 +2241,7 @@ CREATE TABLE parameter_history (
 - 異常な推奨値の場合は従来設定を使用してください
 - 設定変更履歴は`settings_change_history.json`で確認できます
 
-*🤖 このドキュメントは HANAZONOシステム動的設定管理システム v1.0 により生成されました*
+*🤖 このドキュメントは HANAZONOシステム動的設定管理システム v2.0 により生成されました*
 ```
 
 ### 📋 WORK_LOG.md（最新作業履歴）
@@ -2703,14 +2686,21 @@ CREATE TABLE parameter_history (
   - 自動バックアップ: 実行済み
   - AI推奨アクション: Git状態の整理とコミットが必要
 
+[2025-06-05 21:06:46] 完全自動進行管理システム実行（セッション: 20250605_210646）
+  - フェーズ: 大規模開発中（未コミット: 287件）- 要整理
+  - 緊急度: 高
+  - Git状態: 287 files changed
+  - 自動バックアップ: 実行済み
+  - AI推奨アクション: Git状態の整理とコミットが必要
+
 ```
 
 ### 🧭 CLAUDE_START_HERE.md（AI開始手順）
 ```markdown
 # 🤖 AI専用 - 完全自動記憶継承スタートガイド v3.0
 
-*最終自動更新*: 2025-06-05 14:10:00
-*セッションID*: 20250605_141000
+*最終自動更新*: 2025-06-05 21:06:46
+*セッションID*: 20250605_210646
 *緊急度*: 高
 
 ## ⚡ AI完全自動実行手順（人間の記憶・操作不要）
@@ -2730,10 +2720,10 @@ cat HANDOVER_PROMPT.md
 
 ## 🤖 AI自動判定済み現況（リアルタイム）
 
-- *フェーズ*: 大規模開発中（未コミット: 283件）- 要整理
+- *フェーズ*: 大規模開発中（未コミット: 287件）- 要整理
 - *緊急度*: 高
-- *Git変更*: 283 files
-- *最新コミット*: d03c4ff 🎉 1年前比較システム実装完了 + 完全自動化効率システム構築
+- *Git変更*: 287 files
+- *最新コミット*: f9f8714 🤖 自動保存: 2025-06-05 21:00 - AI記憶システム更新 (286件)
 - *AI推奨*: Git状態の整理とコミットが必要
 
 ## 🔒 完全自動安全機能（AI監視中）
@@ -2983,8 +2973,8 @@ CREATE TABLE parameter_history (
 ```markdown
 # ソーラー蓄電システムの設定調整ガイド
 
-*🤖 機械学習による動的更新システム 最終更新: 2025年06月05日 20:38*  
-*📊 ML信頼度: 15.0% | 予想年間削減額: ¥50,600*
+*🤖 機械学習による動的更新システム 最終更新: 2025年06月05日 21:47*  
+*📊 ML信頼度: 62.4% | 予想年間削減額: ¥55,449.56906392694*
 
 ## 目次
 
@@ -3025,7 +3015,7 @@ CREATE TABLE parameter_history (
 - 深夜にダイキン エコキュート EQ46NFVを使用（沸き上げ時間の設定はマニュアルで設定不可能な機種）
 - 深夜に食洗機（200V）を使用（ミーレのG 7104 C SCi）
 - 運用開始日：2024/08/25
-- **機械学習データ蓄積期間**: 6年分（約210万データポイント活用中）
+- **機械学習データ蓄積期間**: 6年分（約1,147データポイント活用中）
 - 深夜価格帯と昼の価格帯の時間に合わせ、グリッド切替を無理なく行える設定を目指す
 - 可能な限り、オフグリッド環境に近づけることが目標
 
@@ -3043,19 +3033,19 @@ CREATE TABLE parameter_history (
 
 | 季節区分 | 設定期間 | ML最適充電時間 | ML最適充電電流 | ML最適SOC設定 | 信頼度 | 削減予測 |
 |----------|----------|----------------|----------------|---------------|--------|----------|
-| 冬季 | 12月-3月 | 60 | 60 | 60 | 15.0% | +¥1,518/月 |
-| 春秋季 | 4月-6月<br>10月-11月 | 45分 | 50A | 45% | 15.0% | +¥1,771/月 |
-| 夏季 | 7月-9月 | 30 | 35 | 35 | 15.0% | +¥1,433/月 |
+| 冬季 | 12月-3月 | 60分 | 60A | 60% | 62.4% | +¥404.0/月 |
+| 春秋季 | 4月-6月<br>10月-11月 | 38分 | 46A | 40% | 62.4% | +¥404.0/月 |
+| 夏季 | 7月-9月 | 30分 | 35A | 35% | 62.4% | +¥404.0/月 |
 
 ### タイプA：状況別設定（変動型）
 
 | 設定項目 | 冬季（12月-3月） | 春秋季（4-6月, 10-11月） | 夏季（7-9月） |
 |----------|-----------------|-----------------------|--------------|
 | | 通常時 | 晴天予報時<br>(3日以上) | 雨天予報時<br>(3日以上) | 通常時 | 晴天予報時<br>(3日以上) | 雨天予報時<br>(3日以上) | 通常時 | 晴天予報時<br>(3日以上) | 雨天予報時<br>(3日以上) |
-| 最大充電電流(ID 07) | 60A | 50A | 70A | 50A | 40A | 65A | 35A | 25A | 45A |
-| 最大充電電圧充電時間(ID 10) | 60分 | 45分 | 75分 | 45分 | 30分 | 60分 | 30分 | 15分 | 45分 |
+| 最大充電電流(ID 07) | 60A | 50A | 70A | 46A | 41A | 61A | 35A | 25A | 45A |
+| 最大充電電圧充電時間(ID 10) | 60分 | 45分 | 75分 | 38分 | 23分 | 68分 | 30分 | 15分 | 45分 |
 | 第1充電終了時間(ID 41) | 03:00 | 02:30 | 03:30 | 03:00 | 02:30 | 03:30 | 03:00 | 02:30 | 03:30 |
-| インバータ出力切替SOC(ID 62) | 60% | 50% | 70% | 45% | 35% | 60% | 35% | 25% | 45% |
+| インバータ出力切替SOC(ID 62) | 60% | 50% | 70% | 40% | 30% | 55% | 35% | 25% | 45% |
 
 ## 経済性とコスト対効果
 
@@ -3064,16 +3054,16 @@ CREATE TABLE parameter_history (
 | 運用方式 | 年間削減額 | ML追加効果 | 改善率 | 予測精度 |
 |----------|------------|------------|--------|----------|
 | 従来タイプB | ¥50,600 | - | - | 30% |
-| **ML強化版** | **¥50,600** | **+¥0** | **+0.0%** | **15.0%** |
+| **ML強化版** | **¥55,449.56906392694** | **+¥4,849.5690639269405** | **+9.6%** | **62.4%** |
 
 ### タイプB（省管理型・年3回設定）の予測経済効果
 
 | 季節区分 | 月数 | 平均月間削減額 | 季節合計 | ML強化効果 |
 |----------|------|----------------|-----------|--------------------|
-| 冬季<br>(12-3月) | 4 | 約¥6,072 | 約¥24,288 | +¥0 |
-| 春秋季<br>(4-6,10-11月) | 5 | 約¥8,855 | 約¥44,275 | +¥0 |
-| 夏季<br>(7-9月) | 3 | 約¥4,299 | 約¥12,897 | +¥0 |
-| 年間合計 | 12 | 約¥4,217 | 約¥50,600 | +¥0 |
+| 冬季<br>(12-3月) | 4 | 約¥4,620.0 | 約¥18,483.0 | +¥1,616.0 |
+| 春秋季<br>(4-6,10-11月) | 5 | 約¥4,620.0 | 約¥27,724.0 | +¥2,424.0 |
+| 夏季<br>(7-9月) | 3 | 約¥4,620.0 | 約¥13,862.0 | +¥1,212.0 |
+| 年間合計 | 12 | 約¥4,620.0 | 約¥55,449.56906392694 | +¥4,849.5690639269405 |
 
 ## 機械学習による設定最適化
 
@@ -3086,27 +3076,27 @@ CREATE TABLE parameter_history (
 - **統合推奨システム**: 複数データソース統合
 
 **データ活用状況:**
-- **総データポイント**: 約210万ポイント
-- **分析期間**: 6年分（2018-2024年）
+- **総データポイント**: 約1,147ポイント
+- **分析期間**: 0.0年分（2018-2024年）
 - **更新頻度**: リアルタイム学習
-- **予測精度**: 15.0%（従来30%から向上）
+- **予測精度**: 62.4%（従来30%から向上）
 
 ### 最新ML分析結果
 
 **📊 現在の推奨設定:**
-- 充電電流: 50A
-- 充電時間: 45分
-- SOC設定: 45%
-- 信頼度: 15.0%
+- 充電電流: 46A
+- 充電時間: 38分
+- SOC設定: 40%
+- 信頼度: 62.4%
 
 **💰 期待効果:**
-- 年間削減額: ¥50,600
-- ML追加効果: +¥0
-- 改善率: +0.0%
+- 年間削減額: ¥55,449.56906392694
+- ML追加効果: +¥4,849.5690639269405
+- 改善率: +9.6%
 
 ### 設定更新履歴
 
-*最終更新: 2025年06月05日 20:38*  
+*最終更新: 2025年06月05日 21:47*  
 *次回自動更新: ML学習による変化検出時*
 
 ---
@@ -3118,7 +3108,7 @@ CREATE TABLE parameter_history (
 - 異常な推奨値の場合は従来設定を使用してください
 - 設定変更履歴は`settings_change_history.json`で確認できます
 
-*🤖 このドキュメントは HANAZONOシステム動的設定管理システム v1.0 により生成されました*
+*🤖 このドキュメントは HANAZONOシステム動的設定管理システム v2.0 により生成されました*
 ```
 
 ### 📋 WORK_LOG.md（最新作業履歴）
@@ -3563,14 +3553,21 @@ CREATE TABLE parameter_history (
   - 自動バックアップ: 実行済み
   - AI推奨アクション: Git状態の整理とコミットが必要
 
+[2025-06-05 21:06:46] 完全自動進行管理システム実行（セッション: 20250605_210646）
+  - フェーズ: 大規模開発中（未コミット: 287件）- 要整理
+  - 緊急度: 高
+  - Git状態: 287 files changed
+  - 自動バックアップ: 実行済み
+  - AI推奨アクション: Git状態の整理とコミットが必要
+
 ```
 
 ### 🧭 CLAUDE_START_HERE.md（AI開始手順）
 ```markdown
 # 🤖 AI専用 - 完全自動記憶継承スタートガイド v3.0
 
-*最終自動更新*: 2025-06-05 14:10:00
-*セッションID*: 20250605_141000
+*最終自動更新*: 2025-06-05 21:06:46
+*セッションID*: 20250605_210646
 *緊急度*: 高
 
 ## ⚡ AI完全自動実行手順（人間の記憶・操作不要）
@@ -3590,10 +3587,10 @@ cat HANDOVER_PROMPT.md
 
 ## 🤖 AI自動判定済み現況（リアルタイム）
 
-- *フェーズ*: 大規模開発中（未コミット: 283件）- 要整理
+- *フェーズ*: 大規模開発中（未コミット: 287件）- 要整理
 - *緊急度*: 高
-- *Git変更*: 283 files
-- *最新コミット*: d03c4ff 🎉 1年前比較システム実装完了 + 完全自動化効率システム構築
+- *Git変更*: 287 files
+- *最新コミット*: f9f8714 🤖 自動保存: 2025-06-05 21:00 - AI記憶システム更新 (286件)
 - *AI推奨*: Git状態の整理とコミットが必要
 
 ## 🔒 完全自動安全機能（AI監視中）
