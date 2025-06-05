@@ -1,0 +1,24 @@
+[
+  {
+    "timestamp": "2025-06-05T20:34:16.569480",
+    "ml_recommendations": {
+      "charge_current": 50,
+      "charge_time": 45,
+      "soc_setting": 45,
+      "confidence_level": 0.3,
+      "expected_savings": 50600
+    },
+    "ml_engine_version": "Default_v1.0"
+  },
+  {
+    "timestamp": "2025-06-05T20:38:59.671792",
+    "ml_recommendations": {
+      "charge_current": 50,
+      "charge_time": 45,
+      "soc_setting": 45,
+      "confidence_level": 0.15,
+      "expected_savings": 50600
+    },
+    "ml_engine_version": "Phase1_v1.0"
+  }
+]
