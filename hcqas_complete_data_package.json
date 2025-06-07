@@ -1,0 +1,152 @@
+{
+  "system_info": {
+    "name": "HCQAS Phase 3b",
+    "platform": "Raspberry Pi Zero 2 W",
+    "python_version": "3.11",
+    "environment": "venv",
+    "diagnosis_date": "2025-06-07T15:00:09",
+    "current_file_timestamp": "2025-06-07T14:15:56"
+  },
+  "file_structure": {
+    "smart_suggestion_engine.py": {
+      "size": 54031,
+      "lines": 1341,
+      "status": "healthy",
+      "last_modified": "2025-06-07T13:45:00"
+    },
+    "ff_preference_learner.py": {
+      "size": 34759,
+      "lines": 886,
+      "status": "critical_error",
+      "last_modified": "2025-06-07T13:43:00"
+    },
+    "smart_proposal_ui.py": {
+      "size": 16689,
+      "lines": 406,
+      "status": "partial_dysfunction",
+      "last_modified": "2025-06-07T14:15:56"
+    }
+  },
+  "diagnosis_results": {
+    "ff_preference_learner": {
+      "status": "critical_error",
+      "error": "'FFPreferenceLearner' object has no attribute 'learn_from_interaction'",
+      "functions": {
+        "initialization": "normal",
+        "learning": "missing_method",
+        "prediction": "unknown",
+        "pattern_recognition": "unknown",
+        "save_preferences": "unknown"
+      }
+    },
+    "smart_suggestion_engine": {
+      "status": "healthy",
+      "functions": {
+        "initialization": "normal",
+        "suggestion_generation": "normal",
+        "quality_evaluation": "normal",
+        "confidence_calculation": "normal",
+        "ff_alignment": "normal",
+        "alternatives": "normal",
+        "metadata": "normal",
+        "implementation": "normal"
+      },
+      "metrics": {
+        "quality_score": {"security": 20, "performance": 20, "readability": 20, "extensibility": 20, "error_handling": 18, "total": 98},
+        "confidence": 0.752,
+        "ff_alignment": 0.5,
+        "alternatives_count": 3
+      }
+    },
+    "smart_proposal_ui": {
+      "status": "partial_dysfunction",
+      "error": "'SmartSuggestion' object has no attribute 'get'",
+      "functions": {
+        "initialization": "normal",
+        "smart_proposal": "fallback_mode",
+        "ui_elements": "normal",
+        "transparency": "normal",
+        "presentation": "normal"
+      },
+      "current_behavior": "手動モードフォールバック",
+      "actual_output": "total_proposals: 2"
+    },
+    "integration_system": {
+      "status": "healthy",
+      "functions": {
+        "component_integration": "normal",
+        "data_flow": "normal",
+        "error_handling": "normal"
+      }
+    },
+    "health_monitoring": {
+      "status": "minor_issue",
+      "issue": "psutil_missing"
+    }
+  },
+  "technical_details": {
+    "smartsuggestion_object_structure": {
+      "suggestion_id": "string",
+      "ff_request": "string",
+      "implementation": "string",
+      "quality_score": "dict with total key",
+      "ff_alignment_score": "float",
+      "confidence_level": "float",
+      "generation_method": "string",
+      "alternative_options": "list",
+      "metadata": "dict",
+      "created_at": "datetime"
+    },
+    "problem_locations": {
+      "data_access_errors": [
+        "Line 136: data.get('approach_type')",
+        "Line 137: data.quality_score.get('total')", 
+        "Line 165: data.quality_score['total']",
+        "Multiple locations: SmartSuggestion treated as dict"
+      ]
+    }
+  },
+  "treatment_constraints": {
+    "absolute_requirements": [
+      "非破壊的作業の徹底",
+      "既存動作機能の保護",
+      "30-40行のターミナル制限",
+      "全コピペ基本方針",
+      "段階的検証必須"
+    ],
+    "forbidden_approaches": [
+      "完全再設計",
+      "既存ファイルの直接修正",
+      "sedコマンドによる複雑な置換",
+      "部分修正の繰り返し"
+    ]
+  },
+  "patient_psychology": {
+    "trust_level": "severely_damaged",
+    "perfectionism": "extremely_high",
+    "tolerance_for_failure": "zero",
+    "technical_consistency_requirement": "absolute"
+  },
+  "previous_treatment_failures": [
+    {
+      "approach": "sedコマンド複雑置換",
+      "result": "構文破損",
+      "damage": "SyntaxError発生"
+    },
+    {
+      "approach": "部分修正繰り返し",
+      "result": "問題拡散",
+      "damage": "新たなエラー増加"
+    },
+    {
+      "approach": "完全再設計提案",
+      "result": "信頼失墜",
+      "damage": "患者の強い拒絶反応"
+    }
+  ],
+  "success_metrics": {
+    "minimum_acceptable": "現在の動作レベル維持",
+    "target": "Smart proposal generated successfully without fallback",
+    "perfect": "All systems healthy, zero errors"
+  }
+}
