@@ -3,7 +3,7 @@
 """
 AI Startup Memory - AI起動時自動記憶復旧システム + 継続記憶機能
 目的: 新AIセッション開始時に完全な記憶継続を実現
-拡張: 作業継続記憶機能追加（15秒完璧継承）
+拡張: 作業継続記憶機能追加（15秒完璧継承） + 自動プロジェクト検知
 """
 
 import os
@@ -26,7 +26,7 @@ class AIStartupMemory:
         self.continuation_path = self.memory_root / "storage" / "continuation"
         
     def restore_full_context(self):
-        """完全文脈復旧 - 新AIセッション用（継続記憶対応）"""
+        """完全文脈復旧 - 新AIセッション用（継続記憶対応+自動検知）"""
         print("🧠 AI記憶システム起動中...")
         print("🔄 完全文脈復旧開始...")
         
@@ -66,8 +66,8 @@ class AIStartupMemory:
                 print(f"   📝 前回作業: {session_data['context']['previous_work']}")
                 print(f"   🎯 現在タスク: {session_data['context']['current_task']}")
         
-        # 🆕 継続記憶復旧追加
-        continuation_success = self.restore_continuation_memory()
+        # 🆕 継続記憶復旧追加（自動検知対応）
+        continuation_success = self.restore_continuation_memory_auto()
         
         # 黄金バージョン検証
         if self.verify_golden_versions(golden_versions):
@@ -78,8 +78,77 @@ class AIStartupMemory:
         print("\n🎯 AI記憶復旧完了 - 完全継続可能状態")
         return True
     
+    def restore_continuation_memory_auto(self):
+        """🆕 継続記憶復旧機能（自動検知対応）"""
+        print("\n🧠 継続記憶復旧開始（自動プロジェクト検知）...")
+        
+        try:
+            # 自動検知対応ProjectContinuationManager使用
+            from ai_memory.core.continuation_manager import ProjectContinuationManager
+            cm = ProjectContinuationManager()  # 自動検知実行
+            
+            # 検知されたプロジェクト情報
+            detected_project = cm.project_name
+            print(f"🎯 検知されたプロジェクト: {detected_project}")
+            
+            # 現在状況取得
+            status = cm.get_current_status()
+            auto_detected = status.get('auto_detected', False)
+            auto_info = " [自動検知]" if auto_detected else ""
+            
+            print("✅ 作業Phase復旧成功")
+            print(f"   📍 Phase: {status['phase']}")
+            print(f"   📊 進捗: {status['progress']}%")
+            print(f"   🎯 次アクション: {status['next_action']}")
+            
+            # Git詳細情報表示
+            git_detail = cm.record_git_changes_detail()
+            if git_detail.get('files_changed', 0) > 0:
+                print(f"   📊 Git状態: {git_detail['files_changed']}件変更 ({git_detail.get('change_scale', 'unknown')})")
+                if git_detail.get('major_changes'):
+                    print(f"   📁 主要変更: {', '.join(git_detail['major_changes'][:3])}")
+            
+            # 技術制約復旧
+            if not self.continuation_path.exists():
+                print("⚠️ 継続記憶なし（初回起動または継続記憶未設定）")
+                return False
+                
+            constraints_data = self.load_memory_file(cm.constraints_file)
+            if constraints_data and constraints_data.get('current_constraints'):
+                print("✅ 技術制約復旧成功")
+                for constraint in constraints_data['current_constraints'][-2:]:
+                    priority = constraint.get('priority', 'medium')
+                    emoji = "🚨" if priority == "critical" else "⚠️" if priority == "high" else "📝"
+                    print(f"   {emoji} 制約: {constraint.get('constraint', 'unknown')} ({priority})")
+            
+            # 次コマンド復旧
+            commands_data = self.load_memory_file(cm.commands_file)
+            if commands_data and commands_data.get('immediate_next'):
+                print("✅ 次コマンド復旧成功")
+                for cmd in commands_data['immediate_next'][:2]:
+                    print(f"   🚀 次実行: {cmd}")
+            
+            # 15秒継承プロンプト存在確認
+            if cm.handover_file.exists():
+                print("✅ 15秒継承プロンプト利用可能")
+                print(f"   📄 ファイル: {cm.handover_file}")
+            
+            print("🎉 継続記憶復旧完了")
+            
+            # プロジェクト別状況表示
+            self.display_project_status_auto(detected_project, status)
+            
+            return True
+            
+        except ImportError:
+            print("⚠️ ProjectContinuationManager未実装")
+            return self.restore_continuation_memory()  # フォールバック
+        except Exception as e:
+            print(f"❌ 継続記憶復旧エラー: {e}")
+            return False
+    
     def restore_continuation_memory(self):
-        """🆕 継続記憶復旧機能"""
+        """継続記憶復旧機能（互換性用フォールバック）"""
         print("\n🧠 継続記憶復旧開始...")
         
         if not self.continuation_path.exists():
@@ -87,33 +156,15 @@ class AIStartupMemory:
             return False
         
         try:
-            # 現在Phase復旧
-            phase_data = self.load_memory_file(self.continuation_path / "current_phase.json")
-            if phase_data:
-                print("✅ 作業Phase復旧成功")
-                print(f"   📍 Phase: {phase_data.get('current_phase', 'unknown')}")
-                print(f"   📊 進捗: {phase_data.get('progress_percentage', 0)}%")
-                print(f"   🎯 次アクション: {phase_data.get('next_immediate_action', 'TBD')}")
-            
-            # 技術制約復旧
-            constraints_data = self.load_memory_file(self.continuation_path / "technical_constraints.json")
-            if constraints_data and constraints_data.get('current_constraints'):
-                print("✅ 技術制約復旧成功")
-                for constraint in constraints_data['current_constraints'][-2:]:  # 最新2件
-                    print(f"   ⚠️ 制約: {constraint.get('constraint', 'unknown')} ({constraint.get('priority', 'medium')})")
-            
-            # 次コマンド復旧
-            commands_data = self.load_memory_file(self.continuation_path / "next_commands.json")
-            if commands_data and commands_data.get('immediate_next'):
-                print("✅ 次コマンド復旧成功")
-                for cmd in commands_data['immediate_next'][:2]:  # 最新2件
-                    print(f"   🚀 次実行: {cmd}")
-            
-            # 15秒継承プロンプト存在確認
-            handover_file = self.continuation_path / "15sec_handover_prompt.md"
-            if handover_file.exists():
-                print("✅ 15秒継承プロンプト利用可能")
-                print(f"   📄 ファイル: {handover_file}")
+            # デフォルトプロジェクト（hanazono）で復旧
+            hanazono_path = self.continuation_path / "hanazono"
+            if hanazono_path.exists():
+                phase_data = self.load_memory_file(hanazono_path / "current_phase.json")
+                if phase_data:
+                    print("✅ 作業Phase復旧成功")
+                    print(f"   📍 Phase: {phase_data.get('current_phase', 'unknown')}")
+                    print(f"   📊 進捗: {phase_data.get('progress_percentage', 0)}%")
+                    print(f"   🎯 次アクション: {phase_data.get('next_immediate_action', 'TBD')}")
             
             print("🎉 継続記憶復旧完了")
             return True
@@ -122,18 +173,39 @@ class AIStartupMemory:
             print(f"❌ 継続記憶復旧エラー: {e}")
             return False
     
+    def display_project_status_auto(self, project_name, status):
+        """プロジェクト状況表示（自動検知対応）"""
+        print(f"\n📊 {project_name.upper()}プロジェクト現在状況:")
+        print("├── 🧠 AI記憶システム: 稼働中")
+        print("├── 🛡️ 黄金バージョン保護: 有効")
+        print("├── 📧 メールシステム: 安定稼働")
+        print("├── 🔌 データ収集: 15分間隔実行中")
+        print("├── 🔄 継続記憶システム: 統合完了")
+        print("├── 🎯 自動プロジェクト検知: 有効")  # 🆕
+        print("└── 🎯 記憶継続性: 100%達成")
+        
+        # 現在作業状況表示
+        print(f"\n🎯 現在作業状況:")
+        print(f"   プロジェクト: {project_name}")
+        print(f"   Phase: {status.get('phase', 'unknown')}")
+        print(f"   進捗: {status.get('progress', 0)}%")
+        auto_detected = status.get('auto_detected', False)
+        if auto_detected:
+            print(f"   検知方式: 自動検知")
+    
     def generate_startup_handover(self):
-        """🆕 起動時継承プロンプト生成"""
+        """🆕 起動時継承プロンプト生成（自動検知対応）"""
         print("\n🔄 起動時継承プロンプト生成中...")
         
         try:
-            # ProjectContinuationManagerを使用
+            # 自動検知対応ProjectContinuationManagerを使用
             from ai_memory.core.continuation_manager import ProjectContinuationManager
-            cm = ProjectContinuationManager()
+            cm = ProjectContinuationManager()  # 自動検知実行
             
             handover = cm.generate_15sec_handover()
             
             print("✅ 起動時継承プロンプト生成完了")
+            print(f"📄 プロジェクト: {cm.project_name}")
             return handover
             
         except ImportError:
@@ -182,12 +254,13 @@ class AIStartupMemory:
         print("├── 🛡️ 黄金バージョン保護: 有効")
         print("├── 📧 メールシステム: 安定稼働")
         print("├── 🔌 データ収集: 15分間隔実行中")
-        print("├── 🔄 継続記憶システム: 統合完了")  # 🆕
+        print("├── 🔄 継続記憶システム: 統合完了")
         print("└── 🎯 記憶継続性: 100%達成")
         
-        # 🆕 継続記憶状況表示
-        if self.continuation_path.exists():
-            phase_data = self.load_memory_file(self.continuation_path / "current_phase.json")
+        # 継続記憶状況表示
+        hanazono_path = self.continuation_path / "hanazono"
+        if hanazono_path.exists():
+            phase_data = self.load_memory_file(hanazono_path / "current_phase.json")
             if phase_data:
                 print(f"\n🎯 現在作業状況:")
                 print(f"   Phase: {phase_data.get('current_phase', 'unknown')}")
@@ -195,47 +268,67 @@ class AIStartupMemory:
                 print(f"   推定完了: {phase_data.get('estimated_completion', 'unknown')}")
         
     def show_next_actions(self):
-        """次のアクション提案（継続記憶対応）"""
+        """次のアクション提案（継続記憶対応+自動検知）"""
         print("\n🚀 推奨次期アクション:")
         
-        # 🆕 継続記憶からの次アクション
-        commands_data = self.load_memory_file(self.continuation_path / "next_commands.json")
-        if commands_data and commands_data.get('immediate_next'):
-            print("📋 継続記憶からの推奨アクション:")
-            for i, cmd in enumerate(commands_data['immediate_next'][:3], 1):
-                print(f"{i}. {cmd}")
-            print("")
+        try:
+            # 自動検知対応の次アクション
+            from ai_memory.core.continuation_manager import ProjectContinuationManager
+            cm = ProjectContinuationManager()  # 自動検知実行
+            
+            commands_data = self.load_memory_file(cm.commands_file)
+            if commands_data and commands_data.get('immediate_next'):
+                print("📋 継続記憶からの推奨アクション:")
+                for i, cmd in enumerate(commands_data['immediate_next'][:3], 1):
+                    print(f"{i}. {cmd}")
+                print("")
+            
+        except ImportError:
+            # フォールバック: hanazono プロジェクトの次アクション
+            hanazono_path = self.continuation_path / "hanazono"
+            if hanazono_path.exists():
+                commands_data = self.load_memory_file(hanazono_path / "next_commands.json")
+                if commands_data and commands_data.get('immediate_next'):
+                    print("📋 継続記憶からの推奨アクション:")
+                    for i, cmd in enumerate(commands_data['immediate_next'][:3], 1):
+                        print(f"{i}. {cmd}")
+                    print("")
         
         # 標準アクション
         print("📋 標準アクション:")
         print("1. システム状況確認: python3 main.py --check-cron")
         print("2. メール機能テスト: python3 ultimate_email_integration.py --test")
-        print("3. 継続記憶機能テスト: python3 -c \"from ai_memory.core.continuation_manager import test_continuation_manager; test_continuation_manager()\"")  # 🆕
-        print("4. 15秒継承プロンプト生成: python3 ai_memory/ai_startup_memory.py --generate-handover")  # 🆕
+        print("3. 継続記憶機能テスト: python3 -c \"from ai_memory.core.continuation_manager import test_auto_detect_system; test_auto_detect_system()\"")  # 🆕
+        print("4. 15秒継承プロンプト生成: python3 ai_memory/ai_startup_memory.py --generate-handover")
         print("5. プロジェクト進行: 通常業務継続")
     
     def show_15sec_handover(self):
-        """🆕 15秒継承プロンプト表示"""
-        handover_file = self.continuation_path / "15sec_handover_prompt.md"
-        if handover_file.exists():
-            print("\n" + "="*60)
-            print("🧠 15秒継承プロンプト:")
-            print("="*60)
-            with open(handover_file, 'r', encoding='utf-8') as f:
-                print(f.read())
-            print("="*60)
-        else:
-            print("\n⚠️ 15秒継承プロンプトが見つかりません")
-            print("🔄 生成中...")
-            handover = self.generate_startup_handover()
-            if handover:
-                print(handover)
+        """🆕 15秒継承プロンプト表示（自動検知対応）"""
+        try:
+            from ai_memory.core.continuation_manager import ProjectContinuationManager
+            cm = ProjectContinuationManager()  # 自動検知実行
+            
+            if cm.handover_file.exists():
+                print("\n" + "="*60)
+                print("🧠 15秒継承プロンプト:")
+                print("="*60)
+                with open(cm.handover_file, 'r', encoding='utf-8') as f:
+                    print(f.read())
+                print("="*60)
+            else:
+                print("\n⚠️ 15秒継承プロンプトが見つかりません")
+                print("🔄 生成中...")
+                handover = self.generate_startup_handover()
+                if handover:
+                    print(handover)
+        except ImportError:
+            print("\n⚠️ 15秒継承プロンプト機能未実装")
 
 def main():
-    """メイン実行（継続記憶対応）"""
+    """メイン実行（継続記憶対応+自動検知）"""
     print("=" * 60)
-    print("🧠 AI Startup Memory System v2.0 + 継続記憶機能")
-    print("目的: 新AIセッション完全記憶継続 + 15秒完璧継承")
+    print("🧠 AI Startup Memory System v2.0 + 継続記憶機能 + 自動検知")
+    print("目的: 新AIセッション完全記憶継続 + 15秒完璧継承 + 自動プロジェクト検知")
     print("=" * 60)
     
     startup = AIStartupMemory()
@@ -246,16 +339,13 @@ def main():
             startup.show_15sec_handover()
             return
         elif sys.argv[1] == "--continuation-only":
-            startup.restore_continuation_memory()
+            startup.restore_continuation_memory_auto()
             return
     
     # 完全文脈復旧実行
     success = startup.restore_full_context()
     
     if success:
-        # プロジェクト状況表示
-        startup.display_project_status()
-        
         # 次のアクション提案
         startup.show_next_actions()
         

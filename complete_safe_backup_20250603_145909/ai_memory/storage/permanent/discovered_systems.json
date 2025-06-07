@@ -1,0 +1,66 @@
+{
+    "discovery_time": "2025-06-01T23:16:08.088794",
+    "source": "\u8a73\u7d30\u30b7\u30b9\u30c6\u30e0\u8abf\u67fb",
+    "active_automation_systems": {
+        "UltimateIntegratedSystem": {
+            "processes": 10,
+            "functions": [
+                "\u7d71\u5408\u76e3\u8996\u30b7\u30b9\u30c6\u30e0\uff0810\u79d2\u9593\u9694\uff09",
+                "\u81ea\u5f8b\u9032\u5316\u30b7\u30b9\u30c6\u30e0\uff0830\u5206\u9593\u9694\uff09",
+                "\u91cf\u5b50\u4e88\u6e2c\u30b7\u30b9\u30c6\u30e0\uff081\u5206\u9593\u9694\uff09",
+                "\u5b8c\u5168\u6700\u9069\u5316\u30b7\u30b9\u30c6\u30e0\uff085\u5206\u9593\u9694\uff09",
+                "\u610f\u8b58\u30b7\u30b9\u30c6\u30e0\uff0830\u79d2\u9593\u9694\uff09"
+            ],
+            "status": "\u7a3c\u50cd\u4e2d",
+            "total_actions": "9000+",
+            "evolution_cycles": "55+",
+            "predictions": "1600+"
+        },
+        "web_dashboard_server": {
+            "port": "unknown",
+            "status": "\u7a3c\u50cd\u4e2d",
+            "api_endpoints": [
+                "/api/data"
+            ]
+        },
+        "manual_auto_update": {
+            "mode": "watch",
+            "status": "\u7a3c\u50cd\u4e2d"
+        }
+    },
+    "ml_email_system": {
+        "status": "\u5b9f\u88c5\u6e08\u307f\u30fb\u7a3c\u50cd\u4e2d",
+        "file": "ultimate_email_integration.py",
+        "features": [
+            "6\u5e74\u30c7\u30fc\u30bf\u7d71\u5408\u30b7\u30b9\u30c6\u30e0",
+            "5\u6bb5\u968e\u30d0\u30c8\u30eb\u30b7\u30b9\u30c6\u30e0",
+            "AI\u4e88\u6e2c\u30a8\u30f3\u30b8\u30f3",
+            "\ud83d\udfe0\u30bf\u30a4\u30c8\u30eb\u7d75\u6587\u5b57\u30b7\u30b9\u30c6\u30e0"
+        ],
+        "last_success": "2025-06-01 19:01:58"
+    },
+    "database_systems": {
+        "comprehensive_electric_data.db": "\u7d71\u5408\u96fb\u529b\u30c7\u30fc\u30bf",
+        "hanazono_analysis.db": "HANAZONO\u5206\u6790\u30c7\u30fc\u30bf",
+        "ai_learning.db": "AI\u5b66\u7fd2\u30c7\u30fc\u30bf",
+        "electric_bills.db": "\u96fb\u6c17\u6599\u91d1\u30c7\u30fc\u30bf"
+    },
+    "cron_automation": {
+        "data_collection": "15\u5206\u9593\u9694",
+        "daily_reports": "\u671d7\u6642\u30fb\u591c23\u6642",
+        "hanazono_optimization": "\u6bce\u671d3\u6642\u30fb6\u6642",
+        "ai_evolution": "2\u6642\u9593\u9593\u9694",
+        "health_checks": "15\u5206\u9593\u9694"
+    },
+    "detected_issues": {
+        "pysolarmanv5_missing": "\u30b7\u30b9\u30c6\u30e0\u30d8\u30eb\u30b9\u3067\u691c\u51fa",
+        "psutil_missing": "\u30aa\u30d7\u30c6\u30a3\u30de\u30a4\u30b6\u30fc\u3067\u691c\u51fa",
+        "smtp_auth_error": "\u30e1\u30fc\u30eb\u8a8d\u8a3c\u30a8\u30e9\u30fc"
+    },
+    "working_systems": {
+        "data_collection": "\u30a4\u30f3\u30d0\u30fc\u30bf\u30fc\u63a5\u7d9a\u6b63\u5e38\uff08192.168.0.202\uff09",
+        "email_integration": "ultimate_email_integration\u52d5\u4f5c\u4e2d",
+        "web_dashboard": "\u30a2\u30af\u30bb\u30b9\u30ed\u30b0\u6b63\u5e38",
+        "ai_evolution": "\u9032\u5316\u30b5\u30a4\u30af\u30eb55\u56de\u5b8c\u4e86"
+    }
+}

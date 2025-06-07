@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "2025-06-03T00:00:18.973984",
+    "concept": "HANAZONOシステム統合",
+    "normalized_target": "HanazonoIntegration",
+    "implementation_level": "intelligent",
+    "version": "Level2_Final",
+    "success": true,
+    "overall_quality": 1.0,
+    "integration_score": 1.0,
+    "learned_patterns": {
+      "python_files": 3,
+      "bash_files": 5,
+      "config_integration": true
+    },
+    "bug_prevention": "complete"
+  }
+]

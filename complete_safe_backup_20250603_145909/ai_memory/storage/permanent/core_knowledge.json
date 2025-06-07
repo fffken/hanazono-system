@@ -1,0 +1,14 @@
+{
+    "system_architecture": {
+        "hardware": "Raspberry Pi Zero 2 W",
+        "inverter": "LVYUAN SPI-10K-U (10kW)",
+        "battery": "FLCD16-10048 \u00d7 4\u53f0 (20.48kWh)",
+        "communication": "Modbus TCP (PySolarmanV5)"
+    },
+    "critical_rules": [
+        "\u4f5c\u696d\u524d\u306b\u5fc5\u305a\u9ec4\u91d1\u30d0\u30fc\u30b8\u30e7\u30f3\u78ba\u4fdd",
+        "\u6a5f\u80fd\u30c6\u30b9\u30c8\u5b9f\u884c\u5f8c\u306b\u5909\u66f4\u9069\u7528",
+        "Git\u72b6\u614b\u78ba\u8a8d\u306f\u4f5c\u696d\u958b\u59cb\u306e\u5fc5\u9808\u6761\u4ef6",
+        "\u8a18\u61b6\u30b7\u30b9\u30c6\u30e0\u5b9f\u88c5\u306f\u6700\u512a\u5148\u4e8b\u9805"
+    ]
+}

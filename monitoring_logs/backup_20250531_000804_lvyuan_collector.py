@@ -1,218 +1,218 @@
-"""LVYUAN インバーターからのデータ収集モジュール（改良版）"""
-import os
-import time
-import json
-import logging
-import socket
-import subprocess
-from datetime import datetime
-from pysolarmanv5 import PySolarmanV5
-
-class LVYUANCollector:
-
-    def __init__(self, settings_file=None):
-        if settings_file is None:
-            self.settings_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'settings.json')
-        else:
-            self.settings_file = settings_file
-        self.settings = self._load_settings()
-        self.data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
-        os.makedirs(self.data_dir, exist_ok=True)
-        self.logger = logging.getLogger('lvyuan_collector')
-        self._setup_logging()
-
-    def _setup_logging(self):
-        """ロギング設定"""
-        log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs')
-        os.makedirs(log_dir, exist_ok=True)
-        log_file = os.path.join(log_dir, f"collector_{datetime.now().strftime('%Y%m%d')}.log")
-        file_handler = logging.FileHandler(log_file)
-        file_handler.setLevel(logging.INFO)
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.INFO)
-        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        file_handler.setFormatter(formatter)
-        console_handler.setFormatter(formatter)
-        self.logger.addHandler(file_handler)
-        self.logger.addHandler(console_handler)
-        self.logger.setLevel(logging.INFO)
-
-    def _load_settings(self):
-        """設定ファイルの読み込み"""
-        try:
-            if os.path.exists(self.settings_file):
-                with open(self.settings_file, 'r') as f:
-                    return json.load(f)
-            else:
-                default_settings = {'inverter': {'ip': '192.168.0.202', 'serial': 3528830226, 'mac': 'D4:27:87:16:7A:F8', 'port': 8899, 'mb_slave_id': 1}, 'network': {'subnet': '192.168.0.0/24', 'last_check': '2025-05-02T02:00:00'}, 'monitoring': {'interval_minutes': 15, 'key_registers': [{'address': '0x0100', 'name': 'バッテリーSOC', 'unit': '%', 'factor': 1, 'emoji': '🔋'}, {'address': '0x0101', 'name': 'バッテリー電圧', 'unit': 'V', 'factor': 0.1, 'emoji': '⚡'}, {'address': '0x0102', 'name': 'バッテリー電流', 'unit': 'A', 'factor': 0.1, 'emoji': '🔌'}, {'address': '0x020E', 'name': '機器状態', 'unit': '', 'factor': 1, 'emoji': '📊'}, {'address': '0xE012', 'name': 'ブースト充電時間', 'unit': '分', 'factor': 1, 'emoji': '⏱️'}]}}
-                with open(self.settings_file, 'w') as f:
-                    json.dump(default_settings, f, indent=2)
-                return default_settings
-        except Exception as e:
-            self.logger.error(f'設定ファイル読み込みエラー: {e}')
-            return {}
-
-    def _save_settings(self):
-        """設定ファイルの保存"""
-        try:
-            with open(self.settings_file, 'w') as f:
-                json.dump(self.settings, f, indent=2)
-            self.logger.debug('設定ファイルを保存しました')
-        except Exception as e:
-            self.logger.error(f'設定ファイル保存エラー: {e}')
-
-    def find_inverter_ip(self):
-        """ネットワークスキャンでインバーターのIPアドレスを特定"""
-        self.logger.info('インバーターのIPアドレスを検索中...')
-        current_ip = self.settings['inverter']['ip']
-        if self._check_inverter_connection(current_ip):
-            self.logger.info(f'現在のIPアドレス ({current_ip}) に接続できます')
-            return (current_ip, False)
-        mac_address = self.settings['inverter']['mac'].replace(':', '-')
-        subnet = self.settings['network']['subnet']
-        try:
-            self.logger.info(f'ネットワークスキャン実行中... ({subnet})')
-            cmd = ['sudo', 'nmap', '-sP', subnet]
-            subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            cmd = ['arp', '-a']
-            result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-            for line in result.stdout.splitlines():
-                if mac_address.lower() in line.lower():
-                    parts = line.split()
-                    for part in parts:
-                        if part.count('.') == 3:
-                            ip = part.strip('()')
-                            if self._check_inverter_connection(ip):
-                                if ip != current_ip:
-                                    self.logger.info(f'インバーターのIPアドレスが変更されました: {current_ip} → {ip}')
-                                    self.settings['inverter']['ip'] = ip
-                                    self._save_settings()
-                                    return (ip, True)
-                                else:
-                                    return (ip, False)
-            self.logger.warning(f'インバーターのMACアドレス ({mac_address}) が見つかりませんでした')
-            return (None, False)
-        except Exception as e:
-            self.logger.error(f'ネットワークスキャンエラー: {e}')
-            return (None, False)
-
-    def _check_inverter_connection(self, ip):
-        """インバーターへの接続確認"""
-        try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.settimeout(2)
-            result = s.connect_ex((ip, self.settings['inverter']['port']))
-            s.close()
-            if result == 0:
-                try:
-                    modbus = PySolarmanV5(address=ip, serial=self.settings['inverter']['serial'], port=self.settings['inverter']['port'], mb_slave_id=self.settings['inverter']['mb_slave_id'], verbose=False, socket_timeout=5)
-                    modbus.read_holding_registers(256, 1)
-                    return True
-                except Exception as e:
-                    self.logger.debug(f'Modbus接続エラー ({ip}): {e}')
-                    return False
-            else:
-                self.logger.debug(f'ソケット接続失敗 ({ip}): {result}')
-                return False
-        except Exception as e:
-            self.logger.debug(f'接続確認エラー ({ip}): {e}')
-            return False
-
-    def collect_data(self):
-        """インバーターからデータを収集"""
-        ip, ip_changed = self.find_inverter_ip()
-        if ip is None:
-            self.logger.error('インバーターのIPアドレスが見つかりません')
-            return (None, ip_changed)
-        try:
-            modbus = PySolarmanV5(address=ip, serial=self.settings['inverter']['serial'], port=self.settings['inverter']['port'], mb_slave_id=self.settings['inverter']['mb_slave_id'], verbose=False, socket_timeout=10)
-            data = {'timestamp': time.time(), 'datetime': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 'ip_address': ip, 'parameters': {}}
-            for register_info in self.settings['monitoring']['key_registers']:
-                try:
-                    address = int(register_info['address'], 16)
-                    raw_value = modbus.read_holding_registers(address, 1)[0]
-                    scaled_value = raw_value * register_info['factor']
-                    if address == 526:
-                        state_desc = {0: '起動中', 1: '待機中', 2: '運転中', 3: 'ソフトスタート', 4: 'グリッド出力', 5: 'オフグリッド', 6: '系統出力', 7: '系統側出力', 8: 'アラーム', 9: '残り', 10: 'シャットダウン', 11: '故障'}
-                        formatted_value = state_desc.get(raw_value, f'不明({raw_value})')
-                    elif register_info['factor'] == 1:
-                        formatted_value = str(int(scaled_value))
-                    else:
-                        formatted_value = f'{scaled_value:.1f}'
-                    data['parameters'][register_info['address']] = {'name': register_info['name'], 'raw_value': raw_value, 'value': scaled_value, 'formatted_value': formatted_value, 'unit': register_info['unit'], 'emoji': register_info['emoji']}
-                except Exception as e:
-                    self.logger.error(f"レジスタ {register_info['address']} ({register_info['name']}) の読み取りエラー: {e}")
-            try:
-                model_code = modbus.read_holding_registers(24, 1)[0]
-                data['device_info'] = {'model_code': model_code}
-                try:
-                    ascii_regs = modbus.read_holding_registers(33, 40)
-                    sn_string = ''
-                    for reg in ascii_regs:
-                        if reg > 0:
-                            high_byte = reg >> 8 & 255
-                            low_byte = reg & 255
-                            if high_byte > 0:
-                                sn_string += chr(high_byte)
-                            if low_byte > 0:
-                                sn_string += chr(low_byte)
-                    if sn_string:
-                        data['device_info']['serial_string'] = sn_string.strip()
-                except Exception as e:
-                    self.logger.debug(f'シリアル番号文字列の読み取りエラー: {e}')
-            except Exception as e:
-                self.logger.debug(f'デバイス情報の読み取りエラー: {e}')
-            self._save_data(data)
-            self.logger.info(f"データ収集成功: {len(data['parameters'])}パラメーター, インバーターIP: {ip}")
-            return (data, ip_changed)
-        except Exception as e:
-            self.logger.error(f'データ収集エラー: {e}')
-            return (None, ip_changed)
-
-    def _save_data(self, data):
-        """収集したデータをJSONファイルに保存"""
-        if data is None:
-            return
-        today = datetime.now().strftime('%Y%m%d')
-        filename = os.path.join(self.data_dir, f'data_{today}.json')
-        try:
-            existing_data = []
-            if os.path.exists(filename):
-                try:
-                    with open(filename, 'r') as f:
-                        existing_data = json.load(f)
-                except json.JSONDecodeError:
-                    self.logger.warning(f'既存のJSONファイル {filename} が壊れています。新しいファイルを作成します。')
-            existing_data.append(data)
-            with open(filename, 'w') as f:
-                json.dump(existing_data, f, indent=2)
-            self.logger.debug(f'データを {filename} に保存しました')
-        except Exception as e:
-            self.logger.error(f'データ保存エラー: {e}')
-if __name__ == '__main__':
-    import argparse
-    parser = argparse.ArgumentParser(description='LVYUANインバーターデータ収集')
-    parser.add_argument('--scan', action='store_true', help='ネットワークスキャンでインバーターIPを検索')
-    parser.add_argument('--collect', action='store_true', help='データ収集を実行')
-    parser.add_argument('--settings', help='設定ファイルのパス')
-    args = parser.parse_args()
-    collector = LVYUANCollector(args.settings)
-    if args.scan:
-        ip, changed = collector.find_inverter_ip()
-        if ip:
-            print(f'インバーターのIPアドレス: {ip}')
-            if changed:
-                print('※ IPアドレスが変更されました')
-        else:
-            print('インバーターが見つかりませんでした')
-    if args.collect:
-        data, ip_changed = collector.collect_data()
-        if data:
-            print(f"データ収集成功: {len(data['parameters'])}パラメーター")
-            print('\n==== 主要パラメータ ====')
-            for address, param in data['parameters'].items():
-                print(f"{param['emoji']} {param['name']}: {param['formatted_value']}{param['unit']}")
-        else:
-            print('データ収集失敗')
-    if not (args.scan or args.collect):
-        parser.print_help()
+"""LVYUAN インバーターからのデータ収集モジュール（改良版）""")
+import os)
+import time)
+import json)
+import logging)
+import socket)
+import subprocess)
+from datetime import datetime)
+from pysolarmanv5 import PySolarmanV5)
+)
+class LVYUANCollector:)
+)
+    def __init__(self, settings_file=None):)
+        if settings_file is None:)
+            self.settings_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'settings.json'))
+        else:)
+            self.settings_file = settings_file)
+        self.settings = self._load_settings())
+        self.data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data'))
+        os.makedirs(self.data_dir, exist_ok=True))
+        self.logger = logging.getLogger('lvyuan_collector'))
+        self._setup_logging())
+)
+    def _setup_logging(self):)
+        """ロギング設定""")
+        log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs'))
+        os.makedirs(log_dir, exist_ok=True))
+        log_file = os.path.join(log_dir, f"collector_{datetime.now().strftime('%Y%m%d')}.log"))
+        file_handler = logging.FileHandler(log_file))
+        file_handler.setLevel(logging.INFO))
+        console_handler = logging.StreamHandler())
+        console_handler.setLevel(logging.INFO))
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+        file_handler.setFormatter(formatter))
+        console_handler.setFormatter(formatter))
+        self.logger.addHandler(file_handler))
+        self.logger.addHandler(console_handler))
+        self.logger.setLevel(logging.INFO))
+)
+    def _load_settings(self):)
+        """設定ファイルの読み込み""")
+        try:)
+            if os.path.exists(self.settings_file):)
+                with open(self.settings_file, 'r') as f:)
+                    return json.load(f))
+            else:)
+                default_settings = {'inverter': {'ip': '192.168.0.202', 'serial': 3528830226, 'mac': 'D4:27:87:16:7A:F8', 'port': 8899, 'mb_slave_id': 1}, 'network': {'subnet': '192.168.0.0/24', 'last_check': '2025-05-02T02:00:00'}, 'monitoring': {'interval_minutes': 15, 'key_registers': [{'address': '0x0100', 'name': 'バッテリーSOC', 'unit': '%', 'factor': 1, 'emoji': '🔋'}, {'address': '0x0101', 'name': 'バッテリー電圧', 'unit': 'V', 'factor': 0.1, 'emoji': '⚡'}, {'address': '0x0102', 'name': 'バッテリー電流', 'unit': 'A', 'factor': 0.1, 'emoji': '🔌'}, {'address': '0x020E', 'name': '機器状態', 'unit': '', 'factor': 1, 'emoji': '📊'}, {'address': '0xE012', 'name': 'ブースト充電時間', 'unit': '分', 'factor': 1, 'emoji': '⏱️'}]}})
+                with open(self.settings_file, 'w') as f:)
+                    json.dump(default_settings, f, indent=2))
+                return default_settings)
+        except Exception as e:)
+            self.logger.error(f'設定ファイル読み込みエラー: {e}'))
+            return {})
+)
+    def _save_settings(self):)
+        """設定ファイルの保存""")
+        try:)
+            with open(self.settings_file, 'w') as f:)
+                json.dump(self.settings, f, indent=2))
+            self.logger.debug('設定ファイルを保存しました'))
+        except Exception as e:)
+            self.logger.error(f'設定ファイル保存エラー: {e}'))
+)
+    def find_inverter_ip(self):)
+        """ネットワークスキャンでインバーターのIPアドレスを特定""")
+        self.logger.info('インバーターのIPアドレスを検索中...'))
+        current_ip = self.settings['inverter']['ip'])
+        if self._check_inverter_connection(current_ip):)
+            self.logger.info(f'現在のIPアドレス ({current_ip}) に接続できます'))
+            return (current_ip, False))
+        mac_address = self.settings['inverter']['mac'].replace(':', '-'))
+        subnet = self.settings['network']['subnet'])
+        try:)
+            self.logger.info(f'ネットワークスキャン実行中... ({subnet})'))
+            cmd = ['sudo', 'nmap', '-sP', subnet])
+            subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE))
+            cmd = ['arp', '-a'])
+            result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True))
+            for line in result.stdout.splitlines():)
+                if mac_address.lower() in line.lower():)
+                    parts = line.split())
+                    for part in parts:)
+                        if part.count('.') == 3:)
+                            ip = part.strip('()'))
+                            if self._check_inverter_connection(ip):)
+                                if ip != current_ip:)
+                                    self.logger.info(f'インバーターのIPアドレスが変更されました: {current_ip} → {ip}'))
+                                    self.settings['inverter']['ip'] = ip)
+                                    self._save_settings())
+                                    return (ip, True))
+                                else:)
+                                    return (ip, False))
+            self.logger.warning(f'インバーターのMACアドレス ({mac_address}) が見つかりませんでした'))
+            return (None, False))
+        except Exception as e:)
+            self.logger.error(f'ネットワークスキャンエラー: {e}'))
+            return (None, False))
+)
+    def _check_inverter_connection(self, ip):)
+        """インバーターへの接続確認""")
+        try:)
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM))
+            s.settimeout(2))
+            result = s.connect_ex((ip, self.settings['inverter']['port'])))
+            s.close())
+            if result == 0:)
+                try:)
+                    modbus = PySolarmanV5(address=ip, serial=self.settings['inverter']['serial'], port=self.settings['inverter']['port'], mb_slave_id=self.settings['inverter']['mb_slave_id'], verbose=False, socket_timeout=5))
+                    modbus.read_holding_registers(256, 1))
+                    return True)
+                except Exception as e:)
+                    self.logger.debug(f'Modbus接続エラー ({ip}): {e}'))
+                    return False)
+            else:)
+                self.logger.debug(f'ソケット接続失敗 ({ip}): {result}'))
+                return False)
+        except Exception as e:)
+            self.logger.debug(f'接続確認エラー ({ip}): {e}'))
+            return False)
+)
+    def collect_data(self):)
+        """インバーターからデータを収集""")
+        ip, ip_changed = self.find_inverter_ip())
+        if ip is None:)
+            self.logger.error('インバーターのIPアドレスが見つかりません'))
+            return (None, ip_changed))
+        try:)
+            modbus = PySolarmanV5(address=ip, serial=self.settings['inverter']['serial'], port=self.settings['inverter']['port'], mb_slave_id=self.settings['inverter']['mb_slave_id'], verbose=False, socket_timeout=10))
+            data = {'timestamp': time.time(), 'datetime': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 'ip_address': ip, 'parameters': {}})
+            for register_info in self.settings['monitoring']['key_registers']:)
+                try:)
+                    address = int(register_info['address'], 16))
+                    raw_value = modbus.read_holding_registers(address, 1)[0])
+                    scaled_value = raw_value * register_info['factor'])
+                    if address == 526:)
+                        state_desc = {0: '起動中', 1: '待機中', 2: '運転中', 3: 'ソフトスタート', 4: 'グリッド出力', 5: 'オフグリッド', 6: '系統出力', 7: '系統側出力', 8: 'アラーム', 9: '残り', 10: 'シャットダウン', 11: '故障'})
+                        formatted_value = state_desc.get(raw_value, f'不明({raw_value})'))
+                    elif register_info['factor'] == 1:)
+                        formatted_value = str(int(scaled_value)))
+                    else:)
+                        formatted_value = f'{scaled_value:.1f}')
+                    data['parameters'][register_info['address']] = {'name': register_info['name'], 'raw_value': raw_value, 'value': scaled_value, 'formatted_value': formatted_value, 'unit': register_info['unit'], 'emoji': register_info['emoji']})
+                except Exception as e:)
+                    self.logger.error(f"レジスタ {register_info['address']} ({register_info['name']}) の読み取りエラー: {e}"))
+            try:)
+                model_code = modbus.read_holding_registers(24, 1)[0])
+                data['device_info'] = {'model_code': model_code})
+                try:)
+                    ascii_regs = modbus.read_holding_registers(33, 40))
+                    sn_string = '')
+                    for reg in ascii_regs:)
+                        if reg > 0:)
+                            high_byte = reg >> 8 & 255)
+                            low_byte = reg & 255)
+                            if high_byte > 0:)
+                                sn_string += chr(high_byte))
+                            if low_byte > 0:)
+                                sn_string += chr(low_byte))
+                    if sn_string:)
+                        data['device_info']['serial_string'] = sn_string.strip())
+                except Exception as e:)
+                    self.logger.debug(f'シリアル番号文字列の読み取りエラー: {e}'))
+            except Exception as e:)
+                self.logger.debug(f'デバイス情報の読み取りエラー: {e}'))
+            self._save_data(data))
+            self.logger.info(f"データ収集成功: {len(data['parameters'])}パラメーター, インバーターIP: {ip}"))
+            return (data, ip_changed))
+        except Exception as e:)
+            self.logger.error(f'データ収集エラー: {e}'))
+            return (None, ip_changed))
+)
+    def _save_data(self, data):)
+        """収集したデータをJSONファイルに保存""")
+        if data is None:)
+            return)
+        today = datetime.now().strftime('%Y%m%d'))
+        filename = os.path.join(self.data_dir, f'data_{today}.json'))
+        try:)
+            existing_data = [])
+            if os.path.exists(filename):)
+                try:)
+                    with open(filename, 'r') as f:)
+                        existing_data = json.load(f))
+                except json.JSONDecodeError:)
+                    self.logger.warning(f'既存のJSONファイル {filename} が壊れています。新しいファイルを作成します。'))
+            existing_data.append(data))
+            with open(filename, 'w') as f:)
+                json.dump(existing_data, f, indent=2))
+            self.logger.debug(f'データを {filename} に保存しました'))
+        except Exception as e:)
+            self.logger.error(f'データ保存エラー: {e}'))
+if __name__ == '__main__':)
+    import argparse)
+    parser = argparse.ArgumentParser(description='LVYUANインバーターデータ収集'))
+    parser.add_argument('--scan', action='store_true', help='ネットワークスキャンでインバーターIPを検索'))
+    parser.add_argument('--collect', action='store_true', help='データ収集を実行'))
+    parser.add_argument('--settings', help='設定ファイルのパス'))
+    args = parser.parse_args())
+    collector = LVYUANCollector(args.settings))
+    if args.scan:)
+        ip, changed = collector.find_inverter_ip())
+        if ip:)
+            print(f'インバーターのIPアドレス: {ip}'))
+            if changed:)
+                print('※ IPアドレスが変更されました'))
+        else:)
+            print('インバーターが見つかりませんでした'))
+    if args.collect:)
+        data, ip_changed = collector.collect_data())
+        if data:)
+            print(f"データ収集成功: {len(data['parameters'])}パラメーター"))
+            print('\n==== 主要パラメータ ===='))
+            for address, param in data['parameters'].items():)
+                print(f"{param['emoji']} {param['name']}: {param['formatted_value']}{param['unit']}"))
+        else:)
+            print('データ収集失敗'))
+    if not (args.scan or args.collect):)
+        parser.print_help())

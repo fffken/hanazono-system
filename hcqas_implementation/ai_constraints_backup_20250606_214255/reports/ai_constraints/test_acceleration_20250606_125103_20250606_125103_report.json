@@ -1,0 +1,14 @@
+{
+  "session_id": "test_acceleration_20250606_125103_20250606_125103",
+  "start_time": "2025-06-06T12:51:03.945910",
+  "end_time": "2025-06-06T12:51:04.254690",
+  "duration_seconds": 0.30878,
+  "total_checks": 0,
+  "success_count": 0,
+  "violation_count": 0,
+  "error_count": 0,
+  "success_rate": 0.0,
+  "violation_rate": 0.0,
+  "monitor_version": "3.1",
+  "dd_confidence_score": "116/120"
+}
