@@ -1,20 +1,27 @@
 """
 🧠 kioku System - ProjectContinuationManager
 Purpose: 15秒完璧継承できる作業継続記憶機能
+Enhanced: Git詳細記録 + 複数プロジェクト対応 + 自動プロジェクト検知
 Created: 2025-06-04
 """
 
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 import subprocess
 
 class ProjectContinuationManager:
-    """作業継続記憶管理クラス - 15秒完璧継承システム"""
+    """作業継続記憶管理クラス - 15秒完璧継承システム（自動検知対応）"""
     
-    def __init__(self):
-        self.base_path = Path("ai_memory/storage/continuation")
+    def __init__(self, project_name=None):
+        # 自動プロジェクト検知
+        if project_name is None:
+            project_name = self.smart_project_detection()
+        
+        self.project_name = project_name
+        self.base_path = Path(f"ai_memory/storage/continuation/{project_name}")
         self.base_path.mkdir(parents=True, exist_ok=True)
         
         # 継続記憶ファイルパス
@@ -26,6 +33,164 @@ class ProjectContinuationManager:
         
         # 初期化
         self._initialize_files()
+        
+        # 未記録作業検知・自動記録
+        self._auto_detect_and_record_work()
+    
+    def smart_project_detection(self):
+        """Git変更からプロジェクト自動検知"""
+        try:
+            # Git変更ファイル取得
+            result = subprocess.run(['git', 'diff', '--name-only', 'HEAD'], 
+                                  capture_output=True, text=True, cwd='.')
+            changed_files = result.stdout.strip().split('\n') if result.stdout.strip() else []
+            
+            # Git status ファイル取得
+            result2 = subprocess.run(['git', 'status', '--porcelain'], 
+                                   capture_output=True, text=True, cwd='.')
+            status_files = []
+            for line in result2.stdout.strip().split('\n'):
+                if line.strip():
+                    status_files.append(line[3:])  # ステータス文字を除去
+            
+            all_files = list(set(changed_files + status_files))
+            all_files_str = ' '.join(all_files).lower()
+            
+            # プロジェクト判定ロジック
+            project_patterns = {
+                'hcqas': ['hcqas', 'perfect_edition', 'design_record', 'complete_design'],
+                'kioku': ['kioku', 'continuation_manager', 'ai_startup_memory', 'memory_manager'],
+                'email': ['email_notifier', 'smtp', 'mail', 'notification'],
+                'lvyuan': ['lvyuan', 'collector', 'solar', 'inverter', 'battery'],
+                'hanazono': ['hanazono', 'main.py', 'settings.json']  # デフォルトプロジェクト
+            }
+            
+            # パターンマッチング
+            for project, patterns in project_patterns.items():
+                for pattern in patterns:
+                    if pattern in all_files_str:
+                        print(f"🎯 自動プロジェクト検知: {project} (検知キーワード: {pattern})")
+                        return project
+            
+            # コミットメッセージからも検知
+            try:
+                result3 = subprocess.run(['git', 'log', '-1', '--pretty=format:%s'], 
+                                       capture_output=True, text=True, cwd='.')
+                commit_msg = result3.stdout.strip().lower()
+                
+                for project, patterns in project_patterns.items():
+                    for pattern in patterns:
+                        if pattern in commit_msg:
+                            print(f"🎯 自動プロジェクト検知: {project} (コミットメッセージ: {pattern})")
+                            return project
+            except:
+                pass
+            
+            print("🎯 自動プロジェクト検知: hanazono (デフォルト)")
+            return "hanazono"
+            
+        except Exception as e:
+            print(f"⚠️ プロジェクト自動検知エラー: {e}")
+            return "hanazono"
+    
+    def _auto_detect_and_record_work(self):
+        """未記録作業検知・自動記録"""
+        try:
+            # Git変更規模確認
+            git_detail = self.record_git_changes_detail()
+            files_changed = git_detail.get('files_changed', 0)
+            
+            # 現在のPhase情報取得
+            current_phase_data = self._load_json(self.phase_file)
+            last_update = current_phase_data.get('timestamp', '')
+            
+            # 大きな変更があるのに記録が古い場合
+            if files_changed >= 10:
+                # 最終更新から1時間以上経過している場合
+                if self._is_stale_record(last_update, hours=1):
+                    self._suggest_work_snapshot(git_detail)
+            
+        except Exception as e:
+            print(f"⚠️ 自動作業検知エラー: {e}")
+    
+    def _is_stale_record(self, timestamp_str, hours=1):
+        """記録が古いかチェック"""
+        try:
+            if not timestamp_str:
+                return True
+            
+            from datetime import datetime, timezone, timedelta
+            last_time = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
+            now = datetime.now(timezone.utc)
+            
+            return (now - last_time) > timedelta(hours=hours)
+        except:
+            return True
+    
+    def _suggest_work_snapshot(self, git_detail):
+        """作業スナップショット記録提案"""
+        major_files = git_detail.get('major_changes', [])
+        change_scale = git_detail.get('change_scale', 'unknown')
+        
+        print("\n" + "="*50)
+        print("🚨 未記録作業検知！")
+        print("="*50)
+        print(f"📊 変更規模: {change_scale}")
+        print(f"📁 主要変更: {', '.join(major_files[:3])}")
+        print(f"🎯 検知プロジェクト: {self.project_name}")
+        print("\n💡 推奨: 現在の作業状況を記録してください")
+        print("例:")
+        print(f"python3 -c \"")
+        print(f"from ai_memory.core.continuation_manager import ProjectContinuationManager")
+        print(f"cm = ProjectContinuationManager('{self.project_name}')")
+        print(f"cm.save_work_snapshot(")
+        print(f"    phase='{self._estimate_phase_from_changes(major_files)}',")
+        print(f"    step='development_in_progress',")
+        print(f"    progress=50,")
+        print(f"    description='検知された作業: {change_scale}規模の変更',")
+        print(f"    next_action='作業継続'")
+        print(f")")
+        print(f"\"")
+        print("="*50)
+    
+    def _estimate_phase_from_changes(self, major_files):
+        """変更ファイルからPhase推定"""
+        files_str = ' '.join(major_files).lower()
+        
+        if 'hcqas' in files_str or 'perfect_edition' in files_str:
+            return 'HCQAS_Perfect_Edition_v4.0'
+        elif 'kioku' in files_str or 'continuation' in files_str:
+            return 'kioku_system_enhancement'
+        elif 'email' in files_str:
+            return 'email_system_enhancement'
+        else:
+            return f'{self.project_name}_development'
+    
+    @classmethod
+    def list_projects(cls):
+        """利用可能プロジェクト一覧取得"""
+        continuation_root = Path("ai_memory/storage/continuation")
+        if not continuation_root.exists():
+            return []
+        
+        projects = []
+        for project_dir in continuation_root.iterdir():
+            if project_dir.is_dir():
+                projects.append({
+                    'name': project_dir.name,
+                    'last_updated': project_dir.stat().st_mtime,
+                    'has_phase': (project_dir / "current_phase.json").exists()
+                })
+        
+        return sorted(projects, key=lambda x: x['last_updated'], reverse=True)
+    
+    @classmethod
+    def get_latest_project(cls):
+        """最新プロジェクト取得"""
+        projects = cls.list_projects()
+        if projects:
+            return projects[0]['name']
+        return "hanazono"  # デフォルト
     
     def _initialize_files(self):
         """継続記憶ファイル初期化"""
@@ -34,13 +199,13 @@ class ProjectContinuationManager:
         if not self.phase_file.exists():
             initial_phase = {
                 "timestamp": datetime.now(timezone.utc).isoformat(),
-                "current_phase": "system_initialization",
+                "current_phase": f"{self.project_name}_initialization",
                 "phase_number": 1,
-                "step": "setup",
+                "step": "auto_detected_setup",
                 "progress_percentage": 0,
                 "estimated_completion": "30_minutes",
-                "description": "kiokuシステム継続記憶機能初期化",
-                "next_immediate_action": "ProjectContinuationManager実装"
+                "description": f"自動検知プロジェクト初期化 - {self.project_name}",
+                "next_immediate_action": "作業スナップショット記録推奨"
             }
             self._save_json(self.phase_file, initial_phase)
         
@@ -49,7 +214,14 @@ class ProjectContinuationManager:
             initial_constraints = {
                 "timestamp": datetime.now(timezone.utc).isoformat(),
                 "resolved_issues": [],
-                "current_constraints": [],
+                "current_constraints": [
+                    {
+                        "constraint": "作業方式鉄則: 部分修正禁止、全コピペ基本、非破壊的作業徹底",
+                        "impact": "全実装でターミナル直接コピペ(30-40行)またはnano全コピペのみ使用",
+                        "priority": "critical",
+                        "recorded_at": datetime.now(timezone.utc).isoformat()
+                    }
+                ],
                 "technical_decisions": []
             }
             self._save_json(self.constraints_file, initial_constraints)
@@ -58,7 +230,7 @@ class ProjectContinuationManager:
         if not self.commands_file.exists():
             initial_commands = {
                 "timestamp": datetime.now(timezone.utc).isoformat(),
-                "immediate_next": ["python3 -c \"from ai_memory.core.continuation_manager import ProjectContinuationManager; cm=ProjectContinuationManager(); print('✅ 継続記憶システム初期化完了')\""],
+                "immediate_next": [f"python3 -c \"from ai_memory.core.continuation_manager import ProjectContinuationManager; cm=ProjectContinuationManager('{self.project_name}'); print('✅ 自動検知継続記憶システム初期化完了')\""],
                 "phase_completion": [],
                 "rollback_commands": []
             }
@@ -73,7 +245,9 @@ class ProjectContinuationManager:
                 "best_practices": [
                     "実装前必ずバックアップ",
                     "段階的テスト実行",
-                    "非破壊的作業徹底"
+                    "非破壊的作業徹底",
+                    "部分修正禁止・全コピペ基本",
+                    "Git変更監視による自動プロジェクト検知活用"
                 ]
             }
             self._save_json(self.patterns_file, initial_patterns)
@@ -89,13 +263,82 @@ class ProjectContinuationManager:
             "estimated_completion": self._estimate_completion(progress),
             "description": description,
             "next_immediate_action": next_action,
-            "git_status": self._get_git_status(),
-            "active_files": self._get_active_files()
+            "git_status": self._get_git_status_enhanced(),
+            "active_files": self._get_active_files(),
+            "project_name": self.project_name,
+            "auto_detected": True
         }
         
         self._save_json(self.phase_file, snapshot)
-        print(f"📸 作業スナップショット保存: {phase} - {step} ({progress}%)")
+        print(f"📸 作業スナップショット保存: {phase} - {step} ({progress}%) [{self.project_name}]")
         return True
+    
+    def record_git_changes_detail(self):
+        """Git変更詳細記録（ファイル別差分統計）"""
+        try:
+            result = subprocess.run(['git', 'diff', '--stat'], 
+                                  capture_output=True, text=True, cwd='.')
+            
+            if result.stdout.strip():
+                lines = result.stdout.strip().split('\n')
+                file_changes = []
+                for line in lines[:-1]:
+                    if '|' in line:
+                        parts = line.split('|')
+                        filename = parts[0].strip()
+                        changes = parts[1].strip() if len(parts) > 1 else ''
+                        file_changes.append({'file': filename, 'changes': changes})
+                
+                summary_line = lines[-1] if lines else ''
+                files_changed = len(file_changes)
+                major_files = [f['file'] for f in file_changes[:5]]
+                
+                git_detail = {
+                    'timestamp': datetime.now(timezone.utc).isoformat(),
+                    'files_changed': files_changed,
+                    'summary': summary_line,
+                    'major_changes': major_files,
+                    'file_details': file_changes[:10],
+                    'change_scale': self._assess_change_scale(files_changed)
+                }
+                return git_detail
+            else:
+                return {'status': 'no_changes', 'files_changed': 0}
+        except Exception as e:
+            print(f"⚠️ Git詳細記録エラー: {e}")
+            return {'status': 'error', 'error': str(e)}
+    
+    def _assess_change_scale(self, files_changed):
+        """変更規模評価"""
+        if files_changed >= 100:
+            return "massive"
+        elif files_changed >= 50:
+            return "large"
+        elif files_changed >= 20:
+            return "medium"
+        elif files_changed >= 5:
+            return "small"
+        else:
+            return "minimal"
+    
+    def _get_git_status_enhanced(self):
+        """Git状態取得（詳細版）"""
+        try:
+            result = subprocess.run(['git', 'status', '--porcelain'], 
+                                  capture_output=True, text=True, cwd='.')
+            lines = result.stdout.strip().split('\n') if result.stdout.strip() else []
+            
+            git_detail = self.record_git_changes_detail()
+            
+            if git_detail.get('files_changed', 0) > 0:
+                scale = git_detail.get('change_scale', 'unknown')
+                major_files = git_detail.get('major_changes', [])
+                major_str = ', '.join(major_files[:3])
+                return f"{len(lines)} files changed ({scale}) - 主要: {major_str}"
+            else:
+                return f"{len(lines)} files changed" if lines else "clean"
+        except Exception as e:
+            return "unknown"
     
     def generate_15sec_handover(self):
         """15秒継承プロンプト生成"""
@@ -107,7 +350,11 @@ class ProjectContinuationManager:
             patterns_data = self._load_json(self.patterns_file)
             
             # Git状態取得
-            git_status = self._get_git_status()
+            git_status = self._get_git_status_enhanced()
+            
+            # 自動検知情報
+            auto_detected = phase_data.get('auto_detected', False)
+            auto_info = " [自動検知]" if auto_detected else ""
             
             # 15秒継承プロンプト生成
             handover = f"""🧠 **15秒完璧継承プロンプト** - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
@@ -115,19 +362,21 @@ class ProjectContinuationManager:
 ## ⚡ 即座実行情報
 ```bash
 cd ~/lvyuan_solar_control
+# プロジェクト: {self.project_name}{auto_info}
 # 現在Phase: {phase_data.get('current_phase', 'unknown')}
 # Progress: {phase_data.get('progress_percentage', 0)}%
 # Git状態: {git_status}
 ```
 
+## 🚨 重要制約（鉄則）
+{self._format_constraints_enhanced(constraints_data)}
+
 ## 🎯 現在状況
+- **プロジェクト**: {self.project_name}{auto_info}
 - **Phase**: {phase_data.get('current_phase', 'unknown')} (Step: {phase_data.get('step', 'unknown')})
 - **進捗**: {phase_data.get('progress_percentage', 0)}% 完了
 - **説明**: {phase_data.get('description', 'No description')}
 - **次アクション**: {phase_data.get('next_immediate_action', 'TBD')}
-
-## 🚨 重要制約
-{self._format_constraints(constraints_data)}
 
 ## 🚀 次のアクション
 ```bash
@@ -146,6 +395,7 @@ cd ~/lvyuan_solar_control
 - **Git状態**: {git_status}
 - **アクティブファイル**: {', '.join(self._get_active_files()[:3])}
 - **推定完了**: {phase_data.get('estimated_completion', 'unknown')}
+- **自動検知**: {'有効' if auto_detected else '手動記録'}
 
 **この継承で即座に作業継続可能！**
 """
@@ -213,7 +463,8 @@ cd ~/lvyuan_solar_control
                 "pattern": f"{phase}_completion",
                 "phase": phase,
                 "completion_time": datetime.now(timezone.utc).isoformat(),
-                "success_factors": success_factors or ["段階的実装", "テスト完了"]
+                "success_factors": success_factors or ["段階的実装", "テスト完了"],
+                "project": self.project_name
             }
             
             if "successful_patterns" not in patterns_data:
@@ -223,7 +474,7 @@ cd ~/lvyuan_solar_control
             patterns_data["timestamp"] = datetime.now(timezone.utc).isoformat()
             
             self._save_json(self.patterns_file, patterns_data)
-            print(f"🎉 Phase完了記録: {phase}")
+            print(f"🎉 Phase完了記録: {phase} [{self.project_name}]")
             return True
             
         except Exception as e:
@@ -234,10 +485,12 @@ cd ~/lvyuan_solar_control
         """現在状況取得"""
         phase_data = self._load_json(self.phase_file)
         return {
+            "project": self.project_name,
             "phase": phase_data.get('current_phase', 'unknown'),
             "step": phase_data.get('step', 'unknown'),
             "progress": phase_data.get('progress_percentage', 0),
-            "next_action": phase_data.get('next_immediate_action', 'TBD')
+            "next_action": phase_data.get('next_immediate_action', 'TBD'),
+            "auto_detected": phase_data.get('auto_detected', False)
         }
     
     # Helper methods
@@ -282,16 +535,6 @@ cd ~/lvyuan_solar_control
         else:
             return "60_minutes"
     
-    def _get_git_status(self):
-        """Git状態取得"""
-        try:
-            result = subprocess.run(['git', 'status', '--porcelain'], 
-                                  capture_output=True, text=True, cwd='.')
-            lines = result.stdout.strip().split('\n') if result.stdout.strip() else []
-            return f"{len(lines)} files changed" if lines else "clean"
-        except:
-            return "unknown"
-    
     def _get_active_files(self):
         """アクティブファイル一覧"""
         try:
@@ -302,17 +545,23 @@ cd ~/lvyuan_solar_control
         except:
             return []
     
-    def _format_constraints(self, constraints_data):
-        """制約フォーマット"""
+    def _format_constraints_enhanced(self, constraints_data):
+        """制約フォーマット（強化版）"""
         constraints = constraints_data.get('current_constraints', [])
         if not constraints:
             return "- 現在制約なし"
         
         formatted = []
         for c in constraints[-3:]:  # 最新3件
-            formatted.append(f"- **{c.get('constraint', 'Unknown')}**: {c.get('impact', 'No impact')} ({c.get('priority', 'medium')})")
+            priority = c.get('priority', 'medium')
+            emoji = "🚨" if priority == "critical" else "⚠️" if priority == "high" else "📝"
+            formatted.append(f"{emoji} **{c.get('constraint', 'Unknown')}**: {c.get('impact', 'No impact')}")
         
         return '\n'.join(formatted)
+    
+    def _format_constraints(self, constraints_data):
+        """制約フォーマット（互換性用）"""
+        return self._format_constraints_enhanced(constraints_data)
     
     def _format_next_commands(self, commands_data):
         """次コマンドフォーマット"""
@@ -330,46 +579,25 @@ cd ~/lvyuan_solar_control
 
 
 # テスト用関数
-def test_continuation_manager():
-    """継続記憶システムテスト"""
-    print("🧪 継続記憶システムテスト開始")
+def test_auto_detect_system():
+    """自動検知システムテスト"""
+    print("🧪 自動検知システムテスト開始")
     
     try:
-        # インスタンス作成
+        # インスタンス作成（自動検知有効）
         cm = ProjectContinuationManager()
-        print("✅ ProjectContinuationManager初期化完了")
+        print(f"✅ 自動プロジェクト検知: {cm.project_name}")
         
-        # スナップショット保存テスト
-        cm.save_work_snapshot(
-            phase="kioku_system_expansion",
-            step="implementation",
-            progress=50,
-            description="kioku継続記憶機能実装中",
-            next_action="ai_startup_memory.py拡張"
-        )
-        
-        # 制約記録テスト
-        cm.record_technical_constraint(
-            constraint="ラズパイターミナル行数制限",
-            impact="コピペ30-40行制限",
-            priority="high"
-        )
-        
-        # 次コマンド保存テスト
-        cm.save_next_command("immediate_next", [
-            "python3 -c \"from ai_memory.core.continuation_manager import test_continuation_manager; test_continuation_manager()\"",
-            "nano ai_memory/ai_startup_memory.py  # 拡張実装"
-        ])
-        
-        # 15秒継承プロンプト生成テスト
-        handover = cm.generate_15sec_handover()
-        print("✅ 15秒継承プロンプト生成完了")
+        # Git詳細記録テスト
+        git_detail = cm.record_git_changes_detail()
+        print(f"✅ Git詳細記録: {git_detail.get('files_changed', 0)}件変更 ({git_detail.get('change_scale', 'unknown')})")
         
         # 現在状況確認
         status = cm.get_current_status()
-        print(f"📊 現在状況: {status['phase']} - {status['step']} ({status['progress']}%)")
+        auto_flag = " [自動検知]" if status['auto_detected'] else ""
+        print(f"📊 現在状況: {status['project']}{auto_flag} - {status['phase']} ({status['progress']}%)")
         
-        print("🎉 継続記憶システムテスト完了！")
+        print("🎉 自動検知システムテスト完了！")
         return True
         
     except Exception as e:
@@ -378,4 +606,4 @@ def test_continuation_manager():
 
 
 if __name__ == "__main__":
-    test_continuation_manager()
+    test_auto_detect_system()

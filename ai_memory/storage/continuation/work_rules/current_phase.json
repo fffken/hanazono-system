@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-06-05T04:34:09.638072+00:00",
+  "current_phase": "efficiency_rules",
+  "phase_number": 1,
+  "step": "import_verification_rule",
+  "progress_percentage": 100,
+  "estimated_completion": "5_minutes",
+  "description": "作業開始時必須確認: 1)main.pyのimport文確認 2)対象ファイル特定 3)実際の参照先確認",
+  "next_immediate_action": "全ての作業でcheck_work_environment.sh実行を必須とする",
+  "git_status": "282 files changed (massive) - 主要: GOLDEN_VERSION.py, add_extract_battery_data.py, ai_assistant.py",
+  "active_files": [
+    "GOLDEN_VERSION.py",
+    "add_extract_battery_data.py",
+    "ai_assistant.py",
+    "ai_auto_decision.py",
+    "ai_auto_resolver.py"
+  ],
+  "project_name": "work_rules",
+  "auto_detected": true
+}

@@ -1,0 +1,245 @@
+#!/usr/bin/env python3
+"""
+Smart Suggestion Engine - Phase 3b Core
+スマート提案エンジン - DD2収束保証完全版
+
+設計者: DD (HCQAS設計評価特化プロフェッショナルAI)
+品質保証: DD2 (コード設計多角的評価特化型超プロフェッショナルAI)
+対象: FF管理者
+品質目標: 100点達成（DD2収束保証改善反映）
+"""
+
+import os
+import sys
+import json
+import time
+import logging
+import sqlite3
+import threading
+import tempfile
+from datetime import datetime, timedelta
+from typing import Dict, List, Any, Optional, Tuple, Union
+from dataclasses import dataclass, asdict
+from enum import Enum
+import hashlib
+import traceback
+
+# Phase 3a基盤システム統合
+try:
+    from ultra_robust_implementation import UltraRobustImplementation
+    from ff_preference_learner import FFPreferenceLearner, InteractionData
+except ImportError as e:
+    logging.warning(f"Phase 3a system import warning: {e}")
+
+# ===================================================================
+# DD2改善実装: 収束保証システム
+# ===================================================================
+
+class ConvergenceGuarantee:
+    """DD2要求: 改善ループ収束保証システム"""
+
+    def __init__(self, max_iterations: int = 5, quality_threshold: int = 98):
+        self.max_iterations = max_iterations
+        self.quality_threshold = quality_threshold
+        self.iteration_history = []
+        self.convergence_strategies = [
+            'incremental_improvement',
+            'template_fallback',
+            'pattern_matching',
+            'manual_escalation'
+        ]
+    """DD2要求: 改善ループ収束保証システム"""
+
+    def __init__(self, max_iterations: int = 5, quality_threshold: int = 98):
+        self.max_iterations = max_iterations
+        self.quality_threshold = quality_threshold
+        self.iteration_history = []
+        self.convergence_strategies = [
+            'incremental_improvement',
+            'template_fallback',
+            'pattern_matching',
+            'manual_escalation'
+        ]
+
+    def execute_convergent_improvement(self, solution: Dict[str, Any],
+                                     quality_evaluator, improvement_engine) -> Tuple[Dict[str, Any], int, bool]:
+        """収束保証付き改善実行"""
+
+        current_solution = solution.copy()
+
+        for iteration in range(self.max_iterations):
+            # 品質評価
+            quality_score = quality_evaluator(current_solution)
+
+            # 履歴記録
+            self.iteration_history.append({
+                'iteration': iteration,
+                'quality_score': quality_score,
+                'strategy': 'quality_evaluation',
+                'timestamp': datetime.now()
+            })
+
+            # 収束判定
+            if quality_score >= self.quality_threshold:
+                logging.info(f"Quality convergence achieved at iteration {iteration}: {quality_score}")
+                return current_solution, quality_score, True
+            # 改善戦略選択
+            strategy = self._select_improvement_strategy(iteration, quality_score)
+
+            # 改善実行
+            try:
+                improved_solution = self._apply_improvement_strategy(
+                    current_solution, strategy, improvement_engine, iteration
+                )
+
+                # 改善検証
+                if self._validate_improvement(current_solution, improved_solution):
+                    current_solution = improved_solution
+                    logging.debug(f"Improvement applied at iteration {iteration} using {strategy}")
+                else:
+                    logging.warning(f"Improvement validation failed at iteration {iteration}")
+
+            except Exception as e:
+                logging.error(f"Improvement error at iteration {iteration}: {e}")
+                # エラー時は次の戦略を試行
+                continue
+
+        # 最大試行数到達: エスカレーション
+        logging.warning(f"Max iterations reached without convergence. Final score: {quality_score}")
+        return self._escalate_to_manual_review(current_solution, "quality_improvement_limit")
+
+    def _select_improvement_strategy(self, iteration: int, current_quality: int) -> str:
+        """改善戦略選択"""
+
+        if iteration == 0:
+            return 'incremental_improvement'
+        elif iteration == 1:
+            return 'template_fallback'
+        elif iteration == 2:
+            return 'pattern_matching'
+        else:
+            return 'manual_escalation'
+
+    def _apply_improvement_strategy(self, solution: Dict[str, Any], strategy: str,
+                                  improvement_engine, iteration: int) -> Dict[str, Any]:
+        """改善戦略適用"""
+
+        if strategy == 'incremental_improvement':
+            return improvement_engine.incremental_improve(solution, iteration)
+        elif strategy == 'template_fallback':
+            return improvement_engine.template_based_improve(solution)
+        elif strategy == 'pattern_matching':
+            return improvement_engine.pattern_based_improve(solution)
+        elif strategy == 'manual_escalation':
+            return improvement_engine.prepare_manual_escalation(solution)
+        else:
+            return solution
+
+    def _validate_improvement(self, original: Dict[str, Any], improved: Dict[str, Any]) -> bool:
+        """改善検証"""
+
+        # 基本検証: 必須フィールド存在確認
+        required_fields = ['implementation', 'quality_score', 'metadata']
+        for field in required_fields:
+            if field not in improved:
+                return False
+
+        # 品質スコア向上確認
+        original_quality = original.get('quality_score', {}).get('total', 0)
+        improved_quality = improved.get('quality_score', {}).get('total', 0)
+
+        return improved_quality >= original_quality
+
+    def _escalate_to_manual_review(self, solution: Dict[str, Any], reason: str) -> Tuple[Dict[str, Any], int, bool]:
+        """手動レビューエスカレーション"""
+
+        escalated_solution = solution.copy()
+        escalated_solution['escalation'] = {
+            'reason': reason,
+            'timestamp': datetime.now().isoformat(),
+            'requires_manual_review': True,
+            'suggested_actions': [
+                'FF管理者による要求の簡略化',
+                '段階的実装への分割',
+                '手動実装モードへの切替'
+            ],
+            'quality_history': self.iteration_history[-5:]  # 最新5回の履歴
+        }
+
+        logging.info(f"Manual escalation triggered: {reason}")
+        return escalated_solution, 85, False  # 85点で手動レビュー推奨
+        return improved_quality >= original_quality
+
+    def _escalate_to_manual_review(self, solution: Dict[str, Any], reason: str) -> Tuple[Dict[str, Any], int, bool]:
+        """手動レビューエスカレーション"""
+
+        escalated_solution = solution.copy()
+        escalated_solution['escalation'] = {
+            'reason': reason,
+            'timestamp': datetime.now().isoformat(),
+            'requires_manual_review': True,
+            'suggested_actions': [
+                'FF管理者による要求の簡略化',
+                '段階的実装への分割',
+                '手動実装モードへの切替'
+            ],
+            'quality_history': self.iteration_history[-5:]  # 最新5回の履歴
+        }
+
+        logging.info(f"Manual escalation triggered: {reason}")
+        return escalated_solution, 85, False  # 85点で手動レビュー推奨
+
+class QualityImprovementEngine:
+    """品質改善エンジン"""
+
+    def __init__(self):
+        self.improvement_patterns = self._load_improvement_patterns()
+        self.template_library = self._load_template_library()
+
+    def incremental_improve(self, solution: Dict[str, Any], iteration: int) -> Dict[str, Any]:
+        """段階的改善"""
+
+        improved = solution.copy()
+        quality_score = improved.get('quality_score', {})
+
+        # セキュリティ改善
+        if quality_score.get('security', 0) < 20:
+            improved = self._improve_security(improved, iteration)
+
+        # パフォーマンス改善
+        if quality_score.get('performance', 0) < 20:
+            improved = self._improve_performance(improved, iteration)
+        # 可読性改善
+        if quality_score.get('readability', 0) < 20:
+            improved = self._improve_readability(improved, iteration)
+
+        # エラーハンドリング改善
+        if quality_score.get('error_handling', 0) < 18:
+            improved = self._improve_error_handling(improved, iteration)
+
+        return improved
+
+    def template_based_improve(self, solution: Dict[str, Any]) -> Dict[str, Any]:
+        """テンプレートベース改善"""
+
+        improved = solution.copy()
+
+        # 実装タイプに応じたテンプレート適用
+        impl_type = self._detect_implementation_type(solution)
+        template = self.template_library.get(impl_type, {})
+
+        if template:
+            # テンプレートパターン適用
+            improved['implementation'] = self._apply_template_pattern(
+                improved.get('implementation', ''), template
+            )
+
+            # 品質スコア更新
+            improved['quality_score'] = self._calculate_template_quality(improved, template)
+
+        return improved
+
+    def pattern_based_improve(self, solution: Dict[str, Any]) -> Dict[str, Any]:
+        """パターンベース改善"""
+
+        improved = solution.copy()

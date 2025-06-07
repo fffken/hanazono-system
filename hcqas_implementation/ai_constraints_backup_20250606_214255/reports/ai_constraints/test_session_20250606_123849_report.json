@@ -1,0 +1,14 @@
+{
+  "session_id": "test_session_20250606_123849",
+  "start_time": "2025-06-06T12:38:49.426230",
+  "end_time": "2025-06-06T12:38:49.440320",
+  "duration_seconds": 0.01409,
+  "total_checks": 2,
+  "success_count": 1,
+  "violation_count": 1,
+  "error_count": 0,
+  "success_rate": 50.0,
+  "violation_rate": 50.0,
+  "monitor_version": "3.1",
+  "dd_confidence_score": "116/120"
+}
