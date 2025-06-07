@@ -1,61 +1,35 @@
 {
-  "diagnosis_date": "2025-06-07T17:58:22.243688",
+  "diagnosis_date": "2025-06-07T18:56:48.000089",
   "overall_status": "要治療",
   "system_count": {
     "total": 5,
-    "healthy": 2,
-    "partial_dysfunction": 1,
-    "critical_error": 1,
+    "healthy": 1,
+    "partial_dysfunction": 0,
+    "critical_error": 3,
     "minor_issue": 1
   },
   "detailed_results": {
     "ff_preference_learner": {
-      "status": "critical_error",
-      "error": "FFPreferenceLearner.learn_from_interaction() takes 2 positional arguments but 4 were given"
+      "status": "healthy",
+      "functions": {
+        "initialization": "normal",
+        "learning": "normal",
+        "prediction": "normal",
+        "pattern_recognition": "normal",
+        "save_preferences": "normal"
+      }
     },
     "smart_suggestion_engine": {
-      "status": "healthy",
-      "functions": {
-        "initialization": "normal",
-        "suggestion_generation": "normal",
-        "quality_evaluation": "normal",
-        "confidence_calculation": "normal",
-        "ff_alignment": "normal",
-        "alternatives": "normal",
-        "metadata": "normal",
-        "implementation": "normal"
-      },
-      "metrics": {
-        "quality_score": {
-          "total": 75,
-          "security": 15,
-          "performance": 15,
-          "readability": 15,
-          "extensibility": 15,
-          "error_handling": 15
-        },
-        "confidence": 0.3,
-        "ff_alignment": 0.5,
-        "alternatives_count": 0
-      }
+      "status": "critical_error",
+      "error": "invalid syntax (smart_suggestion_engine.py, line 123)"
     },
     "smart_proposal_ui": {
-      "status": "partial_dysfunction",
-      "functions": {
-        "initialization": "normal",
-        "smart_proposal": "fallback_mode",
-        "ui_elements": "normal",
-        "transparency": "normal",
-        "presentation": "normal"
-      }
+      "status": "critical_error",
+      "error": "invalid syntax (smart_suggestion_engine.py, line 123)"
     },
     "integration_system": {
-      "status": "healthy",
-      "functions": {
-        "component_integration": "normal",
-        "data_flow": "normal",
-        "error_handling": "normal"
-      }
+      "status": "error",
+      "error": "cannot access local variable 'SmartProposalUI' where it is not associated with a value"
     },
     "health_monitoring": {
       "status": "minor_issue",
