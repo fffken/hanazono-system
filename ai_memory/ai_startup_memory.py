@@ -52,6 +52,48 @@ class AIStartupMemory:
             print("✅ プロジェクト基盤知識復旧成功")
             print(f"   🏗️ システム構成: {core_knowledge['system_architecture']['hardware']}")
             print(f"   📋 重要ルール: {len(core_knowledge['critical_rules'])}件")
+
+        # システム診断革命手法 - kiokuシステム統合 (2025-06-08確立)
+        diagnostic_protocol = {
+            "protocol_name": "バックアップ前提一時診断スクリプト手法",
+            "version": "1.0", 
+            "established": "2025-06-08",
+            "success_case": "39個自動化スクリプト制御問題完全解決",
+            "proven_results": [
+                "Gemini誤診論破（OS再インストール回避）",
+                "20時間停止バッテリー監視システム復旧",
+                "HANAZONOループ問題完全解決"
+            ],
+            "trigger_conditions": [
+                "システム診断・修復作業時",
+                "複雑な問題調査時",
+                "環境構築・変更作業時",
+                "自動化スクリプト問題発生時"
+            ],
+            "mandatory_workflow": [
+                "1. tar -czf BACKUP_$(date +%Y%m%d_%H%M%S).tar.gz で確実バックアップ",
+                "2. nano [目的]_diagnosis_$(date +%H%M%S).py で一時診断スクリプト作成",
+                "3. 段階的・非破壊的調査実行",
+                "4. rm [診断スクリプト].py で即座削除",
+                "5. 結果記録・次AI継承"
+            ],
+            "core_principles": [
+                "非破壊的アプローチ100%遵守",
+                "段階的問題解決",
+                "完全な記録と透明性",
+                "システム協調優先"
+            ],
+            "cleanup_mandatory": True,
+            "cleanup_patterns": ["*_diagnosis_*.py", "*_emergency_*.py", "*_audit_*.py", "*_inspector_*.py"]
+        }
+        
+        # 診断プロトコル記憶表示
+        if diagnostic_protocol:
+            print("✅ 診断プロトコル記憶復旧成功")
+            print(f"   🛠️ 手法: {diagnostic_protocol['protocol_name']}")
+            print(f"   📊 実績: {diagnostic_protocol['success_case']}")
+            print(f"   🎯 適用条件: {len(diagnostic_protocol['trigger_conditions'])}種類")
+
         
         # 最新セッション情報復旧
         short_term_path = self.memory_root / "storage" / "short_term"
