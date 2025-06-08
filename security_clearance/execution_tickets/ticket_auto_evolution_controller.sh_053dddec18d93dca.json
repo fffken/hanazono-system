@@ -1,0 +1,12 @@
+{
+  "ticket_id": "053dddec18d93dca",
+  "certificate_id": "91f3e19abfca888e397a4b3780f2fd3f",
+  "script_path": "scripts/auto_evolution_controller.sh",
+  "script_hash": "25195b676d11b6678b7b92c59b6a3e07efd4d94f5d5b4332d07835de00c51e0e",
+  "clearance_level": "GREEN",
+  "issue_timestamp": "2025-06-08T22:48:56.984586",
+  "expiry_timestamp": "2025-07-08T22:48:56.984608",
+  "execution_count": 0,
+  "max_executions": 10,
+  "ticket_status": "ACTIVE"
+}

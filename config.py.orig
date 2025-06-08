@@ -1,0 +1,20 @@
+WEATHER_URL = 'https://www.jma.go.jp/bosai/forecast/#area_type=offices&area_code=370000'
+WEATHER_API_URL = 'https://www.jma.go.jp/bosai/forecast/data/forecast/370000.json'
+EMAIL_ENABLED = True
+EMAIL_SENDER = 'fffken@gmail.com'
+EMAIL_PASSWORD = 'bbzpgdsvqlcemyxi'
+EMAIL_RECEIVERS = ['fffken@gmail.com']
+EMAIL_SMTP_SERVER = 'smtp.gmail.com'
+EMAIL_SMTP_PORT = 587
+CHARGE_CURRENT_ID = '07'
+CHARGE_TIME_ID = '10'
+SOC_SETTING_ID = '62'
+SETTINGS = {'winter': {'typeA': {'charge_current': 50, 'charge_time': 45, 'soc': 50}, 'typeB': {'charge_current': 60, 'charge_time': 60, 'soc': 60}}, 'spring_fall': {'typeA': {'charge_current': 40, 'charge_time': 30, 'soc': 35}, 'typeB': {'charge_current': 50, 'charge_time': 45, 'soc': 45}}, 'summer': {'typeA': {'charge_current': 25, 'charge_time': 15, 'soc': 25}, 'typeB': {'charge_current': 35, 'charge_time': 30, 'soc': 35}}}
+WEATHER_TYPE_MAPPING = {'晴': 'typeB', '晴時々曇': 'typeB', '晴一時曇': 'typeB', '晴のち曇': 'typeB', '曇時々晴': 'typeB', '曇一時晴': 'typeB', '曇のち晴': 'typeB', '曇': 'typeA', '曇時々雨': 'typeA', '曇一時雨': 'typeA', '曇のち雨': 'typeA', '雨': 'typeA', '雨時々曇': 'typeA', '雨一時曇': 'typeA', '雨のち曇': 'typeA', '雨時々晴': 'typeA', '雨一時晴': 'typeA', '雨のち晴': 'typeA'}
+LOG_FILE = 'solar_control.log'
+DEFAULT_TYPE = 'typeA'
+WARNING_API_URL = 'https://www.jma.go.jp/bosai/warning/data/warning/370000.json'
+TYPHOON_API_URL = 'https://www.jma.go.jp/bosai/typhoon/data/latest.json'
+WARNING_EMOJI = {'警報': '⚠️', '大雨警報': '⛈️', '洪水警報': '🌊', '暴風警報': '🌪️', '暴風雪警報': '❄️🌪️', '大雪警報': '❄️', '波浪警報': '🌊', '高潮警報': '🌊', '注意報': '⚠️', '大雨注意報': '☔', '洪水注意報': '💧', '強風注意報': '💨', '風雪注意報': '❄️💨', '大雪注意報': '❄️', '波浪注意報': '🌊', '高潮注意報': '🌊', '雷注意報': '⚡', '融雪注意報': '💧', '濃霧注意報': '🌫️', '乾燥注意報': '🔥', 'なだれ注意報': '⛄', '低温注意報': '❄️', '霜注意報': '❄️', '着氷注意報': '❄️', '着雪注意報': '❄️', '特別警報': '🚨', '大雨特別警報': '🚨⛈️', '暴風特別警報': '🚨🌪️', '高潮特別警報': '🚨🌊', '波浪特別警報': '🚨🌊', '暴風雪特別警報': '🚨❄️🌪️', '大雪特別警報': '🚨❄️', '解除': '✅'}
+TYPHOON_EMOJI = '🌀'
+DETAILED_SEASON_EMOJI = {'winter_early': '🍂❄️', 'winter_mid': '❄️☃️', 'winter_late': '❄️🌱', 'spring_early': '🌸🌱', 'spring_mid': '🌸🌷', 'spring_late': '🌿🌦️', 'rainy': '☔🌿', 'summer_early': '☀️🌿', 'summer_mid': '☀️🏖️', 'summer_late': '☀️🍃', 'autumn_early': '🍁🍃', 'autumn_mid': '🍂🍁', 'autumn_late': '🍂❄️'}

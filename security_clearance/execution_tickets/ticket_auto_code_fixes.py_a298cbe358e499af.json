@@ -1,0 +1,12 @@
+{
+  "ticket_id": "a298cbe358e499af",
+  "certificate_id": "537558b4529c176459bc2db9b15cdc70",
+  "script_path": "auto_code_fixes.py",
+  "script_hash": "66d53453443726b0a3dc71dbb3959ef13a03bff4527aa61e108af2cdd529ea8b",
+  "clearance_level": "GREEN",
+  "issue_timestamp": "2025-06-08T22:48:56.964122",
+  "expiry_timestamp": "2025-07-08T22:48:56.964146",
+  "execution_count": 2,
+  "max_executions": 10,
+  "ticket_status": "ACTIVE"
+}

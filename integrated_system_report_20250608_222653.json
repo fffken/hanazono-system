@@ -1,0 +1,68 @@
+{
+  "timestamp": "2025-06-08T22:26:53.852146",
+  "system_health": "良好",
+  "total_conflicts": 1,
+  "conflicts": [
+    {
+      "type": "cron重複",
+      "severity": "高",
+      "detail": "main.py が 2回 cron登録"
+    }
+  ],
+  "script_analysis": {
+    "total_scripts": 7,
+    "safe_scripts": 4,
+    "risky_scripts": 1
+  },
+  "immediate_actions": [
+    "緊急: main.py が 2回 cron登録"
+  ],
+  "recovery_recommendations": [
+    {
+      "script": "scripts/auto_evolution_controller.sh",
+      "priority_score": 110,
+      "safety_score": 100,
+      "risk_level": "低リスク",
+      "purpose": "システム修復・メンテナンス",
+      "conflict_risks": []
+    },
+    {
+      "script": "auto_code_fixes.py",
+      "priority_score": 110,
+      "safety_score": 100,
+      "risk_level": "低リスク",
+      "purpose": "Git操作・バックアップ",
+      "conflict_risks": []
+    },
+    {
+      "script": "scripts/ultimate_cron_auto_fix.sh",
+      "priority_score": 100,
+      "safety_score": 100,
+      "risk_level": "低リスク",
+      "purpose": "Git操作・バックアップ",
+      "conflict_risks": [
+        "venv環境競合リスク",
+        "cron競合リスク"
+      ]
+    },
+    {
+      "script": "scripts/auto_system_generator.sh",
+      "priority_score": 100,
+      "safety_score": 100,
+      "risk_level": "低リスク",
+      "purpose": "Git操作・バックアップ",
+      "conflict_risks": [
+        "venv環境競合リスク",
+        "cron競合リスク"
+      ]
+    },
+    {
+      "script": "start_persistent_ultimate.sh",
+      "priority_score": 65,
+      "safety_score": 75,
+      "risk_level": "中リスク",
+      "purpose": "高度自動化・進化系",
+      "conflict_risks": []
+    }
+  ]
+}

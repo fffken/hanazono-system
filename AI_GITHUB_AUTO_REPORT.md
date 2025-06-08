@@ -1,330 +1,982 @@
 # AI用GitHub自動取得レポート v4.0（100点満点完全版）
 
-*生成時刻*: 2025-06-07 19:58:34
+*生成時刻*: 2025-06-08 16:42:12
 *目的*: 新しいAIセッション開始時の100%完全状況把握
 *完成度*: 🏆 *100点/100点満点達成*
 
 ## 🔍 Git状態の完全把握
 
 ### 📊 リポジトリ基本情報
-- *ブランチ*: main
-- *最新コミット*: 521ba8d 🤖 自動保存: 2025-06-07 19:00 - AI記憶システム更新 (300件)
+- *ブランチ*: feature/system-stabilization-20250607
+- *最新コミット*: 1f3cec8 feat: Implement Capsule Architecture for core modules (Email, HCQAS)
 - *リモートURL*: git@github.com:fffken/hanazono-system.git
-- *未コミット変更*: 302 件
+- *未コミット変更*: 954 件
 
 ### ⚠️ 未コミット変更詳細
 ```
  M AI_GITHUB_AUTO_REPORT.md
- M GOLDEN_VERSION.py
- M add_extract_battery_data.py
- M ai_assistant.py
- M ai_auto_decision.py
- M ai_auto_resolver.py
- M ai_auto_resolver_v2.py
- M ai_empire_system.py
- M ai_learning_database.py
- M ai_memory/ai_startup_memory.py
- M ai_memory/core/continuation_manager.py
- M ai_memory/core/memory_manager.py
- M ai_memory/storage/continuation/technical_constraints.json
- M ai_self_mod_capability_expansion.py
- M ai_self_mod_complexity_reduction.py
- M ai_self_mod_maintainability_enhancement.py
- M archive/session_20250524/connection_manager.py
- M archive/session_20250524/enhanced_email_system_old.py
- M archive/session_20250524/monitoring_backups/backup_20250524_101936_email_notifier.py
- M archive/session_20250524/monitoring_backups/backup_20250524_120045_email_notifier.py
- M ast_fix_indentation.py
- M auto_code_fixes.py
- M auto_fix_email_battery.py
- D auto_guardian.py
- M collect_daily_data.py
- M comprehensive_data_integrator.py
  M config.py
- M current_email_notifier.py
- M data_analyzer.py
- M data_analyzer_v1.py
- M data_util.py
- M electric_bill_tracker.py
- M electric_bill_tracker_v1_backup.py
- M electric_data_manager.py
- M email_notification.py
- M email_notification_new.py
- M email_notifier_BROKEN_20250601_184503.py
- M email_notifier_BROKEN_FINAL_20250601_190126.py
- M email_notifier_backup_20250525_125951.py
- M email_notifier_backup_20250601_112037.py
- M email_notifier_backup_20250601_113017.py
- M email_notifier_backup_20250601_175553.py
- M email_notifier_backup_20250601_180756.py
- M email_notifier_backup_before_final_restore_20250601_183629.py
- M email_notifier_backup_before_fix_20250601_182954.py
- M email_notifier_backup_env_fix_20250601_180147.py
- M email_notifier_fixed.py
- M email_notifier_fixed_v2.py
- M email_notifier_golden_working.py
- M email_notifier_temp1.py
- M email_notifier_ultimate.py
- M email_notifier_ultimate_fixed.py
- M email_notifier_v1.py
- M email_notifier_v2.py
- M email_notifier_v2_1.py
- M email_notifier_working.py
- M enhanced_email_system.py
- M enhanced_email_system_github.py
- M enhanced_email_system_v2.py
- M enhanced_email_system_v2_temp.py
- M enhanced_email_v2_base.py
- M expand_ai_memory.py
- M expand_env_fix.py
- M file_corruption_detector.py
- M fix_dashboard_data.py
- M galactic_domination_project.py
- M github_access_system.py
- M github_auto_fetch.py
- M github_auto_investigator.py
- M github_files/AI_WORK_RULES.md
- M github_files/PROJECT_STATUS.md
- M github_files/github_auto_handover.md
- M github_files/main.py
- M hanazono_dashboard.py
- M hanazono_dev.py
- M hanazono_github_auto.py
- M hanazono_optimizer.py
- M hanazono_ultimate.py
- M hcqas_diagnosis_report.json
- M logger.py
- M logger_util.py
- M lvyuan_collector.py
- M lvyuan_registers.py
  M main.py
- M manual_auto_update.py
- M manual_auto_update_fixed.py
- M modules/database.py
- M monitoring_logs/backup_20250524_175447_email_notifier.py
- M monitoring_logs/backup_20250524_175951_email_notifier.py
- M monitoring_logs/backup_20250524_180454_email_notifier.py
- M monitoring_logs/backup_20250525_022537_email_notifier.py
- M monitoring_logs/backup_20250525_025558_email_notifier.py
- M monitoring_logs/backup_20250525_040647_email_notifier.py
- M monitoring_logs/backup_20250525_101601_email_notifier.py
- M monitoring_logs/backup_20250525_102104_email_notifier.py
- M monitoring_logs/backup_20250525_104738_enhanced_email_system.py
- M monitoring_logs/backup_20250525_130255_email_notifier.py
- M monitoring_logs/backup_20250525_130759_email_notifier.py
- M monitoring_logs/backup_20250525_131302_email_notifier.py
- M monitoring_logs/backup_20250525_132309_email_notifier.py
- M monitoring_logs/backup_20250525_133316_email_notifier.py
- M monitoring_logs/backup_20250525_181126_email_notifier.py
- M monitoring_logs/backup_20250525_185154_email_notifier.py
- M monitoring_logs/backup_20250525_192718_email_notifier.py
- M monitoring_logs/backup_20250530_220639_email_notifier.py
- M monitoring_logs/backup_20250530_221646_email_notifier.py
- M monitoring_logs/backup_20250530_221646_lvyuan_collector.py
- M monitoring_logs/backup_20250530_221646_main.py
- M monitoring_logs/backup_20250531_000804_email_notifier.py
- M monitoring_logs/backup_20250531_000804_lvyuan_collector.py
- M monitoring_logs/backup_20250531_000804_main.py
- M monitoring_logs/backup_20250531_011350_email_notifier.py
- M monitoring_logs/backup_20250531_011350_lvyuan_collector.py
- M monitoring_logs/backup_20250531_011350_main.py
- M monitoring_logs/backup_20250531_015921_email_notifier.py
- M monitoring_logs/backup_20250531_020425_email_notifier.py
- M monitoring_logs/backup_20250531_021432_email_notifier.py
- M monitoring_logs/backup_20250601_113323_email_notifier.py
- M monitoring_logs/backup_20250601_114330_email_notifier.py
- M monitoring_logs/backup_20250601_114834_email_notifier.py
- M monitoring_logs/backup_20250601_175257_email_notifier.py
- M monitoring_logs/backup_20250601_180812_email_notifier.py
- M monitoring_logs/backup_20250601_181822_email_notifier.py
- M monitoring_logs/backup_20250601_182328_email_notifier.py
- M monitoring_logs/backup_20250601_183338_email_notifier.py
- M monitoring_logs/backup_20250601_183843_email_notifier.py
- M monitoring_logs/backup_20250601_184348_email_notifier.py
- M monitoring_logs/backup_20250601_190408_email_notifier.py
- M monitoring_logs/backup_local_20250525_105100_enhanced_email_system.py
  M monitoring_logs/git_changes
  M monitoring_logs/hash_email_notifier.py
- M monitoring_logs/hash_lvyuan_collector.py
  M monitoring_logs/hash_main.py
  M monitoring_logs/process_python3
- M predictive_analysis_system.py
- M report_generator.py
- M revolutionary_battle_system.py
- M safety_backups/test_backup_20250525_023831/email_notifier.py
- M safety_backups/test_backup_20250525_023831/main.py
- M "safety_backups/\343\203\241\343\203\274\343\203\253\346\251\237\350\203\275\345\223\201\350\263\252\346\224\271\345\226\204_20250525_023954/email_notifier.py"
- M "safety_backups/\343\203\241\343\203\274\343\203\253\346\251\237\350\203\275\345\223\201\350\263\252\346\224\271\345\226\204_20250525_023954/main.py"
- M scripts/auto_generated/level2_final_hanazono_integration_20250603_000018.py
- M scripts/auto_generated/level2_hanazono_integration_20250602_234929.py
- M scripts/auto_generated/level2_improved_hanazono_integration_20250602_235751.py
- M scripts/auto_generated/simple_ai_learner_20250602_233317.py
- M scripts/auto_generated/simple_data_analyzer_20250602_233212.py
- M scripts/auto_generated/simple_email_optimizer_20250602_233317.py
- M scripts/auto_generated/simple_system_monitor_20250602_233317.py
- M scripts/fix_docstring_and_indent.py
- M scripts/fix_email_step2.py
- M scripts/fix_email_step3.py
- M season_detector.py
- M self_evolving_ai.py
- M self_evolving_ai_v2.py
- M self_evolving_ai_v3.py
- M settings_editor.py
- M settings_manager.py
- M settings_recommender.py
- M settings_tracker.py
- M setup.py
- M solar_control_scheduler.py
- M space_empire_dashboard.py
- M space_empire_dashboard_fixed.py
- M space_expansion_project.py
- M supreme_ai_prediction.py
  m system_backups/git_organize_20250531_094611
  m system_backups/git_organize_20250531_094739
  m system_backups/git_organize_20250531_174028
  m system_backups/git_organize_20250531_194204
  m system_backups/h_backup_20250602_002956
- M system_health_monitor.py
- M temp_excluded/email_notifier_backup_20250518_155417.py
- M temp_excluded/tests/test_connection.py
- M temp_excluded/tests/test_email.py
- M temp_excluded/tests/test_registers.py
- M ultimate_email_integration.py
- M ultimate_email_integration_fixed.py
- M ultimate_integrated_system.py
- M web_dashboard_server.py
- M write_and_verify.py
- M zero_touch_operation.py
-?? EMERGENCY_20250604_092555/
-?? EMERGENCY_20250604_092610/
-?? EMERGENCY_20250604_092706/
-?? EMERGENCY_20250604_093038/
-?? __init__.py
-?? ai_memory/ai_startup_memory.py.backup_before_auto_detect
-?? ai_memory/core/continuation_manager.py.backup_before_auto_detect
-?? ai_memory/core/continuation_manager.py.before_enhancement
-?? ai_memory/storage/continuation/email/
-?? ai_memory/storage/continuation/hanazono/
-?? ai_memory/storage/continuation/hcqas/
-?? ai_memory/storage/continuation/work_rules/
-?? auto_guardian.py.DISABLED
-?? check_work_environment.sh
-?? complete_safe_backup_20250603_145909/
-?? config.py.before_fix
-?? config.py.broken
-?? data/hanazono_data.db
-?? data_util.py.before_fix
-?? design_violation_detector.py.strict
-?? dynamic_settings_manager.py
-?? dynamic_settings_manager_v1_backup.py
-?? email_notifier_GOLDEN_MASTER_20250604_010604.py
-?? email_notifier_SAFE_WORKING_20250604_003114.py
-?? email_notifier_SAFE_WORKING_20250604_003408.py
-?? email_notifier_backup_20250603_153551.py
-?? email_notifier_broken_backup.py
-?? email_notifier_golden_working.py.before_fix
-?? email_notifier_golden_working_fixed.py
-?? email_notifier_old_testmode.py
-?? email_notifier_simple_backup.py
-?? email_notifier_simple_backup_20250604_002433.py
-?? email_notifier_testmode_backup.py
-?? email_notifier_v2_1.py.backup_before_1year_comparison
-?? email_notifier_v2_1.py.backup_before_battle_integration
-?? email_notifier_v2_1.py.backup_before_replacement
-?? email_notifier_v2_1.py.old
-?? email_notifier_v2_1.py.old_ai_battle_version
-?? email_notifier_v2_1.py.safe_backup_20250605_124816
-?? email_notifier_v2_1.py.safe_backup_20250605_124942
-?? email_notifier_v2_1_battle_system.py
-?? email_notifier_v2_1_github.py
-?? email_protection_vault/
-?? emergency_backup_20250603_084722/
-?? enhanced_email_notifier.py
-?? fix_syntax.py
-?? hanazono_safe_guardian.py
-?? hcqas_complete_diagnosis.py
-?? hcqas_implementation/
-?? kioku_auto_backup_20250603_151706/
-?? kioku_success_snapshot_20250603_151445/
-?? kioku_ultra.py
-?? lvyuan_collector.py.before_fix
-?? mail_diagnostic_safe.sh
-?? main.py.backup_before_daily_report_fix
-?? main_broken_backup.py
-?? ml_enhancement_phase1.py
-?? ml_enhancement_phase1_v2.py
-?? ml_enhancement_phase1_v3.py
-?? ml_enhancement_phase1_v4.py
-?? ml_enhancement_phase1_v4_backup.py
-?? ml_news_generator.py
-?? monitoring_logs/backup_20250603_052855_email_notifier.py
-?? monitoring_logs/backup_20250603_052855_lvyuan_collector.py
-?? monitoring_logs/backup_20250603_052855_main.py
-?? monitoring_logs/backup_20250603_085154_email_notifier.py
-?? monitoring_logs/backup_20250603_085154_lvyuan_collector.py
-?? monitoring_logs/backup_20250603_085154_main.py
-?? monitoring_logs/backup_20250603_085659_email_notifier.py
-?? monitoring_logs/backup_20250603_085659_lvyuan_collector.py
-?? monitoring_logs/backup_20250603_085659_main.py
-?? monitoring_logs/backup_20250603_090205_main.py
-?? monitoring_logs/backup_20250603_090206_email_notifier.py
-?? monitoring_logs/backup_20250603_090206_lvyuan_collector.py
-?? monitoring_logs/backup_20250603_090711_email_notifier.py
-?? monitoring_logs/backup_20250603_090711_lvyuan_collector.py
-?? monitoring_logs/backup_20250603_090711_main.py
-?? monitoring_logs/backup_20250603_091216_email_notifier.py
-?? monitoring_logs/backup_20250603_091216_lvyuan_collector.py
-?? monitoring_logs/backup_20250603_091216_main.py
-?? monitoring_logs/backup_20250603_150716_main.py
-?? monitoring_logs/backup_20250603_151729_email_notifier.py
-?? monitoring_logs/backup_20250604_005039_email_notifier.py
-?? monitoring_logs/backup_20250604_011058_email_notifier.py
-?? monitoring_logs/backup_20250604_091015_lvyuan_collector.py
-?? monitoring_logs/backup_20250604_091524_lvyuan_collector.py
-?? monitoring_logs/backup_20250605_085849_main.py
-?? monitoring_logs/backup_20250605_133348_email_notifier.py
-?? precise_backup_20250603_085506/
-?? precise_backup_20250603_090316/
-?? protection_controller.sh
-?? safe_mass_fix.sh
-?? season_detector.py.before_fix
-?? season_detector.py.broken
-?? settings_backups/
-?? settings_manager.py.before_fix
-?? settings_manager_broken_backup.py
-?? settings_recommender.py.before_fix
-?? settings_recommender.py.broken
-?? smart_proposal_ui.py
-?? system_backups/backup_20250603_083658/
-?? system_backups/backup_20250603_234306/
-?? system_backups/backup_20250604_140745/
-?? system_backups/backup_20250604_152256/
-?? system_backups/backup_20250604_182556/
-?? system_backups/backup_20250604_195515/
-?? system_backups/backup_20250605_091013/
-?? system_backups/backup_20250605_125154/
-?? system_backups/backup_20250605_141000/
-?? system_backups/backup_20250605_210646/
-?? system_backups/backup_20250605_232930/
-?? system_backups/backup_20250606_100425/
-?? system_backups/backup_20250606_120537/
-?? system_backups/backup_20250606_151037/
-?? ultimate_backup_20250603_090708/
-?? ultimate_fix.py
-?? ultimate_protection_system.py
-?? venv_backup_20250603_085615/
-?? venv_broken_20250603_085659/
-?? weather_forecast.py.before_fix
-?? weather_forecast.py.broken
+ D venv_broken_20250603_085659/bin/Activate.ps1
+ D venv_broken_20250603_085659/bin/activate
+ D venv_broken_20250603_085659/bin/activate.csh
+ D venv_broken_20250603_085659/bin/activate.fish
+ D venv_broken_20250603_085659/bin/normalizer
+ D venv_broken_20250603_085659/bin/pip
+ D venv_broken_20250603_085659/bin/pip3
+ D venv_broken_20250603_085659/bin/pip3.11
+ D venv_broken_20250603_085659/bin/pyserial-miniterm
+ D venv_broken_20250603_085659/bin/pyserial-ports
+ D venv_broken_20250603_085659/bin/python
+ D venv_broken_20250603_085659/bin/python3
+ D venv_broken_20250603_085659/bin/python3.11
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/_distutils_hack/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/_distutils_hack/override.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/certifi-2025.4.26.dist-info/INSTALLER
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/certifi-2025.4.26.dist-info/METADATA
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/certifi-2025.4.26.dist-info/RECORD
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/certifi-2025.4.26.dist-info/WHEEL
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/certifi-2025.4.26.dist-info/licenses/LICENSE
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/certifi/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/certifi/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/certifi/cacert.pem
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/certifi/core.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/certifi/py.typed
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer-3.4.2.dist-info/INSTALLER
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer-3.4.2.dist-info/METADATA
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer-3.4.2.dist-info/RECORD
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer-3.4.2.dist-info/WHEEL
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer-3.4.2.dist-info/licenses/LICENSE
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/api.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/cd.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/cli/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/cli/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/constant.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/legacy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/md.cpython-311-aarch64-linux-gnu.so
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/md.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/md__mypyc.cpython-311-aarch64-linux-gnu.so
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/models.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/py.typed
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/charset_normalizer/version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/distutils-precedence.pth
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna-3.10.dist-info/INSTALLER
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna-3.10.dist-info/LICENSE.md
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna-3.10.dist-info/METADATA
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna-3.10.dist-info/RECORD
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna-3.10.dist-info/WHEEL
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna/codec.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna/compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna/core.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna/idnadata.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna/intranges.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna/package_data.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna/py.typed
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/idna/uts46data.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip-23.0.1.dist-info/INSTALLER
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip-23.0.1.dist-info/METADATA
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip-23.0.1.dist-info/RECORD
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip-23.0.1.dist-info/REQUESTED
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip-23.0.1.dist-info/WHEEL
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/__pip-runner__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/build_env.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cache.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/autocompletion.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/base_command.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/cmdoptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/command_context.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/main.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/main_parser.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/parser.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/progress_bars.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/req_command.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/spinners.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/cli/status_codes.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/cache.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/check.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/completion.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/configuration.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/debug.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/download.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/freeze.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/hash.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/help.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/index.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/inspect.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/install.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/list.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/search.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/show.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/uninstall.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/commands/wheel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/configuration.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/distributions/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/distributions/base.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/distributions/installed.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/distributions/sdist.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/distributions/wheel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/index/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/index/collector.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/index/package_finder.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/index/sources.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/locations/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/locations/_distutils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/locations/_sysconfig.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/locations/base.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/main.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/metadata/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/metadata/_json.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/metadata/base.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/metadata/importlib/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/metadata/importlib/_compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/metadata/importlib/_dists.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/metadata/importlib/_envs.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/metadata/pkg_resources.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/candidate.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/direct_url.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/format_control.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/index.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/installation_report.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/link.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/scheme.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/search_scope.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/selection_prefs.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/target_python.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/models/wheel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/network/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/network/auth.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/network/cache.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/network/download.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/network/lazy_wheel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/network/session.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/network/utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/network/xmlrpc.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/build/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/build/build_tracker.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/build/metadata.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/build/metadata_editable.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/build/metadata_legacy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/build/wheel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/build/wheel_editable.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/build/wheel_legacy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/check.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/freeze.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/install/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/install/editable_legacy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/install/legacy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/install/wheel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/operations/prepare.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/pyproject.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/req/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/req/constructors.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/req/req_file.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/req/req_install.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/req/req_set.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/req/req_uninstall.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/base.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/legacy/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/legacy/resolver.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/resolvelib/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/resolvelib/base.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/resolvelib/candidates.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/resolvelib/factory.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/resolvelib/provider.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/resolvelib/reporter.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/resolvelib/requirements.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/resolution/resolvelib/resolver.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/self_outdated_check.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/_log.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/appdirs.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/compatibility_tags.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/datetime.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/deprecation.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/direct_url_helpers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/distutils_args.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/egg_link.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/encoding.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/entrypoints.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/filesystem.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/filetypes.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/glibc.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/hashes.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/inject_securetransport.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/logging.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/misc.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/models.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/packaging.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/setuptools_build.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/subprocess.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/unpacking.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/urls.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/virtualenv.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/utils/wheel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/vcs/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/vcs/bazaar.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/vcs/git.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/vcs/mercurial.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/vcs/subversion.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/vcs/versioncontrol.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_internal/wheel_builder.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/_cmd.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/adapter.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/cache.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/caches/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/caches/file_cache.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/caches/redis_cache.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/controller.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/filewrapper.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/heuristics.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/serialize.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/cachecontrol/wrapper.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/certifi/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/certifi/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/certifi/cacert.pem
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/certifi/core.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/big5freq.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/big5prober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/chardistribution.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/charsetgroupprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/charsetprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/cli/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/cli/chardetect.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/codingstatemachine.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/codingstatemachinedict.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/cp949prober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/enums.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/escprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/escsm.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/eucjpprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/euckrfreq.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/euckrprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/euctwfreq.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/euctwprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/gb2312freq.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/gb2312prober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/hebrewprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/jisfreq.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/johabfreq.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/johabprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/jpcntx.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/langbulgarianmodel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/langgreekmodel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/langhebrewmodel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/langhungarianmodel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/langrussianmodel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/langthaimodel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/langturkishmodel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/latin1prober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/macromanprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/mbcharsetprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/mbcsgroupprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/mbcssm.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/metadata/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/metadata/languages.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/resultdict.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/sbcharsetprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/sbcsgroupprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/sjisprober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/universaldetector.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/utf1632prober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/utf8prober.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/chardet/version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/colorama/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/colorama/ansi.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/colorama/ansitowin32.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/colorama/initialise.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/colorama/tests/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/colorama/tests/utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/colorama/win32.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/colorama/winterm.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/database.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/index.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/locators.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/manifest.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/markers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/metadata.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/resources.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/scripts.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distlib/wheel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distro/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distro/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/distro/distro.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/idna/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/idna/codec.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/idna/compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/idna/core.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/idna/idnadata.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/idna/intranges.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/idna/package_data.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/idna/uts46data.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/msgpack/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/msgpack/exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/msgpack/ext.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/msgpack/fallback.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/__about__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/_manylinux.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/_musllinux.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/_structures.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/markers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/requirements.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/specifiers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/tags.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/packaging/version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pkg_resources/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pkg_resources/py31compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/platformdirs/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/platformdirs/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/platformdirs/android.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/platformdirs/api.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/platformdirs/macos.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/platformdirs/unix.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/platformdirs/version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/platformdirs/windows.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/cmdline.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/console.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/filter.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/filters/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatter.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/_mapping.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/bbcode.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/groff.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/html.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/img.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/irc.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/latex.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/other.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/pangomarkup.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/rtf.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/svg.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/terminal.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/formatters/terminal256.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/lexer.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/lexers/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/lexers/_mapping.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/lexers/python.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/modeline.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/plugin.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/regexopt.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/scanner.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/sphinxext.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/style.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/styles/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/token.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/unistring.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pygments/util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/actions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/common.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/core.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/diagram/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/helpers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/results.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/testing.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/unicode.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyparsing/util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_impl.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/__version__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/_internal_utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/adapters.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/api.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/auth.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/certs.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/cookies.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/help.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/hooks.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/models.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/packages.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/sessions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/status_codes.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/structures.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/requests/utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/resolvelib/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/resolvelib/compat/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/resolvelib/compat/collections_abc.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/resolvelib/providers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/resolvelib/reporters.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/resolvelib/resolvers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/resolvelib/structs.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_cell_widths.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_emoji_codes.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_emoji_replace.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_export_format.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_extension.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_inspect.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_log_render.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_loop.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_null_file.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_palettes.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_pick.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_ratio.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_spinners.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_stack.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_timer.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_win32_console.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_windows.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_windows_renderer.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/_wrap.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/abc.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/align.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/ansi.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/bar.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/box.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/cells.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/color.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/color_triplet.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/columns.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/console.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/constrain.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/containers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/control.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/default_styles.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/diagnose.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/emoji.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/errors.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/file_proxy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/filesize.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/highlighter.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/json.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/jupyter.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/layout.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/live.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/live_render.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/logging.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/markup.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/measure.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/padding.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/pager.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/palette.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/panel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/pretty.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/progress.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/progress_bar.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/prompt.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/protocol.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/region.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/repr.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/rule.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/scope.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/screen.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/segment.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/spinner.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/status.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/style.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/styled.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/syntax.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/table.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/terminal_theme.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/text.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/theme.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/themes.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/traceback.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/rich/tree.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/six.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/_asyncio.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/_utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/after.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/before.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/before_sleep.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/nap.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/retry.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/stop.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/tornadoweb.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tenacity/wait.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tomli/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tomli/_parser.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tomli/_re.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/tomli/_types.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/typing_extensions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/_collections.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/_version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/connection.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/connectionpool.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/contrib/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/contrib/_appengine_environ.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/contrib/_securetransport/bindings.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/contrib/_securetransport/low_level.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/contrib/appengine.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/contrib/ntlmpool.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/contrib/securetransport.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/contrib/socks.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/fields.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/filepost.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/packages/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/packages/backports/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/packages/backports/makefile.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/packages/six.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/poolmanager.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/request.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/response.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/connection.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/proxy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/queue.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/request.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/response.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/retry.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/ssl_.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/ssl_match_hostname.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/ssltransport.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/timeout.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/url.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/urllib3/util/wait.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/webencodings/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/webencodings/labels.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/webencodings/mklabels.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/webencodings/tests.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/_vendor/webencodings/x_user_defined.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pip/py.typed
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/importlib_resources/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/importlib_resources/_adapters.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/importlib_resources/_common.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/importlib_resources/_compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/importlib_resources/_itertools.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/importlib_resources/_legacy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/importlib_resources/abc.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/importlib_resources/readers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/importlib_resources/simple.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/jaraco/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/jaraco/context.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/jaraco/functools.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/jaraco/text/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/more_itertools/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/more_itertools/more.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/more_itertools/recipes.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/__about__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/_manylinux.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/_musllinux.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/_structures.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/markers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/requirements.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/specifiers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/tags.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/packaging/version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/platformdirs/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/platformdirs/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/platformdirs/android.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/platformdirs/api.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/platformdirs/macos.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/platformdirs/unix.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/platformdirs/version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/platformdirs/windows.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/actions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/common.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/core.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/diagram/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/helpers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/results.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/testing.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/unicode.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/pyparsing/util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/typing_extensions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/_vendor/zipp.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pkg_resources/extern/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pyserial-3.5.dist-info/DESCRIPTION.rst
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pyserial-3.5.dist-info/INSTALLER
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pyserial-3.5.dist-info/METADATA
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pyserial-3.5.dist-info/RECORD
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pyserial-3.5.dist-info/WHEEL
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pyserial-3.5.dist-info/metadata.json
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pysolarmanv5-3.0.6.dist-info/INSTALLER
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pysolarmanv5-3.0.6.dist-info/LICENSE
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pysolarmanv5-3.0.6.dist-info/METADATA
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pysolarmanv5-3.0.6.dist-info/RECORD
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pysolarmanv5-3.0.6.dist-info/REQUESTED
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pysolarmanv5-3.0.6.dist-info/WHEEL
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pysolarmanv5/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pysolarmanv5/pysolarmanv5.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/pysolarmanv5/pysolarmanv5_async.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests-2.32.3.dist-info/INSTALLER
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests-2.32.3.dist-info/LICENSE
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests-2.32.3.dist-info/METADATA
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests-2.32.3.dist-info/RECORD
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests-2.32.3.dist-info/REQUESTED
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests-2.32.3.dist-info/WHEEL
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/__version__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/_internal_utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/adapters.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/api.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/auth.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/certs.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/cookies.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/help.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/hooks.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/models.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/packages.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/sessions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/status_codes.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/structures.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/requests/utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/__main__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/rfc2217.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/rs485.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/serialcli.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/serialjava.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/serialposix.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/serialutil.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/serialwin32.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/threaded/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/tools/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/tools/hexlify_codec.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/tools/list_ports.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/tools/list_ports_common.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/tools/list_ports_linux.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/tools/list_ports_osx.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/tools/list_ports_posix.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/tools/list_ports_windows.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/tools/miniterm.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/urlhandler/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/urlhandler/protocol_alt.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/urlhandler/protocol_cp2110.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/urlhandler/protocol_hwgrep.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/urlhandler/protocol_loop.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/urlhandler/protocol_rfc2217.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/urlhandler/protocol_socket.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/urlhandler/protocol_spy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/serial/win32.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools-66.1.1.dist-info/INSTALLER
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools-66.1.1.dist-info/LICENSE
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools-66.1.1.dist-info/METADATA
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools-66.1.1.dist-info/RECORD
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools-66.1.1.dist-info/REQUESTED
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools-66.1.1.dist-info/WHEEL
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_deprecation_warning.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/_collections.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/_functools.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/_log.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/_macos_compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/_msvccompiler.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/archive_util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/bcppcompiler.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/ccompiler.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/cmd.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/_framework_compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/bdist.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/bdist_dumb.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/bdist_rpm.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/build.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/build_clib.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/build_ext.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/build_py.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/build_scripts.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/check.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/clean.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/config.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/install.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/install_data.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/install_egg_info.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/install_headers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/install_lib.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/install_scripts.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/py37compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/register.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/sdist.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/command/upload.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/config.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/core.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/cygwinccompiler.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/debug.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/dep_util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/dir_util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/dist.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/errors.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/extension.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/fancy_getopt.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/file_util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/filelist.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/log.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/msvc9compiler.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/msvccompiler.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/py38compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/py39compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/spawn.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/sysconfig.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/text_file.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/unixccompiler.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_distutils/versionpredicate.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_entry_points.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_imp.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_importlib.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_itertools.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_path.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_reqs.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_metadata/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_metadata/_adapters.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_metadata/_collections.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_metadata/_compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_metadata/_functools.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_metadata/_itertools.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_metadata/_meta.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_metadata/_text.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_resources/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_resources/_adapters.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_resources/_common.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_resources/_compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_resources/_itertools.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_resources/_legacy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_resources/abc.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_resources/readers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/importlib_resources/simple.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/jaraco/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/jaraco/context.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/jaraco/functools.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/jaraco/text/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/more_itertools/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/more_itertools/more.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/more_itertools/recipes.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/ordered_set.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/__about__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/_manylinux.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/_musllinux.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/_structures.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/markers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/requirements.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/specifiers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/tags.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/packaging/version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/actions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/common.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/core.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/diagram/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/helpers.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/results.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/testing.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/unicode.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/pyparsing/util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/tomli/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/tomli/_parser.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/tomli/_re.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/tomli/_types.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/typing_extensions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/_vendor/zipp.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/archive_util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/build_meta.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/cli-32.exe
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/cli-64.exe
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/cli-arm64.exe
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/cli.exe
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/alias.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/bdist_egg.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/bdist_rpm.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/build.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/build_clib.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/build_ext.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/build_py.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/develop.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/dist_info.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/easy_install.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/editable_wheel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/egg_info.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/install.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/install_egg_info.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/install_lib.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/install_scripts.py
+ D "venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/launcher manifest.xml"
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/py36compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/register.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/rotate.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/saveopts.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/sdist.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/setopt.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/test.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/upload.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/command/upload_docs.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/_apply_pyprojecttoml.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/_validate_pyproject/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/_validate_pyproject/error_reporting.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/_validate_pyproject/extra_validations.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/_validate_pyproject/fastjsonschema_exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/_validate_pyproject/fastjsonschema_validations.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/_validate_pyproject/formats.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/expand.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/pyprojecttoml.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/config/setupcfg.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/dep_util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/depends.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/discovery.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/dist.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/errors.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/extension.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/extern/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/glob.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/gui-32.exe
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/gui-64.exe
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/gui-arm64.exe
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/gui.exe
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/installer.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/launch.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/logging.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/monkey.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/msvc.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/namespaces.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/package_index.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/py34compat.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/sandbox.py
+ D "venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/script (dev).tmpl"
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/script.tmpl
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/unicode_utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/wheel.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/setuptools/windows_support.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/uModbus-1.0.4.dist-info/INSTALLER
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/uModbus-1.0.4.dist-info/LICENSE
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/uModbus-1.0.4.dist-info/METADATA
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/uModbus-1.0.4.dist-info/RECORD
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/uModbus-1.0.4.dist-info/WHEEL
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/client/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/client/serial/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/client/serial/redundancy_check.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/client/serial/rtu.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/client/tcp.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/config.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/functions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/route.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/server/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/server/serial/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/server/serial/rtu.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/server/tcp.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/umodbus/utils.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3-2.4.0.dist-info/INSTALLER
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3-2.4.0.dist-info/METADATA
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3-2.4.0.dist-info/RECORD
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3-2.4.0.dist-info/REQUESTED
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3-2.4.0.dist-info/WHEEL
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/_base_connection.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/_collections.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/_request_methods.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/_version.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/connection.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/connectionpool.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/contrib/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/contrib/emscripten/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/contrib/emscripten/connection.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/contrib/emscripten/emscripten_fetch_worker.js
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/contrib/emscripten/fetch.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/contrib/emscripten/request.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/contrib/emscripten/response.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/contrib/pyopenssl.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/contrib/socks.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/exceptions.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/fields.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/filepost.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/http2/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/http2/connection.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/http2/probe.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/poolmanager.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/py.typed
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/response.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/__init__.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/connection.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/proxy.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/request.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/response.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/retry.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/ssl_.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/ssl_match_hostname.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/ssltransport.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/timeout.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/url.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/util.py
+ D venv_broken_20250603_085659/lib/python3.11/site-packages/urllib3/util/wait.py
+ D venv_broken_20250603_085659/lib64
+ D venv_broken_20250603_085659/pyvenv.cfg
+?? config.py.orig
+?? config.py.rej
+?? development_log.md
+?? email_notifier.github.py
+?? monitoring_logs/backup_20250608_013045_main.py
+?? monitoring_logs/backup_20250608_013550_email_notifier.py
+?? monitoring_logs/backup_20250608_120139_email_notifier.py
+?? monitoring_logs/backup_20250608_121702_main.py
+?? monitoring_logs/backup_20250608_125746_main.py
+?? monitoring_logs/backup_20250608_135859_main.py
+?? unified_scanner.py
 ```
 
 ### 📝 最近のコミット履歴（5件）
 ```
+1f3cec8 feat: Implement Capsule Architecture for core modules (Email, HCQAS)
+9123515 🤖 自動保存: 2025-06-07 22:00 - AI記憶システム更新 (312件)
+42aa9ae 🤖 自動保存: 2025-06-07 20:00 - AI記憶システム更新 (307件)
 521ba8d 🤖 自動保存: 2025-06-07 19:00 - AI記憶システム更新 (300件)
 e28873d 🤖 自動保存: 2025-06-07 18:00 - AI記憶システム更新 (300件)
-762710c 🤖 自動保存: 2025-06-07 16:00 - AI記憶システム更新 (302件)
-27b7c60 🤖 自動保存: 2025-06-07 12:00 - AI記憶システム更新 (299件)
-a14ffb3 🤖 自動保存: 2025-06-06 16:00 - AI記憶システム更新 (302件)
 ```
 
 ## 🔬 段階1: ファイル内容深掘り分析
@@ -338,239 +990,59 @@ a14ffb3 🤖 自動保存: 2025-06-06 16:00 - AI記憶システム更新 (302件
         "soc_setting_id": "62"
     },
     "seasonal_settings": {
-        "winter": {
-            "typeA": {
-                "charge_current": 50,
-                "charge_time": 45,
-                "soc": 50
-            },
-            "typeB": {
-                "charge_current": 60,
-                "charge_time": 60,
-                "soc": 60
-            }
-        },
-        "spring_fall": {
-            "typeA": {
-                "charge_current": 40,
-                "charge_time": 30,
-                "soc": 35
-            },
-            "typeB": {
-                "charge_current": 50,
-                "charge_time": 45,
-                "soc": 45
-            }
-        },
-        "summer": {
-            "typeA": {
-                "charge_current": 25,
-                "charge_time": 15,
-                "soc": 25
-            },
-            "typeB": {
-                "charge_current": 35,
-                "charge_time": 30,
-                "soc": 35
-            }
-        }
+        "winter": { "typeA": { "charge_current": 50, "charge_time": 45, "soc": 50 }, "typeB": { "charge_current": 60, "charge_time": 60, "soc": 60 } },
+        "spring_fall": { "typeA": { "charge_current": 40, "charge_time": 30, "soc": 35 }, "typeB": { "charge_current": 50, "charge_time": 45, "soc": 45 } },
+        "summer": { "typeA": { "charge_current": 25, "charge_time": 15, "soc": 25 }, "typeB": { "charge_current": 35, "charge_time": 30, "soc": 35 } }
     },
     "detailed_seasonal_settings": {
-        "winter_early": {
-            "reference": "winter"
-        },
-        "winter_mid": {
-            "reference": "winter"
-        },
-        "winter_late": {
-            "reference": "winter"
-        },
-        "spring_early": {
-            "reference": "spring_fall"
-        },
-        "spring_mid": {
-            "reference": "spring_fall"
-        },
-        "spring_late": {
-            "reference": "spring_fall"
-        },
-        "rainy": {
-            "reference": "spring_fall"
-        },
-        "summer_early": {
-            "reference": "summer"
-        },
-        "summer_mid": {
-            "reference": "summer"
-        },
-        "summer_late": {
-            "reference": "summer"
-        },
-        "autumn_early": {
-            "reference": "spring_fall"
-        },
-        "autumn_mid": {
-            "reference": "spring_fall"
-        },
-        "autumn_late": {
-            "reference": "spring_fall"
-        }
+        "winter_early": { "reference": "winter" }, "winter_mid": { "reference": "winter" }, "winter_late": { "reference": "winter" },
+        "spring_early": { "reference": "spring_fall" }, "spring_mid": { "reference": "spring_fall" }, "spring_late": { "reference": "spring_fall" },
+        "rainy": { "reference": "spring_fall" },
+        "summer_early": { "reference": "summer" }, "summer_mid": { "reference": "summer" }, "summer_late": { "reference": "summer" },
+        "autumn_early": { "reference": "spring_fall" }, "autumn_mid": { "reference": "spring_fall" }, "autumn_late": { "reference": "spring_fall" }
     },
     "notification": {
         "email": {
             "enabled": true,
             "template": {
-                "subject": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-                "subject_with_warning": "\u26a0\ufe0f \u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011 \u8a2d\u5b9a\u63a8\u5968\u901a\u77e5",
-                "footer": "\u203b\u3053\u306e\u8a2d\u5b9a\u306f\u5929\u6c17\u4e88\u5831\u3068\u5b63\u7bc0\u306b\u57fa\u3065\u3044\u3066\u81ea\u52d5\u7684\u306b\u8a08\u7b97\u3055\u308c\u3066\u3044\u307e\u3059\u3002\n\u203b\u5b9f\u969b\u306e\u8a2d\u5b9a\u5909\u66f4\u306f\u624b\u52d5\u3067\u884c\u3046\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\n\n-----\n\u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u9001\u4fe1\u3055\u308c\u3066\u3044\u307e\u3059\u3002"
+                "subject": "【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+                "subject_with_warning": "⚠️ 【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+                "title": "【ソーラー蓄電システム】 設定推奨通知",
+                "footer": "※この設定は天気予報と季節に基づいて自動的に計算されています。\n※実際の変更は手動で行う必要があります。\n\n-----\n本メールは自動送信されています。"
             },
             "smtp_server": "smtp.gmail.com",
             "smtp_port": 587,
-            "email_sender": "fffken@gmail.com",
-            "email_recipients": [
-                "fffken@gmail.com"
-            ],
             "smtp_user": "fffken@gmail.com",
-            "smtp_password": "${SMTP_PASSWORD}"
+            "smtp_password": "${SMTP_PASSWORD}",
+            "email_sender": "fffken@gmail.com",
+            "email_recipients": ["fffken@gmail.com"],
+            "smtp_use_tls": true,
+            "smtp_use_ssl": false
         },
-        "line": {
-            "enabled": false,
-            "template": {
-                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968",
-                "footer": "\u203b\u81ea\u52d5\u8a08\u7b97\u3055\u308c\u305f\u63a8\u5968\u8a2d\u5b9a\u3067\u3059"
-            }
-        },
-        "telegram": {
-            "enabled": false,
-            "bot_token": "",
-            "chat_id": "",
-            "template": {
-                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968",
-                "footer": "\u203b\u81ea\u52d5\u8a08\u7b97\u3055\u308c\u305f\u63a8\u5968\u8a2d\u5b9a\u3067\u3059"
-            }
-        }
+        "line": { "enabled": false },
+        "telegram": { "enabled": false }
     },
-    "weather_connectors": [
-        "\u3000\u5f8c\u3000",
-        "\u3000\u306e\u3061\u3000",
-        "\u3000\u6642\u3005\u3000",
-        "\u3000\u4e00\u6642\u3000",
-        "\u3000\u591c\u3000",
-        "\u3000\u591c\u9045\u304f\u3000",
-        "\u3000\u6240\u306b\u3088\u308a\u3000",
-        "\u3000\u3067\u3000",
-        "\u3000\u304b\u3089\u3000",
-        "\u3000\u307e\u305f\u306f\u3000"
-    ],
-    "weather_icons": {
-        "\u6674": "\u2600\ufe0f",
-        "\u6674\u308c": "\u2600\ufe0f",
-        "\u66c7": "\u2601\ufe0f",
-        "\u66c7\u308a": "\u2601\ufe0f",
-        "\u304f\u3082\u308a": "\u2601\ufe0f",
-        "\u96e8": "\ud83c\udf27\ufe0f",
-        "\u96ea": "\u2744\ufe0f",
-        "\u96f7": "\u26a1",
-        "\u9727": "\ud83c\udf2b\ufe0f"
-    },
+    "weather_connectors": ["　後　", "　のち　", "　時々　", "　一時　", "　夜　", "　夜遅く　", "　所により　", "　で　", "　から　", "　または　"],
+    "weather_icons": { "晴": "☀️", "晴れ": "☀️", "曇": "☁️", "曇り": "☁️", "くもり": "☁️", "雨": "🌧️", "雪": "❄️", "雷": "⚡", "霧": "🌫️" },
     "season_icons": {
-        "winter_early": "\ud83c\udf42\u2744\ufe0f",
-        "winter_mid": "\u2744\ufe0f\u2603\ufe0f",
-        "winter_late": "\u2744\ufe0f\ud83c\udf31",
-        "spring_early": "\ud83c\udf38\ud83c\udf31",
-        "spring_mid": "\ud83c\udf38\ud83c\udf37",
-        "spring_late": "\ud83c\udf3f\ud83c\udf26\ufe0f",
-        "rainy": "\u2614\ud83c\udf3f",
-        "summer_early": "\u2600\ufe0f\ud83c\udf3f",
-        "summer_mid": "\u2600\ufe0f\ud83c\udfd6\ufe0f",
-        "summer_late": "\u2600\ufe0f\ud83c\udf43",
-        "autumn_early": "\ud83c\udf41\ud83c\udf43",
-        "autumn_mid": "\ud83c\udf42\ud83c\udf41",
-        "autumn_late": "\ud83c\udf42\u2744\ufe0f"
+        "winter_early": "🍂❄️", "winter_mid": "❄️️☃️", "winter_late": "❄️🌱",
+        "spring_early": "🌸🌱", "spring_mid": "🌸🌿", "spring_late": "🌿🌦️",
+        "rainy": "☔️🌿",
+        "summer_early": "☀️🌿", "summer_mid": "☀️🏖️", "summer_late": "☀️🍇",
+        "autumn_early": "🍁🍇", "autumn_mid": "🍂🍁", "autumn_late": "🍂❄️"
     },
-    "inverter": {
-        "ip": "192.168.0.202",
-        "serial": 3528830226,
-        "mac": "D4:27:87:16:7A:F8",
-        "port": 8899,
-        "mb_slave_id": 1
-    },
-    "network": {
-        "subnet": "192.168.0.0/24"
-    },
-    "email": {
-        "smtp_server": "smtp.gmail.com",
-        "smtp_port": 587,
-        "smtp_user": "fffken@gmail.com",
-        "smtp_password": "${SMTP_PASSWORD}",
-        "sender": "fffken@gmail.com",
-        "recipients": [
-            "fffken@gmail.com"
-        ],
-        "admin_email": "fffken@gmail.com",
-        "recipient": "fffken@gmail.com",
-        "email_sender": "fffken@gmail.com",
-        "email_recipients": [
-            "fffken@gmail.com"
-        ],
-        "smtp_username": "fffken@gmail.com",
-        "smtp_use_tls": true,
-        "smtp_use_ssl": false
-    },
+    "inverter": { "ip": "192.168.0.202", "serial": 3528830226, "port": 8899, "mb_slave_id": 1 },
+    "network": { "subnet": "192.168.0.0/24" },
     "monitoring": {
         "interval_minutes": 15,
         "key_registers": [
-            {
-                "address": "0x0100",
-                "name": "\u30d0\u30c3\u30c6\u30ea\u30fcSOC",
-                "unit": "%",
-                "factor": 1,
-                "emoji": "\ud83d\udd0b"
-            },
-            {
-                "address": "0x0101",
-                "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u96fb\u5727",
-                "unit": "V",
-                "factor": 0.1,
-                "emoji": "\u26a1"
-            },
-            {
-                "address": "0x0102",
-                "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u96fb\u6d41",
-                "unit": "A",
-                "factor": 0.1,
-                "emoji": "\ud83d\udd0c"
-            },
-            {
-                "address": "0x020E",
-                "name": "\u6a5f\u5668\u72b6\u614b",
-                "unit": "",
-                "factor": 1,
-                "emoji": "\ud83d\udcca"
-            },
-            {
-                "address": "0xE012",
-                "name": "\u30d6\u30fc\u30b9\u30c8\u5145\u96fb\u6642\u9593",
-                "unit": "\u5206",
-                "factor": 1,
-                "emoji": "\u23f1\ufe0f"
-            }
+            { "address": "0x0100", "name": "バッテリーSOC", "unit": "%", "factor": 1, "emoji": "🔋" },
+            { "address": "0x0101", "name": "バッテリー電圧", "unit": "V", "factor": 0.1, "emoji": "⚡" }
         ]
     },
-    "files": {
-        "data_prefix": "data_",
-        "date_format": "%Y%m%d",
-        "data_directory": "data"
-    },
-    "openweathermap": {
-        "api_key": "f03c7c0d5051735e9af4a782d0be60c1",
-        "location": "\u9ad8\u677e\u5e02"
-    },
-    "modbus": {
-        "port": 8899,
-        "host": "192.168.0.202"
-    }
+    "files": { "data_prefix": "data_", "date_format": "%Y%m%d", "data_directory": "data" },
+    "openweathermap": { "api_key": "f03c7c0d5051735e9af4a782d0be60c1", "location": "高松市" },
+    "modbus": { "port": 8899, "host": "192.168.0.202" }
 }
 ```
 
@@ -582,51 +1054,27 @@ a14ffb3 🤖 自動保存: 2025-06-06 16:00 - AI記憶システム更新 (302件
         "email": {
             "enabled": true,
             "template": {
-                "subject": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-                "subject_with_warning": "\u26a0\ufe0f \u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011 \u8a2d\u5b9a\u63a8\u5968\u901a\u77e5",
-                "footer": "\u203b\u3053\u306e\u8a2d\u5b9a\u306f\u5929\u6c17\u4e88\u5831\u3068\u5b63\u7bc0\u306b\u57fa\u3065\u3044\u3066\u81ea\u52d5\u7684\u306b\u8a08\u7b97\u3055\u308c\u3066\u3044\u307e\u3059\u3002\n\u203b\u5b9f\u969b\u306e\u8a2d\u5b9a\u5909\u66f4\u306f\u624b\u52d5\u3067\u884c\u3046\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\n\n-----\n\u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u9001\u4fe1\u3055\u308c\u3066\u3044\u307e\u3059\u3002"
+                "subject": "【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+                "subject_with_warning": "⚠️ 【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+                "title": "【ソーラー蓄電システム】 設定推奨通知",
+                "footer": "※この設定は天気予報と季節に基づいて自動的に計算されています。\n※実際の変更は手動で行う必要があります。\n\n-----\n本メールは自動送信されています。"
             },
             "smtp_server": "smtp.gmail.com",
             "smtp_port": 587,
-            "email_sender": "fffken@gmail.com",
-            "email_recipients": [
-                "fffken@gmail.com"
-            ],
             "smtp_user": "fffken@gmail.com",
-            "smtp_password": "${SMTP_PASSWORD}"
+            "smtp_password": "${SMTP_PASSWORD}",
+            "email_sender": "fffken@gmail.com",
+            "email_recipients": ["fffken@gmail.com"],
+            "smtp_use_tls": true,
+            "smtp_use_ssl": false
         },
-        "line": {
-            "enabled": false,
-            "template": {
-                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968",
-                "footer": "\u203b\u81ea\u52d5\u8a08\u7b97\u3055\u308c\u305f\u63a8\u5968\u8a2d\u5b9a\u3067\u3059"
---
-        "subnet": "192.168.0.0/24"
+        "line": { "enabled": false },
+        "telegram": { "enabled": false }
     },
-    "email": {
-        "smtp_server": "smtp.gmail.com",
-        "smtp_port": 587,
-        "smtp_user": "fffken@gmail.com",
-        "smtp_password": "${SMTP_PASSWORD}",
-        "sender": "fffken@gmail.com",
-        "recipients": [
-            "fffken@gmail.com"
-        ],
-        "admin_email": "fffken@gmail.com",
-        "recipient": "fffken@gmail.com",
-        "email_sender": "fffken@gmail.com",
-        "email_recipients": [
-            "fffken@gmail.com"
-        ],
-        "smtp_username": "fffken@gmail.com",
-        "smtp_use_tls": true,
-        "smtp_use_ssl": false
-    },
-    "monitoring": {
-        "interval_minutes": 15,
-        "key_registers": [
-            {
+    "weather_connectors": ["　後　", "　のち　", "　時々　", "　一時　", "　夜　", "　夜遅く　", "　所により　", "　で　", "　から　", "　または　"],
+    "weather_icons": { "晴": "☀️", "晴れ": "☀️", "曇": "☁️", "曇り": "☁️", "くもり": "☁️", "雨": "🌧️", "雪": "❄️", "雷": "⚡", "霧": "🌫️" },
+    "season_icons": {
+        "winter_early": "🍂❄️", "winter_mid": "❄️️☃️", "winter_late": "❄️🌱",
 ```
 *スケジュール設定:*
 ```
@@ -636,77 +1084,41 @@ a14ffb3 🤖 自動保存: 2025-06-06 16:00 - AI記憶システム更新 (302件
         "soc_setting_id": "62"
     },
     "seasonal_settings": {
-        "winter": {
-            "typeA": {
-                "charge_current": 50,
-                "charge_time": 45,
-                "soc": 50
-            },
-            "typeB": {
-                "charge_current": 60,
-                "charge_time": 60,
-                "soc": 60
-            }
-        },
-        "spring_fall": {
-            "typeA": {
-                "charge_current": 40,
-                "charge_time": 30,
-                "soc": 35
-            },
-            "typeB": {
-                "charge_current": 50,
-                "charge_time": 45,
-                "soc": 45
-            }
-        },
-        "summer": {
-            "typeA": {
-                "charge_current": 25,
-                "charge_time": 15,
-                "soc": 25
-            },
-            "typeB": {
-                "charge_current": 35,
-                "charge_time": 30,
-                "soc": 35
-            }
-        }
+        "winter": { "typeA": { "charge_current": 50, "charge_time": 45, "soc": 50 }, "typeB": { "charge_current": 60, "charge_time": 60, "soc": 60 } },
+        "spring_fall": { "typeA": { "charge_current": 40, "charge_time": 30, "soc": 35 }, "typeB": { "charge_current": 50, "charge_time": 45, "soc": 45 } },
+        "summer": { "typeA": { "charge_current": 25, "charge_time": 15, "soc": 25 }, "typeB": { "charge_current": 35, "charge_time": 30, "soc": 35 } }
     },
     "detailed_seasonal_settings": {
+        "winter_early": { "reference": "winter" }, "winter_mid": { "reference": "winter" }, "winter_late": { "reference": "winter" },
+        "spring_early": { "reference": "spring_fall" }, "spring_mid": { "reference": "spring_fall" }, "spring_late": { "reference": "spring_fall" },
+        "rainy": { "reference": "spring_fall" },
 --
             "enabled": true,
             "template": {
-                "subject": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-                "subject_with_warning": "\u26a0\ufe0f \u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011 \u8a2d\u5b9a\u63a8\u5968\u901a\u77e5",
-                "footer": "\u203b\u3053\u306e\u8a2d\u5b9a\u306f\u5929\u6c17\u4e88\u5831\u3068\u5b63\u7bc0\u306b\u57fa\u3065\u3044\u3066\u81ea\u52d5\u7684\u306b\u8a08\u7b97\u3055\u308c\u3066\u3044\u307e\u3059\u3002\n\u203b\u5b9f\u969b\u306e\u8a2d\u5b9a\u5909\u66f4\u306f\u624b\u52d5\u3067\u884c\u3046\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\n\n-----\n\u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u9001\u4fe1\u3055\u308c\u3066\u3044\u307e\u3059\u3002"
+                "subject": "【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+                "subject_with_warning": "⚠️ 【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+                "title": "【ソーラー蓄電システム】 設定推奨通知",
+                "footer": "※この設定は天気予報と季節に基づいて自動的に計算されています。\n※実際の変更は手動で行う必要があります。\n\n-----\n本メールは自動送信されています。"
             },
             "smtp_server": "smtp.gmail.com",
             "smtp_port": 587,
 --
-    },
+    "network": { "subnet": "192.168.0.0/24" },
     "monitoring": {
         "interval_minutes": 15,
         "key_registers": [
-            {
-                "address": "0x0100",
-                "name": "\u30d0\u30c3\u30c6\u30ea\u30fcSOC",
-                "unit": "%",
+            { "address": "0x0100", "name": "バッテリーSOC", "unit": "%", "factor": 1, "emoji": "🔋" },
+            { "address": "0x0101", "name": "バッテリー電圧", "unit": "V", "factor": 0.1, "emoji": "⚡" }
+        ]
+    },
 ```
 *閾値・制御設定:*
 ```
-        ],
-        "admin_email": "fffken@gmail.com",
-        "recipient": "fffken@gmail.com",
-        "email_sender": "fffken@gmail.com",
-        "email_recipients": [
---
     "monitoring": {
         "interval_minutes": 15,
         "key_registers": [
-            {
-                "address": "0x0100",
+            { "address": "0x0100", "name": "バッテリーSOC", "unit": "%", "factor": 1, "emoji": "🔋" },
+            { "address": "0x0101", "name": "バッテリー電圧", "unit": "V", "factor": 0.1, "emoji": "⚡" }
 ```
 
 ### 🎯 main.py 詳細実装分析
@@ -715,74 +1127,55 @@ a14ffb3 🤖 自動保存: 2025-06-06 16:00 - AI記憶システム更新 (302件
 ```python
 # === main関数の実装 ===
 def main():
-    """メイン処理"""
-    global _hanazono_logger_instance
-    _hanazono_logger_instance = setup_logger()
-    logger = _hanazono_logger_instance
-    
-    logger.info("HANAZONOシステム自動最適化を開始します")
-    
-    parser = argparse.ArgumentParser(description="HANAZONO自動最適化システム")
-    parser.add_argument('--collect', action='store_true', help='データを収集します')
-    parser.add_argument('--daily-report', action='store_true', help='日次レポートを生成します')
-    parser.add_argument('--check-cron', action='store_true', help='cron設定を確認します')
-    parser.add_argument('--debug', action='store_true', help='デバッグモードで実行します')
-    
-    args = parser.parse_args()
-    
-    if args.debug:
-        logger.setLevel(logging.DEBUG)
-        logger.debug("デバッグモードで実行中")
-    
+    """
+    HANAZONOシステムの主要な機能（日次レポート）を呼び出す司令塔。
+    """
+    # ロガー設定
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    logger = logging.getLogger("HANAZONO_MAIN")
+
 
 # === 設定読み込み部分 ===
-        
-        # 設定読み込み
-        with open('settings.json', 'r', encoding='utf-8') as f:
-            settings = json.load(f)
-        email_config = settings.get('email', {})
-        
-        # メール送信
-        notifier = EnhancedEmailNotifier(email_config)
-        report_data = {
-            'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-            'system_status': 'operational'
-        }
-        
-        result = notifier.send_daily_report(report_data, test_mode=False)
-        
-        if result:
-            logger.info("✅ 日次レポート送信成功")
-            return True
+    sys.exit(1)
+try:
+    from config import get_settings
+except ImportError as e:
+    print(f"FATAL: config.py の読み込みに失敗しました: {e}")
+    sys.exit(1)
+
+
+def main():
+    """
+    HANAZONOシステムの主要な機能（日次レポート）を呼び出す司令塔。
+    """
+    # ロガー設定
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    logger = logging.getLogger("HANAZONO_MAIN")
 --
-            # 基本的な動作確認
-            logger.info("設定ファイルを確認中...")
-            if os.path.exists('settings.json'):
-                logger.info("✅ settings.json: 存在")
-            else:
-                logger.warning("⚠️ settings.json: 見つかりません")
-            
-            logger.info("システム初期化完了")
-            print("使用方法:")
-            print("  python3 main.py --collect       # データ収集")
-            print("  python3 main.py --daily-report  # 日次レポート送信")
-            print("  python3 main.py --check-cron    # cron設定確認")
-            print("  python3 main.py --debug         # デバッグモード")
-    
-    except KeyboardInterrupt:
-        logger.info("ユーザーによって処理が中断されました")
+    try:
+        # 1. 設定司令塔から設定を取得
+        settings = get_settings()
+        
+        # 2. 設定をメール担当に手渡しして初期化
+        notifier = EnhancedEmailNotifier(settings_object=settings, logger=logger)
+        
+        # 3. レポート送信を指示。--liveがなければテストモード
+        success = notifier.send_daily_report(test_mode=not args.live)
+        
+        if success:
+            logger.info("✅ 司令塔: 日次レポート処理、正常完了。")
+        else:
+            logger.error("❌ 司令塔: 日次レポート処理、失敗。")
+
+    except Exception as e:
 ```
 
 #### 📦 依存関係と設定
 ```python
-import os
 import sys
+import argparse
 import json
 import logging
-import time
-import argparse
-from datetime import datetime, timedelta
-_hanazono_logger_instance = None
 ```
 
 ### 📧 email_notifier.py メール機能詳細分析
@@ -1347,27 +1740,27 @@ if __name__ == '__main__':
 
 #### 🐍 Python関連プロセス
 ```
-pi           462  0.0  0.8  19192  3756 ?        Ss   May06   1:12 python /home/pi/lvyuan_solar_control/solar_control_scheduler.py
-pi        590183  0.0  0.6  25664  2764 ?        S    May31   0:10 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/quantum_prediction.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🌌 量子予測システム開始') logging.info('量子予測システム開始')  while True:     try:         system._execute_quantum_predictions()         logging.info(f'量子予測完了 - 予測数: {system.perfect_predictions}')         time.sleep(60)  # 1分     except Exception as e:         logging.error(f'量子予測エラー: {e}')         time.sleep(120) 
-pi        590184  0.0  0.6  25780  2788 ?        S    May31   0:05 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/perfect_optimization.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('⚡ 完全最適化システム開始') logging.info('完全最適化システム開始')  while True:     try:         system._execute_perfect_optimization()         logging.info('完全最適化実行完了')         time.sleep(300)  # 5分     except Exception as e:         logging.error(f'完全最適化エラー: {e}')         time.sleep(600) 
-pi        590185  0.0  0.6  25788  2684 ?        S    May31   0:16 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/consciousness.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🧠 意識システム開始') logging.info('意識システム開始')  while True:     try:         system._execute_conscious_decisions()         logging.info('意識的決定実行完了')         time.sleep(30)  # 30秒     except Exception as e:         logging.error(f'意識システムエラー: {e}')         time.sleep(60) 
-pi        590315  0.0  0.6  25664  2760 ?        S    May31   0:10 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/quantum_prediction.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🌌 量子予測システム開始') logging.info('量子予測システム開始')  while True:     try:         system._execute_quantum_predictions()         logging.info(f'量子予測完了 - 予測数: {system.perfect_predictions}')         time.sleep(60)  # 1分     except Exception as e:         logging.error(f'量子予測エラー: {e}')         time.sleep(120) 
+pi        590183  0.0  0.5  25664  2484 ?        S    May31   0:11 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/quantum_prediction.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🌌 量子予測システム開始') logging.info('量子予測システム開始')  while True:     try:         system._execute_quantum_predictions()         logging.info(f'量子予測完了 - 予測数: {system.perfect_predictions}')         time.sleep(60)  # 1分     except Exception as e:         logging.error(f'量子予測エラー: {e}')         time.sleep(120) 
+pi        590184  0.0  0.6  25780  2592 ?        S    May31   0:05 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/perfect_optimization.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('⚡ 完全最適化システム開始') logging.info('完全最適化システム開始')  while True:     try:         system._execute_perfect_optimization()         logging.info('完全最適化実行完了')         time.sleep(300)  # 5分     except Exception as e:         logging.error(f'完全最適化エラー: {e}')         time.sleep(600) 
+pi        590185  0.0  0.5  25788  2392 ?        S    May31   0:18 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/consciousness.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🧠 意識システム開始') logging.info('意識システム開始')  while True:     try:         system._execute_conscious_decisions()         logging.info('意識的決定実行完了')         time.sleep(30)  # 30秒     except Exception as e:         logging.error(f'意識システムエラー: {e}')         time.sleep(60) 
+pi        590315  0.0  0.5  25664  2224 ?        S    May31   0:11 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/quantum_prediction.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('🌌 量子予測システム開始') logging.info('量子予測システム開始')  while True:     try:         system._execute_quantum_predictions()         logging.info(f'量子予測完了 - 予測数: {system.perfect_predictions}')         time.sleep(60)  # 1分     except Exception as e:         logging.error(f'量子予測エラー: {e}')         time.sleep(120) 
+pi        590316  0.0  0.5  25656  2376 ?        S    May31   0:05 python3 -c  import sys sys.path.append('/home/pi/lvyuan_solar_control') from ultimate_integrated_system import UltimateIntegratedSystem import time import logging  logging.basicConfig(     filename='/home/pi/lvyuan_solar_control/logs/ultimate_system/perfect_optimization.log',     level=logging.INFO,     format='%(asctime)s - %(message)s' )  system = UltimateIntegratedSystem() print('⚡ 完全最適化システム開始') logging.info('完全最適化システム開始')  while True:     try:         system._execute_perfect_optimization()         logging.info('完全最適化実行完了')         time.sleep(300)  # 5分     except Exception as e:         logging.error(f'完全最適化エラー: {e}')         time.sleep(600) 
 ```
 
 #### 💾 システムリソース状況
 ```
 === CPU・メモリ使用状況 ===
-top - 19:58:39 up 31 days, 22:28,  2 users,  load average: 0.23, 0.24, 0.22
-Tasks: 160 total,   1 running, 159 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us, 25.0 sy,  0.0 ni, 75.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
-MiB Mem :    416.8 total,    103.3 free,    198.6 used,    179.1 buff/cache     
-MiB Swap:    512.0 total,    385.9 free,    126.1 used.    218.1 avail Mem 
+top - 16:42:17 up 32 days, 19:11,  2 users,  load average: 0.32, 0.22, 0.19
+Tasks: 159 total,   1 running, 158 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 12.5 us, 12.5 sy,  0.0 ni, 75.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :    416.8 total,    122.6 free,    173.2 used,    185.2 buff/cache     
+MiB Swap:    512.0 total,    423.7 free,     88.3 used.    243.6 avail Mem 
 
 === ディスク使用状況 ===
 Filesystem      Size  Used Avail Use% Mounted on
 udev             75M     0   75M   0% /dev
-tmpfs            42M  984K   41M   3% /run
-/dev/mmcblk0p2   57G   41G   14G  75% /
+tmpfs            42M  980K   41M   3% /run
+/dev/mmcblk0p2   57G   40G   15G  74% /
 tmpfs           209M     0  209M   0% /dev/shm
 ```
 
@@ -1375,21 +1768,21 @@ tmpfs           209M     0  209M   0% /dev/shm
 
 #### 📅 重要ファイルの最終更新時刻
 ```
-main.py: 2025-06-05 08:55:16.018127044 +0900
-email_notifier.py: 2025-06-05 13:29:41.234043000 +0900
+main.py: 2025-06-08 13:55:41.062006552 +0900
+email_notifier.py: 2025-06-08 14:06:22.531895489 +0900
 settings_manager.py: 2025-06-03 15:08:22.401266595 +0900
 lvyuan_collector.py: 2025-06-04 09:10:32.795933913 +0900
 ```
 
 #### ⏰ スケジュール設定確認
 ```
-*/15 * * * * /bin/bash -c "cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --collect" > /dev/null 2>&1
-0 7 * * * /bin/bash -c "cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --daily-report" >> /home/pi/lvyuan_solar_control/logs/cron_daily_report_morning.log 2>&1
-0 23 * * * /bin/bash -c "cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --daily-report" >> /home/pi/lvyuan_solar_control/logs/cron_daily_report_night.log 2>&1
-0 * * * * cd /home/pi/lvyuan_solar_control && bash scripts/auto_git_save_system.sh >> logs/auto_git_save.log 2>&1
-0 */4 * * * cd /home/pi/lvyuan_solar_control && bash scripts/run_evolved_systems.sh >> logs/evolved_systems.log 2>&1
-0 */6 * * * cd /home/pi/lvyuan_solar_control && bash backup_with_verification.sh >> logs/verified_backup.log 2>&1
-*/3 * * * * cd /home/pi/lvyuan_solar_control && python3 auto_guardian.py >> logs/auto_guardian.log 2>&1
+*/15 * * * * /bin/bash -c "cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 collector_capsule.py" >> /home/pi/lvyuan_solar_control/logs/cron.log 2>&1
+
+0 7 * * * /bin/bash -c "cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --daily-report" >> /home/pi/lvyuan_solar_control/logs/cron.log 2>&1
+
+0 23 * * * /bin/bash -c "cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --daily-report" >> /home/pi/lvyuan_solar_control/logs/cron.log 2>&1
+
+
 ```
 
 ## 🌍 段階3: 詳細環境情報確認（2点向上）
@@ -1414,20 +1807,20 @@ setuptools 66.1.1
 === システム基本情報 ===
 OS: Linux solarpi 6.12.20+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.20-1+rpt1~bpo12+1 (2025-03-19) aarch64 GNU/Linux
 Hostname: solarpi
-Uptime:  19:58:44 up 31 days, 22:28,  2 users,  load average: 0.29, 0.25, 0.22
+Uptime:  16:42:22 up 32 days, 19:12,  2 users,  load average: 0.46, 0.25, 0.20
 Current user: pi
 Working directory: /home/pi/lvyuan_solar_control
 
 === メモリ使用状況詳細 ===
                total        used        free      shared  buff/cache   available
-Mem:           416Mi       193Mi       107Mi       8.0Ki       180Mi       223Mi
-Swap:          511Mi       126Mi       385Mi
+Mem:           416Mi       171Mi       122Mi       8.0Ki       186Mi       244Mi
+Swap:          511Mi        88Mi       423Mi
 
 === ディスク使用状況詳細 ===
 Filesystem      Size  Used Avail Use% Mounted on
 udev             75M     0   75M   0% /dev
-tmpfs            42M  984K   41M   3% /run
-/dev/mmcblk0p2   57G   41G   14G  75% /
+tmpfs            42M  980K   41M   3% /run
+/dev/mmcblk0p2   57G   40G   15G  74% /
 tmpfs           209M     0  209M   0% /dev/shm
 tmpfs           5.0M  8.0K  5.0M   1% /run/lock
 /dev/mmcblk0p1  510M   57M  454M  12% /boot/firmware
@@ -1464,9 +1857,9 @@ Core(s) per cluster:                  4
 ### 📁 ファイルシステム権限確認
 ```
 === 重要ファイルの権限 ===
--rw-r--r-- 1 pi pi 6029 Jun  5 08:55 main.py
--rw-r--r-- 1 pi pi 25792 Jun  5 13:29 email_notifier.py
--rw-r--r-- 1 pi pi 7994 Jun  2 20:14 settings.json
+-rw-r--r-- 1 pi pi 2533 Jun  8 13:55 main.py
+-rw-r--r-- 1 pi pi 25792 Jun  8 14:06 email_notifier.py
+-rw-r--r-- 1 pi pi 3910 Jun  7 21:45 settings.json
 
 === 実行権限確認 ===
 -rwxr-xr-x 1 pi pi 13931 Jun  3 02:37 scripts/master_progress_controller.sh
@@ -1591,81 +1984,42 @@ Core(s) per cluster:                  4
 
 #### ⚙️ settings.json内メール設定確認
 ```json
-        "autumn_late": {
-            "reference": "spring_fall"
-        }
+        "rainy": { "reference": "spring_fall" },
+        "summer_early": { "reference": "summer" }, "summer_mid": { "reference": "summer" }, "summer_late": { "reference": "summer" },
+        "autumn_early": { "reference": "spring_fall" }, "autumn_mid": { "reference": "spring_fall" }, "autumn_late": { "reference": "spring_fall" }
     },
     "notification": {
         "email": {
             "enabled": true,
             "template": {
-                "subject": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-                "subject_with_warning": "\u26a0\ufe0f \u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968\u901a\u77e5 - {timestamp}",
-                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011 \u8a2d\u5b9a\u63a8\u5968\u901a\u77e5",
-                "footer": "\u203b\u3053\u306e\u8a2d\u5b9a\u306f\u5929\u6c17\u4e88\u5831\u3068\u5b63\u7bc0\u306b\u57fa\u3065\u3044\u3066\u81ea\u52d5\u7684\u306b\u8a08\u7b97\u3055\u308c\u3066\u3044\u307e\u3059\u3002\n\u203b\u5b9f\u969b\u306e\u8a2d\u5b9a\u5909\u66f4\u306f\u624b\u52d5\u3067\u884c\u3046\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002\n\n-----\n\u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u9001\u4fe1\u3055\u308c\u3066\u3044\u307e\u3059\u3002"
+                "subject": "【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+                "subject_with_warning": "⚠️ 【ソーラー蓄電システム】設定推奨通知 - {timestamp}",
+                "title": "【ソーラー蓄電システム】 設定推奨通知",
+                "footer": "※この設定は天気予報と季節に基づいて自動的に計算されています。\n※実際の変更は手動で行う必要があります。\n\n-----\n本メールは自動送信されています。"
             },
             "smtp_server": "smtp.gmail.com",
             "smtp_port": 587,
-            "email_sender": "fffken@gmail.com",
-            "email_recipients": [
-                "fffken@gmail.com"
-            ],
             "smtp_user": "fffken@gmail.com",
-            "smtp_password": "${SMTP_PASSWORD}"
+            "smtp_password": "${SMTP_PASSWORD}",
+            "email_sender": "fffken@gmail.com",
+            "email_recipients": ["fffken@gmail.com"],
+            "smtp_use_tls": true,
+            "smtp_use_ssl": false
         },
-        "line": {
-            "enabled": false,
-            "template": {
-                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968",
-                "footer": "\u203b\u81ea\u52d5\u8a08\u7b97\u3055\u308c\u305f\u63a8\u5968\u8a2d\u5b9a\u3067\u3059"
-            }
-        },
-        "telegram": {
-            "enabled": false,
-            "bot_token": "",
-            "chat_id": "",
-            "template": {
-                "title": "\u3010\u30bd\u30fc\u30e9\u30fc\u84c4\u96fb\u30b7\u30b9\u30c6\u30e0\u3011\u8a2d\u5b9a\u63a8\u5968",
-                "footer": "\u203b\u81ea\u52d5\u8a08\u7b97\u3055\u308c\u305f\u63a8\u5968\u8a2d\u5b9a\u3067\u3059"
---
-        "mb_slave_id": 1
+        "line": { "enabled": false },
+        "telegram": { "enabled": false }
     },
-    "network": {
-        "subnet": "192.168.0.0/24"
+    "weather_connectors": ["　後　", "　のち　", "　時々　", "　一時　", "　夜　", "　夜遅く　", "　所により　", "　で　", "　から　", "　または　"],
+    "weather_icons": { "晴": "☀️", "晴れ": "☀️", "曇": "☁️", "曇り": "☁️", "くもり": "☁️", "雨": "🌧️", "雪": "❄️", "雷": "⚡", "霧": "🌫️" },
+    "season_icons": {
+        "winter_early": "🍂❄️", "winter_mid": "❄️️☃️", "winter_late": "❄️🌱",
+        "spring_early": "🌸🌱", "spring_mid": "🌸🌿", "spring_late": "🌿🌦️",
+        "rainy": "☔️🌿",
+        "summer_early": "☀️🌿", "summer_mid": "☀️🏖️", "summer_late": "☀️🍇",
+        "autumn_early": "🍁🍇", "autumn_mid": "🍂🍁", "autumn_late": "🍂❄️"
     },
-    "email": {
-        "smtp_server": "smtp.gmail.com",
-        "smtp_port": 587,
-        "smtp_user": "fffken@gmail.com",
-        "smtp_password": "${SMTP_PASSWORD}",
-        "sender": "fffken@gmail.com",
-        "recipients": [
-            "fffken@gmail.com"
-        ],
-        "admin_email": "fffken@gmail.com",
-        "recipient": "fffken@gmail.com",
-        "email_sender": "fffken@gmail.com",
-        "email_recipients": [
-            "fffken@gmail.com"
-        ],
-        "smtp_username": "fffken@gmail.com",
-        "smtp_use_tls": true,
-        "smtp_use_ssl": false
-    },
-    "monitoring": {
-        "interval_minutes": 15,
-        "key_registers": [
-            {
-                "address": "0x0100",
-                "name": "\u30d0\u30c3\u30c6\u30ea\u30fcSOC",
-                "unit": "%",
-                "factor": 1,
-                "emoji": "\ud83d\udd0b"
-            },
-            {
-                "address": "0x0101",
-                "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u96fb\u5727",
-                "unit": "V",
+    "inverter": { "ip": "192.168.0.202", "serial": 3528830226, "port": 8899, "mb_slave_id": 1 },
+    "network": { "subnet": "192.168.0.0/24" },
 ✅ settings.jsonにメール設定が存在
 ```
 
@@ -1775,14 +2129,14 @@ def expand_env_vars(config):
 ```markdown
 # HANAZONOシステム プロジェクト状態 (完全自動生成)
 
-*最終更新*: 2025-06-06 15:10:37
-*セッションID*: 20250606_151037
+*最終更新*: 2025-06-07 19:58:49
+*セッションID*: 20250607_195849
 *緊急度レベル*: 高
 
 ## 🤖 AI自動分析結果
-- *現在のフェーズ*: 大規模開発中（未コミット: 298件）- 要整理
-- *Git状態*: 298 files changed
-- *最新コミット*: 5286aef 🤖 自動保存: 2025-06-06 13:00 - AI記憶システム更新 (307件)
+- *現在のフェーズ*: 大規模開発中（未コミット: 303件）- 要整理
+- *Git状態*: 303 files changed
+- *最新コミット*: 521ba8d 🤖 自動保存: 2025-06-07 19:00 - AI記憶システム更新 (300件)
 - *AI推奨アクション*: Git状態の整理とコミットが必要
 
 ## 🔒 自動安全機能状態
@@ -1797,10 +2151,10 @@ def expand_env_vars(config):
 
 ### 📄 HANDOVER_PROMPT.md
 ```markdown
-# v33_HANAZONOシステム／完全自動記憶継承プロンプト-2025-06-06
+# v34_HANAZONOシステム／完全自動記憶継承プロンプト-2025-06-07
 
-*自動生成*: 2025-06-06 15:10:37
-*セッションID*: 20250606_151037
+*自動生成*: 2025-06-07 19:58:49
+*セッションID*: 20250607_195849
 *緊急度*: 高
 
 ## ⚡ AI自動実行必須手順（人間の記憶不要）
@@ -1821,9 +2175,9 @@ cat AI_AUTOMATIC_INSTRUCTIONS.md
 
 ### 📄 AI_AUTOMATIC_INSTRUCTIONS.md
 ```markdown
-# AI自動作業指示書 - セッション20250606_151037
+# AI自動作業指示書 - セッション20250607_195849
 
-*生成時刻*: 2025-06-06 15:10:37
+*生成時刻*: 2025-06-07 19:58:49
 *緊急度*: 高
 
 ## 🤖 AIが自動実行すべき必須アクション
@@ -1832,9 +2186,9 @@ cat AI_AUTOMATIC_INSTRUCTIONS.md
 \n- 大量の未コミット変更の整理が緊急に必要
 
 ### システム自動確認項目
-1. *Git状態確認*: 298 files changed
-2. *最新コミット*: 5286aef 🤖 自動保存: 2025-06-06 13:00 - AI記憶システム更新 (307件)
-3. *フェーズ判定*: 大規模開発中（未コミット: 298件）- 要整理
+1. *Git状態確認*: 303 files changed
+2. *最新コミット*: 521ba8d 🤖 自動保存: 2025-06-07 19:00 - AI記憶システム更新 (300件)
+3. *フェーズ判定*: 大規模開発中（未コミット: 303件）- 要整理
 4. *推奨アクション*: Git状態の整理とコミットが必要
 
 ### AI自動実行ルール
@@ -2723,14 +3077,21 @@ CREATE TABLE parameter_history (
   - 自動バックアップ: 実行済み
   - AI推奨アクション: Git状態の整理とコミットが必要
 
+[2025-06-07 19:58:49] 完全自動進行管理システム実行（セッション: 20250607_195849）
+  - フェーズ: 大規模開発中（未コミット: 303件）- 要整理
+  - 緊急度: 高
+  - Git状態: 303 files changed
+  - 自動バックアップ: 実行済み
+  - AI推奨アクション: Git状態の整理とコミットが必要
+
 ```
 
 ### 🧭 CLAUDE_START_HERE.md（AI開始手順）
 ```markdown
 # 🤖 AI専用 - 完全自動記憶継承スタートガイド v3.0
 
-*最終自動更新*: 2025-06-06 15:10:37
-*セッションID*: 20250606_151037
+*最終自動更新*: 2025-06-07 19:58:49
+*セッションID*: 20250607_195849
 *緊急度*: 高
 
 ## ⚡ AI完全自動実行手順（人間の記憶・操作不要）
@@ -2750,10 +3111,10 @@ cat HANDOVER_PROMPT.md
 
 ## 🤖 AI自動判定済み現況（リアルタイム）
 
-- *フェーズ*: 大規模開発中（未コミット: 298件）- 要整理
+- *フェーズ*: 大規模開発中（未コミット: 303件）- 要整理
 - *緊急度*: 高
-- *Git変更*: 298 files
-- *最新コミット*: 5286aef 🤖 自動保存: 2025-06-06 13:00 - AI記憶システム更新 (307件)
+- *Git変更*: 303 files
+- *最新コミット*: 521ba8d 🤖 自動保存: 2025-06-07 19:00 - AI記憶システム更新 (300件)
 - *AI推奨*: Git状態の整理とコミットが必要
 
 ## 🔒 完全自動安全機能（AI監視中）
@@ -3618,14 +3979,21 @@ CREATE TABLE parameter_history (
   - 自動バックアップ: 実行済み
   - AI推奨アクション: Git状態の整理とコミットが必要
 
+[2025-06-07 19:58:49] 完全自動進行管理システム実行（セッション: 20250607_195849）
+  - フェーズ: 大規模開発中（未コミット: 303件）- 要整理
+  - 緊急度: 高
+  - Git状態: 303 files changed
+  - 自動バックアップ: 実行済み
+  - AI推奨アクション: Git状態の整理とコミットが必要
+
 ```
 
 ### 🧭 CLAUDE_START_HERE.md（AI開始手順）
 ```markdown
 # 🤖 AI専用 - 完全自動記憶継承スタートガイド v3.0
 
-*最終自動更新*: 2025-06-06 15:10:37
-*セッションID*: 20250606_151037
+*最終自動更新*: 2025-06-07 19:58:49
+*セッションID*: 20250607_195849
 *緊急度*: 高
 
 ## ⚡ AI完全自動実行手順（人間の記憶・操作不要）
@@ -3645,10 +4013,10 @@ cat HANDOVER_PROMPT.md
 
 ## 🤖 AI自動判定済み現況（リアルタイム）
 
-- *フェーズ*: 大規模開発中（未コミット: 298件）- 要整理
+- *フェーズ*: 大規模開発中（未コミット: 303件）- 要整理
 - *緊急度*: 高
-- *Git変更*: 298 files
-- *最新コミット*: 5286aef 🤖 自動保存: 2025-06-06 13:00 - AI記憶システム更新 (307件)
+- *Git変更*: 303 files
+- *最新コミット*: 521ba8d 🤖 自動保存: 2025-06-07 19:00 - AI記憶システム更新 (300件)
 - *AI推奨*: Git状態の整理とコミットが必要
 
 ## 🔒 完全自動安全機能（AI監視中）

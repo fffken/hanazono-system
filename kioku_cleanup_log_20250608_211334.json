@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-06-08T21:13:47.434076",
+  "deleted_scripts": [
+    "data_analyzer_v1.py",
+    "automation_audit.py",
+    "emergency_automation_control.py"
+  ],
+  "cleanup_reason": "診断プロトコル完了後の標準削除"
+}

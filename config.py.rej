@@ -1,0 +1,15 @@
+--- config.py
++++ config.py
+@@ -14,9 +14,9 @@
+         with open(SETTINGS_FILE, 'r', encoding='utf-8') as f:
+             settings = json.load(f)
+         return expand_env_vars(settings)
+-    except (FileNotFoundError, json.JSONDecodeError):
+-        # If the file does not exist or is invalid, return an empty dictionary
+-        return {}
++    except (FileNotFoundError, json.JSONDecodeError) as e:
++        print(f"FATAL: {SETTINGS_FILE}の読み込みまたは解析に失敗しました。エラー: {e}")
++        raise
+ 
+ def expand_env_vars(settings):
+     """

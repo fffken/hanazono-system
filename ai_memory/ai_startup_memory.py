@@ -53,6 +53,15 @@ class AIStartupMemory:
             print(f"   🏗️ システム構成: {core_knowledge['system_architecture']['hardware']}")
             print(f"   📋 重要ルール: {len(core_knowledge['critical_rules'])}件")
 
+        # システム全体マップ記憶継承
+        system_map_info = core_knowledge.get('system_architecture', {})
+        if system_map_info:
+            print("✅ システム全体マップ記憶復旧成功")
+            print(f"   📊 システム規模: Python{system_map_info.get('system_scale', {}).get('python_files', 0)}個")
+            print(f"   🔧 主要モジュール: {len(system_map_info.get('core_modules', {}))}個")
+            print(f"   ⚙️ 自動化レベル: {system_map_info.get('automation_status', {}).get('automation_level', '不明')}")
+            print(f"   📋 確認方法: cat system_summary_*.md")
+
         # システム診断革命手法 - kiokuシステム統合 (2025-06-08確立)
         diagnostic_protocol = {
             "protocol_name": "バックアップ前提一時診断スクリプト手法",

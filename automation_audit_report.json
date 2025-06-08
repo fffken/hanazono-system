@@ -1,0 +1,399 @@
+{
+  "timestamp": "2025-06-08T19:03:03.458885",
+  "automation_scripts": {
+    "ai_auto_resolver.py": {
+      "content_lines": 169,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']",
+          "potential_conflict: ['sys.path']"
+        ]
+      }
+    },
+    "github_auto_fetch.py": {
+      "content_lines": 34,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "manual_auto_update.py": {
+      "content_lines": 126,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['while true']",
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "scripts/auto_bug_fixer.sh": {
+      "content_lines": 111,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['&', 'auto']"
+        ]
+      }
+    },
+    "hanazono_safe_guardian.py": {
+      "content_lines": 183,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['while true']",
+          "medium_risk: ['cron', 'auto']"
+        ]
+      }
+    },
+    "scripts/run_all_automations.sh": {
+      "content_lines": 15,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "scripts/true_auto_input.sh": {
+      "content_lines": 16,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "scripts/auto_fix_system.sh": {
+      "content_lines": 25,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "automation_audit.py": {
+      "content_lines": 243,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['rm -rf', 'sudo rm', 'format', 'delete', 'while true', 'infinite', 'pkill -9']",
+          "medium_risk: ['cron', 'nohup', 'background', '&', 'auto', 'automatic', 'loop']",
+          "potential_conflict: ['venv', 'pip install', 'source', 'activate', 'python3 -m', 'sys.path']"
+        ]
+      }
+    },
+    "github_auto_investigator.py": {
+      "content_lines": 374,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['format', 'delete']",
+          "medium_risk: ['cron', 'auto']"
+        ]
+      }
+    },
+    "scripts/github_auto_fetch.sh": {
+      "content_lines": 704,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['cron', '&', 'auto', 'automatic']",
+          "potential_conflict: ['python3 -m']"
+        ]
+      }
+    },
+    "scripts/ultimate_cron_auto_fix.sh": {
+      "content_lines": 102,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['cron', '&', 'auto']",
+          "potential_conflict: ['venv', 'source', 'activate']"
+        ]
+      }
+    },
+    "scripts/auto_evolution_controller.sh": {
+      "content_lines": 308,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['format', 'delete']",
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "scripts/cron_auto_fix.sh": {
+      "content_lines": 43,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['cron', 'auto']",
+          "potential_conflict: ['source']"
+        ]
+      }
+    },
+    "git_cleanup_auto_fixed.sh": {
+      "content_lines": 175,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto', 'automatic']"
+        ]
+      }
+    },
+    "hanazono_github_auto.py": {
+      "content_lines": 268,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['format']",
+          "medium_risk: ['auto']",
+          "potential_conflict: ['source']"
+        ]
+      }
+    },
+    "ai_auto_decision.py": {
+      "content_lines": 34,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['rm -rf']",
+          "medium_risk: ['cron', '&', 'auto']",
+          "potential_conflict: ['venv', 'pip install', 'source', 'activate', 'python3 -m']"
+        ]
+      }
+    },
+    "master_progress_controller.sh": {
+      "content_lines": 390,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['format']",
+          "medium_risk: ['cron', '&', 'auto', 'automatic']"
+        ]
+      }
+    },
+    "scripts/run_evolved_systems.sh": {
+      "content_lines": 13,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "auto_code_fixes.py": {
+      "content_lines": 58,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']",
+          "potential_conflict: ['venv']"
+        ]
+      }
+    },
+    "scripts/auto_input_generator.sh": {
+      "content_lines": 4,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "scripts/auto_git_save_system.sh": {
+      "content_lines": 81,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "scripts/auto_git_organize_push.sh": {
+      "content_lines": 91,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "scripts/enhanced_auto_file_generator.sh": {
+      "content_lines": 57,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "auto_work_assistant.sh": {
+      "content_lines": 47,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']",
+          "potential_conflict: ['source']"
+        ]
+      }
+    },
+    "manual_auto_update_fixed.py": {
+      "content_lines": 150,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['while true']",
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "git_cleanup_auto.sh": {
+      "content_lines": 175,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto', 'automatic']"
+        ]
+      }
+    },
+    "scripts/cron_auto_fix_v2.sh": {
+      "content_lines": 35,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['cron', '&', 'auto']",
+          "potential_conflict: ['venv', 'source', 'activate']"
+        ]
+      }
+    },
+    "scripts/master_progress_controller.sh": {
+      "content_lines": 390,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['format']",
+          "medium_risk: ['cron', '&', 'auto', 'automatic']"
+        ]
+      }
+    },
+    "setup_auto_update.sh": {
+      "content_lines": 26,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['cron', '&']"
+        ]
+      }
+    },
+    "start_persistent_ultimate.sh": {
+      "content_lines": 180,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['format', 'while true']",
+          "medium_risk: ['nohup', '&', 'auto']",
+          "potential_conflict: ['sys.path']"
+        ]
+      }
+    },
+    "ai_auto_resolver_v2.py": {
+      "content_lines": 194,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "scripts/auto_system_generator.sh": {
+      "content_lines": 360,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['delete']",
+          "medium_risk: ['cron', '&', 'auto']",
+          "potential_conflict: ['venv', 'source', 'activate', 'python3 -m']"
+        ]
+      }
+    },
+    "scripts/syntax_error_auto_fixer.sh": {
+      "content_lines": 39,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "scripts/auto_debug_fixer.sh": {
+      "content_lines": 344,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['delete']",
+          "medium_risk: ['&', 'auto', 'automatic']",
+          "potential_conflict: ['python3 -m']"
+        ]
+      }
+    },
+    "scripts/complete_auto_input.sh": {
+      "content_lines": 17,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['auto']"
+        ]
+      }
+    },
+    "scripts/setup_auto_update.sh": {
+      "content_lines": 26,
+      "risk_analysis": {
+        "risk_level": "medium",
+        "issues": [
+          "medium_risk: ['cron', '&']"
+        ]
+      }
+    },
+    "scripts/github_auto_enhanced.sh": {
+      "content_lines": 32,
+      "risk_analysis": {
+        "risk_level": "high",
+        "issues": [
+          "high_risk: ['delete']",
+          "medium_risk: ['&', 'auto']"
+        ]
+      }
+    },
+    "auto_fix_email_battery.py": {
+      "content_lines": 28,
+      "risk_analysis": {
+        "risk_level": "low",
+        "issues": []
+      }
+    }
+  },
+  "active_processes": "root         374  0.0  0.1   6696   752 ?        Ss   May06   0:17 /usr/sbin/cron -f\npi          8873 86.3  2.6  18228 11148 pts/0    S+   19:03   0:00 python3 automation_audit.py\n",
+  "cron_jobs": {
+    "user": "# データを15分ごとに収集する（修正済み）\n*/15 * * * * /bin/bash -c \"cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 collector_capsule.py\" >> /home/pi/lvyuan_solar_control/logs/cron.log 2>&1\n\n# 日次レポートを朝7時に送信する（正常）\n0 7 * * * /bin/bash -c \"cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --daily-report\" >> /home/pi/lvyuan_solar_control/logs/cron.log 2>&1\n\n# 日次レポートを夜23時に送信する（正常）\n0 23 * * * /bin/bash -c \"cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --daily-report\" >> /home/pi/lvyuan_solar_control/logs/cron.log 2>&1\n\n# --- 以下の高リスクな自動化タスクは、安定性確保のため一時的に停止します ---\n# 0 * * * * cd /home/pi/lvyuan_solar_control && bash scripts/auto_git_save_system.sh >> logs/auto_git_save.log 2>&1\n# 0 */4 * * * cd /home/pi/lvyuan_solar_control && bash scripts/run_evolved_systems.sh >> logs/evolved_systems.log 2>&1\n# 0 */6 * * * cd /home/pi/lvyuan_solar_control && bash backup_with_verification.sh >> logs/verified_backup.log 2>&1\n# */3 * * * * cd /home/pi/lvyuan_solar_control && python3 auto_guardian.py >> logs/auto_guardian.log 2>&1\n\n",
+    "root": ""
+  },
+  "system_services": {},
+  "risk_analysis": {},
+  "conflicts": [
+    "venv競合: ['automation_audit.py', 'scripts/ultimate_cron_auto_fix.sh', 'ai_auto_decision.py', 'auto_code_fixes.py', 'scripts/cron_auto_fix_v2.sh', 'scripts/auto_system_generator.sh']",
+    "高リスク: ['manual_auto_update.py', 'hanazono_safe_guardian.py', 'automation_audit.py', 'github_auto_investigator.py', 'scripts/auto_evolution_controller.sh', 'hanazono_github_auto.py', 'ai_auto_decision.py', 'master_progress_controller.sh', 'manual_auto_update_fixed.py', 'scripts/master_progress_controller.sh', 'start_persistent_ultimate.sh', 'scripts/auto_system_generator.sh', 'scripts/auto_debug_fixer.sh', 'scripts/github_auto_enhanced.sh']"
+  ],
+  "recommendations": [
+    "1. 高リスクスクリプトの安全化または無効化",
+    "2. venv環境を使用する自動化の統一管理",
+    "3. 中央集権的自動化マネージャーの構築",
+    "4. 競合検知・防止システムの実装",
+    "5. 段階的な自動化無効化・再有効化手順の確立"
+  ]
+}

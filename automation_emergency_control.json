@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-06-08T19:15:41.611938",
+  "action": "emergency_automation_control",
+  "disabled_scripts": [
+    {
+      "original": "ai_auto_decision.py",
+      "disabled": "ai_auto_decision.py.DISABLED_critical_risk_20250608_191541",
+      "reason": "critical_risk"
+    },
+    {
+      "original": "start_persistent_ultimate.sh",
+      "disabled": "start_persistent_ultimate.sh.DISABLED_critical_risk_20250608_191541",
+      "reason": "critical_risk"
+    },
+    {
+      "original": "hanazono_safe_guardian.py",
+      "disabled": "hanazono_safe_guardian.py.DISABLED_critical_risk_20250608_191541",
+      "reason": "critical_risk"
+    },
+    {
+      "original": "scripts/auto_evolution_controller.sh",
+      "disabled": "scripts/auto_evolution_controller.sh.DISABLED_critical_risk_20250608_191541",
+      "reason": "critical_risk"
+    },
+    {
+      "original": "scripts/ultimate_cron_auto_fix.sh",
+      "disabled": "scripts/ultimate_cron_auto_fix.sh.DISABLED_critical_risk_20250608_191541",
+      "reason": "critical_risk"
+    },
+    {
+      "original": "auto_code_fixes.py",
+      "disabled": "auto_code_fixes.py.DISABLED_critical_risk_20250608_191541",
+      "reason": "critical_risk"
+    },
+    {
+      "original": "scripts/auto_system_generator.sh",
+      "disabled": "scripts/auto_system_generator.sh.DISABLED_critical_risk_20250608_191541",
+      "reason": "critical_risk"
+    }
+  ],
+  "failed_scripts": [],
+  "restoration_commands": [
+    "mv 'ai_auto_decision.py.DISABLED_critical_risk_20250608_191541' 'ai_auto_decision.py'",
+    "mv 'start_persistent_ultimate.sh.DISABLED_critical_risk_20250608_191541' 'start_persistent_ultimate.sh'",
+    "mv 'hanazono_safe_guardian.py.DISABLED_critical_risk_20250608_191541' 'hanazono_safe_guardian.py'",
+    "mv 'scripts/auto_evolution_controller.sh.DISABLED_critical_risk_20250608_191541' 'scripts/auto_evolution_controller.sh'",
+    "mv 'scripts/ultimate_cron_auto_fix.sh.DISABLED_critical_risk_20250608_191541' 'scripts/ultimate_cron_auto_fix.sh'",
+    "mv 'auto_code_fixes.py.DISABLED_critical_risk_20250608_191541' 'auto_code_fixes.py'",
+    "mv 'scripts/auto_system_generator.sh.DISABLED_critical_risk_20250608_191541' 'scripts/auto_system_generator.sh'"
+  ]
+}

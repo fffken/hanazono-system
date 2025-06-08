@@ -1,0 +1,23 @@
+{
+  "certificate_id": "91f3e19abfca888e397a4b3780f2fd3f",
+  "script_path": "scripts/auto_evolution_controller.sh",
+  "script_hash": "25195b676d11b6678b7b92c59b6a3e07efd4d94f5d5b4332d07835de00c51e0e",
+  "inspection_timestamp": "2025-06-08T22:48:56.967325",
+  "inspector": "SecurityClearanceSystem v1.0",
+  "clearance_level": "GREEN",
+  "safety_score": 100,
+  "violations_count": 0,
+  "risk_factors_count": 0,
+  "certificate_status": "VALID",
+  "expiry_date": "2025-07-08T22:48:56.983217",
+  "detailed_inspection": {
+    "script_path": "scripts/auto_evolution_controller.sh",
+    "inspection_timestamp": "2025-06-08T22:48:56.967325",
+    "file_hash": "25195b676d11b6678b7b92c59b6a3e07efd4d94f5d5b4332d07835de00c51e0e",
+    "file_size": 7058,
+    "security_violations": [],
+    "risk_factors": [],
+    "safety_score": 100,
+    "clearance_level": "GREEN"
+  }
+}
