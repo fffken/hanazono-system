@@ -1,0 +1,20 @@
+{
+  "learning_database": {
+    "初期化時刻": "$(date '+%Y-%m-%d %H:%M:%S')",
+    "code_patterns": [],
+    "successful_implementations": [],
+    "failed_attempts": [],
+    "optimization_history": [],
+    "user_preferences": {
+      "automation_level": "high",
+      "confirmation_required_threshold": "major_changes",
+      "preferred_languages": ["bash", "python"],
+      "coding_style": "clean_efficient"
+    },
+    "learning_stats": {
+      "total_implementations": 0,
+      "success_rate": 0.0,
+      "preferred_patterns": []
+    }
+  }
+}

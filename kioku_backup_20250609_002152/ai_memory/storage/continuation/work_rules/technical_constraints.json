@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-06-05T04:34:08.762644+00:00",
+  "resolved_issues": [],
+  "current_constraints": [
+    {
+      "constraint": "作業方式鉄則: 部分修正禁止、全コピペ基本、非破壊的作業徹底",
+      "impact": "全実装でターミナル直接コピペ(30-40行)またはnano全コピペのみ使用",
+      "priority": "critical",
+      "recorded_at": "2025-06-05T04:34:08.762687+00:00"
+    }
+  ],
+  "technical_decisions": []
+}

@@ -1,0 +1,43 @@
+{
+  "system_architecture": {
+    "last_updated": "2025-06-08T22:14:09.148875",
+    "system_scale": {
+      "python_files": 151,
+      "shell_scripts": 26,
+      "config_files": 36,
+      "complexity_level": "高"
+    },
+    "core_modules": {
+      "collector_capsule.py": "データ収集統合管理 (124行, 5関数)",
+      "lvyuan_collector.py": "バッテリー監視システム (218行, 8関数)",
+      "email_capsule.py": "メール機能 (72行, 1関数)",
+      "weather_forecast.py": "天気予報 (139行, 2関数)",
+      "hcqas_capsule.py": "AI提案システム (38行, 1関数)",
+      "main.py": "システム司令塔 (66行, 1関数)"
+    },
+    "automation_status": {
+      "active_cron_jobs": 4,
+      "automation_level": "高",
+      "maintenance_status": "良好"
+    },
+    "map_files": {
+      "summary": "system_summary_*.md",
+      "detailed_data": "system_map_light_*.json",
+      "usage": "cat system_summary_*.md で即座システム理解"
+    },
+    "established_solutions": {
+      "automation_control": "39個自動化スクリプト制御完了",
+      "diagnostic_protocol": "バックアップ前提一時診断スクリプト手法確立",
+      "system_mapping": "軽量版自動マッピングシステム構築"
+    }
+  },
+  "critical_rules": [
+    "作業前に必ず黄金バージョン確保",
+    "機能テスト実行後に変更適用",
+    "Git状態確認は作業開始の必須条件",
+    "記憶システム実装は最優先事項",
+    "システム全体把握: cat system_summary_*.md で構造確認必須",
+    "定期マップ更新: python3 lightweight_system_mapper.py 月1回実行",
+    "新規参加者対応: システムマップ要約で迅速理解支援"
+  ]
+}

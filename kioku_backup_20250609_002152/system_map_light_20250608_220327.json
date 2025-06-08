@@ -1,0 +1,1390 @@
+{
+  "metadata": {
+    "timestamp": "2025-06-08T22:03:27.578182",
+    "scan_type": "lightweight",
+    "version": "1.0"
+  },
+  "file_structure": {
+    "python_scripts": [
+      {
+        "name": "settings_editor.py",
+        "path": "settings_editor.py",
+        "size": 1125,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "scan_email_module.py",
+        "path": "scan_email_module.py",
+        "size": 3353,
+        "modified": "2025-06-08 01:43"
+      },
+      {
+        "name": "email_notifier_golden_working_fixed.py",
+        "path": "email_notifier_golden_working_fixed.py",
+        "size": 26565,
+        "modified": "2025-06-04 00:36"
+      },
+      {
+        "name": "enhanced_email_notifier.py",
+        "path": "enhanced_email_notifier.py",
+        "size": 19377,
+        "modified": "2025-06-05 22:18"
+      },
+      {
+        "name": "ai_self_mod_maintainability_enhancement.py",
+        "path": "ai_self_mod_maintainability_enhancement.py",
+        "size": 757,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "revolutionary_battle_system.py",
+        "path": "revolutionary_battle_system.py",
+        "size": 15868,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "hanazono_gentle_fix_corrected.py",
+        "path": "hanazono_gentle_fix_corrected.py",
+        "size": 10320,
+        "modified": "2025-06-08 18:42"
+      },
+      {
+        "name": "email_notifier_v2_1.py",
+        "path": "email_notifier_v2_1.py",
+        "size": 25792,
+        "modified": "2025-06-05 13:23"
+      },
+      {
+        "name": "temp_file.py",
+        "path": "temp_file.py",
+        "size": 1416,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "zero_touch_operation.py",
+        "path": "zero_touch_operation.py",
+        "size": 20509,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "electric_data_manager.py",
+        "path": "electric_data_manager.py",
+        "size": 14878,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "email_notifier_fixed.py",
+        "path": "email_notifier_fixed.py",
+        "size": 26566,
+        "modified": "2025-06-04 01:04"
+      },
+      {
+        "name": "lvyuan_registers.py",
+        "path": "lvyuan_registers.py",
+        "size": 1896,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "email_notifier_backup_before_fix_20250601_182954.py",
+        "path": "email_notifier_backup_before_fix_20250601_182954.py",
+        "size": 8437,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "register_scanner.py",
+        "path": "register_scanner.py",
+        "size": 2662,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "weather_forecast_backup_20250525_180212.py",
+        "path": "weather_forecast_backup_20250525_180212.py",
+        "size": 6720,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "dynamic_settings_manager_v1_backup.py",
+        "path": "dynamic_settings_manager_v1_backup.py",
+        "size": 24531,
+        "modified": "2025-06-05 20:34"
+      },
+      {
+        "name": "logger_util.py",
+        "path": "logger_util.py",
+        "size": 1567,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "email_notifier_golden_working.py",
+        "path": "email_notifier_golden_working.py",
+        "size": 26565,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "email_notifier_fixed_final.py",
+        "path": "email_notifier_fixed_final.py",
+        "size": 9885,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "ultimate_solution.py",
+        "path": "ultimate_solution.py",
+        "size": 5696,
+        "modified": "2025-06-08 18:25"
+      },
+      {
+        "name": "main_broken_backup.py",
+        "path": "main_broken_backup.py",
+        "size": 9003,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "galactic_domination_project.py",
+        "path": "galactic_domination_project.py",
+        "size": 5424,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "ai_self_mod_complexity_reduction.py",
+        "path": "ai_self_mod_complexity_reduction.py",
+        "size": 523,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "update_method.py",
+        "path": "update_method.py",
+        "size": 1750,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "find_indent_errors.py",
+        "path": "find_indent_errors.py",
+        "size": 2003,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "electric_bill_tracker.py",
+        "path": "electric_bill_tracker.py",
+        "size": 19118,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "config.py",
+        "path": "config.py",
+        "size": 1026,
+        "modified": "2025-06-08 13:03"
+      },
+      {
+        "name": "data_analyzer.py",
+        "path": "data_analyzer.py",
+        "size": 11471,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "space_empire_dashboard_fixed.py",
+        "path": "space_empire_dashboard_fixed.py",
+        "size": 8190,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "dynamic_settings_manager.py",
+        "path": "dynamic_settings_manager.py",
+        "size": 20523,
+        "modified": "2025-06-05 21:47"
+      },
+      {
+        "name": "web_dashboard_server.py",
+        "path": "web_dashboard_server.py",
+        "size": 11733,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "add_extract_battery_data.py",
+        "path": "add_extract_battery_data.py",
+        "size": 4023,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "email_notifier_v2_1_battle_system.py",
+        "path": "email_notifier_v2_1_battle_system.py",
+        "size": 24340,
+        "modified": "2025-06-05 10:20"
+      },
+      {
+        "name": "ultimate_email_integration.py",
+        "path": "ultimate_email_integration.py",
+        "size": 14127,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "supreme_ai_prediction.py",
+        "path": "supreme_ai_prediction.py",
+        "size": 24606,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "design_violation_detector.py",
+        "path": "design_violation_detector.py",
+        "size": 245,
+        "modified": "2025-06-04 17:30"
+      },
+      {
+        "name": "weather_forecast.py",
+        "path": "weather_forecast.py",
+        "size": 6386,
+        "modified": "2025-06-07 21:24"
+      },
+      {
+        "name": "ml_enhancement_phase1_v4_backup.py",
+        "path": "ml_enhancement_phase1_v4_backup.py",
+        "size": 40542,
+        "modified": "2025-06-05 20:37"
+      },
+      {
+        "name": "email_notifier_backup_env_fix_20250601_180147.py",
+        "path": "email_notifier_backup_env_fix_20250601_180147.py",
+        "size": 6625,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "email_notifier_BROKEN_20250601_184503.py",
+        "path": "email_notifier_BROKEN_20250601_184503.py",
+        "size": 10117,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "github_access_system.py",
+        "path": "github_access_system.py",
+        "size": 5803,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "write_and_verify.py",
+        "path": "write_and_verify.py",
+        "size": 2737,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "email_notifier_backup_20250603_153551.py",
+        "path": "email_notifier_backup_20250603_153551.py",
+        "size": 8196,
+        "modified": "2025-06-03 15:35"
+      },
+      {
+        "name": "email_notifier.github.py",
+        "path": "email_notifier.github.py",
+        "size": 25792,
+        "modified": "2025-06-08 14:25"
+      },
+      {
+        "name": "ml_enhancement_phase1_v4.py",
+        "path": "ml_enhancement_phase1_v4.py",
+        "size": 28649,
+        "modified": "2025-06-05 21:39"
+      },
+      {
+        "name": "email_notifier.py",
+        "path": "email_notifier.py",
+        "size": 25792,
+        "modified": "2025-06-08 14:06"
+      },
+      {
+        "name": "ai_assistant.py",
+        "path": "ai_assistant.py",
+        "size": 16079,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "enhanced_email_system_github.py",
+        "path": "enhanced_email_system_github.py",
+        "size": 26076,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "self_evolving_ai_v3.py",
+        "path": "self_evolving_ai_v3.py",
+        "size": 44944,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "hanazono_dashboard.py",
+        "path": "hanazono_dashboard.py",
+        "size": 21254,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "ai_self_mod_capability_expansion.py",
+        "path": "ai_self_mod_capability_expansion.py",
+        "size": 1700,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "main.py",
+        "path": "main.py",
+        "size": 2533,
+        "modified": "2025-06-08 13:55"
+      },
+      {
+        "name": "email_notifier_v1.py",
+        "path": "email_notifier_v1.py",
+        "size": 6625,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "predictive_analysis_system.py",
+        "path": "predictive_analysis_system.py",
+        "size": 30058,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "ai_auto_resolver_v2.py",
+        "path": "ai_auto_resolver_v2.py",
+        "size": 10112,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "fix_dashboard_data.py",
+        "path": "fix_dashboard_data.py",
+        "size": 910,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "email_notifier_old_testmode.py",
+        "path": "email_notifier_old_testmode.py",
+        "size": 26565,
+        "modified": "2025-06-04 01:06"
+      },
+      {
+        "name": "ultimate_integrated_system.py",
+        "path": "ultimate_integrated_system.py",
+        "size": 29433,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "space_empire_dashboard.py",
+        "path": "space_empire_dashboard.py",
+        "size": 5118,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "ml_enhancement_phase1.py",
+        "path": "ml_enhancement_phase1.py",
+        "size": 27027,
+        "modified": "2025-06-05 21:42"
+      },
+      {
+        "name": "fix_syntax.py",
+        "path": "fix_syntax.py",
+        "size": 8869,
+        "modified": "2025-06-03 09:04"
+      },
+      {
+        "name": "GOLDEN_VERSION.py",
+        "path": "GOLDEN_VERSION.py",
+        "size": 26943,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "hanazono_github_auto.py",
+        "path": "hanazono_github_auto.py",
+        "size": 10930,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "electric_bill_tracker_v1_backup.py",
+        "path": "electric_bill_tracker_v1_backup.py",
+        "size": 19118,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "final_victory_check.py",
+        "path": "final_victory_check.py",
+        "size": 5661,
+        "modified": "2025-06-08 17:49"
+      },
+      {
+        "name": "enhanced_email_system.py",
+        "path": "enhanced_email_system.py",
+        "size": 26076,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "lightweight_system_mapper.py",
+        "path": "lightweight_system_mapper.py",
+        "size": 10543,
+        "modified": "2025-06-08 22:03"
+      },
+      {
+        "name": "email_notifier_backup_20250601_113017.py",
+        "path": "email_notifier_backup_20250601_113017.py",
+        "size": 6625,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "email_notifier_SAFE_WORKING_20250604_003408.py",
+        "path": "email_notifier_SAFE_WORKING_20250604_003408.py",
+        "size": 8196,
+        "modified": "2025-06-04 00:34"
+      },
+      {
+        "name": "auto_fix_email_battery.py",
+        "path": "auto_fix_email_battery.py",
+        "size": 1143,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "email_notifier_simple_backup_20250604_002433.py",
+        "path": "email_notifier_simple_backup_20250604_002433.py",
+        "size": 8196,
+        "modified": "2025-06-04 00:24"
+      },
+      {
+        "name": "comprehensive_data_integrator.py",
+        "path": "comprehensive_data_integrator.py",
+        "size": 17615,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "email_notifier_backup_20250601_180756.py",
+        "path": "email_notifier_backup_20250601_180756.py",
+        "size": 6625,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "enhanced_email_system_v2.py",
+        "path": "enhanced_email_system_v2.py",
+        "size": 9319,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "email_notifier_fixed_v2.py",
+        "path": "email_notifier_fixed_v2.py",
+        "size": 8600,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "email_capsule.py",
+        "path": "email_capsule.py",
+        "size": 3184,
+        "modified": "2025-06-08 11:56"
+      },
+      {
+        "name": "self_evolving_ai.py",
+        "path": "self_evolving_ai.py",
+        "size": 18316,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "file_corruption_detector.py",
+        "path": "file_corruption_detector.py",
+        "size": 1252,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "hanazono_optimizer.py",
+        "path": "hanazono_optimizer.py",
+        "size": 19562,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "email_notifier_working.py",
+        "path": "email_notifier_working.py",
+        "size": 6864,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "email_notifier_SAFE_WORKING_20250604_003114.py",
+        "path": "email_notifier_SAFE_WORKING_20250604_003114.py",
+        "size": 8196,
+        "modified": "2025-06-04 00:31"
+      },
+      {
+        "name": "github_auto_fetch.py",
+        "path": "github_auto_fetch.py",
+        "size": 1200,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "ultimate_protection_system.py",
+        "path": "ultimate_protection_system.py",
+        "size": 5361,
+        "modified": "2025-06-04 09:23"
+      },
+      {
+        "name": "ensurepip_recovery.py",
+        "path": "ensurepip_recovery.py",
+        "size": 7483,
+        "modified": "2025-06-08 17:48"
+      },
+      {
+        "name": "space_expansion_project.py",
+        "path": "space_expansion_project.py",
+        "size": 15286,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "collector_capsule.py",
+        "path": "collector_capsule.py",
+        "size": 4156,
+        "modified": "2025-06-08 20:42"
+      },
+      {
+        "name": "email_notification.py",
+        "path": "email_notification.py",
+        "size": 17335,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "settings_manager.py",
+        "path": "settings_manager.py",
+        "size": 6649,
+        "modified": "2025-06-03 15:08"
+      },
+      {
+        "name": "email_notifier_temp1.py",
+        "path": "email_notifier_temp1.py",
+        "size": 9073,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "email_notifier_v2_1_github.py",
+        "path": "email_notifier_v2_1_github.py",
+        "size": 26331,
+        "modified": "2025-06-05 13:15"
+      },
+      {
+        "name": "scan_email_system.py",
+        "path": "scan_email_system.py",
+        "size": 5163,
+        "modified": "2025-06-08 00:04"
+      },
+      {
+        "name": "email_notifier_backup_20250601_175553.py",
+        "path": "email_notifier_backup_20250601_175553.py",
+        "size": 6625,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "ast_fix_indentation.py",
+        "path": "ast_fix_indentation.py",
+        "size": 2282,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "ml_enhancement_phase1_v3.py",
+        "path": "ml_enhancement_phase1_v3.py",
+        "size": 24481,
+        "modified": "2025-06-05 21:35"
+      },
+      {
+        "name": "data_util.py",
+        "path": "data_util.py",
+        "size": 2604,
+        "modified": "2025-06-03 09:07"
+      },
+      {
+        "name": "email_notifier_ultimate_fixed.py",
+        "path": "email_notifier_ultimate_fixed.py",
+        "size": 9537,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "setup.py",
+        "path": "setup.py",
+        "size": 7474,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "logger.py",
+        "path": "logger.py",
+        "size": 1738,
+        "modified": "2025-06-03 09:08"
+      },
+      {
+        "name": "lvyuan_collector.py",
+        "path": "lvyuan_collector.py",
+        "size": 12138,
+        "modified": "2025-06-04 09:10"
+      },
+      {
+        "name": "email_notifier_backup_20250525_125951.py",
+        "path": "email_notifier_backup_20250525_125951.py",
+        "size": 8361,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "ultimate_fix.py",
+        "path": "ultimate_fix.py",
+        "size": 5465,
+        "modified": "2025-06-03 09:06"
+      },
+      {
+        "name": "hanazono_ultimate.py",
+        "path": "hanazono_ultimate.py",
+        "size": 13265,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "check_methods.py",
+        "path": "check_methods.py",
+        "size": 819,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "hcqas_complete_diagnosis.py",
+        "path": "hcqas_complete_diagnosis.py",
+        "size": 11314,
+        "modified": "2025-06-07 15:00"
+      },
+      {
+        "name": "report_generator.py",
+        "path": "report_generator.py",
+        "size": 14896,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "hcqas_capsule.py",
+        "path": "hcqas_capsule.py",
+        "size": 1532,
+        "modified": "2025-06-08 11:56"
+      },
+      {
+        "name": "github_auto_investigator.py",
+        "path": "github_auto_investigator.py",
+        "size": 15248,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "unified_scanner.py",
+        "path": "unified_scanner.py",
+        "size": 3345,
+        "modified": "2025-06-08 15:07"
+      },
+      {
+        "name": "check_system_status.py",
+        "path": "check_system_status.py",
+        "size": 2933,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "smart_proposal_ui.py",
+        "path": "smart_proposal_ui.py",
+        "size": 16170,
+        "modified": "2025-06-07 06:38"
+      },
+      {
+        "name": "ai_auto_resolver.py",
+        "path": "ai_auto_resolver.py",
+        "size": 6626,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "current_email_notifier.py",
+        "path": "current_email_notifier.py",
+        "size": 17938,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "enhanced_email_system_v2_temp.py",
+        "path": "enhanced_email_system_v2_temp.py",
+        "size": 26076,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "expand_ai_memory.py",
+        "path": "expand_ai_memory.py",
+        "size": 3101,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "system_health_monitor.py",
+        "path": "system_health_monitor.py",
+        "size": 17008,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "season_detector.py",
+        "path": "season_detector.py",
+        "size": 2162,
+        "modified": "2025-06-04 00:47"
+      },
+      {
+        "name": "self_evolving_ai_v2.py",
+        "path": "self_evolving_ai_v2.py",
+        "size": 28331,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "ultimate_email_integration_fixed.py",
+        "path": "ultimate_email_integration_fixed.py",
+        "size": 14127,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "manual_auto_update.py",
+        "path": "manual_auto_update.py",
+        "size": 4135,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "email_notifier_ultimate.py",
+        "path": "email_notifier_ultimate.py",
+        "size": 8841,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "enhanced_email_v2_base.py",
+        "path": "enhanced_email_v2_base.py",
+        "size": 1178,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "ai_learning_database.py",
+        "path": "ai_learning_database.py",
+        "size": 6426,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "email_notifier_GOLDEN_MASTER_20250604_010604.py",
+        "path": "email_notifier_GOLDEN_MASTER_20250604_010604.py",
+        "size": 26566,
+        "modified": "2025-06-04 01:06"
+      },
+      {
+        "name": "hanazono_analysis.py",
+        "path": "hanazono_analysis.py",
+        "size": 6177,
+        "modified": "2025-06-08 18:34"
+      },
+      {
+        "name": "email_notification_new.py",
+        "path": "email_notification_new.py",
+        "size": 3959,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "email_notifier_testmode_backup.py",
+        "path": "email_notifier_testmode_backup.py",
+        "size": 26565,
+        "modified": "2025-06-04 01:04"
+      },
+      {
+        "name": "register_scan_full.py",
+        "path": "register_scan_full.py",
+        "size": 5227,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "settings_tracker.py",
+        "path": "settings_tracker.py",
+        "size": 3138,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "solar_control_scheduler.py",
+        "path": "solar_control_scheduler.py",
+        "size": 2002,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "ml_news_generator.py",
+        "path": "ml_news_generator.py",
+        "size": 17302,
+        "modified": "2025-06-05 21:55"
+      },
+      {
+        "name": "manual_auto_update_fixed.py",
+        "path": "manual_auto_update_fixed.py",
+        "size": 5376,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "scan_solarman.py",
+        "path": "scan_solarman.py",
+        "size": 3098,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "__init__.py",
+        "path": "__init__.py",
+        "size": 42,
+        "modified": "2025-06-07 06:38"
+      },
+      {
+        "name": "ml_enhancement_phase1_v2.py",
+        "path": "ml_enhancement_phase1_v2.py",
+        "size": 17697,
+        "modified": "2025-06-05 21:30"
+      },
+      {
+        "name": "email_notifier_simple_backup.py",
+        "path": "email_notifier_simple_backup.py",
+        "size": 8196,
+        "modified": "2025-06-04 00:47"
+      },
+      {
+        "name": "email_notifier_backup_before_final_restore_20250601_183629.py",
+        "path": "email_notifier_backup_before_final_restore_20250601_183629.py",
+        "size": 6864,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "settings_manager_broken_backup.py",
+        "path": "settings_manager_broken_backup.py",
+        "size": 10289,
+        "modified": "2025-06-03 09:11"
+      },
+      {
+        "name": "ai_empire_system.py",
+        "path": "ai_empire_system.py",
+        "size": 24683,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "hanazono_dev.py",
+        "path": "hanazono_dev.py",
+        "size": 18297,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "settings_recommender.py",
+        "path": "settings_recommender.py",
+        "size": 13293,
+        "modified": "2025-06-04 00:41"
+      },
+      {
+        "name": "collect_daily_data.py",
+        "path": "collect_daily_data.py",
+        "size": 3300,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "email_notifier_BROKEN_FINAL_20250601_190126.py",
+        "path": "email_notifier_BROKEN_FINAL_20250601_190126.py",
+        "size": 10117,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "expand_env_fix.py",
+        "path": "expand_env_fix.py",
+        "size": 1209,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "email_notifier_v2.py",
+        "path": "email_notifier_v2.py",
+        "size": 26536,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "email_notifier_backup_20250601_112037.py",
+        "path": "email_notifier_backup_20250601_112037.py",
+        "size": 6625,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "email_notifier_broken_backup.py",
+        "path": "email_notifier_broken_backup.py",
+        "size": 27182,
+        "modified": "2025-06-03 09:11"
+      },
+      {
+        "name": "update_memory_with_discoveries.py",
+        "path": "update_memory_with_discoveries.py",
+        "size": 4026,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "ai_startup_memory.py",
+        "path": "ai_memory/ai_startup_memory.py",
+        "size": 18871,
+        "modified": "2025-06-08 21:30"
+      },
+      {
+        "name": "memory_manager.py",
+        "path": "ai_memory/core/memory_manager.py",
+        "size": 6494,
+        "modified": "2025-06-03 05:23"
+      },
+      {
+        "name": "continuation_manager.py",
+        "path": "ai_memory/core/continuation_manager.py",
+        "size": 25807,
+        "modified": "2025-06-04 21:39"
+      }
+    ],
+    "shell_scripts": [
+      {
+        "name": "master_progress_controller.sh",
+        "path": "master_progress_controller.sh",
+        "size": 13931,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "hanazono_detail_startup.sh",
+        "path": "hanazono_detail_startup.sh",
+        "size": 692,
+        "modified": "2025-06-02 18:00"
+      },
+      {
+        "name": "start_web_dashboard.sh",
+        "path": "start_web_dashboard.sh",
+        "size": 743,
+        "modified": "2025-06-02 18:00"
+      },
+      {
+        "name": "check_work_environment_universal.sh",
+        "path": "check_work_environment_universal.sh",
+        "size": 5684,
+        "modified": "2025-06-05 13:40"
+      },
+      {
+        "name": "start_manual_system_fixed.sh",
+        "path": "start_manual_system_fixed.sh",
+        "size": 697,
+        "modified": "2025-06-02 18:00"
+      },
+      {
+        "name": "backup_with_verification.sh",
+        "path": "backup_with_verification.sh",
+        "size": 623,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "setup_auto_update.sh",
+        "path": "setup_auto_update.sh",
+        "size": 941,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "hanazono_complete_startup.sh",
+        "path": "hanazono_complete_startup.sh",
+        "size": 2449,
+        "modified": "2025-06-02 18:06"
+      },
+      {
+        "name": "start.sh",
+        "path": "start.sh",
+        "size": 743,
+        "modified": "2025-06-02 20:11"
+      },
+      {
+        "name": "check_work_environment.sh",
+        "path": "check_work_environment.sh",
+        "size": 2688,
+        "modified": "2025-06-05 13:35"
+      },
+      {
+        "name": "fetch_github_files.sh",
+        "path": "fetch_github_files.sh",
+        "size": 1800,
+        "modified": "2025-06-02 20:11"
+      },
+      {
+        "name": "mail_diagnostic_safe.sh",
+        "path": "mail_diagnostic_safe.sh",
+        "size": 6881,
+        "modified": "2025-06-03 08:33"
+      },
+      {
+        "name": "step1_create_basic_structure.sh",
+        "path": "step1_create_basic_structure.sh",
+        "size": 1214,
+        "modified": "2025-06-02 20:11"
+      },
+      {
+        "name": "auto_work_assistant.sh",
+        "path": "auto_work_assistant.sh",
+        "size": 1511,
+        "modified": "2025-06-05 13:44"
+      },
+      {
+        "name": "git_cleanup_auto.sh",
+        "path": "git_cleanup_auto.sh",
+        "size": 6881,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "empire_dashboard.sh",
+        "path": "empire_dashboard.sh",
+        "size": 3577,
+        "modified": "2025-06-02 20:12"
+      },
+      {
+        "name": "run_daily_report.sh",
+        "path": "run_daily_report.sh",
+        "size": 174,
+        "modified": "2025-06-02 20:12"
+      },
+      {
+        "name": "RESTORE_AUTOMATION.sh",
+        "path": "RESTORE_AUTOMATION.sh",
+        "size": 865,
+        "modified": "2025-06-08 19:15"
+      },
+      {
+        "name": "ai_dev_assistant_v2.sh",
+        "path": "ai_dev_assistant_v2.sh",
+        "size": 23092,
+        "modified": "2025-06-02 20:12"
+      },
+      {
+        "name": "ai_memory_integration.sh",
+        "path": "ai_memory_integration.sh",
+        "size": 2076,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "cleanup_temp_files.sh",
+        "path": "cleanup_temp_files.sh",
+        "size": 440,
+        "modified": "2025-06-02 20:12"
+      },
+      {
+        "name": "protection_controller.sh",
+        "path": "protection_controller.sh",
+        "size": 3312,
+        "modified": "2025-06-04 09:25"
+      },
+      {
+        "name": "git_cleanup_auto_fixed.sh",
+        "path": "git_cleanup_auto_fixed.sh",
+        "size": 6904,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "start_manual_system.sh",
+        "path": "start_manual_system.sh",
+        "size": 402,
+        "modified": "2025-06-02 20:14"
+      },
+      {
+        "name": "root_cause_analyzer.sh",
+        "path": "root_cause_analyzer.sh",
+        "size": 33,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "safe_mass_fix.sh",
+        "path": "safe_mass_fix.sh",
+        "size": 606,
+        "modified": "2025-06-04 01:43"
+      }
+    ],
+    "config_files": [
+      {
+        "name": "github_access.json",
+        "path": "github_access.json",
+        "size": 30084,
+        "modified": "2025-06-02 18:00"
+      },
+      {
+        "name": "handover_config.json",
+        "path": "handover_config.json",
+        "size": 466,
+        "modified": "2025-06-02 18:00"
+      },
+      {
+        "name": "ai_empire_constitution.json",
+        "path": "ai_empire_constitution.json",
+        "size": 1271,
+        "modified": "2025-06-02 18:00"
+      },
+      {
+        "name": "settings_change_history.json",
+        "path": "settings_change_history.json",
+        "size": 827,
+        "modified": "2025-06-05 21:47"
+      },
+      {
+        "name": "settings_recommender.py.before_fix",
+        "path": "settings_recommender.py.before_fix",
+        "size": 13638,
+        "modified": "2025-06-04 00:41"
+      },
+      {
+        "name": "settings.json.auto_backup_20250602_201448",
+        "path": "settings.json.auto_backup_20250602_201448",
+        "size": 6775,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "kioku_cleanup_log_20250608_211334.json",
+        "path": "kioku_cleanup_log_20250608_211334.json",
+        "size": 236,
+        "modified": "2025-06-08 21:13"
+      },
+      {
+        "name": "hcqas_complete_data_package.json",
+        "path": "hcqas_complete_data_package.json",
+        "size": 4560,
+        "modified": "2025-06-07 15:25"
+      },
+      {
+        "name": "settings_recommender.py.auto_backup_20250602_201449",
+        "path": "settings_recommender.py.auto_backup_20250602_201449",
+        "size": 13293,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "config.py.rej",
+        "path": "config.py.rej",
+        "size": 570,
+        "modified": "2025-06-08 12:43"
+      },
+      {
+        "name": "config.py.auto_backup_20250602_180628",
+        "path": "config.py.auto_backup_20250602_180628",
+        "size": 2885,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "config.py.broken",
+        "path": "config.py.broken",
+        "size": 2905,
+        "modified": "2025-06-03 05:06"
+      },
+      {
+        "name": "manual_config.json",
+        "path": "manual_config.json",
+        "size": 110,
+        "modified": "2025-06-04 00:27"
+      },
+      {
+        "name": "ml_news_cache.json",
+        "path": "ml_news_cache.json",
+        "size": 1127,
+        "modified": "2025-06-05 22:21"
+      },
+      {
+        "name": "settings_manager.py.fixed",
+        "path": "settings_manager.py.fixed",
+        "size": 6605,
+        "modified": "2025-06-04 00:41"
+      },
+      {
+        "name": "space_config.json",
+        "path": "space_config.json",
+        "size": 999,
+        "modified": "2025-06-02 20:12"
+      },
+      {
+        "name": "automation_emergency_control.json",
+        "path": "automation_emergency_control.json",
+        "size": 2220,
+        "modified": "2025-06-08 19:15"
+      },
+      {
+        "name": "space_config.json.auto_backup_20250602_201202",
+        "path": "space_config.json.auto_backup_20250602_201202",
+        "size": 842,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "ai_knowledge_base.json",
+        "path": "ai_knowledge_base.json",
+        "size": 511,
+        "modified": "2025-06-02 20:12"
+      },
+      {
+        "name": "settings_manager.py.before_fix",
+        "path": "settings_manager.py.before_fix",
+        "size": 6649,
+        "modified": "2025-06-04 00:41"
+      },
+      {
+        "name": "config.py.before_fix",
+        "path": "config.py.before_fix",
+        "size": 2905,
+        "modified": "2025-06-04 00:43"
+      },
+      {
+        "name": "handover_config.json.auto_backup_20250602_180003",
+        "path": "handover_config.json.auto_backup_20250602_180003",
+        "size": 397,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "settings.json.security_backup",
+        "path": "settings.json.security_backup",
+        "size": 6781,
+        "modified": "2025-05-30 01:31"
+      },
+      {
+        "name": ".github_config",
+        "path": ".github_config",
+        "size": 210,
+        "modified": "2025-05-24 11:28"
+      },
+      {
+        "name": "manual_config.json.auto_backup_20250602_201200",
+        "path": "manual_config.json.auto_backup_20250602_201200",
+        "size": 110,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "ai_empire_citizens.json",
+        "path": "ai_empire_citizens.json",
+        "size": 2419,
+        "modified": "2025-06-02 20:12"
+      },
+      {
+        "name": "main.py.20250503_settings_complete",
+        "path": "main.py.20250503_settings_complete",
+        "size": 9786,
+        "modified": "2025-05-03 14:21"
+      },
+      {
+        "name": "hcqas_diagnosis_report.json",
+        "path": "hcqas_diagnosis_report.json",
+        "size": 1714,
+        "modified": "2025-06-07 19:31"
+      },
+      {
+        "name": "settings_editor.py.auto_backup_20250602_180003",
+        "path": "settings_editor.py.auto_backup_20250602_180003",
+        "size": 1125,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "settings_recommender.py.broken",
+        "path": "settings_recommender.py.broken",
+        "size": 13638,
+        "modified": "2025-06-03 05:24"
+      },
+      {
+        "name": "settings_tracker.py.auto_backup_20250602_201448",
+        "path": "settings_tracker.py.auto_backup_20250602_201448",
+        "size": 3039,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "config.py.orig",
+        "path": "config.py.orig",
+        "size": 2885,
+        "modified": "2025-06-08 12:43"
+      },
+      {
+        "name": "settings_editor.py.broken_backup",
+        "path": "settings_editor.py.broken_backup",
+        "size": 1147,
+        "modified": "2025-06-04 01:43"
+      },
+      {
+        "name": "settings.json",
+        "path": "settings.json",
+        "size": 3910,
+        "modified": "2025-06-07 21:45"
+      },
+      {
+        "name": "settings_manager.py.auto_backup_20250602_201202",
+        "path": "settings_manager.py.auto_backup_20250602_201202",
+        "size": 10095,
+        "modified": "2025-06-03 02:37"
+      },
+      {
+        "name": "automation_audit_report.json",
+        "path": "automation_audit_report.json",
+        "size": 12082,
+        "modified": "2025-06-08 19:03"
+      }
+    ],
+    "important_files": []
+  },
+  "modules": {
+    "main.py": {
+      "lines_of_code": 66,
+      "imports_count": 6,
+      "functions_count": 1,
+      "classes_count": 0,
+      "description": "# プロジェクトルートをパスに追加 ",
+      "top_imports": [
+        "import sys",
+        "import argparse",
+        "import json",
+        "import logging",
+        "from email_notifier import EnhancedEmailNotifier"
+      ]
+    },
+    "collector_capsule.py": {
+      "lines_of_code": 124,
+      "imports_count": 6,
+      "functions_count": 5,
+      "classes_count": 1,
+      "description": "#!/usr/bin/env python3 \"\"\" ",
+      "top_imports": [
+        "import sys",
+        "import os",
+        "import logging",
+        "import json",
+        "from datetime import datetime"
+      ]
+    },
+    "lvyuan_collector.py": {
+      "lines_of_code": 218,
+      "imports_count": 9,
+      "functions_count": 8,
+      "classes_count": 1,
+      "description": "\"\"\"LVYUAN インバーターからのデータ収集モジュール(改良版)\"\"\" ",
+      "top_imports": [
+        "import os",
+        "import time",
+        "import json",
+        "import logging",
+        "import socket"
+      ]
+    },
+    "weather_forecast.py": {
+      "lines_of_code": 139,
+      "imports_count": 5,
+      "functions_count": 2,
+      "classes_count": 0,
+      "description": "",
+      "top_imports": [
+        "import requests",
+        "import json",
+        "import datetime",
+        "import re",
+        "from config import WEATHER_API_URL, WARNING_API_URL, TYPHOON_API_URL"
+      ]
+    },
+    "email_capsule.py": {
+      "lines_of_code": 72,
+      "imports_count": 6,
+      "functions_count": 1,
+      "classes_count": 0,
+      "description": "# --- 設定データをコード内に直接埋め込む --- ",
+      "top_imports": [
+        "import smtplib",
+        "import logging",
+        "import os",
+        "from datetime import datetime",
+        "from email.mime.text import MIMEText"
+      ]
+    },
+    "hcqas_capsule.py": {
+      "lines_of_code": 38,
+      "imports_count": 3,
+      "functions_count": 1,
+      "classes_count": 0,
+      "description": "# HCQASモジュールのパス問題を解決 ",
+      "top_imports": [
+        "import sys",
+        "import logging",
+        "from hcqas_implementation.ai_constraints.smart_suggestion_engine import SmartSuggestionEngine"
+      ]
+    }
+  },
+  "services": {
+    "active_cron_jobs": 4,
+    "cron_sample": [
+      "*/15 * * * * /bin/bash -c \"cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 collector_capsule.py\" >> /home/pi/lvyuan_solar_control/logs/cron.log 2>&1",
+      "0 7 * * * /bin/bash -c \"cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --daily-report\" >> /home/pi/lvyuan_solar_control/logs/cron.log 2>&1",
+      "0 23 * * * /bin/bash -c \"cd /home/pi/lvyuan_solar_control && source venv/bin/activate && python3 main.py --daily-report\" >> /home/pi/lvyuan_solar_control/logs/cron.log 2>&1"
+    ],
+    "relevant_processes": 1,
+    "process_sample": [
+      "pi         18612 77.7  2.8  19396 12372 pts/0    S+   22:03   0:00 python3 lightweight_system_mapper"
+    ]
+  }
+}
