@@ -60,6 +60,19 @@ class AIStartupMemory:
             print(f"   📊 システム規模: Python{system_map_info.get('system_scale', {}).get('python_files', 0)}個")
             print(f"   🔧 主要モジュール: {len(system_map_info.get('core_modules', {}))}個")
             print(f"   ⚙️ 自動化レベル: {system_map_info.get('automation_status', {}).get('automation_level', '不明')}")
+
+        # システム状況自動表示
+        current_status = core_knowledge.get('current_system_status', {})
+        if current_status:
+            print("✅ システム状況記憶復旧成功")
+            security = current_status.get('security_system', {})
+            recovery = current_status.get('automation_recovery', {})
+            health = current_status.get('system_health', {})
+            
+            print(f"   🛡️ セキュリティ: 証明書{security.get('certificates_count', 0)}個, チケット{security.get('active_tickets', 0)}個")
+            print(f"   🔄 自動化復旧: {recovery.get('recovery_rate', '0/0')} 復旧済み")
+            print(f"   ⚙️ システム健全性: cron{health.get('active_cron_jobs', 0)}個稼働中")
+            print(f"   📊 最終更新: {core_knowledge.get('last_status_update', '不明')}")
             print(f"   📋 確認方法: cat system_summary_*.md")
 
         # システム診断革命手法 - kiokuシステム統合 (2025-06-08確立)
