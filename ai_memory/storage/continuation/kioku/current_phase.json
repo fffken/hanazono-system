@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-06-08T15:25:10.375909+00:00",
+  "current_phase": "kioku_initialization",
+  "phase_number": 1,
+  "step": "auto_detected_setup",
+  "progress_percentage": 0,
+  "estimated_completion": "30_minutes",
+  "description": "自動検知プロジェクト初期化 - kioku",
+  "next_immediate_action": "作業スナップショット記録推奨"
+}

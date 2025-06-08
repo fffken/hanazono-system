@@ -29,13 +29,6 @@
       "automation_control": "39個自動化スクリプト制御完了",
       "diagnostic_protocol": "バックアップ前提一時診断スクリプト手法確立",
       "system_mapping": "軽量版自動マッピングシステム構築"
-    },
-    "hardware": {
-      "platform": "Raspberry Pi",
-      "cpu": "ARM",
-      "memory": "8GB",
-      "storage": "microSD",
-      "environment": "IoT Solar Control System"
     }
   },
   "critical_rules": [
