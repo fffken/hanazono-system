@@ -38,6 +38,32 @@
     "記憶システム実装は最優先事項",
     "システム全体把握: cat system_summary_*.md で構造確認必須",
     "定期マップ更新: python3 lightweight_system_mapper.py 月1回実行",
-    "新規参加者対応: システムマップ要約で迅速理解支援"
-  ]
+    "新規参加者対応: システムマップ要約で迅速理解支援",
+    "新AIセッション開始時: システム状況自動表示でプロジェクト継続性確保"
+  ],
+  "current_system_status": {
+    "timestamp": "2025-06-08T23:15:03.493042",
+    "security_system": {
+      "certificates_count": 2,
+      "active_tickets": 2,
+      "quarantined_scripts": 0,
+      "system_status": "ACTIVE"
+    },
+    "automation_recovery": {
+      "total_disabled": 7,
+      "recovered_count": 2,
+      "recovered_scripts": [
+        "scripts/auto_evolution_controller.sh",
+        "auto_code_fixes.py"
+      ],
+      "recovery_rate": "2/7"
+    },
+    "system_health": {
+      "active_cron_jobs": 3,
+      "venv_status": "ACTIVE",
+      "core_systems": "OPERATIONAL"
+    },
+    "active_scripts": {}
+  },
+  "last_status_update": "2025-06-08T23:15:03.543993"
 }
