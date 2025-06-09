@@ -48,7 +48,7 @@ def main():
         settings = get_settings()
         
         # 2. 設定をメール担当に手渡しして初期化
-        notifier = EnhancedEmailNotifier(config=settings['notification']['email'], logger=logger)
+        notifier = EnhancedEmailNotifier(config=settings, logger=logger)
         
         # 3. レポート送信を指示。--liveがなければテストモード
         # データ収集

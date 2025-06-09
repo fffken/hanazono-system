@@ -48,16 +48,10 @@ def main():
         settings = get_settings()
         
         # 2. 設定をメール担当に手渡しして初期化
-        notifier = EnhancedEmailNotifier(config=settings['notification']['email'], logger=logger)
+        notifier = EnhancedEmailNotifier(config=settings, logger=logger)
         
         # 3. レポート送信を指示。--liveがなければテストモード
-        # データ収集
-        from collector_capsule import CollectorCapsule
-        collector = CollectorCapsule()
-        data = collector.collect_lvyuan_data()
-        
-        # メール送信
-        success = notifier.send_daily_report(data, test_mode=not args.live)
+        success = notifier.send_daily_report(test_mode=not args.live)
         
         if success:
             logger.info("✅ 司令塔: 日次レポート処理、正常完了。")
