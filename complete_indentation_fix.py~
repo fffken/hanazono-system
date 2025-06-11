@@ -1,0 +1,215 @@
+#!/usr/bin/env python3
+"""
+Complete Indentation Fix Script
+目的: 全インデントエラーの完全修復
+原則: バックアップから復旧・安全第一・即座削除対象
+"""
+
+import shutil
+import glob
+from datetime import datetime
+
+def restore_from_latest_backup():
+    """最新の安全なバックアップから復旧"""
+    print("🛡️ 安全なバックアップから復旧...")
+    
+    # 全バックアップファイルを検索（破損前のもの）
+    backup_patterns = [
+        "email_notifier_v2_1.py.realdata_fix_*",
+        "email_notifier_v2_1.py.final_fix_*",
+        "email_notifier_v2_1.py.direct_fix_*"
+    ]
+    
+    all_backups = []
+    for pattern in backup_patterns:
+        all_backups.extend(glob.glob(pattern))
+    
+    # タイムスタンプでソート（最新順）
+    all_backups.sort(reverse=True)
+    
+    if all_backups:
+        # 最新のバックアップを試行
+        for backup_file in all_backups[:3]:  # 最新3つを試行
+            print(f"🔍 バックアップ確認: {backup_file}")
+            
+            # 構文チェック
+            shutil.copy2(backup_file, "temp_test.py")
+            try:
+                import subprocess
+                result = subprocess.run(['python3', '-m', 'py_compile', 'temp_test.py'], 
+                                      capture_output=True, text=True)
+                
+                if result.returncode == 0:
+                    print(f"✅ 安全なバックアップ発見: {backup_file}")
+                    
+                    # 現在の破損ファイルをバックアップ
+                    broken_backup = f"email_notifier_v2_1.py.broken_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+                    shutil.copy2("email_notifier_v2_1.py", broken_backup)
+                    
+                    # 安全なバックアップから復旧
+                    shutil.copy2(backup_file, "email_notifier_v2_1.py")
+                    print(f"✅ 復旧完了: {backup_file} → email_notifier_v2_1.py")
+                    
+                    # 一時ファイル削除
+                    import os
+                    os.remove("temp_test.py")
+                    return True
+                else:
+                    print(f"❌ 構文エラーあり: {backup_file}")
+                    
+            except Exception as e:
+                print(f"❌ バックアップ確認エラー: {e}")
+            
+            # 一時ファイル削除
+            try:
+                import os
+                os.remove("temp_test.py")
+            except:
+                pass
+    
+    print("❌ 安全なバックアップが見つかりません")
+    return False
+
+def apply_minimal_battery_fix():
+    """最小限のバッテリー実データ修正"""
+    print("🔋 最小限バッテリー実データ修正...")
+    
+    # 新しいバックアップ
+    backup_file = f"email_notifier_v2_1.py.minimal_fix_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    shutil.copy2("email_notifier_v2_1.py", backup_file)
+    print(f"✅ バックアップ: {backup_file}")
+    
+    with open("email_notifier_v2_1.py", 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # データベース不要でCollectorCapsuleから直接取得する関数に置換
+    old_battery_func = '''    def get_current_battery_status(self):
+        """現在のバッテリー状況を取得"""
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            
+            # 最新のデータを取得
+            cursor.execute('''
+                SELECT timestamp, battery_soc, battery_voltage, battery_current
+                FROM battery_data
+                ORDER BY timestamp DESC
+                LIMIT 1
+            ''')
+            
+            result = cursor.fetchone()
+            conn.close()
+            
+            if result:
+                return {
+                    "timestamp": result[0],
+                    "soc": result[1],
+                    "voltage": result[2],
+                    "current": result[3]
+                }
+                
+        except Exception as e:
+            self.logger.error(f"バッテリー状況取得エラー: {e}")
+        
+        return None'''
+    
+    new_battery_func = '''    def get_current_battery_status(self):
+        """現在のバッテリー状況を取得（CollectorCapsuleから直接）"""
+        try:
+            from collector_capsule import CollectorCapsule
+            from datetime import datetime
+            
+            collector = CollectorCapsule()
+            data = collector.collect_lvyuan_data()
+            
+            if data and len(data) > 0 and isinstance(data[0], dict):
+                battery_data = data[0]
+                params = battery_data.get('parameters', {})
+                
+                # SOCとVoltageを取得
+                soc_data = params.get('0x0100', {})
+                voltage_data = params.get('0x0101', {})
+                
+                return {
+                    "timestamp": battery_data.get('datetime', datetime.now().strftime('%Y-%m-%d %H:%M:%S')),
+                    "soc": soc_data.get('value', 'N/A'),
+                    "voltage": voltage_data.get('value', 'N/A'),
+                    "current": 'N/A'
+                }
+                
+        except Exception as e:
+            self.logger.error(f"バッテリー状況取得エラー: {e}")
+        
+        return None'''
+    
+    if old_battery_func in content:
+        content = content.replace(old_battery_func, new_battery_func)
+        
+        with open("email_notifier_v2_1.py", 'w', encoding='utf-8') as f:
+            f.write(content)
+        
+        print("✅ バッテリー実データ取得に変更完了")
+        return True
+    else:
+        print("⚠️ 対象関数が見つかりません")
+        return False
+
+def final_test():
+    """最終動作テスト"""
+    print("🧪 最終動作テスト...")
+    
+    try:
+        import subprocess
+        result = subprocess.run([
+            'python3', 'main.py', '--daily-report', '--live'
+        ], capture_output=True, text=True, timeout=60)
+        
+        print(f"📊 終了コード: {result.returncode}")
+        
+        if result.returncode == 0:
+            print("✅ 実データメール送信成功")
+            return True
+        else:
+            if result.stderr:
+                for line in result.stderr.splitlines()[-5:]:
+                    print(f"❌ {line}")
+            return False
+            
+    except Exception as e:
+        print(f"❌ テストエラー: {e}")
+        return False
+
+def main():
+    print("🔧 Complete Indentation Fix")
+    print(f"実行時刻: {datetime.now()}")
+    print("🎯 目的: 全インデントエラー完全修復")
+    
+    print("\n" + "="*60)
+    print(" Phase 1: 安全なバックアップから復旧")
+    print("="*60)
+    restore_ok = restore_from_latest_backup()
+    
+    if restore_ok:
+        print("\n" + "="*60)
+        print(" Phase 2: 最小限バッテリー実データ修正")
+        print("="*60)
+        fix_ok = apply_minimal_battery_fix()
+        
+        if fix_ok:
+            print("\n" + "="*60)
+            print(" Phase 3: 最終動作テスト")
+            print("="*60)
+            final_ok = final_test()
+            
+            if final_ok:
+                print("\n🎉 完全修復成功！")
+                print("📧 実データメール送信完了")
+            else:
+                print("\n🔧 最終テストで問題発生")
+        else:
+            print("\n⚠️ バッテリー修正スキップ")
+    else:
+        print("\n❌ 安全なバックアップが見つかりません")
+
+if __name__ == "__main__":
+    main()

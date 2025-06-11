@@ -8,7 +8,7 @@ sys.path.append('.')
 
 # 修正：ここで必要なモジュールをインポートする
 try:
-    from email_notifier_v2_1 import EnhancedEmailNotifier
+    from email_notifier import EnhancedEmailNotifier
 except ImportError as e:
     print(f"FATAL: email_notifier.py の読み込みに失敗しました。循環参照または依存関係の問題の可能性があります: {e}")
     sys.exit(1)

@@ -114,7 +114,7 @@ class EnhancedEmailNotifier:
             "generation_forecast": "中程度"
         }
 
-    def get_current_battery_status_OLD(self):
+    def get_current_battery_status_DISABLED(self):
         """現在のバッテリー状況を取得"""
         try:
             conn = sqlite3.connect(self.db_path)
@@ -521,6 +521,32 @@ HANAZONOシステム効果: 革新的削減達成
         content.append("Enhanced Email System v2.2 + Revolutionary Battle System")
 
         return '\n'.join(content)
+
+    def get_current_battery_status(self):
+        """現在のバッテリー状況を取得（CollectorCapsuleから直接）"""
+        try:
+            from collector_capsule import CollectorCapsule
+            from datetime import datetime
+            
+            collector = CollectorCapsule()
+            data = collector.collect_lvyuan_data()
+            
+            if data and len(data) > 0 and isinstance(data[0], dict):
+                battery_data = data[0]
+                params = battery_data.get("parameters", {})
+                
+                soc_data = params.get("0x0100", {})
+                voltage_data = params.get("0x0101", {})
+                
+                return {
+                    "timestamp": battery_data.get("datetime", datetime.now().strftime("%Y-%m-%d %H:%M:%S")),
+                    "soc": soc_data.get("value", "N/A"),
+                    "voltage": voltage_data.get("value", "N/A"),
+                    "current": "N/A"
+                }
+        except Exception as e:
+            self.logger.error(f"バッテリー状況取得エラー: {e}")
+        return None
 
 def test_email_system():
     """メールシステムのテスト"""

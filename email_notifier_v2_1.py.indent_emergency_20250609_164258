@@ -114,7 +114,7 @@ class EnhancedEmailNotifier:
             "generation_forecast": "中程度"
         }
 
-    def get_current_battery_status_OLD(self):
+    def get_current_battery_status(self):
         """現在のバッテリー状況を取得"""
         try:
             conn = sqlite3.connect(self.db_path)
@@ -459,6 +459,10 @@ HANAZONOシステム効果: 革新的削減達成
                 content.append(f"電流: {battery_status['current']}A")
             else:
                 content.append("バッテリー残量: データ取得中...")
+            if battery_status:
+            content.append(f"電流: {battery_status['current']}A")
+        else:
+            content.append("電流: データ取得中...")
 
         content.append("")
         content.append("24時間蓄電量変化 (HTML時はグラフ表示)")

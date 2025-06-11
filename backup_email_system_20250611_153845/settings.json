@@ -1,0 +1,194 @@
+{
+  "inverter_parameters": {
+    "charge_current_id": "07",
+    "charge_time_id": "10",
+    "soc_setting_id": "62"
+  },
+  "seasonal_settings": {
+    "winter": {
+      "typeA": {
+        "charge_current": 50,
+        "charge_time": 45,
+        "soc": 50
+      },
+      "typeB": {
+        "charge_current": 60,
+        "charge_time": 60,
+        "soc": 60
+      }
+    },
+    "spring_fall": {
+      "typeA": {
+        "charge_current": 40,
+        "charge_time": 30,
+        "soc": 35
+      },
+      "typeB": {
+        "charge_current": 50,
+        "charge_time": 45,
+        "soc": 45
+      }
+    },
+    "summer": {
+      "typeA": {
+        "charge_current": 25,
+        "charge_time": 15,
+        "soc": 25
+      },
+      "typeB": {
+        "charge_current": 35,
+        "charge_time": 30,
+        "soc": 35
+      }
+    }
+  },
+  "detailed_seasonal_settings": {
+    "winter_early": {
+      "reference": "winter"
+    },
+    "winter_mid": {
+      "reference": "winter"
+    },
+    "winter_late": {
+      "reference": "winter"
+    },
+    "spring_early": {
+      "reference": "spring_fall"
+    },
+    "spring_mid": {
+      "reference": "spring_fall"
+    },
+    "spring_late": {
+      "reference": "spring_fall"
+    },
+    "rainy": {
+      "reference": "spring_fall"
+    },
+    "summer_early": {
+      "reference": "summer"
+    },
+    "summer_mid": {
+      "reference": "summer"
+    },
+    "summer_late": {
+      "reference": "summer"
+    },
+    "autumn_early": {
+      "reference": "spring_fall"
+    },
+    "autumn_mid": {
+      "reference": "spring_fall"
+    },
+    "autumn_late": {
+      "reference": "spring_fall"
+    }
+  },
+  "notification": {
+    "email": {
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
+      "smtp_user": "fffken@gmail.com",
+      "smtp_password": "bbzpgdsvqlcemyxi",
+      "email_sender": "fffken@gmail.com",
+      "email_recipients": [
+        "fffken@gmail.com"
+      ],
+      "smtp_use_tls": true,
+      "smtp_use_ssl": false,
+      "enabled": true
+    },
+    "line": {
+      "enabled": false
+    },
+    "telegram": {
+      "enabled": false
+    }
+  },
+  "weather_connectors": [
+    "　後　",
+    "　のち　",
+    "　時々　",
+    "　一時　",
+    "　夜　",
+    "　夜遅く　",
+    "　所により　",
+    "　で　",
+    "　から　",
+    "　または　"
+  ],
+  "weather_icons": {
+    "晴": "☀️",
+    "晴れ": "☀️",
+    "曇": "☁️",
+    "曇り": "☁️",
+    "くもり": "☁️",
+    "雨": "🌧️",
+    "雪": "❄️",
+    "雷": "⚡",
+    "霧": "🌫️"
+  },
+  "season_icons": {
+    "winter_early": "🍂❄️",
+    "winter_mid": "❄️️☃️",
+    "winter_late": "❄️🌱",
+    "spring_early": "🌸🌱",
+    "spring_mid": "🌸🌿",
+    "spring_late": "🌿🌦️",
+    "rainy": "☔️🌿",
+    "summer_early": "☀️🌿",
+    "summer_mid": "☀️🏖️",
+    "summer_late": "☀️🍇",
+    "autumn_early": "🍁🍇",
+    "autumn_mid": "🍂🍁",
+    "autumn_late": "🍂❄️"
+  },
+  "inverter": {
+    "ip": "192.168.0.202",
+    "serial": 3528830226,
+    "port": 8899,
+    "mb_slave_id": 1
+  },
+  "network": {
+    "subnet": "192.168.0.0/24"
+  },
+  "monitoring": {
+    "interval_minutes": 15,
+    "key_registers": [
+      {
+        "address": "0x0100",
+        "name": "バッテリーSOC",
+        "unit": "%",
+        "factor": 1,
+        "emoji": "🔋"
+      },
+      {
+        "address": "0x0101",
+        "name": "バッテリー電圧",
+        "unit": "V",
+        "factor": 0.1,
+        "emoji": "⚡"
+      }
+    ]
+  },
+  "files": {
+    "data_prefix": "data_",
+    "date_format": "%Y%m%d",
+    "data_directory": "data"
+  },
+  "openweathermap": {
+    "api_key": "f03c7c0d5051735e9af4a782d0be60c1",
+    "location": "高松市"
+  },
+  "modbus": {
+    "port": 8899,
+    "host": "192.168.0.202"
+  },
+  "email": {
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "use_tls": true,
+    "sender_email": "fffken@gmail.com",
+    "receiver_email": "fffken@gmail.com",
+    "sender_password": "bbzpgdsvqlcemyxi"
+  }
+}

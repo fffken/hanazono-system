@@ -1,0 +1,33 @@
+{
+  "email": {
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "use_tls": true,
+    "sender_email": "fffken@gmail.com",
+    "receiver_email": "fffken@gmail.com",
+    "sender_password": "bbzpgdsvqlcemyxi"
+  },
+  "active_modules": [
+    "weather_module",
+    "battery_module",
+    "news_module"
+  ],
+  "system": {
+    "log_level": "INFO",
+    "max_retries": 3,
+    "timeout_seconds": 30
+  },
+  "modbus": {
+    "ip": "192.168.0.202",
+    "serial": 3528830226,
+    "port": 8899,
+    "mb_slave_id": 1
+  },
+  "report_settings": {
+    "daily_time": "07:00",
+    "evening_time": "23:00",
+    "include_weather": true,
+    "include_battery": true,
+    "include_news": true
+  }
+}
