@@ -1,10 +1,20 @@
 {
-  "timestamp": "2025-06-08T15:25:10.375909+00:00",
-  "current_phase": "kioku_initialization",
+  "timestamp": "2025-06-14T13:46:52.554652+00:00",
+  "current_phase": "kioku_memory_system_integration",
   "phase_number": 1,
-  "step": "auto_detected_setup",
-  "progress_percentage": 0,
-  "estimated_completion": "30_minutes",
-  "description": "自動検知プロジェクト初期化 - kioku",
-  "next_immediate_action": "作業スナップショット記録推奨"
+  "step": "documentation_updates",
+  "progress_percentage": 25,
+  "estimated_completion": "60_minutes",
+  "description": "AI記憶システム統合: ドキュメント更新完了",
+  "next_immediate_action": "システム状況確認とメール機能テスト",
+  "git_status": "32 files changed (small) - 主要: AI_AUTOMATIC_INSTRUCTIONS.md, AI_GITHUB_AUTO_REPORT.md, HANDOVER_PROMPT.md",
+  "active_files": [
+    "AI_AUTOMATIC_INSTRUCTIONS.md",
+    "AI_GITHUB_AUTO_REPORT.md",
+    "HANDOVER_PROMPT.md",
+    "PROJECT_STATUS.md",
+    "docs/WORK_LOG.md"
+  ],
+  "project_name": "kioku",
+  "auto_detected": true
 }
