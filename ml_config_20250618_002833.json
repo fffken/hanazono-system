@@ -1,0 +1,17 @@
+{
+  "model_type": "Random Forest + Neural Network Ensemble",
+  "features": [
+    "season",
+    "month",
+    "temp_max",
+    "temp_min",
+    "sunshine_hours",
+    "weather_encoded",
+    "year_trend"
+  ],
+  "target": "usage_kwh",
+  "expected_accuracy": "95%+",
+  "training_data_points": 0,
+  "validation_split": 0.2,
+  "cross_validation": 5
+}

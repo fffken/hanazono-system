@@ -1,0 +1,2259 @@
+{
+  "survey_date": "20250617_153103",
+  "completed_modules": {
+    "メインハブシステム": {
+      "file": "abc_integration_fixed_final_20250616_231158.py",
+      "size": 21786,
+      "last_modified": "2025-06-17 15:05:57",
+      "classes": [
+        "IntegrateBattleToMail"
+      ],
+      "functions": [
+        "__init__",
+        "get_perfect_weather_data",
+        "get_fallback_weather",
+        "get_battery_data",
+        "calculate_visual_recommendations",
+        "analyze_weather_text_advanced",
+        "get_perfect_weather_emoji_fixed",
+        "get_power_generation_forecast",
+        "fix_temperature_format",
+        "get_battle_data"
+      ],
+      "status": "完成"
+    },
+    "天気予報システム": {
+      "file": "weather_forecast.py",
+      "size": 12197,
+      "last_modified": "2025-06-15 20:36:21",
+      "classes": [],
+      "functions": [
+        "get_weather_forecast",
+        "extract_temperature"
+      ],
+      "status": "完成"
+    },
+    "システム制御": {
+      "file": "main.py",
+      "size": 2785,
+      "last_modified": "2025-06-09 17:05:48",
+      "classes": [],
+      "functions": [
+        "main"
+      ],
+      "status": "完成"
+    },
+    "データ収集システム": {
+      "total_files": 2035,
+      "latest_file": "data/collected_data_20250616_224503.json",
+      "freshness_hours": 16.76692117141353,
+      "status": "稼働中"
+    },
+    "自動化システム": {
+      "cron_jobs": 9,
+      "cron_lines": [
+        "logs = glob.glob('/tmp/hanazono_*.log')",
+        "print('週次確認完了')\" > /tmp/hanazono_weekly.log 2>&1",
+        "logs = glob.glob('/tmp/hanazono_*.log')",
+        "print('月次メンテナンス完了')\" > /tmp/hanazono_monthly.log 2>&1",
+        "    logs = glob.glob('/tmp/hanazono_*.log')",
+        "\" > /tmp/hanazono_monitor.log 2>&1",
+        "# HANAZONOシステム 最終修正版（重複解消）",
+        "0 7 * * * cd /home/pi/lvyuan_solar_control && python3 abc_integration_fixed_final_20250616_231158.py > /tmp/hanazono_morning.log 2>&1",
+        "0 23 * * * cd /home/pi/lvyuan_solar_control && python3 abc_integration_fixed_final_20250616_231158.py > /tmp/hanazono_night.log 2>&1"
+      ],
+      "status": "稼働中"
+    },
+    "ログ・監視システム": {
+      "log_files": 3,
+      "recent_logs": [
+        "hanazono_morning.log",
+        "hanazono_monitor.log",
+        "hanazono_evening.log"
+      ],
+      "status": "稼働中"
+    }
+  },
+  "additional_modules": [
+    {
+      "file": "weather_data_integration_diagnosis.py",
+      "size": 4463,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "thorough_search_format_battle.py",
+      "size": 5242,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "settings_editor.py",
+      "size": 1125,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "scan_email_module.py",
+      "size": 3353,
+      "classes": 0,
+      "functions": 5
+    },
+    {
+      "file": "email_notifier_golden_working_fixed.py",
+      "size": 26565,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "enhanced_email_notifier.py",
+      "size": 19377,
+      "classes": 1,
+      "functions": 17
+    },
+    {
+      "file": "kioku_permanent_integration.py",
+      "size": 8994,
+      "classes": 0,
+      "functions": 6
+    },
+    {
+      "file": "correct_icon_file_recovery.py",
+      "size": 3671,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_run_daily_optimization_final_fix_real_send_20250615_180822.py",
+      "size": 5319,
+      "classes": 0,
+      "functions": 4
+    },
+    {
+      "file": "revolutionary_battle_system.py",
+      "size": 15868,
+      "classes": 1,
+      "functions": 9
+    },
+    {
+      "file": "hanazono_gentle_fix_corrected.py",
+      "size": 10320,
+      "classes": 0,
+      "functions": 7
+    },
+    {
+      "file": "setting_recommender_hub_integration.py",
+      "size": 14027,
+      "classes": 2,
+      "functions": 12
+    },
+    {
+      "file": "email_notifier_v2_1.py",
+      "size": 24700,
+      "classes": 1,
+      "functions": 14
+    },
+    {
+      "file": "temp_file.py",
+      "size": 1416,
+      "classes": 1,
+      "functions": 3
+    },
+    {
+      "file": "zero_touch_operation.py",
+      "size": 20509,
+      "classes": 5,
+      "functions": 42
+    },
+    {
+      "file": "find_and_push_tokidoki.py",
+      "size": 8405,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "electric_data_manager.py",
+      "size": 14878,
+      "classes": 1,
+      "functions": 13
+    },
+    {
+      "file": "weather_forecast_ultimate_final.py",
+      "size": 11487,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "weather_forecast_final_replacement.py",
+      "size": 11196,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "email_notifier_fixed.py",
+      "size": 26566,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "backup_before_emoji_fix_20250616_234234.py",
+      "size": 10648,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "hanazono_email_fixed_20250615_111919.py",
+      "size": 16707,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "mail_function_test.py",
+      "size": 6866,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "final_email_delivery_test.py",
+      "size": 4321,
+      "classes": 0,
+      "functions": 4
+    },
+    {
+      "file": "weather_forecast_perfect_compatible.py",
+      "size": 12197,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "ultimate_kioku_perfect_fix.py",
+      "size": 15339,
+      "classes": 5,
+      "functions": 21
+    },
+    {
+      "file": "lvyuan_registers.py",
+      "size": 1896,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "email_notifier_backup_before_fix_20250601_182954.py",
+      "size": 8437,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "register_scanner.py",
+      "size": 2662,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "ml_predictor_module.py",
+      "size": 20560,
+      "classes": 3,
+      "functions": 23
+    },
+    {
+      "file": "weather_forecast_backup_20250525_180212.py",
+      "size": 6720,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_complete_report_analysis_real_send_20250615_180822.py",
+      "size": 10151,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "ultimate_kioku_fix.py",
+      "size": 1340,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_setting_recommender_20250615_190957.py",
+      "size": 9076,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "final_hardcoded_hunt.py",
+      "size": 5443,
+      "classes": 0,
+      "functions": 4
+    },
+    {
+      "file": "dynamic_settings_manager_v1_backup.py",
+      "size": 24531,
+      "classes": 1,
+      "functions": 18
+    },
+    {
+      "file": "hanazono_real_data_email_system.py",
+      "size": 12863,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "logger_util.py",
+      "size": 1567,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_simple_backup_real_send_20250615_180822.py",
+      "size": 16263,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "email_notifier_golden_working.py",
+      "size": 26565,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "email_notifier_fixed_final.py",
+      "size": 9885,
+      "classes": 2,
+      "functions": 9
+    },
+    {
+      "file": "weather_3days_restore.py",
+      "size": 14615,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "weather_predictor_hub_integration.py",
+      "size": 8813,
+      "classes": 2,
+      "functions": 8
+    },
+    {
+      "file": "ultimate_solution.py",
+      "size": 5696,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "auto_code_fixes_secured.py",
+      "size": 1526,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "kioku_precision_system.py",
+      "size": 14055,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "main_broken_backup.py",
+      "size": 9003,
+      "classes": 0,
+      "functions": 5
+    },
+    {
+      "file": "galactic_domination_project.py",
+      "size": 5424,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_perfect_email_fix_real_send_20250615_180822.py",
+      "size": 5843,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "simulation_mode_fix.py",
+      "size": 8894,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "perfect_weather_achievement_save.py",
+      "size": 11674,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "cron_file_backup_20250616_143041.py",
+      "size": 14373,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "hanazono_email_simulation_fix_real_send_20250615_180822.py",
+      "size": 3928,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "update_method.py",
+      "size": 1750,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "find_indent_errors.py",
+      "size": 2003,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "battle_news_generator.py",
+      "size": 10862,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "abc_integration_icon_fixed_20250615_223341.py",
+      "size": 14373,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "hanazono_3elements_final_system.py",
+      "size": 8960,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "electric_bill_tracker.py",
+      "size": 19118,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "auto_simulation_mode_killer_real_send_20250615_180822.py",
+      "size": 8826,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "config.py",
+      "size": 1665,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "data_analyzer.py",
+      "size": 11471,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "cron_icon_fix_switch.py",
+      "size": 5869,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "auto_simulation_mode_killer.py",
+      "size": 8975,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "send_daily_report_fix.py",
+      "size": 3776,
+      "classes": 0,
+      "functions": 5
+    },
+    {
+      "file": "existing_weather_system_diagnosis.py",
+      "size": 16917,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "cron_backup_before_tokidoki_20250616_235410.py",
+      "size": 10648,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "hanazono_email_integration_fix.py",
+      "size": 4905,
+      "classes": 3,
+      "functions": 2
+    },
+    {
+      "file": "space_empire_dashboard_fixed.py",
+      "size": 8190,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "dynamic_settings_manager.py",
+      "size": 20523,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "scan_email_system_real_send_20250615_180822.py",
+      "size": 5163,
+      "classes": 0,
+      "functions": 6
+    },
+    {
+      "file": "web_dashboard_server.py",
+      "size": 11733,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "backup_before_tokidoki_fix_20250616_234722.py",
+      "size": 16010,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "kioku_working_fixed.py",
+      "size": 1214,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "hanazono_daily_optimization_email_fix.py",
+      "size": 4938,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "add_extract_battery_data.py",
+      "size": 4023,
+      "classes": 1,
+      "functions": 3
+    },
+    {
+      "file": "test_real_data_email_20250615_111508.py",
+      "size": 1969,
+      "classes": 0,
+      "functions": 0
+    },
+    {
+      "file": "hanazono_optimization_hub_backup_20250611_221011.py",
+      "size": 14245,
+      "classes": 4,
+      "functions": 26
+    },
+    {
+      "file": "final_system_save.py",
+      "size": 6413,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "email_notifier_v2_1_battle_system.py",
+      "size": 24340,
+      "classes": 1,
+      "functions": 14
+    },
+    {
+      "file": "cron_backup_correct_integration_20250617_012734.py",
+      "size": 8405,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "push_and_save_tokidoki.py",
+      "size": 10690,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "battery_data_integration_diagnosis.py",
+      "size": 9083,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "ultimate_email_integration.py",
+      "size": 14127,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "preview_email_content.py",
+      "size": 1067,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "abc_integration_icon_fixed_20250615_223350.py",
+      "size": 14373,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "ultimate_kioku_system.py",
+      "size": 13165,
+      "classes": 5,
+      "functions": 19
+    },
+    {
+      "file": "fix_23_time_newline.py",
+      "size": 5178,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "test_linebreak_fix.py",
+      "size": 2482,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "supreme_ai_prediction.py",
+      "size": 24606,
+      "classes": 1,
+      "functions": 18
+    },
+    {
+      "file": "ml_enhancement_phase1_v4_backup.py",
+      "size": 40542,
+      "classes": 1,
+      "functions": 42
+    },
+    {
+      "file": "email_notifier_backup_env_fix_20250601_180147.py",
+      "size": 6625,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "email_hub_ml_final_real_send_20250615_180822.py",
+      "size": 20486,
+      "classes": 3,
+      "functions": 16
+    },
+    {
+      "file": "perfect_weather_apply.py",
+      "size": 7224,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "hanazono_email_auto_integration_real_send_20250615_180822.py",
+      "size": 5743,
+      "classes": 3,
+      "functions": 3
+    },
+    {
+      "file": "correct_battle_integration.py",
+      "size": 3680,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "ml_system_diagnosis.py",
+      "size": 8051,
+      "classes": 0,
+      "functions": 8
+    },
+    {
+      "file": "email_notifier_BROKEN_20250601_184503.py",
+      "size": 10117,
+      "classes": 2,
+      "functions": 9
+    },
+    {
+      "file": "github_access_system.py",
+      "size": 5803,
+      "classes": 0,
+      "functions": 7
+    },
+    {
+      "file": "write_and_verify.py",
+      "size": 2737,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "weather_api_fix.py",
+      "size": 10788,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "email_syntax_fix.py",
+      "size": 9346,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "email_notifier_backup_20250603_153551.py",
+      "size": 8196,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "email_notifier.github.py",
+      "size": 25792,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "github_data_integration.py",
+      "size": 13863,
+      "classes": 1,
+      "functions": 9
+    },
+    {
+      "file": "weather_forecast_fixed_20250615_192318.py",
+      "size": 6434,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "ml_enhancement_phase1_v4.py",
+      "size": 28649,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "hanazono_complete_system_detailed_report_20250615_073249.py",
+      "size": 17611,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "email_notifier.py",
+      "size": 25792,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "ai_assistant.py",
+      "size": 16079,
+      "classes": 2,
+      "functions": 36
+    },
+    {
+      "file": "ultimate_kioku_complete_fix.py",
+      "size": 8979,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "icon_fixed_file_recovery.py",
+      "size": 3855,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "enhanced_email_system_github.py",
+      "size": 26076,
+      "classes": 1,
+      "functions": 25
+    },
+    {
+      "file": "email_hub_direct_fix_20250615_184510.py",
+      "size": 1776,
+      "classes": 1,
+      "functions": 1
+    },
+    {
+      "file": "self_evolving_ai_v3.py",
+      "size": 44944,
+      "classes": 1,
+      "functions": 78
+    },
+    {
+      "file": "hanazono_dashboard.py",
+      "size": 21254,
+      "classes": 1,
+      "functions": 13
+    },
+    {
+      "file": "ai_self_mod_capability_expansion.py",
+      "size": 1700,
+      "classes": 0,
+      "functions": 5
+    },
+    {
+      "file": "hanazono_email_clean_fixed.py",
+      "size": 7547,
+      "classes": 2,
+      "functions": 8
+    },
+    {
+      "file": "hanazono_real_send_mode_20250615_180033.py",
+      "size": 15270,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "email_notifier_v1.py",
+      "size": 6625,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "predictive_analysis_system.py",
+      "size": 30058,
+      "classes": 1,
+      "functions": 23
+    },
+    {
+      "file": "past_email_recovery_search.py",
+      "size": 8085,
+      "classes": 0,
+      "functions": 6
+    },
+    {
+      "file": "ai_auto_resolver_v2.py",
+      "size": 10112,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "abc_integration_backup_20250615_213452.py",
+      "size": 15554,
+      "classes": 1,
+      "functions": 9
+    },
+    {
+      "file": "simple_real_data_test_fixed.py",
+      "size": 1193,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "email_notifier_old_testmode.py",
+      "size": 26565,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "ultimate_integrated_system.py",
+      "size": 29433,
+      "classes": 6,
+      "functions": 53
+    },
+    {
+      "file": "space_empire_dashboard.py",
+      "size": 5118,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "email_system_real_data_integration.py",
+      "size": 11967,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "hanazono_weather_syntax_fixed_20250615_190118.py",
+      "size": 4800,
+      "classes": 1,
+      "functions": 4
+    },
+    {
+      "file": "push_and_save_clean.py",
+      "size": 6385,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_run_daily_optimization_final_fix.py",
+      "size": 5319,
+      "classes": 0,
+      "functions": 4
+    },
+    {
+      "file": "ml_predictor_lite.py",
+      "size": 10210,
+      "classes": 3,
+      "functions": 14
+    },
+    {
+      "file": "past_success_config_diagnosis.py",
+      "size": 12060,
+      "classes": 2,
+      "functions": 9
+    },
+    {
+      "file": "ml_enhancement_phase1.py",
+      "size": 27027,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "abc_integration_emoji_corrected_20250616_234234.py",
+      "size": 16010,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "weather_forecast_perfect_20250615_195809.py",
+      "size": 8733,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "fix_syntax.py",
+      "size": 8869,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "GOLDEN_VERSION.py",
+      "size": 26943,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "hanazono_github_auto.py",
+      "size": 10930,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "hanazono_complete_report_analysis_v2_real_send_20250615_180822.py",
+      "size": 6562,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "abc_integration_visual_corrected_20250615_220611.py",
+      "size": 13532,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "icon_fix_completion_save.py",
+      "size": 11972,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "electric_bill_tracker_v1_backup.py",
+      "size": 19118,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "final_victory_check.py",
+      "size": 5661,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "verify_unified_content.py",
+      "size": 5225,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "enhanced_email_system.py",
+      "size": 26076,
+      "classes": 1,
+      "functions": 25
+    },
+    {
+      "file": "setting_change_detector.py",
+      "size": 19334,
+      "classes": 1,
+      "functions": 16
+    },
+    {
+      "file": "weather_emoji_fix_corrected.py",
+      "size": 17941,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "email_hub_core.py",
+      "size": 6527,
+      "classes": 1,
+      "functions": 9
+    },
+    {
+      "file": "final_verification_test.py",
+      "size": 2450,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "weather_forecast_final_tuning.py",
+      "size": 8499,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "email_test_send.py",
+      "size": 2467,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "email_notifier_backup_20250601_113017.py",
+      "size": 6625,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "email_notifier_SAFE_WORKING_20250604_003408.py",
+      "size": 8196,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "test_real_data_email_20250615_111514.py",
+      "size": 1969,
+      "classes": 0,
+      "functions": 0
+    },
+    {
+      "file": "hanazono_email_auto_integration.py",
+      "size": 5799,
+      "classes": 3,
+      "functions": 3
+    },
+    {
+      "file": "change_to_23_time.py",
+      "size": 4878,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "auto_code_fixes.py",
+      "size": 2207,
+      "classes": 1,
+      "functions": 4
+    },
+    {
+      "file": "abc_integration_push_save.py",
+      "size": 9373,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "hanazono_working_config_email_20250615_173908.py",
+      "size": 4233,
+      "classes": 1,
+      "functions": 3
+    },
+    {
+      "file": "hanazono_weather_integrated_20250615_185647.py",
+      "size": 17453,
+      "classes": 1,
+      "functions": 14
+    },
+    {
+      "file": "test_email_hub_v3.py",
+      "size": 9132,
+      "classes": 0,
+      "functions": 9
+    },
+    {
+      "file": "email_notifier_simple_backup_20250604_002433.py",
+      "size": 8196,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "kioku_simple_working.py",
+      "size": 2527,
+      "classes": 0,
+      "functions": 5
+    },
+    {
+      "file": "comprehensive_data_integrator.py",
+      "size": 17615,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "hanazono_complete_report_analysis_v2.py",
+      "size": 6562,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "email_notifier_backup_20250601_180756.py",
+      "size": 6625,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "enhanced_email_system_v2.py",
+      "size": 9319,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "weather_syntax_fix.py",
+      "size": 6515,
+      "classes": 2,
+      "functions": 7
+    },
+    {
+      "file": "hcqas_system_investigation.py",
+      "size": 9929,
+      "classes": 2,
+      "functions": 10
+    },
+    {
+      "file": "force_real_email_send_real_send_20250615_180822.py",
+      "size": 6713,
+      "classes": 1,
+      "functions": 4
+    },
+    {
+      "file": "hanazono_email_module_creation.py",
+      "size": 9995,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "auto_email_cron_setup.py",
+      "size": 13305,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "email_notifier_fixed_v2.py",
+      "size": 8600,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "detailed_cron_analysis.py",
+      "size": 6311,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_optimization_hub_design.py",
+      "size": 8813,
+      "classes": 11,
+      "functions": 13
+    },
+    {
+      "file": "hanazono_complete_status_check.py",
+      "size": 11395,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "battery_data_integration_test_20250615_111010.py",
+      "size": 1937,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "abc_integration_complete_test.py",
+      "size": 15554,
+      "classes": 1,
+      "functions": 9
+    },
+    {
+      "file": "data_analysis_diagnostic.py",
+      "size": 11904,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "email_capsule.py",
+      "size": 3184,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "cron_switch_verification.py",
+      "size": 3603,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_real_send_fixed_20250615_180325.py",
+      "size": 15255,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "hanazono_email_real_data_integrated_20250615_111508.py",
+      "size": 16816,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "ml_predictor_enhanced_fixed.py",
+      "size": 22015,
+      "classes": 3,
+      "functions": 23
+    },
+    {
+      "file": "self_evolving_ai.py",
+      "size": 18316,
+      "classes": 1,
+      "functions": 38
+    },
+    {
+      "file": "fix_line_break_issue.py",
+      "size": 24034,
+      "classes": 1,
+      "functions": 16
+    },
+    {
+      "file": "push_23_time_completion.py",
+      "size": 7013,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "file_corruption_detector.py",
+      "size": 1252,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_perfect_email_fix.py",
+      "size": 5843,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "hanazono_original_safe.py",
+      "size": 15255,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "hanazono_optimizer.py",
+      "size": 19562,
+      "classes": 1,
+      "functions": 22
+    },
+    {
+      "file": "email_hub_argument_fix.py",
+      "size": 7137,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "setting_visualization_upgrade.py",
+      "size": 22032,
+      "classes": 2,
+      "functions": 15
+    },
+    {
+      "file": "weather_forecast_backup_20250615_210823.py",
+      "size": 12197,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "email_notifier_working.py",
+      "size": 6864,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "email_notifier_SAFE_WORKING_20250604_003114.py",
+      "size": 8196,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "github_auto_fetch.py",
+      "size": 1200,
+      "classes": 1,
+      "functions": 3
+    },
+    {
+      "file": "ultimate_protection_system.py",
+      "size": 5361,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "hanazono_real_send_mode_20250615_180033_real_send_20250615_180822.py",
+      "size": 15213,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "ensurepip_recovery.py",
+      "size": 7483,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "abc_integration_tokidoki_fixed_20250616_234722.py",
+      "size": 16295,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "space_expansion_project.py",
+      "size": 15286,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "abc_integration_weather_fixed_20250617_150557.py",
+      "size": 21786,
+      "classes": 1,
+      "functions": 15
+    },
+    {
+      "file": "weather_emoji_fix_safe.py",
+      "size": 17595,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "mail_send_diagnosis.py",
+      "size": 3661,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "collector_capsule.py",
+      "size": 4156,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "email_notification.py",
+      "size": 17335,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "check_cron_time.py",
+      "size": 3915,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "variable_undefined_fix.py",
+      "size": 4595,
+      "classes": 1,
+      "functions": 4
+    },
+    {
+      "file": "settings_manager.py",
+      "size": 6649,
+      "classes": 1,
+      "functions": 15
+    },
+    {
+      "file": "weather_forecast_today_jma_api.py",
+      "size": 13126,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "operation_optimization.py",
+      "size": 16536,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "hanazono_3elements_integration.py",
+      "size": 11113,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "email_notifier_temp1.py",
+      "size": 9073,
+      "classes": 2,
+      "functions": 9
+    },
+    {
+      "file": "hanazono_simple_backup.py",
+      "size": 16320,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "hanazono_complete_system.py",
+      "size": 15255,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "system_achievements_documentation.py",
+      "size": 8875,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "email_notifier_v2_1_github.py",
+      "size": 26331,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "hanazono_optimization_hub.py",
+      "size": 14245,
+      "classes": 4,
+      "functions": 26
+    },
+    {
+      "file": "scan_email_system.py",
+      "size": 5163,
+      "classes": 0,
+      "functions": 6
+    },
+    {
+      "file": "email_notifier_backup_20250601_175553.py",
+      "size": 6625,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "ast_fix_indentation.py",
+      "size": 2282,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "ml_enhancement_phase1_v3.py",
+      "size": 24481,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "data_util.py",
+      "size": 2604,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "email_notifier_ultimate_fixed.py",
+      "size": 9537,
+      "classes": 2,
+      "functions": 13
+    },
+    {
+      "file": "setup.py",
+      "size": 7474,
+      "classes": 0,
+      "functions": 7
+    },
+    {
+      "file": "logger.py",
+      "size": 1738,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "lvyuan_collector.py",
+      "size": 12138,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "visual_system_corrected.py",
+      "size": 14706,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "email_notifier_backup_20250525_125951.py",
+      "size": 8361,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "abc_integration_3days_restored_20250615_222454.py",
+      "size": 13813,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "weather_forecast_fixed_20250615_191342.py",
+      "size": 6434,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "kioku_simple_fix.py",
+      "size": 2116,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "disable_old_email_system.py",
+      "size": 4277,
+      "classes": 0,
+      "functions": 4
+    },
+    {
+      "file": "hanazono_original_safe_real_send_20250615_180822.py",
+      "size": 15198,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "ultimate_fix.py",
+      "size": 5465,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "weather_forecast_complete_final.py",
+      "size": 10646,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_ultimate.py",
+      "size": 13265,
+      "classes": 1,
+      "functions": 18
+    },
+    {
+      "file": "ultimate_kioku_syntax_only_fix.py",
+      "size": 1059,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "github_data_integration_fixed.py",
+      "size": 14214,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "hanazono_email_fix_correct_target_real_send_20250615_180822.py",
+      "size": 5966,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "email_hub_ml_final.py",
+      "size": 21858,
+      "classes": 3,
+      "functions": 19
+    },
+    {
+      "file": "weather_forecast_min_max_perfect.py",
+      "size": 12478,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hcqas_complete_diagnosis.py",
+      "size": 11314,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "pinpoint_check_battle_function.py",
+      "size": 3248,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_complete_system_real_send_20250615_180822.py",
+      "size": 15198,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "report_generator.py",
+      "size": 14896,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "hcqas_capsule.py",
+      "size": 1532,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "abc_integration_visual_enhanced_20250615_213452.py",
+      "size": 19092,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "github_auto_investigator.py",
+      "size": 15248,
+      "classes": 1,
+      "functions": 15
+    },
+    {
+      "file": "weather_forecast_second_source.py",
+      "size": 10011,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "email_hub_ml_integration_real_send_20250615_180822.py",
+      "size": 21053,
+      "classes": 3,
+      "functions": 19
+    },
+    {
+      "file": "unified_scanner.py",
+      "size": 3345,
+      "classes": 0,
+      "functions": 6
+    },
+    {
+      "file": "email_hub_ml_integration.py",
+      "size": 21071,
+      "classes": 3,
+      "functions": 19
+    },
+    {
+      "file": "abc_integration_linebreak_fixed_20250617_090232.py",
+      "size": 21571,
+      "classes": 1,
+      "functions": 15
+    },
+    {
+      "file": "simulation_mode_fix_real_send_20250615_180822.py",
+      "size": 8768,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "cron_diagnosis_and_fix.py",
+      "size": 17725,
+      "classes": 1,
+      "functions": 9
+    },
+    {
+      "file": "git_push_current_state.py",
+      "size": 2477,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "hanazono_email_real_data_integrated_20250615_111508_real_send_20250615_180822.py",
+      "size": 16759,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "check_system_status.py",
+      "size": 2933,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "smart_proposal_ui.py",
+      "size": 16170,
+      "classes": 6,
+      "functions": 18
+    },
+    {
+      "file": "hanazono_email_hub_20250615_094612.py",
+      "size": 7076,
+      "classes": 1,
+      "functions": 4
+    },
+    {
+      "file": "fix_mail_formatting.py",
+      "size": 22042,
+      "classes": 1,
+      "functions": 15
+    },
+    {
+      "file": "ai_auto_resolver.py",
+      "size": 6626,
+      "classes": 1,
+      "functions": 9
+    },
+    {
+      "file": "current_email_notifier.py",
+      "size": 17938,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "enhanced_email_system_v2_temp.py",
+      "size": 26076,
+      "classes": 1,
+      "functions": 25
+    },
+    {
+      "file": "expand_ai_memory.py",
+      "size": 3101,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "system_health_monitor.py",
+      "size": 17008,
+      "classes": 4,
+      "functions": 25
+    },
+    {
+      "file": "system_problem_analysis.py",
+      "size": 8876,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "season_detector.py",
+      "size": 2162,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "fix_weather_display.py",
+      "size": 9391,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "ultimate_kioku_system_correct.py",
+      "size": 11964,
+      "classes": 5,
+      "functions": 18
+    },
+    {
+      "file": "hanazono_email_fixed_20250615_111919_real_send_20250615_180822.py",
+      "size": 16650,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "self_evolving_ai_v2.py",
+      "size": 28331,
+      "classes": 1,
+      "functions": 32
+    },
+    {
+      "file": "perfect_weather_apply_fixed.py",
+      "size": 10386,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "ultimate_email_integration_fixed.py",
+      "size": 14127,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "hanazono_optimization_hub_v3.py",
+      "size": 23682,
+      "classes": 4,
+      "functions": 36
+    },
+    {
+      "file": "hanazono_complete_report_analysis.py",
+      "size": 10205,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "manual_auto_update.py",
+      "size": 4135,
+      "classes": 1,
+      "functions": 8
+    },
+    {
+      "file": "hanazono_email_real_data_integrated_20250615_111514.py",
+      "size": 16816,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "email_notifier_ultimate.py",
+      "size": 8841,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "weather_integration_with_fixed_api.py",
+      "size": 9259,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "enhanced_email_v2_base.py",
+      "size": 1178,
+      "classes": 1,
+      "functions": 2
+    },
+    {
+      "file": "ai_learning_database.py",
+      "size": 6426,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "hanazono_email_fix_correct_target.py",
+      "size": 5966,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "data_integration_system.py",
+      "size": 16786,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "tokidoki_emoji_fix.py",
+      "size": 18126,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "parameter_manager.py",
+      "size": 14897,
+      "classes": 3,
+      "functions": 15
+    },
+    {
+      "file": "cron_setup_simple.py",
+      "size": 2885,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "email_notifier_GOLDEN_MASTER_20250604_010604.py",
+      "size": 26566,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "hanazono_email_simulation_fix_v2.py",
+      "size": 4455,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "hanazono_analysis.py",
+      "size": 6177,
+      "classes": 0,
+      "functions": 5
+    },
+    {
+      "file": "backup_before_weather_fix_20250617_150557.py",
+      "size": 21571,
+      "classes": 1,
+      "functions": 15
+    },
+    {
+      "file": "weather_forecast_backup_20250615_204824.py",
+      "size": 6386,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "email_golden_version_diagnosis.py",
+      "size": 5946,
+      "classes": 0,
+      "functions": 4
+    },
+    {
+      "file": "hanazono_data_source_diagnosis.py",
+      "size": 8164,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "install_ml_dependencies.py",
+      "size": 2138,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "email_notification_new.py",
+      "size": 3959,
+      "classes": 1,
+      "functions": 4
+    },
+    {
+      "file": "email_notifier_testmode_backup.py",
+      "size": 26565,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "hanazono_complete_system_detailed_report_20250615_073249_real_send_20250615_180822.py",
+      "size": 17554,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "register_scan_full.py",
+      "size": 5227,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "settings_tracker.py",
+      "size": 3138,
+      "classes": 1,
+      "functions": 4
+    },
+    {
+      "file": "force_real_email_send.py",
+      "size": 6713,
+      "classes": 1,
+      "functions": 4
+    },
+    {
+      "file": "integrated_safety_monitoring.py",
+      "size": 14381,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "solar_control_scheduler.py",
+      "size": 2002,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "kioku_precision_working.py",
+      "size": 1711,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_email_simulation_fix_v2_real_send_20250615_180822.py",
+      "size": 4386,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "test_weather_fix.py",
+      "size": 2842,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "fix_title_and_temperature.py",
+      "size": 15364,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "security_clearance_system.py",
+      "size": 16054,
+      "classes": 1,
+      "functions": 9
+    },
+    {
+      "file": "ml_news_generator.py",
+      "size": 17302,
+      "classes": 1,
+      "functions": 14
+    },
+    {
+      "file": "manual_auto_update_fixed.py",
+      "size": 5376,
+      "classes": 1,
+      "functions": 9
+    },
+    {
+      "file": "weather_forecast_perfect_temperature.py",
+      "size": 8376,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "scan_solarman.py",
+      "size": 3098,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "abc_integration_push_save_fixed.py",
+      "size": 9553,
+      "classes": 1,
+      "functions": 6
+    },
+    {
+      "file": "kioku_runtime_fix.py",
+      "size": 7570,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "hanazono_complete_structure_analysis.py",
+      "size": 5610,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "temperature_data_perfection.py",
+      "size": 19075,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "weather_forecast_existing_fixed_20250615_195300.py",
+      "size": 8055,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "ml_enhancement_phase1_v2.py",
+      "size": 17697,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "investigate_weather_missing.py",
+      "size": 8692,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "ml_predictor_enhanced.py",
+      "size": 23740,
+      "classes": 3,
+      "functions": 23
+    },
+    {
+      "file": "backup_before_linebreak_fix_20250617_090232.py",
+      "size": 21539,
+      "classes": 1,
+      "functions": 15
+    },
+    {
+      "file": "temperature_data_verification.py",
+      "size": 2870,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "email_notifier_simple_backup.py",
+      "size": 8196,
+      "classes": 1,
+      "functions": 10
+    },
+    {
+      "file": "email_notifier_backup_before_final_restore_20250601_183629.py",
+      "size": 6864,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "save_formatting_fix.py",
+      "size": 8871,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_real_send_fixed_20250615_180325_real_send_20250615_180822.py",
+      "size": 15198,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "system_status_report.py",
+      "size": 8926,
+      "classes": 0,
+      "functions": 9
+    },
+    {
+      "file": "settings_manager_broken_backup.py",
+      "size": 10289,
+      "classes": 1,
+      "functions": 19
+    },
+    {
+      "file": "hanazono_complete_system_email_fixed_20250615_072337_real_send_20250615_180822.py",
+      "size": 16263,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "ai_empire_system.py",
+      "size": 24683,
+      "classes": 7,
+      "functions": 41
+    },
+    {
+      "file": "hanazono_email_real_data_integrated_20250615_111514_real_send_20250615_180822.py",
+      "size": 16759,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "hanazono_dev.py",
+      "size": 18297,
+      "classes": 1,
+      "functions": 23
+    },
+    {
+      "file": "hanazono_email_fix_separate_file.py",
+      "size": 5122,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_email_integration_fix_real_send_20250615_180822.py",
+      "size": 4868,
+      "classes": 3,
+      "functions": 2
+    },
+    {
+      "file": "hanazono_complete_system_email_fixed_20250615_072337.py",
+      "size": 16320,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "settings_recommender.py",
+      "size": 13293,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "survey_completed_modules.py",
+      "size": 9141,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_email_fix_separate_file_real_send_20250615_180822.py",
+      "size": 5122,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "check_latest_push.py",
+      "size": 4021,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_variable_fixed_20250615_181224.py",
+      "size": 15198,
+      "classes": 1,
+      "functions": 11
+    },
+    {
+      "file": "hanazono_data_fix_solution.py",
+      "size": 15291,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "hanazono_email_simulation_fix.py",
+      "size": 3982,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "collect_daily_data.py",
+      "size": 3300,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "sync_to_pushed_version.py",
+      "size": 3348,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "email_notifier_BROKEN_FINAL_20250601_190126.py",
+      "size": 10117,
+      "classes": 2,
+      "functions": 9
+    },
+    {
+      "file": "expand_env_fix.py",
+      "size": 1209,
+      "classes": 1,
+      "functions": 2
+    },
+    {
+      "file": "kioku_emergency_fix.py",
+      "size": 1535,
+      "classes": 0,
+      "functions": 3
+    },
+    {
+      "file": "existing_system_problem_diagnosis_real_send_20250615_180822.py",
+      "size": 6922,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "existing_system_problem_diagnosis.py",
+      "size": 6952,
+      "classes": 1,
+      "functions": 7
+    },
+    {
+      "file": "email_notifier_v2.py",
+      "size": 26536,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "email_notifier_backup_20250601_112037.py",
+      "size": 6625,
+      "classes": 1,
+      "functions": 5
+    },
+    {
+      "file": "recommendation_icon_fix.py",
+      "size": 15532,
+      "classes": 1,
+      "functions": 12
+    },
+    {
+      "file": "email_notifier_broken_backup.py",
+      "size": 27182,
+      "classes": 2,
+      "functions": 16
+    },
+    {
+      "file": "weather_data_integration_20250615_113001.py",
+      "size": 1484,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "wrong_file_backup_20250616_142139.py",
+      "size": 3855,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "hanazono_daily_optimization_email_fix_real_send_20250615_180822.py",
+      "size": 4884,
+      "classes": 0,
+      "functions": 2
+    },
+    {
+      "file": "update_memory_with_discoveries.py",
+      "size": 4026,
+      "classes": 0,
+      "functions": 1
+    },
+    {
+      "file": "integrate_battle_to_mail.py",
+      "size": 21539,
+      "classes": 1,
+      "functions": 15
+    },
+    {
+      "file": "setup_auto_email.py",
+      "size": 3958,
+      "classes": 0,
+      "functions": 4
+    }
+  ],
+  "completion_rate": 120.0,
+  "next_action": "拡張機能実装検討"
+}

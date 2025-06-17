@@ -1,0 +1,8 @@
+{
+  "test_timestamp": "20250618_012050",
+  "overall_status": "SUCCESS",
+  "data_records": 1104,
+  "prediction_test": "PASS",
+  "integration_ready": true,
+  "next_step": "HANAZONOシステム統合実行"
+}

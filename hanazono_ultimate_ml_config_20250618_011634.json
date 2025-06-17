@@ -1,0 +1,24 @@
+{
+  "model_architecture": "Gradient Boosting + Neural Network Ensemble",
+  "input_features": [
+    "season",
+    "month",
+    "day_of_week",
+    "temp_max",
+    "temp_min",
+    "sunshine_hours",
+    "weather_encoded",
+    "usage_history",
+    "trend_analysis"
+  ],
+  "target_variables": [
+    "daily_usage_kwh",
+    "optimal_soc",
+    "optimal_charge_current"
+  ],
+  "training_data": 1134,
+  "validation_split": 0.2,
+  "cross_validation": 10,
+  "expected_accuracy": "95%+",
+  "implementation_time": "30分以内"
+}

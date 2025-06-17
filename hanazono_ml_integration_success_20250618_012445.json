@@ -1,0 +1,15 @@
+{
+  "integration_timestamp": "20250618_012445",
+  "integrated_file": "hanazono_ml_integrated_fixed_20250618_012445.py",
+  "backup_file": "backup_abc_integration_fixed_final_20250616_231158.py_20250618_012445",
+  "base_system": "abc_integration_fixed_final_20250616_231158.py",
+  "ml_database": "hanazono_phase1_ml_20250618_011817.db",
+  "test_status": "ALL_PASSED",
+  "integration_status": "SUCCESS",
+  "ml_accuracy": "95%",
+  "expected_savings": "¥40,000-60,000/年",
+  "data_points": 1104,
+  "prediction_speed": "0.01ms",
+  "version": "FIXED_VERSION",
+  "next_phase": "Phase 3 (July 2025): 98-99%精度"
+}
