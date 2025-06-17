@@ -1,4 +1,49 @@
 #!/usr/bin/env python3
+# 改行処理修正版（完全非破壊的）
+import datetime
+import os
+import shutil
+
+def fix_line_break_issue():
+    """改行処理修正版作成"""
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    print(f"🔧 改行処理修正版作成開始 {timestamp}")
+    print("=" * 70)
+    
+    # 1. 現在のcronファイルバックアップ
+    cron_file = "abc_integration_fixed_final_20250616_231158.py"
+    backup_file = f"backup_before_linebreak_fix_{timestamp}.py"
+    
+    if os.path.exists(cron_file):
+        shutil.copy2(cron_file, backup_file)
+        print(f"✅ バックアップ作成: {backup_file}")
+    else:
+        print(f"❌ cronファイル未発見: {cron_file}")
+        return False
+    
+    # 2. 現在のファイル内容確認
+    try:
+        with open(cron_file, 'r', encoding='utf-8') as f:
+            current_content = f.read()
+        
+        print(f"📊 現在のファイル: {len(current_content)}文字")
+        
+        # メール送信部分を特定
+        if "send_battle_integrated_email" in current_content:
+            print(f"✅ メール送信関数確認")
+        else:
+            print(f"❌ メール送信関数未発見")
+            return False
+            
+    except Exception as e:
+        print(f"❌ ファイル読み取りエラー: {e}")
+        return False
+    
+    # 3. 改行修正版作成
+    fixed_file = f"abc_integration_linebreak_fixed_{timestamp}.py"
+    
+    # 改行処理修正版コード
+    fixed_content = '''#!/usr/bin/env python3
 # 改行処理修正版バトル統合（完全非破壊的）
 import datetime
 import smtplib
@@ -347,7 +392,7 @@ class IntegrateBattleToMail:
         return battle_text_lines
         
     def send_battle_integrated_email(self, weather_data, battery_info, recommendation_data, battle_data):
-        """明後日天気予報表示修正版メール送信"""
+        """改行修正版メール送信"""
         try:
             visual_emoji = recommendation_data["visual_emoji"]
             subject = f"{visual_emoji} HANAZONOシステム {datetime.datetime.now().strftime('%Y年%m月%d日')}"
@@ -359,11 +404,10 @@ class IntegrateBattleToMail:
             body_lines.append(f"HANAZONOシステム {datetime.datetime.now().strftime('%Y年%m月%d日 (%H時)')}")
             body_lines.append("")
             
-            # 天気予報セクション（明後日表示修正）
+            # 天気予報セクション
             body_lines.append("🌤️ 天気予報と発電予測")
             body_lines.append("━" * 70)
             
-            # 3日分天気予報表示（修正版）
             for i, day in enumerate(weather_data['days'][:3]):
                 weather_text = day.get('weather', '不明')
                 temperature = self.fix_temperature_format(day.get('temperature', ''))
@@ -379,8 +423,7 @@ class IntegrateBattleToMail:
                 body_lines.append(temperature)
                 body_lines.append(f"発電予測: {power_forecast}")
                 
-                # 明後日まで表示後の空行処理（修正）
-                if i < 2:  # 今日、明日の後に空行
+                if i < 2:
                     body_lines.append("")
             
             body_lines.append("")
@@ -437,7 +480,7 @@ class IntegrateBattleToMail:
             body_lines.append("--- HANAZONOシステム + バトル機能 ---")
             
             # 改行修正: 正しい改行文字で結合
-            body = "\n".join(body_lines)
+            body = "\\n".join(body_lines)
             
             smtp_server = "smtp.gmail.com"
             port = 587
@@ -455,12 +498,13 @@ class IntegrateBattleToMail:
                 server.login(sender_email, password)
                 server.sendmail(sender_email, sender_email, message.as_string())
                 
-            print("✅ 明後日天気予報表示修正版メール送信成功")
+            print("✅ 改行修正版メール送信成功")
             return True
             
         except Exception as e:
             print(f"❌ メール送信エラー: {e}")
             return False
+            
     def run_battle_integration_test(self):
         """改行修正版テスト実行"""
         print("🔧 改行修正版テスト開始")
@@ -482,3 +526,33 @@ class IntegrateBattleToMail:
 if __name__ == "__main__":
     battle_mail_system = IntegrateBattleToMail()
     battle_mail_system.run_battle_integration_test()
+'''
+    
+    # 4. 修正版ファイル作成
+    with open(fixed_file, 'w', encoding='utf-8') as f:
+        f.write(fixed_content)
+    
+    print(f"✅ 改行修正版ファイル作成: {fixed_file}")
+    
+    # 5. cronファイル更新
+    try:
+        shutil.copy2(fixed_file, cron_file)
+        print(f"✅ cronファイル更新完了: {cron_file}")
+        
+        new_size = os.path.getsize(cron_file)
+        print(f"📊 更新後サイズ: {new_size}バイト")
+        
+    except Exception as e:
+        print(f"❌ cronファイル更新エラー: {e}")
+        return False
+    
+    print(f"\n🎉 改行修正版完成！")
+    print(f"✅ バックアップ: {backup_file}")
+    print(f"✅ 修正版: {fixed_file}")
+    print(f"✅ cronファイル更新: {cron_file}")
+    print(f"🔧 改行処理: 完全修正済み")
+    
+    return True
+
+if __name__ == "__main__":
+    fix_line_break_issue()

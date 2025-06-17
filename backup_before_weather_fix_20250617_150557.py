@@ -347,7 +347,7 @@ class IntegrateBattleToMail:
         return battle_text_lines
         
     def send_battle_integrated_email(self, weather_data, battery_info, recommendation_data, battle_data):
-        """明後日天気予報表示修正版メール送信"""
+        """改行修正版メール送信"""
         try:
             visual_emoji = recommendation_data["visual_emoji"]
             subject = f"{visual_emoji} HANAZONOシステム {datetime.datetime.now().strftime('%Y年%m月%d日')}"
@@ -359,11 +359,10 @@ class IntegrateBattleToMail:
             body_lines.append(f"HANAZONOシステム {datetime.datetime.now().strftime('%Y年%m月%d日 (%H時)')}")
             body_lines.append("")
             
-            # 天気予報セクション（明後日表示修正）
+            # 天気予報セクション
             body_lines.append("🌤️ 天気予報と発電予測")
             body_lines.append("━" * 70)
             
-            # 3日分天気予報表示（修正版）
             for i, day in enumerate(weather_data['days'][:3]):
                 weather_text = day.get('weather', '不明')
                 temperature = self.fix_temperature_format(day.get('temperature', ''))
@@ -379,8 +378,7 @@ class IntegrateBattleToMail:
                 body_lines.append(temperature)
                 body_lines.append(f"発電予測: {power_forecast}")
                 
-                # 明後日まで表示後の空行処理（修正）
-                if i < 2:  # 今日、明日の後に空行
+                if i < 2:
                     body_lines.append("")
             
             body_lines.append("")
@@ -455,12 +453,13 @@ class IntegrateBattleToMail:
                 server.login(sender_email, password)
                 server.sendmail(sender_email, sender_email, message.as_string())
                 
-            print("✅ 明後日天気予報表示修正版メール送信成功")
+            print("✅ 改行修正版メール送信成功")
             return True
             
         except Exception as e:
             print(f"❌ メール送信エラー: {e}")
             return False
+            
     def run_battle_integration_test(self):
         """改行修正版テスト実行"""
         print("🔧 改行修正版テスト開始")

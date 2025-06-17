@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# 改行処理修正版バトル統合（完全非破壊的）
+# 1年前比較バトル統合版（完全非破壊的）
 import datetime
 import smtplib
 import ssl
@@ -10,10 +10,10 @@ import os
 import random
 
 class IntegrateBattleToMail:
-    """改行処理修正版バトル統合システム"""
+    """1年前比較バトル統合版メールシステム"""
     
     def __init__(self):
-        print("🔧 改行処理修正版バトル統合システム 初期化完了")
+        print("🔥 1年前比較バトル統合版システム 初期化完了")
         
     def get_perfect_weather_data(self):
         """完璧な天気データ取得"""
@@ -176,7 +176,7 @@ class IntegrateBattleToMail:
             "sub_elements": sub_elements
         }
         
-    def get_perfect_weather_emoji_fixed(self, weather_text):
+    def get_perfect_weather_emoji_battle(self, weather_text):
         """完璧な天気絵文字生成"""
         analysis = self.analyze_weather_text_advanced(weather_text)
         
@@ -313,7 +313,7 @@ class IntegrateBattleToMail:
             return "🔧 システム調整で更なる削減を！"
             
     def format_battle_section(self, battle_data):
-        """バトルセクション完璧フォーマット"""
+        """1年前比較バトルセクション"""
         month_names = {
             1: '1月', 2: '2月', 3: '3月', 4: '4月', 5: '5月', 6: '6月',
             7: '7月', 8: '8月', 9: '9月', 10: '10月', 11: '11月', 12: '12月'
@@ -328,116 +328,114 @@ class IntegrateBattleToMail:
         
         judgment = self.generate_battle_judgment(battle_data['cost_reduction_rate'])
         
-        battle_text_lines = []
-        battle_text_lines.append("🏆 1年前比較バトル（HANAZONOシステム効果）")
-        battle_text_lines.append("━" * 70)
-        battle_text_lines.append(f"📅 {last_year}年{current_month_name} vs {battle_data['current_year']}年{current_month_name} メインバトル")
-        battle_text_lines.append("")
-        battle_text_lines.append(f"前年同月: ¥{battle_data['last_year']['cost']:,} ({battle_data['last_year']['kwh']}kWh) {last_year_bar} 100%")
-        battle_text_lines.append(f"今年実績: ¥{battle_data['this_year']['cost']:,}  ({battle_data['this_year']['kwh']}kWh) {this_year_bar}  {this_year_percentage:.1f}%")
-        battle_text_lines.append("")
-        battle_text_lines.append(f"💰 削減効果: ¥{battle_data['cost_reduction']:,} ({battle_data['cost_reduction_rate']:.1f}%削減)")
-        battle_text_lines.append(f"🏆 判定: {judgment}")
+        battle_lines = []
+        battle_lines.append("🏆 1年前比較バトル（HANAZONOシステム効果）")
+        battle_lines.append("━" * 70)
+        battle_lines.append(f"📅 {last_year}年{current_month_name} vs {battle_data['current_year']}年{current_month_name} メインバトル")
+        battle_lines.append("")
+        battle_lines.append(f"前年同月: ¥{battle_data['last_year']['cost']:,} ({battle_data['last_year']['kwh']}kWh) {last_year_bar} 100%")
+        battle_lines.append(f"今年実績: ¥{battle_data['this_year']['cost']:,}  ({battle_data['this_year']['kwh']}kWh) {this_year_bar}  {this_year_percentage:.1f}%")
+        battle_lines.append("")
+        battle_lines.append(f"💰 削減効果: ¥{battle_data['cost_reduction']:,} ({battle_data['cost_reduction_rate']:.1f}%削減)")
+        battle_lines.append(f"🏆 判定: {judgment}")
         
         if battle_data['cost_reduction_rate'] >= 40:
-            battle_text_lines.append("")
-            battle_text_lines.append(f"🔥 速報！削減率{battle_data['cost_reduction_rate']:.1f}%で素晴らしい成果！")
-            battle_text_lines.append("  HANAZONOシステムの威力が発揮されています！")
+            battle_lines.append("")
+            battle_lines.append(f"🔥 速報！削減率{battle_data['cost_reduction_rate']:.1f}%で素晴らしい成果！")
+            battle_lines.append("  HANAZONOシステムの威力が発揮されています！")
         
-        return battle_text_lines
+        return battle_lines
         
     def send_battle_integrated_email(self, weather_data, battery_info, recommendation_data, battle_data):
-        """明後日天気予報表示修正版メール送信"""
+        """1年前比較バトル統合メール送信"""
         try:
             visual_emoji = recommendation_data["visual_emoji"]
             subject = f"{visual_emoji} HANAZONOシステム {datetime.datetime.now().strftime('%Y年%m月%d日')}"
             
-            # 改行修正: リスト形式で作成してから結合
-            body_lines = []
+            # 天気表示部分
+            weather_lines = []
+            weather_lines.append("🌤️ 天気予報と発電予測")
+            weather_lines.append("━" * 70)
             
-            # タイトル
-            body_lines.append(f"HANAZONOシステム {datetime.datetime.now().strftime('%Y年%m月%d日 (%H時)')}")
-            body_lines.append("")
-            
-            # 天気予報セクション（明後日表示修正）
-            body_lines.append("🌤️ 天気予報と発電予測")
-            body_lines.append("━" * 70)
-            
-            # 3日分天気予報表示（修正版）
             for i, day in enumerate(weather_data['days'][:3]):
                 weather_text = day.get('weather', '不明')
                 temperature = self.fix_temperature_format(day.get('temperature', ''))
                 display_date = day.get('display_date', '不明')
                 
-                emoji_sequence = self.get_perfect_weather_emoji_fixed(weather_text)
+                emoji_sequence = self.get_perfect_weather_emoji_battle(weather_text)
                 power_forecast = self.get_power_generation_forecast(weather_text)
                 
                 day_label = ['今日', '明日', '明後日'][i]
                 
-                body_lines.append(emoji_sequence)
-                body_lines.append(f"{day_label}({display_date}): {weather_text}")
-                body_lines.append(temperature)
-                body_lines.append(f"発電予測: {power_forecast}")
+                weather_lines.append(emoji_sequence)
+                weather_lines.append(f"{day_label}({display_date}): {weather_text}")
+                weather_lines.append(temperature)
+                weather_lines.append(f"発電予測: {power_forecast}")
                 
-                # 明後日まで表示後の空行処理（修正）
-                if i < 2:  # 今日、明日の後に空行
-                    body_lines.append("")
+                if i < 2:
+                    weather_lines.append("")
             
-            body_lines.append("")
-            
-            # 推奨設定セクション
+            # 推奨設定部分
             base = recommendation_data["base_settings"]
             recs = recommendation_data["recommendations"]
             season_emoji = recommendation_data["season_emoji"]
             recommendation_icon = recommendation_data["recommendation_icon"]
             
-            body_lines.append("🔧 今日の推奨設定")
-            body_lines.append("━" * 70)
-            body_lines.append("")
-            body_lines.append(f"基本設定（季節：夏季{season_emoji}）")
-            body_lines.append(f"ID 07: {base['ID07']}A (基本)    ID 10: {base['ID10']}分 (基本)    ID 62: {base['ID62']}% (基本)")
+            rec_lines = []
+            rec_lines.append("🔧 今日の推奨設定")
+            rec_lines.append("━" * 70)
+            rec_lines.append("")
+            rec_lines.append(f"基本設定（季節：夏季{season_emoji}）")
+            rec_lines.append(f"ID 07: {base['ID07']}A (基本)    ID 10: {base['ID10']}分 (基本)    ID 62: {base['ID62']}% (基本)")
             
             if recommendation_data["change_needed"]:
-                body_lines.append("")
-                body_lines.append(f"{recommendation_icon} 推奨変更")
+                rec_lines.append("")
+                rec_lines.append(f"{recommendation_icon} 推奨変更")
                 for param_id, change in recs.items():
                     base_val = base[param_id]
-                    body_lines.append(f"{param_id}: {base_val} → {change['value']}")
-                    body_lines.append(change['reason'])
-                    body_lines.append("期待効果: 効率最適化")
+                    rec_lines.append(f"{param_id}: {base_val} → {change['value']}")
+                    rec_lines.append(change['reason'])
+                    rec_lines.append("期待効果: 効率最適化")
             else:
-                body_lines.append("")
-                body_lines.append("✅ 現在の設定が最適です")
+                rec_lines.append("")
+                rec_lines.append("✅ 現在の設定が最適です")
             
-            body_lines.append("")
-            
-            # バトルセクション
+            # バトル部分
             battle_lines = self.format_battle_section(battle_data)
-            body_lines.extend(battle_lines)
             
-            body_lines.append("")
+            # システム状況部分
+            system_lines = []
+            system_lines.append("━" * 70)
+            system_lines.append("📊 システム状況")
+            system_lines.append("━" * 70)
+            system_lines.append("")
+            system_lines.append("✅ メインハブ実送信モード: HCQASバイパス適用済み")
+            system_lines.append("✅ WeatherPredictor統合: 完璧な3日分気温データ統合")
+            system_lines.append("✅ SettingRecommender統合: アイコン修正対応推奨設定")
+            system_lines.append("✅ BattleNewsGenerator統合: 1年前比較バトル搭載")
+            system_lines.append("")
+            system_lines.append("📊 システム詳細状況:")
+            system_lines.append(f"🔋 バッテリーSOC: {battery_info['soc']}%")
+            system_lines.append("🌤️ 天気データソース: 気象庁API（3日分）")
+            system_lines.append(f"🎨 推奨アイコン: {recommendation_data['recommendation_icon']} 対応")
+            system_lines.append(f"🔥 バトルシステム: 1年前比較バトル搭載")
+            system_lines.append("🛡️ セキュリティ: HCQASバイパス確実送信")
+            system_lines.append("")
+            system_lines.append("--- HANAZONOシステム + バトル機能 ---")
             
-            # システム状況セクション
-            body_lines.append("━" * 70)
-            body_lines.append("📊 システム状況")
-            body_lines.append("━" * 70)
-            body_lines.append("")
-            body_lines.append("✅ メインハブ実送信モード: HCQASバイパス適用済み")
-            body_lines.append("✅ WeatherPredictor統合: 完璧な3日分気温データ統合")
-            body_lines.append("✅ SettingRecommender統合: アイコン修正対応推奨設定")
-            body_lines.append("✅ BattleNewsGenerator統合: 1年前比較バトル搭載")
-            body_lines.append("")
-            body_lines.append("📊 システム詳細状況:")
-            body_lines.append(f"🔋 バッテリーSOC: {battery_info['soc']}%")
-            body_lines.append("🌤️ 天気データソース: 気象庁API（3日分）")
-            body_lines.append(f"🎨 推奨アイコン: {recommendation_data['recommendation_icon']} 対応")
-            body_lines.append("🔥 バトルシステム: 1年前比較バトル搭載")
-            body_lines.append("🛡️ セキュリティ: HCQASバイパス確実送信")
-            body_lines.append("")
-            body_lines.append("--- HANAZONOシステム + バトル機能 ---")
+            # 全体組み合わせ
+            all_lines = []
+            all_lines.append(f"HANAZONOシステム {datetime.datetime.now().strftime('%Y年%m月%d日 (%H時)')}")
+            all_lines.append("")
+            all_lines.extend(weather_lines)
+            all_lines.append("")
+            all_lines.extend(rec_lines)
+            all_lines.append("")
+            all_lines.extend(battle_lines)
+            all_lines.append("")
+            all_lines.extend(system_lines)
             
-            # 改行修正: 正しい改行文字で結合
-            body = "\n".join(body_lines)
+            body = "\\n".join(all_lines)
             
             smtp_server = "smtp.gmail.com"
             port = 587
@@ -455,28 +453,28 @@ class IntegrateBattleToMail:
                 server.login(sender_email, password)
                 server.sendmail(sender_email, sender_email, message.as_string())
                 
-            print("✅ 明後日天気予報表示修正版メール送信成功")
+            print("✅ 1年前比較バトル統合メール送信成功")
             return True
             
         except Exception as e:
             print(f"❌ メール送信エラー: {e}")
             return False
+            
     def run_battle_integration_test(self):
-        """改行修正版テスト実行"""
-        print("🔧 改行修正版テスト開始")
+        """1年前比較バトル統合テスト実行"""
+        print("🔥 1年前比較バトル統合テスト開始")
         weather_data = self.get_perfect_weather_data()
         battery_info = self.get_battery_data()
         recommendation_data = self.calculate_visual_recommendations(weather_data, battery_info)
         battle_data = self.get_battle_data()
         
-        print("🔧 改行修正版データ確認:")
+        print("🔥 バトルデータ確認:")
         print(f"  削減効果: ¥{battle_data['cost_reduction']:,} ({battle_data['cost_reduction_rate']:.1f}%削減)")
         print(f"  判定: {self.generate_battle_judgment(battle_data['cost_reduction_rate'])}")
-        print("  改行処理: 修正版適用")
         
         result = self.send_battle_integrated_email(weather_data, battery_info, recommendation_data, battle_data)
         if result:
-            print("🎉 改行修正版完成！")
+            print("🎉 1年前比較バトル統合完成！")
         return result
 
 if __name__ == "__main__":
